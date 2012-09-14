@@ -1,0 +1,84 @@
+$experimental-support-for-svg: true;
+
+
+// Grid settings
+$column-width: 60;
+$gutter-width: 30;
+$columns: 12;
+
+// Remove the definition below for a pixel-based layout
+$total-width: 100%;
+
+// Typography Settings
+
+$baseline-rhythm: 5px !default;
+$base-font-size: 14px !default;
+$base-line-height: $baseline-rhythm * 4 !default;
+
+$base-font-family: Georgia, serif !default;
+$alternate-font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue", Arial, sans-serif !default;
+$alternate-font-family2: "Helvetica Neue", Arial, sans-serif !default;
+$button-font-family: 'IM Fell Great Primer SC', serif;
+$mono-font-family: Consolas, "Andale Mono", "Lucida Console", monospace !default;
+$button-font-family: Georgia !default;
+
+// ===========
+// =  Colors =
+// ===========
+
+$blue: #1e65d8;
+$blueDarker: #0c4686;
+$red: #d51f1b;
+$redLight: #fe4e4c;
+$blueLight: #43b2ec;
+$blueLighter: #a7d4fb;
+$orange: #fa8f4c;
+
+// Grays
+$black:                 #000 !default;
+$grayDarker:            #222 !default;
+$grayDark:              #333 !default;
+$gray:                  #555 !default;
+$grayLight:             #999 !default;
+$grayLighter:           #eee !default;
+$white:                 #fff !default;
+
+
+$base-text-color: #4d4d4d !default;
+$strong-text-color: black !default;
+$weak-text-color: #3d3d3d !default;
+$header-color: #000000 !default;
+$blockquote-color: #666666 !default;
+$footer-text-color: #929292 !default;
+$link-color: $base-text-color !default;
+$link-hover-color: #ff3300 !default;
+
+$extra-light-screen-color: #d8d8d8 !default;
+$light-rule-color: #dfdfdf !default;
+
+// =========
+// = Sizes =
+// =========
+
+$nav-height:70px;
+
+// ========================================
+// = Messaging Background and Text Colors =
+// ========================================
+
+$defaulBackground: #696969 !default;
+$successBackground: #40a140 !default;
+$errorBackground: #da2222 !default;
+$warningBackground: #e7c202 !default;
+$infoBackground: #3386af !default;
+
+$defaultText: #fff !default;
+$successText: #fff !default;
+$errorText: #fff !default;
+$warningText: #fff !default;
+$infoText: #fff !default;
+
+// =================
+// = Miscellaneous =
+// =================
+$boxmodel: border-box !default;

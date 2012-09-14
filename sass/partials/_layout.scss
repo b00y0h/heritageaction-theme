@@ -1,0 +1,47 @@
+.max-width {
+  max-width: 960px;
+}
+.centered {
+  margin: 0 auto;
+}
+#main-inner, .site-info {
+  @extend .max-width;
+	@extend .centered;
+	z-index:5;
+	position:relative;
+}
+#masthead {
+  @extend .max-width;
+  @extend .centered;
+  @extend .clearfix;
+  z-index:1000;
+  position:relative;
+  hgroup {
+    @extend .float-left;
+  }
+}
+#main {
+  padding-top:25px;
+	position:relative;
+}
+#main-inner {
+  @extend .clearfix;
+}
+
+#primary {
+  @include column(8);
+}
+#secondary {
+  @include column(4);
+}
+#hero {
+  margin-right:-5%;
+}
+.home {
+  #content {
+    @include row(8);
+    .col1,.col2 {
+      @include column(4,8);
+    }
+  }
+}

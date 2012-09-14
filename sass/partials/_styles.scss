@@ -1,0 +1,506 @@
+footer {
+  background-color:#000;
+  color:#fff;
+  font-size:12px;
+  padding:45px 0;
+  text-align:center;
+  color:$footer-text-color;
+  a {
+    color:$footer-text-color;
+    padding:0 1em;
+    &:hover {
+      color:white;
+    }
+  }
+  address {
+    margin:0 0 1.5em 0;
+    a {text-decoration:underline;}
+  }
+}
+
+.site-title {
+  @include hide-text;
+  @include size($nav-height,120px);
+  
+  background:transparent url('img/logo.png') left center no-repeat;
+  border-right:1px solid #dddddd;
+}
+
+.made-in-usa {
+  background:transparent url('img/made-in-usa.png') left center no-repeat;
+  @include size(22px, 44px);
+  @extend .display-inline-block;
+}
+.gradient a {
+  color:$white;
+}
+.red-gradient {
+  background-color:$red;
+  color:white;
+  @include gradient-vertical($red, #9c0c0a);
+}
+.light-red-gradient {
+  background-color:$redLight;
+  color:$white;
+  @include gradient-vertical($redLight, #c91211);
+}
+.light-blue-gradient {
+  background-color:$blueLighter;
+  color:white;
+  @include gradient-vertical($blueLighter,#73bbf8);
+}
+.medium-blue-gradient {
+  background-color:$blueLight;
+  color:white;
+  @include gradient-vertical($blueLight,#1d61d7);
+}
+.blue-gradient {
+  background-color:$blueDarker;
+  color:white;
+  @include gradient-vertical($blueDarker,#05203e);
+}
+.orange-gradient {
+  background-color:$orange;
+  color:white;
+  @include gradient-vertical($orange,#f54a18);
+}
+.dark-gray-gradient {
+  background-color:#727272;
+  color:$white;
+  @include gradient-vertical(#727272,#555555);
+}
+
+.btn {
+  @include size(37px, auto);
+  @include font-shorthand(14px, normal,37px);
+  padding:0 1em;
+  text-align:center;
+  @extend .uppercase;
+  @extend .display-inline-block;
+  @extend .text-shadow-dark;
+}
+.rounded {
+  @include border-radius(37px);
+}
+
+.arrow-up {
+	width: 0; 
+	height: 0; 
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	
+	border-bottom: 5px solid black;
+}
+
+.arrow-down {
+	width: 0; 
+	height: 0; 
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	
+	border-top: 20px solid #f00;
+}
+
+.arrow-right {
+	width: 0; 
+	height: 0; 
+	border-top: 6px solid transparent;
+	border-bottom: 6px solid transparent;
+	border-left: 6px solid $white;
+}
+
+.arrow-left {
+	width: 0; 
+	height: 0; 
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent; 
+	border-right:10px solid blue; 
+}
+
+.shadow {
+  position: relative;  
+  background-color: $white;
+  @include box-shadow(0 0 5px rgba(0,0,0,.25)); 
+}
+
+[class*="shadow-curl-"] {
+  margin-bottom:1em;
+  &:before, &:after {
+  	position: absolute;
+    width:85%;
+    height:200px;
+  	content: ' ';
+  	bottom: 9px;
+  	background: transparent;
+    z-index: -1;    
+  }
+}
+.shadow-curl-left:before {
+	@include box-shadow(0 10px 10px 5px rgba(0,0,0,.3));
+  @include skew-rotate(-5deg, -2deg);
+  left: 12px;
+}
+.shadow-curl-right:after
+{
+	@include box-shadow(0 10px 10px 5px rgba(0,0,0,.3));
+  @include skew-rotate(5deg, 2deg);
+	right: 12px;
+}
+.diag-stripes {
+background:transparent url('img/striped-bg.png');
+}
+
+.base-drop-shadow {
+  @include box-shadow(0 1px 5px rgba(0,0,0,.35));
+}
+
+.uppercase {
+  text-transform:uppercase;
+}
+
+.text-shadow-dark {
+  text-shadow:1px 0 5px rgba(0,0,0,.35);
+}
+.post-meta {
+  @extend .display-block;
+	@extend .uppercase;
+  font-size:9px;
+  font-family:Arial, sans-serif;
+	letter-spacing: .1em;
+	margin:.3em 0 .2em;
+  word-spacing: .2em;
+}
+
+
+.pagination {
+  height: 40px;
+  margin: 20px 0;
+}
+
+.pagination ul {
+  display: inline-block;
+  *display: inline;
+  font-family:Arial, sans-serif;
+  font-size:12px;
+  margin-bottom: 0;
+  margin-left: 0;
+  @include border-radius(30px);
+  *zoom: 1;
+  @include box-shadow(0 1px 2px rgba(0,0,0,.35));
+}
+
+.pagination ul > li {
+  display: inline;
+}
+
+.pagination ul > li > a,
+.pagination ul > li > span {
+  float: left;
+  padding: 0 14px;
+  line-height: 38px;
+  text-decoration: none;
+  background-color: #f3f3f3;
+  @include gradient-vertical($white, #f3f3f3);
+  border: 1px solid #dddddd;
+  border-left-width: 0;
+}
+
+.pagination ul > li > a:hover,
+.pagination ul > .active > a,
+.pagination ul > .active > span {
+  background-color: #f5f5f5;
+}
+
+.orange.pagination ul > {
+  li > a:hover, .active > a, .active > span {@extend .orange-gradient;color:$white;}
+  }
+.blue.pagination ul > {
+  li > a:hover, .active > a, .active > span {@extend .blue-gradient;color:$white!important;}
+  }
+
+.pagination ul > .active > a,
+.pagination ul > .active > span {
+  color: #999999;
+  cursor: default;
+}
+
+.pagination ul > .disabled > span,
+.pagination ul > .disabled > a,
+.pagination ul > .disabled > a:hover {
+  color: #999999;
+  cursor: default;
+  background-color: transparent;
+}
+
+.pagination ul > li:first-child > a,
+.pagination ul > li:first-child > span {
+  border-left-width: 1px;
+  -webkit-border-radius: 30px 0 0 30px;
+     -moz-border-radius: 30px 0 0 30px;
+          border-radius: 30px 0 0 30px;
+}
+
+.pagination ul > li:last-child > a,
+.pagination ul > li:last-child > span {
+  -webkit-border-radius: 0 30px 30px 0;
+     -moz-border-radius: 0 30px 30px 0;
+          border-radius: 0 30px 30px 0;
+}
+
+.pagination-centered {
+  text-align: center;
+}
+
+.pagination-right {
+  text-align: right;
+}
+
+
+
+
+
+
+
+
+
+#hero {
+  position:relative;
+  margin-bottom:2em;
+  .diag-stripes {
+    height:185px;
+    width:100%;
+    position:absolute;
+    bottom:-155px;
+  }
+}
+
+// WIDGETS
+.widgets {
+  @extend .shadow;
+  padding:0 10px 15px;
+  margin-bottom:30px;
+  header {
+    margin:0 -10px 10px;
+    text-align:center;
+    height:40px;
+  }
+  .btn {
+    @extend .display-block;
+    @extend .base-drop-shadow;
+    width:70%;
+    margin:1em auto 0;
+  }
+  .title {line-height:40px;color:$white;font-size:18px;@extend .uppercase;}
+  &#action-dashboard h2 {font-family: 'Bree Serif', serif;}
+  .widget-title {
+    text-align:center;
+  }
+  &#score-card {
+    h2 {
+      background:transparent url('img/score-card.png') center no-repeat;
+      text-indent:-9999em;
+    }
+  }
+  .post-title {
+    @extend .alternate-font-family;
+    @extend .display-block;
+    font-size:18px;
+  }
+}
+
+#key-votes {
+  ul.items {
+    @extend .no-bullets;
+    margin-left:0;
+    li {
+      margin:1em 0;
+      padding-left:25px;
+      background: url('img/bullet-default.png') 0 0 no-repeat;
+      &.yes {
+        background: url('img/bullet-yes.png') 0 0 no-repeat;      
+      }
+      &.no {
+        background: url('img/bullet-no.png') 0 4px no-repeat;      
+      }
+    }
+    a {
+      text-decoration:none;
+      color:$base-text-color;
+    }
+  }
+  .post-title:hover {text-decoration:underline;}  
+}
+#action-dashboard {
+  text-align:center;
+  #enter_your_zip {
+    @include gradient-vertical(#e9e9e9, #fcfcfc);
+    padding:1em;
+  	text-align:center;
+  }
+}
+
+.home {
+  #main {
+    background:#f3f3f3 url('img/bg-capital-left.jpg') left center no-repeat; 
+  }
+  #black-bg {
+    @include size(377px,100%);
+    background-color:$black;
+    position:absolute;
+    top:0;
+    z-index:1;
+  }
+}
+
+.home #secondary {
+  background-color:$base-text-color;
+  color:$weak-text-color;
+  padding:0 15px 40px;
+  position:relative;
+  h3 {
+    @include font-shorthand(14px, normal, 14px);
+    @extend .uppercase;
+    font-family:$button-font-family;
+    color:$blueLighter;
+    border-bottom:1px solid $blueLighter;
+  }
+  ul,li {@extend .no-bullets;@extend .no-margin-or-padding;}
+  li {margin:1em 0;}
+  a {
+    text-decoration:none;color:$white;
+    &:hover .post-title {text-decoration:underline;}
+    }
+  .post-title {
+    @extend .uppercase;
+    @extend .display-block;
+    @extend .alternate-font-family;
+    @include font-shorthand(18px,bold,18px);
+  }
+  .meta, .excerpt {color:$extra-light-screen-color;}
+  .meta {
+    @extend .post-meta;
+  }
+  #latest-tweets .meta {
+    margin-bottom:-.4em;
+  }
+  .excerpt {@extend .small-font;}
+  #read-the-forge {width:65%;margin:2em auto;@extend .display-block;}
+  #follow-twitter {
+    @include size(20px,146px);
+    @extend .display-block;
+    background:transparent url('img/follow-twitter.png') center no-repeat;
+    margin:auto auto;
+    text-indent:-9999em;
+  }
+}
+
+#the-forge {
+  @extend .base-drop-shadow;
+  text-align:center;
+  margin:0 -15px 20px; 
+  h2 {
+    line-height:40px;color:$white;
+    background:transparent url('img/the-forge.png') center no-repeat;
+    text-indent:-9999em;
+  }
+}
+
+// ===================
+// = sign up section =
+// ===================
+#sign-up {
+  @include box-shadow(inset 0 2px 5px rgba(0,0,0,.30));
+  @include box-shadow(0 8px 15px rgba(0,0,0,.45));
+  @extend .position-relative;
+  background-color:$white;
+  border-top:10px solid $blue;
+  margin:2em 0 0;
+  text-align:center;
+  padding-bottom:1em;
+  z-index:50; //over top #under-cover
+  .btn {
+    @extend .base-drop-shadow;
+    @extend .display-inline-block;
+    margin-top:-10px;
+  }
+  form {
+    margin-top:3em;
+    input {
+      @include gradient-vertical(#e9e9e9, #fcfcfc);
+      @include border-radius(0);
+      @include box-shadow(inset 0 1px 2px rgba(0,0,0,.35));
+      line-height:20px;
+      height:20px;
+      padding:1.2em;
+      border:1px solid #eee;
+      margin-right:1em;
+      vertical-align:middle;
+    }
+    .inline {
+      @extend .display-inline-block;
+      @extend .uppercase;
+      margin-right:1em;
+      font-size:14px;
+    }
+  }
+  #interest {
+    font-family:$button-font-family;
+  }
+}
+
+#sign-up-tab {
+  @include size(30px,137px);
+  @extend .centered;
+  @extend .alternate-font-family;
+  @extend .uppercase;
+  @extend .text-shadow-dark;
+  font-size:18px;
+  text-align:center;
+  padding-top:11px;
+  margin-top:-40px!important;
+}
+
+// ===============================================
+// = under cover section / recent press releases =
+// ===============================================
+
+#under-cover {
+  @extend .clearfix;
+  @extend .position-relative;
+  background:#4d4d4d url('img/striped-bg-light.png');
+  padding-top:3em;
+  z-index:40; //underneath #sign-up
+  .inner {
+    @extend .centered;
+    @extend .max-width;
+  }
+  .col1 {
+    @include column(8);    
+  }
+  .col2 {
+    @include column(4);
+  }
+  h4 {
+    font-size:24px;
+  }
+  .social {
+    margin-top:.6em;
+    text-align:center;
+    img {
+      padding:0 .2em;
+    }
+  }
+  .btn {
+    width:50%;
+  }
+}
+.video {
+  @extend .position-relative;
+  line-height:0;
+  .overlay {
+    @extend .position-absolute;
+    background: url('img/video-overlay.png');
+    top:0;
+    @include size(100%,100%);
+  }
+}

@@ -1,0 +1,33 @@
+/*
+Theme Name: Heritage Action
+Theme URI: http://underscores.me/
+Author: Bobby Smith
+Author URI: http://bobby.is
+Description: Description
+Version: 1.0
+License: GNU General Public License
+License URI: license.txt
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@import "b00-mixins";
+@import "b00-misc";
+@import "b00-grid";
+
+@import "variables";
+
+@import "b00-normalize";
+
+@import "b00-typography";
+@import "partials/global";
+@import "partials/menu";
+@import "partials/styles";
+@import "partials/forms";
+
+@import "partials/layout";
+
+@import "partials/ie";
+
