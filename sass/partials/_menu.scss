@@ -94,7 +94,6 @@ nav[role='navigation'] {
   li {
     @extend .display-inline-block;
     height:$nav-height;
-//    max-height:137px;
     text-align:center;
     z-index:950;
     position:relative;
@@ -152,14 +151,12 @@ nav[role='navigation'] {
     @include font-shorthand(16px, bold, 16px);
     font-style:normal;
   }
-  input[type="search"] {width:70%;margin-left:-30px;font-size:12px;}
-  .nav-search {top:80px;}
   .go {
     @extend .rounded;
     @include square(22px);
     @include box-shadow(rgba(0, 0, 0, .35) 0 1px 5px);
     position:absolute;
-    right:10px;
+    right:0px;
     bottom:15px;
     padding:5px 9px;
   }
@@ -169,12 +166,18 @@ li#search {
   @extend .position-absolute;
   right:0;
   z-index:900;
+  &:hover {
+    a, a:hover {background-image: url('img/search-hover.png');}
+  }
   a {
     @extend .position-absolute;
-    width:45px;
+    width:60px;
     height:$nav-height;
     right:0;
+    background:transparent url('img/search.png') center center no-repeat;
     }
+    .nav-desc {top:85px;width:95%;}
+  input[type="search"] {width:80%;font-size:12px;}
 }
 .footer-navigation {
   li {
