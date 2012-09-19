@@ -120,7 +120,7 @@ footer {
 .shadow {
   position: relative;  
   background-color: $white;
-  @include box-shadow(0 0 5px rgba(0,0,0,.25)); 
+  @include box-shadow(0 0 8px rgba(0,0,0,.15)); 
 }
 
 [class*="shadow-curl-"] {
@@ -136,13 +136,13 @@ footer {
   }
 }
 .shadow-curl-left:before {
-	@include box-shadow(0 10px 10px 5px rgba(0,0,0,.3));
+	@include box-shadow(0 10px 10px 5px rgba(0,0,0,.15));
   @include skew-rotate(-5deg, -2deg);
   left: 12px;
 }
 .shadow-curl-right:after
 {
-	@include box-shadow(0 10px 10px 5px rgba(0,0,0,.3));
+	@include box-shadow(0 10px 10px 5px rgba(0,0,0,.15));
   @include skew-rotate(5deg, 2deg);
 	right: 12px;
 }
@@ -502,5 +502,72 @@ background:transparent url('img/striped-bg.png');
     background: url('img/video-overlay.png');
     top:0;
     @include size(100%,100%);
+  }
+}
+
+.shadow-full {
+  @include box-shadow(0 0 15px rgba(0,0,0,.4));
+}
+
+h1 {
+  font-family:$header-font-family;
+  padding-bottom:40px;
+}
+
+
+// =========
+// = Pages =
+// =========
+.page-template {
+  #hero {
+    @include box-shadow(0 2px 5px rgba(0,0,0,.25));
+    padding-bottom:2em;
+    margin-bottom:0;
+    @extend .clearfix;
+  }
+  &.page-template-page-about-php #main-inner {
+    background:#eff0f0 url('img/bg-capital-center.jpg') center bottom no-repeat;
+    padding-top:2em;
+  }
+  #content {
+    .col2 {
+      min-height: 12em;
+      display: table-cell;
+      vertical-align: middle; 
+    }
+  }
+}
+
+// section.team-info on home page
+.team-info {
+  @include row();
+  margin-bottom:40px;
+  h2 {padding-top:35px;@extend .base-font-family;@extend .normal;}
+  .info-detail {
+    margin-left: 200px;
+  }
+  .title {
+    @extend .uppercase;
+    @extend .post-meta;
+    @extend .normal;
+    color:$grayLight;
+    font-size:11px;
+  }
+  .partner-image {
+    &::before, &::after {
+      width:60%;
+      height:70%;
+    }
+    &::before {
+      @include skew-rotate(-11deg, -6deg); 
+      left:8px;     
+    }
+    &::after {
+    @include skew-rotate(11deg, 6deg);
+    right:8px;
+  }
+//  remove bottom 'padding'
+  line-height:0;
+  font-size:0
   }
 }

@@ -1,10 +1,23 @@
+.column1 {@include column(1);}
+.column2 {@include column(2);}
+.column3 {@include column(3);}
+.column4 {@include column(4);}
+.column5 {@include column(5);}
+.column6 {@include column(6);}
+.column7 {@include column(7);}
+.column8 {@include column(8);}
+.column9 {@include column(9);}
+.column10 {@include column(10);}
+.column11 {@include column(11);}
+.column12 {@include column(12);}
+
 .max-width {
   max-width: 960px;
 }
 .centered {
   margin: 0 auto;
 }
-#main-inner, .site-info {
+.home #main-inner, .site-info, #hero .inner, .page-template #primary {
   @extend .max-width;
 	@extend .centered;
 	z-index:5;
@@ -27,21 +40,32 @@
 #main-inner {
   @extend .clearfix;
 }
-
-#primary {
-  @include column(8);
-}
-#secondary {
-  @include column(4);
-}
-#hero {
-  margin-right:-5%;
-}
+.row {@include row();}
 .home {
+  #primary {
+    @extend .column8;
+  }
+  #secondary {
+    @extend .column4;
+  }
+  #hero {
+    margin-right:-5%;
+  }
   #content {
     @include row(8);
     .col1,.col2 {
       @include column(4,8);
+    }
+  }
+}
+
+.page-template {
+  #hero .inner {
+    .col1 {
+      @extend .column4;
+    }
+    .col2 {
+      @extend .column8;
     }
   }
 }
