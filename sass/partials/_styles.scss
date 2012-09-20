@@ -571,3 +571,69 @@ h1 {
   font-size:0
   }
 }
+
+.ribbon {
+  background: $red;
+  @extend .red-gradient;
+  @extend .pagination-centered;
+  font-family:$header-font-family;
+  font-size:30px;
+  position: relative;
+  padding: .5em 1em; /* Adjust to suit */
+  margin: 0 -.5em .5em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: -.5em;
+    border: .75em solid darken($red, 10);
+    z-index: -1;
+  }
+  &:before {
+    left: -1em;
+    border-right-width: .75em;
+    border-left-color: transparent;
+  }
+  &:after {
+    right: -1em;
+    border-left-width: .75em;
+    border-right-color: transparent;
+  }
+  .ribbon-content {
+   &:before, &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      border-style: solid;
+      border-color: darken($red, 20) transparent transparent transparent;
+      bottom: -.5em;
+    }
+    &:before {
+      left: 0;
+      border-width: .5em 0 0 .5em;
+    }
+    &:after {
+      right: 0;
+      border-width: .5em .5em 0 0;
+    }
+  }
+}
+
+.donate {
+  #about_us+.col1 {padding-right:6em;}
+}
+
+#select-your-donation {
+  margin-top:-80px;
+  padding-top:1em;
+  @extend .clearfix;
+  .col1 {
+    @include column(2,6);
+  }
+  .col2 {
+    @include column(4,6);
+    border-left:1px dashed $grey;
+    margin-left:-2em;
+    padding-left:2em;
+  }
+}

@@ -28,37 +28,68 @@ get_header(); ?>
                   <strong class="ribbon-content">Select Your Donation</strong>
               </p>
               
-              <!-- standard donation amounts -->
-              <div class="control-group question">
-                <div class="controls input choice">
-                  <label class="radio"><input type="radio" name="ARRAY[standard_donation_amounts]" value="25"><?php _e('$25', 'heritageaction'); ?></label>
-                  <label class="radio"><input type="radio" name="ARRAY[standard_donation_amounts]" value="50"><?php _e('$50', 'heritageaction'); ?></label>
-                  <label class="radio"><input type="radio" name="ARRAY[standard_donation_amounts]" value="100"><?php _e('$100', 'heritageaction'); ?></label>
-                  <label class="radio"><input type="radio" name="ARRAY[standard_donation_amounts]" value="250"><?php _e('$250', 'heritageaction'); ?></label>
-                  <label class="radio"><input type="radio" name="ARRAY[standard_donation_amounts]" value="500"><?php _e('$500', 'heritageaction'); ?></label>
-                  <label class="radio"><input type="radio" name="ARRAY[standard_donation_amounts]" value="1000"><?php _e('$1000', 'heritageaction'); ?></label>
+              <div class="col1">
+              
+                <!-- standard donation amounts -->
+                <div class="control-group question">
+                  <div class="controls input choice">
+                    <label class="radio"><input type="radio" name="ARRAY[donation_amounts]" value="25"><?php _e('$25', 'heritageaction'); ?></label>
+                    <label class="radio"><input type="radio" name="ARRAY[donation_amounts]" value="50"><?php _e('$50', 'heritageaction'); ?></label>
+                    <label class="radio"><input type="radio" name="ARRAY[donation_amounts]" value="100"><?php _e('$100', 'heritageaction'); ?></label>
+                    <label class="radio"><input type="radio" name="ARRAY[donation_amounts]" value="250"><?php _e('$250', 'heritageaction'); ?></label>
+                    <label class="radio"><input type="radio" name="ARRAY[donation_amounts]" value="500"><?php _e('$500', 'heritageaction'); ?></label>
+                    <label class="radio"><input type="radio" name="ARRAY[donation_amounts]" value="1000"><?php _e('$1000', 'heritageaction'); ?></label>
+                  </div>
                 </div>
+                <!-- ^^^^^ standard donation amounts ^^^^^^ -->
+              
               </div>
-              <!-- ^^^^^ standard donation amounts ^^^^^^ -->
+              
+              <div class="col2">
 
-              <!-- standard donation amounts -->
-              <div class="control-group question">
-                <div class="controls input choice">
-                  <label class="radio"><input type="radio" name="ARRAY[standard_donation_amounts]" value="25"><?php _e('$25', 'heritageaction'); ?></label>
-                  <label class="radio"><input type="radio" name="ARRAY[standard_donation_amounts]" value="50"><?php _e('$50', 'heritageaction'); ?></label>
-                  <label class="radio"><input type="radio" name="ARRAY[standard_donation_amounts]" value="100"><?php _e('$100', 'heritageaction'); ?></label>
-                  <label class="radio"><input type="radio" name="ARRAY[standard_donation_amounts]" value="250"><?php _e('$250', 'heritageaction'); ?></label>
-                  <label class="radio"><input type="radio" name="ARRAY[standard_donation_amounts]" value="500"><?php _e('$500', 'heritageaction'); ?></label>
-                  <label class="radio"><input type="radio" name="ARRAY[standard_donation_amounts]" value="1000"><?php _e('$1000', 'heritageaction'); ?></label>
+                <!-- other donation amount -->
+                <div class="control-group question">
+                  <div class="controls input choice">
+                    <label class="radio inline"><input type="radio" name="ARRAY[donation_amounts]" value="other-donation-amount"><?php _e('Other: ', 'heritageaction'); ?></label>
+                    <input type="text" name="ARRAY[visitor_input_amount]" value="$1,000,000" id="visitor_input_amount">
+                    <p class="help-block"><?php _e( '($5 minimum per payment)', 'heritageaction'); ?></p>
+                  </div>
                 </div>
-              </div>
-              <!-- ^^^^^ standard donation amounts ^^^^^^ -->
+                <!-- ^^^^^ other donation amount ^^^^^^ -->
+                
+                <!-- Payment Plan -->
+                <div class="control-group question">
+                  <div class="controls input choice">
+                    <label class="radio inline"><input type="radio" name="ARRAY[payment_plan]" value="active"><?php _e('Payment Plan: ', 'heritageaction'); ?>
+                    </label>
+                    <select name="ARRAY[payment_plan_select]" id="payment_plan_select">
+                      <option value="select"><?php _e( 'Select...', 'heritageaction'); ?></option>
+                    </select>  
+                  </div>
+                </div>
+                <!-- ^^^^^ Payment Plan ^^^^^^ -->
+
+                <!-- Recurring Donation -->
+                <div class="control-group question">
+                  <div class="controls input choice">
+                    <label class="radio inline"><input type="radio" name="ARRAY[recurring_donation]" value="active"><?php _e('Recurring Donation: ', 'heritageaction'); ?>
+                    </label>
+                    <select name="ARRAY[recurring_donation_select]" id="recurring_donation_select">
+                      <option value="select"><?php _e( 'Select...', 'heritageaction'); ?></option>
+                    </select>
+                  </div>
+                </div>
+                <!-- ^^^^^ Payment Plan ^^^^^^ -->
+
+
+              </div> <!-- .col2 -->
               
+              <a href="#" class="btn rounded red-gradient shadow">Support Heritage</a>
               
+              <div class="clearfix">&nbsp;</div> <!-- TODO: fix clearfix. ugh -->
               
-            </div>
-		      </div>
-          </div>
+            </div> <!-- #select-your-donation -->
+		      </div> <!-- .col2.column6 -->
           </div> <!-- .inner -->
   		  </div> <!-- #hero -->
    <div id="main-inner">

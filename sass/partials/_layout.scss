@@ -17,7 +17,7 @@
 .centered {
   margin: 0 auto;
 }
-.home #main-inner, .site-info, #hero .inner, .page-template #primary {
+.home #main-inner, .site-info, #hero .inner, .page-template #primary, .custom #primary {
   @extend .max-width;
 	@extend .centered;
 	z-index:5;
@@ -60,7 +60,7 @@
 }
 
 .page-template {
-  #hero .inner {
+  #hero {
     .col1 {
       @extend .column4;
     }

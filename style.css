@@ -13,14 +13,14 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 /* line 19, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-mixins.scss */
-.clearfix, #under-cover, .page-template #hero, #masthead, #main-inner {
+.clearfix, #under-cover, .page-template #hero, #select-your-donation, #masthead, #main-inner {
   *zoom: 1; }
   /* line 10, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-mixins.scss */
-  .clearfix:before, #under-cover:before, .page-template #hero:before, #masthead:before, #main-inner:before, .clearfix:after, #under-cover:after, .page-template #hero:after, #masthead:after, #main-inner:after {
+  .clearfix:before, #under-cover:before, .page-template #hero:before, #select-your-donation:before, #masthead:before, #main-inner:before, .clearfix:after, #under-cover:after, .page-template #hero:after, #select-your-donation:after, #masthead:after, #main-inner:after {
     display: table;
     content: ""; }
   /* line 14, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-mixins.scss */
-  .clearfix:after, #under-cover:after, .page-template #hero:after, #masthead:after, #main-inner:after {
+  .clearfix:after, #under-cover:after, .page-template #hero:after, #select-your-donation:after, #masthead:after, #main-inner:after {
     clear: both; }
 
 /* line 160, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-mixins.scss */
@@ -958,7 +958,7 @@ footer {
   color: white; }
 
 /* line 37, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
-.red-gradient {
+.red-gradient, .ribbon {
   background-color: #d51f1b;
   color: white;
   background-image: -ms-linear-gradient(top, #d51f1b, #9c0c0a);
@@ -971,7 +971,7 @@ footer {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d51f1b', endColorstr='#9c0c0a', GradientType=0); }
 
 /* line 42, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
-.light-red-gradient, nav[role='navigation'] li.red-gradient:hover, nav[role='navigation'] li.light-red-gradient:hover {
+.light-red-gradient, nav[role='navigation'] li.red-gradient:hover, nav[role='navigation'] li.ribbon:hover, nav[role='navigation'] li.light-red-gradient:hover {
   background-color: #fe4e4c;
   color: white;
   background-image: -ms-linear-gradient(top, #fe4e4c, #c91211);
@@ -1255,7 +1255,7 @@ footer {
   border-radius: 0 30px 30px 0; }
 
 /* line 250, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
-.pagination-centered {
+.pagination-centered, .ribbon {
   text-align: center; }
 
 /* line 254, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
@@ -1590,6 +1590,75 @@ h1 {
       transform: skew(11deg) rotate(6deg);
       right: 8px; }
 
+/* line 575, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+.ribbon {
+  background: #d51f1b;
+  font-family: "IM Fell Great Primer SC", serif;
+  font-size: 30px;
+  position: relative;
+  padding: .5em 1em;
+  /* Adjust to suit */
+  margin: 0 -0.5em 0.5em;
+  /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */ }
+  /* line 584, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+  .ribbon:before, .ribbon:after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: -0.5em;
+    border: 0.75em solid #a81815;
+    z-index: -1; }
+  /* line 592, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+  .ribbon:before {
+    left: -1em;
+    border-right-width: .75em;
+    border-left-color: transparent; }
+  /* line 597, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+  .ribbon:after {
+    right: -1em;
+    border-left-width: .75em;
+    border-right-color: transparent; }
+  /* line 603, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+  .ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+    content: "";
+    position: absolute;
+    display: block;
+    border-style: solid;
+    border-color: #7a1210 transparent transparent transparent;
+    bottom: -0.5em; }
+  /* line 611, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+  .ribbon .ribbon-content:before {
+    left: 0;
+    border-width: .5em 0 0 .5em; }
+  /* line 615, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+  .ribbon .ribbon-content:after {
+    right: 0;
+    border-width: .5em .5em 0 0; }
+
+/* line 623, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+.donate #about_us + .col1 {
+  padding-right: 6em; }
+
+/* line 626, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+#select-your-donation {
+  margin-top: -80px;
+  padding-top: 1em; }
+  /* line 630, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+  #select-your-donation .col1 {
+    display: inline;
+    float: left;
+    width: 27.77778%;
+    margin: 0 2.77778%; }
+  /* line 633, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+  #select-your-donation .col2 {
+    display: inline;
+    float: left;
+    width: 61.11111%;
+    margin: 0 2.77778%;
+    border-left: 1px dashed #555555;
+    margin-left: -2em;
+    padding-left: 2em; }
+
 /* line 6, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_forms.scss */
 label,
 input,
@@ -1798,6 +1867,58 @@ textarea {
   /* Improves readability and alignment in all browsers */
   width: 98%; }
 
+/* line 171, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_forms.scss */
+.radio.inline,
+.checkbox.inline {
+  display: inline-block;
+  padding-top: 5px;
+  margin-bottom: 0;
+  vertical-align: middle; }
+
+/* line 178, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_forms.scss */
+.radio.inline + .radio.inline,
+.checkbox.inline + .checkbox.inline {
+  margin-left: 10px; }
+
+/* line 184, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_forms.scss */
+input[type="radio"],
+input[type="checkbox"] {
+  margin: 3px 0;
+  *margin-top: 0;
+  /* IE7 */
+  line-height: normal;
+  cursor: pointer; }
+
+/* line 196, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_forms.scss */
+.radio,
+.checkbox {
+  min-height: 18px;
+  padding-left: 18px; }
+
+/* line 201, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_forms.scss */
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] {
+  float: left;
+  margin-left: -18px; }
+
+/* line 208, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_forms.scss */
+.controls > .radio:first-child,
+.controls > .checkbox:first-child {
+  padding-top: 5px; }
+
+/* line 215, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_forms.scss */
+.radio.inline,
+.checkbox.inline {
+  display: inline-block;
+  padding-top: 5px;
+  margin-bottom: 0;
+  vertical-align: middle; }
+
+/* line 222, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_forms.scss */
+.radio.inline + .radio.inline,
+.checkbox.inline + .checkbox.inline {
+  margin-left: 10px; }
+
 /* line 1, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
 .column1 {
   display: inline;
@@ -1820,7 +1941,7 @@ textarea {
   margin: 0 1.38889%; }
 
 /* line 4, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
-.column4, .home #secondary, .page-template #hero .inner .col1 {
+.column4, .home #secondary, .page-template #hero .col1 {
   display: inline;
   float: left;
   width: 30.55556%;
@@ -1848,7 +1969,7 @@ textarea {
   margin: 0 1.38889%; }
 
 /* line 8, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
-.column8, .home #primary, .page-template #hero .inner .col2 {
+.column8, .home #primary, .page-template #hero .col2 {
   display: inline;
   float: left;
   width: 63.88889%;
@@ -1883,15 +2004,15 @@ textarea {
   margin: 0 1.38889%; }
 
 /* line 14, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
-.max-width, #under-cover .inner, .home #main-inner, .site-info, #hero .inner, .page-template #primary, #masthead {
+.max-width, #under-cover .inner, .home #main-inner, .site-info, #hero .inner, .page-template #primary, .custom #primary, #masthead {
   max-width: 960px; }
 
 /* line 17, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
-.centered, #sign-up-tab, #under-cover .inner, .home #main-inner, .site-info, #hero .inner, .page-template #primary, #masthead {
+.centered, #sign-up-tab, #under-cover .inner, .home #main-inner, .site-info, #hero .inner, .page-template #primary, .custom #primary, #masthead {
   margin: 0 auto; }
 
 /* line 20, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
-.home #main-inner, .site-info, #hero .inner, .page-template #primary {
+.home #main-inner, .site-info, #hero .inner, .page-template #primary, .custom #primary {
   z-index: 5;
   position: relative; }
 
