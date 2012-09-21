@@ -223,3 +223,24 @@ input[type="checkbox"] {
   margin-left: 10px; // space out consecutive inline controls
 }
 
+.form-search label,
+.form-inline label {
+  display: inline-block;
+}
+.form-inline .radio,
+.form-inline .checkbox {
+  padding-left: 0;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+.form-inline .radio input[type="radio"],
+.form-inline .checkbox input[type="checkbox"] {
+  float: left;
+  margin-right: 3px;
+  margin-left: 0;
+}
+
+.radio.inline + select {
+  margin-left:10px;
+}
+

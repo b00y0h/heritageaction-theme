@@ -1,3 +1,7 @@
+.button-font-family {
+  font-family: $button-font-family;
+}
+
 footer {
   background-color:#000;
   color:#fff;
@@ -360,7 +364,7 @@ background:transparent url('img/striped-bg.png');
   h3 {
     @include font-shorthand(14px, normal, 14px);
     @extend .uppercase;
-    font-family:$button-font-family;
+    @extend .button-font-family;
     color:$blueLighter;
     border-bottom:1px solid $blueLighter;
   }
@@ -444,7 +448,7 @@ background:transparent url('img/striped-bg.png');
     }
   }
   #interest {
-    font-family:$button-font-family;
+    @extend .button-font-family;
   }
 }
 
@@ -621,6 +625,38 @@ h1 {
 
 .donate {
   #about_us+.col1 {padding-right:6em;}
+  #hero {
+    padding-bottom:60px;
+    background-color:#efefef;
+    background: -moz-linear-gradient(-86deg, #efefef 0%, #efefef 80%, #ffffff 80%, #ffffff 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#efefef), color-stop(80%,#efefef), color-stop(80%,#ffffff), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(-86deg, #efefef 0%,#efefef 80%,#ffffff 80%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(-86deg, #efefef 0%,#efefef 80%,#ffffff 80%,#ffffff 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(-86deg, #efefef 0%,#efefef 80%,#ffffff 80%,#ffffff 100%); /* IE10+ */
+    background: linear-gradient(135deg, #efefef 0%,#efefef);
+  }
+  #main-inner {
+    margin-top:-4em;
+    label {
+      @extend .uppercase;
+      color:$black;
+      font-family:Arial, sans-serif;
+    }
+    h1 {
+      text-align:right;
+      border-bottom:1px dashed #ccc;
+      line-height:20px;
+      padding-bottom:26px;
+      }
+  }
+  h4 {
+    @extend .button-font-family;
+    @include font-shorthand(24px);
+    border-bottom:1px solid $grayLight;
+    color:$grey;
+    padding-bottom:.5em;
+    margin:1em 0 .5em;
+  }
 }
 
 #select-your-donation {
@@ -632,8 +668,10 @@ h1 {
   }
   .col2 {
     @include column(4,6);
-    border-left:1px dashed $grey;
+    border-left:1px dashed $grayLight;
     margin-left:-2em;
     padding-left:2em;
+    .help-block {margin-left:15px;}
   }
+  .btn {@extend .display-inline-block;margin:1em 0 0 -2em;}
 }

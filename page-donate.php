@@ -96,8 +96,191 @@ get_header(); ?>
 		<div id="primary" class="content-area">
   		  <h1>Your Information</h1>
   		  <div id="content" class="site-content row" role="main">
-          
+		    <div class="row">
+          <div class="col1">
+            <div id="billing-address">
+              <h4>Billing Address</h4>
+              <!-- Billing Street 1 -->
+              <div class="control-group question">
+                <label for="billing_street_1" class="control-label"><?php _e('Street', 'heritageaction'); ?></label>
+                <div class="controls input">
+                  <input type="text" name="ARRAY[billing_street_1]" value="" id="billing_street_1">
+                </div>
+              </div>
+              <!-- ^^^^^ Billing Street 1 ^^^^^^ -->
+              
+              <!-- Billing Street 2 -->
+              <div class="control-group question">
+                <label for="billing_street_2" class="control-label"><?php _e('Street 2', 'heritageaction'); ?></label>
+                <div class="controls input">
+                  <input type="text" name="ARRAY[billing_street_2]" value="" id="billing_street_2">
+                </div>
+              </div>
+              <!-- ^^^^^ Billing Street 2 ^^^^^^ -->
+              
+              <!-- Billing City -->
+              <div class="control-group question">
+                <label for="billing_city" class="control-label"><?php _e('City', 'heritageaction'); ?></label>
+                <div class="controls input">
+                  <input type="text" name="ARRAY[billing_city]" value="" id="billing_city">
+                </div>
+              </div>
+              <!-- ^^^^^ Billing City ^^^^^^ -->
+              
+              <!-- Billing State -->
+              <div class="control-group question">
+                <label for="billing_state" class="control-label"><?php _e('State', 'heritageaction'); ?></label>
+                <div class="controls input">
+                  <input type="text" name="ARRAY[billing_state]" value="" id="billing_state">
+                </div>
+              </div>
+              <!-- ^^^^^ Billing State ^^^^^^ -->
+              
+              <!-- Billing Zip Code -->
+              <div class="control-group question">
+                <label for="billing_zip_code" class="control-label"><?php _e('Zip Code', 'heritageaction'); ?></label>
+                <div class="controls input">
+                  <input type="text" name="ARRAY[billing_zip_code]" value="" id="billing_zip_code">
+                  
+                </div>
+              </div>
+              <!-- ^^^^^ Billing Zip Code ^^^^^^ -->
+              
+              <!-- Billing Country -->
+              <div class="control-group question">
+                <label for="billing_country" class="control-label"><?php _e('Country', 'heritageaction'); ?></label>
+                <div class="controls input choice">
+                  <select name="ARRAY[billing_country]" id="billing_country">
+                    <option value="-Choose-"><?php _e( '-Choose-', 'heritageaction'); ?></option>
+                  </select>
+                </div>
+              </div>
+              <!-- ^^^^^ Billing Country ^^^^^^ -->
+              
+            </div> <!-- #billing-address -->
+            
+            
+          </div> <!-- .col1 -->
 
+          <div class="col2">
+            
+            <div id="personal-info">
+              <h4>Personal Info</h4>
+              
+              <!-- Personal Info Title -->
+              <div class="control-group question">
+                <label for="personal_info_title" class="control-label"><?php _e('Title', 'heritageaction'); ?></label>
+                <div class="controls input choice">
+                  <select name="ARRAY[personal_info_title]" id="personal_info_title">
+                    <option value=""><?php _e( '-Choose-', 'heritageaction'); ?></option>
+                  </select>
+                </div>
+              </div>
+              <!-- ^^^^^ Personal Info Title ^^^^^^ -->
+              
+              <!-- Personal Info First Name -->
+              <div class="control-group question">
+                <label for="personal_info_first_name" class="control-label"><?php _e('First Name', 'heritageaction'); ?></label>
+                <div class="controls input">
+                  <input type="text" name="ARRAY[personal_info_first_name]" value="" id="personal_info_first_name">
+                </div>
+              </div>
+              <!-- ^^^^^ Personal Info First Name ^^^^^^ -->
+              
+              <!-- Personal Info Last Name -->
+              <div class="control-group question">
+                <label for="personal_info_last_name" class="control-label"><?php _e('Last Name', 'heritageaction'); ?></label>
+                <div class="controls input">
+                  <input type="text" name="ARRAY[personal_info_last_name]" value="" id="personal_info_last_name">
+                </div>
+              </div>
+              <!-- ^^^^^ Personal Info Last Name ^^^^^^ -->
+              
+              <!-- Personal Info Email -->
+              <div class="control-group question">
+                <label for="personal_info_email" class="control-label"><?php _e('Email', 'heritageaction'); ?></label>
+                <div class="controls input">
+                  <input type="text" name="ARRAY[personal_info_email]" value="" id="personal_info_email">
+                  
+                </div>
+              </div>
+              <!-- ^^^^^ Personal Info Email ^^^^^^ -->
+              
+              <!-- Receive Updates -->
+              <div class="control-group question">
+                <label class="control-label"><?php _e('Do you want to receive our updates?', 'heritageaction'); ?></label>
+                <div class="controls input choice">
+                  <label class="radio inline"><input type="radio" name="ARRAY[receive_updates]" id="receive_updates_yes" <?php // echo C66_SettingManager::get_value('receive_updates') == '1' ? 'checked="checked" ' : '' ?> value="1"><?php _e('Yes', 'heritageaction'); ?></label>
+                  <label class="radio inline"><input type="radio" name="ARRAY[receive_updates]" id="receive_updates_no" <?php // echo C66_SettingManager::get_value('receive_updates') != '1' ? 'checked="checked" ' : '' ?> value=""><?php _e('No', 'heritageaction'); ?></label>    
+                </div>
+              </div>
+              <!-- ^^^^^ Receive Updates ^^^^^^ -->
+            </div> <!-- #personal-info -->
+                        
+          </div> <!-- .col2 -->
+        
+        </div>
+ 
+          <div class="row">
+            <div class="col1">
+              <div id="cc-info">
+
+                 <h4>Credit Card Info</h4>
+
+                 <!-- Credit Card Number -->
+                 <div class="control-group question">
+                   <label for="credit_card_number" class="control-label"><?php _e('Cart #', 'heritageaction'); ?></label>
+                   <div class="controls input">
+                     <input type="text" name="ARRAY[credit_card_number]" value="" id="credit_card_number">
+                   </div>
+                 </div>
+                 <!-- ^^^^^ Credit Card Number ^^^^^^ -->
+
+                 <!-- Credit Card CVC Code -->
+                 <div class="control-group question">
+                   <label for="credit_card_cvc_code" class="control-label"><?php _e('CVC Code', 'heritageaction'); ?></label>
+                   <div class="controls input">
+                     <input type="text" name="ARRAY[credit_card_cvc_code]" value="" id="credit_card_cvc_code">
+
+                   </div>
+                 </div>
+                 <!-- ^^^^^ Credit Card CVC Code ^^^^^^ -->
+
+                 <!-- Credit Card Exp Month and Year -->
+                 <div class="control-group question inline-form">
+                   <label for="credit_card_exp_month" class="control-label"><?php _e('Exp Month', 'heritageaction'); ?></label>
+                   <div class="controls input choice">
+                     <select name="ARRAY[credit_card_exp_month]" id="credit_card_exp_month">
+                       <option value=""><?php _e( '-Choose-', 'heritageaction'); ?></option>
+                     </select>
+                   </div>
+                   <label for="credit_card_exp_year" class="control-label"><?php _e('Exp Year', 'heritageaction'); ?></label>
+                   <div class="controls input choice">
+                     <select name="ARRAY[credit_card_exp_year]" id="credit_card_exp_year">
+                       <option value=""><?php _e( '-Choose-', 'heritageaction'); ?></option>
+                     </select>
+                   </div>
+                 </div>
+                 <!-- ^^^^^ Credit Card Exp Month and Year ^^^^^^ -->
+
+
+
+               </div> <!-- #cc-info -->
+             </div> <!-- .col1 -->
+             
+             <div class="col2">
+                <div id="thank-you">
+                  <h4>Thank You</h4>
+                  <img src="<?php echo get_bloginfo('template_url'); ?>/img/cards.png" alt="Cards">
+                  <p>Because Heritage Action for America lobbies directly on behalf of conservative legislation, contributions are not tax-deductible as charitable donations. All donations are processed securely.</p>
+                </div>
+             </div> <!-- .col2 -->
+            
+          </div> <!-- .row -->
+ 
+ 
+          <a href="#" class='btn rounded shadow medium-blue-gradient'>Donate</a>
+          
   			</div><!-- #content .site-content -->
 
 		</div><!-- #primary .content-area -->    

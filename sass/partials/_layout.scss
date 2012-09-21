@@ -69,3 +69,13 @@
     }
   }
 }
+
+.donate {
+  #main {padding-top:0;}
+  #hero {padding-top:25px;}
+  #content {
+    .col1, .col2 {
+      @extend .column6;
+    }
+  }
+}
