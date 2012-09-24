@@ -57,7 +57,19 @@
 <![endif]-->
 <script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.custom.29806.js"></script>
 
+
 <?php wp_head(); ?>
+
+<!-- BOBBY add this to functions -->
+<script src="<?php echo get_template_directory_uri(); ?>/js/application.js"></script>
+
+<!-- BOBBY add this to styles -->
+<style type="text/css" media="screen">
+  #sign-up-tab{
+    cursor:pointer;
+  }
+</style>
+
 </head>
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site wrap">
