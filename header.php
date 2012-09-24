@@ -50,7 +50,7 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 
-<link href='http://fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC|Bree+Serif' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC|Open+Sans+Condensed:700|Bree+Serif' rel='stylesheet' type='text/css'>
 
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
