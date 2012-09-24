@@ -59,24 +59,7 @@
 
 <?php wp_head(); ?>
 </head>
-  <?php
-  
-  add_filter( 'body_class', 'my_neat_body_class');
-  function my_neat_body_class( $classes ) {
-        $classes[] = 'responsive-help';
-       return $classes;
-  }
-  
-  ?>
-
 <body <?php body_class(); ?>>
-  
-  
-  
-  
-  
-  
-  
 <div id="page" class="hfeed site wrap">
  <?php do_action( 'before' ); ?>
  <header id="masthead" class="site-header" role="banner">
