@@ -99,7 +99,7 @@
 											 </span>
 									 </li>
 									 <li class="gradient light-red-gradient donate">
-											 <a href="http://heritageaction.dev/donate/">
+											 <a href="/donate/">
 													 <span class="nav-title">Donate</span>
 											 </a>
 											 <span class="nav-desc">&ldquo;I give money to Heritage Action, you should too.&rdquo;<span class="author">– Erick Erickson</span></span>
