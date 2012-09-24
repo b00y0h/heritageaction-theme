@@ -200,12 +200,16 @@ get_header(); ?>
             </div> <!-- .info-detail -->            
           </section>
           <!-- ^^^ end #nathanael-yellis ^^^ -->
-
+          
+          <br><br><br>
+          
   			</div><!-- #content .site-content -->
 
 		</div><!-- #primary .content-area -->    
     </div> <!-- #main-inner -->
-    <section id="sign-up" class="">
+    <div id="signup-scroll-target"></div>
+    
+    <section id="sign-up" class="fixed">
       <div id="sign-up-tab" class="gradient medium-blue-gradient">Sign Up</div>
       <div class="centered max-width">
         <form action="front-page_submit" method="get" accept-charset="utf-8">
