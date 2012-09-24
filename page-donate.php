@@ -16,7 +16,7 @@ function my_neat_body_class( $classes ) {
 }
 get_header(); ?>
 		    <div id="hero">
-		      <div class="inner clearfix">
+          <div class="inner clearfix">
     		  <h1 id="about_us">Donate</h1>
 		      <div class="col1 column6">
   		      <p>Heritage Action for America is building a grassroots army around the nation to pressure lawmakers to implement conservative reforms. We are holding Congressmen accountable to their conservative campaign promises with our tough Conservative Scorecard. And we are fighting in the trenches in Washington to make sure Representatives and Senators always vote on principle.</p>
@@ -93,7 +93,7 @@ get_header(); ?>
           </div> <!-- .inner -->
   		  </div> <!-- #hero -->
    <div id="main-inner">
-		<div id="primary" class="content-area">
+		<div id="primary" class="content-area form-horizontal">
   		  <h1>Your Information</h1>
   		  <div id="content" class="site-content row" role="main">
 		    <div class="row">
@@ -207,12 +207,10 @@ get_header(); ?>
               <!-- ^^^^^ Personal Info Email ^^^^^^ -->
               
               <!-- Receive Updates -->
-              <div class="control-group question">
-                <label class="control-label"><?php _e('Do you want to receive our updates?', 'heritageaction'); ?></label>
-                <div class="controls input choice">
+              <div class="control-group question form-inline">
+                <label class="inline"><?php _e('Do you want to receive our updates?', 'heritageaction'); ?></label>
                   <label class="radio inline"><input type="radio" name="ARRAY[receive_updates]" id="receive_updates_yes" <?php // echo C66_SettingManager::get_value('receive_updates') == '1' ? 'checked="checked" ' : '' ?> value="1"><?php _e('Yes', 'heritageaction'); ?></label>
                   <label class="radio inline"><input type="radio" name="ARRAY[receive_updates]" id="receive_updates_no" <?php // echo C66_SettingManager::get_value('receive_updates') != '1' ? 'checked="checked" ' : '' ?> value=""><?php _e('No', 'heritageaction'); ?></label>    
-                </div>
               </div>
               <!-- ^^^^^ Receive Updates ^^^^^^ -->
             </div> <!-- #personal-info -->
@@ -247,19 +245,17 @@ get_header(); ?>
                  <!-- ^^^^^ Credit Card CVC Code ^^^^^^ -->
 
                  <!-- Credit Card Exp Month and Year -->
-                 <div class="control-group question inline-form">
+                 <div class="control-group question form-inline">
                    <label for="credit_card_exp_month" class="control-label"><?php _e('Exp Month', 'heritageaction'); ?></label>
-                   <div class="controls input choice">
+                   <div class="controls input">
                      <select name="ARRAY[credit_card_exp_month]" id="credit_card_exp_month">
                        <option value=""><?php _e( '-Choose-', 'heritageaction'); ?></option>
                      </select>
-                   </div>
-                   <label for="credit_card_exp_year" class="control-label"><?php _e('Exp Year', 'heritageaction'); ?></label>
-                   <div class="controls input choice">
+                   <label for="credit_card_exp_year" id="credit_card_exp_year_label"><?php _e('Exp Year', 'heritageaction'); ?></label>
                      <select name="ARRAY[credit_card_exp_year]" id="credit_card_exp_year">
                        <option value=""><?php _e( '-Choose-', 'heritageaction'); ?></option>
                      </select>
-                   </div>
+                     </div>
                  </div>
                  <!-- ^^^^^ Credit Card Exp Month and Year ^^^^^^ -->
 
@@ -277,9 +273,19 @@ get_header(); ?>
              </div> <!-- .col2 -->
             
           </div> <!-- .row -->
- 
- 
+
           <a href="#" class='btn rounded shadow medium-blue-gradient'>Donate</a>
+          
+          <div id="donate-by-mail" class="row">
+            <p>To donate by mail, make out your check to "Heritage Action for America" and mail to:</p>
+            <address>
+              Heritage Action for America<br>
+              214 Massachusetts Ave NE, Suite 400<br>
+              Washington DC 20002<br>
+            </address>
+          </div>
+ 
+ 
           
   			</div><!-- #content .site-content -->
 

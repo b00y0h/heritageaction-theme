@@ -627,20 +627,19 @@ h1 {
   #about_us+.col1 {padding-right:6em;}
   #hero {
     padding-bottom:60px;
-    background-color:#efefef;
-    background: -moz-linear-gradient(-86deg, #efefef 0%, #efefef 80%, #ffffff 80%, #ffffff 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#efefef), color-stop(80%,#efefef), color-stop(80%,#ffffff), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(-86deg, #efefef 0%,#efefef 80%,#ffffff 80%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(-86deg, #efefef 0%,#efefef 80%,#ffffff 80%,#ffffff 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(-86deg, #efefef 0%,#efefef 80%,#ffffff 80%,#ffffff 100%); /* IE10+ */
-    background: linear-gradient(135deg, #efefef 0%,#efefef);
+    background: #efefef url('img/donate-bg.png') no-repeat center bottom;
   }
   #main-inner {
-    margin-top:-4em;
+    margin:-4em 0 4em 0;
     label {
       @extend .uppercase;
       color:$black;
       font-family:Arial, sans-serif;
+    }
+    .btn {
+      @extend .display-block;
+      @extend .centered;
+      width:125px;
     }
     h1 {
       text-align:right;
@@ -657,6 +656,17 @@ h1 {
     padding-bottom:.5em;
     margin:1em 0 .5em;
   }
+  #credit_card_exp_year_label {
+    margin:0 1em 0 2em;
+  }
+}
+#donate-by-mail {
+  @extend .pagination-centered;
+  @extend .italic;
+  border-top:1px solid $grayLight;
+  margin-top:8em;
+  padding-top:2em;
+  address {@include font-shorthand(12px, normal, 14px);}
 }
 
 #select-your-donation {
