@@ -120,9 +120,9 @@ get_header(); ?>
               <div class="control-group question">
                 <label class="control-label"><?php _e("I'm interested in:", 'heritageaction'); ?></label>
                 <div class="controls input choice">
-                  <label class="checkbox inline"><input type="checkbox" name="ARRAY[email_interest]" value=""><?php _e('Press Updates', 'heritageaction'); ?></label>
-                  <label class="checkbox inline"><input type="checkbox" name="ARRAY[email_interest]" value=""><?php _e('Action Alerts', 'heritageaction'); ?></label>
-                  <label class="checkbox inline"><input type="checkbox" name="ARRAY[email_interest]" value=""><?php _e('Newsletter', 'heritageaction'); ?></label>
+                  <label class="checkbox inline"><input type="checkbox" checked="checked" name="ARRAY[email_interest]" value=""><?php _e('Action Alerts', 'heritageaction'); ?></label>
+                  <label class="checkbox inline"><input type="checkbox" name="ARRAY[email_interest]" value=""><?php _e('Why We Fight', 'heritageaction'); ?></label>
+                  <label class="checkbox inline"><input type="checkbox" name="ARRAY[email_interest]" value=""><?php _e('Insider', 'heritageaction'); ?></label>
                 </div>
               </div>
               <!-- ^^^^^ press updates ^^^^^^ -->
