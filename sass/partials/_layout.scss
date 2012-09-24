@@ -39,6 +39,9 @@
 }
 #main-inner {
   @extend .clearfix;
+  .home & {
+    margin-bottom:80px;
+  }
 }
 .row {@include row();}
 .home {
