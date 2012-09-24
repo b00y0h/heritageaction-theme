@@ -76,13 +76,13 @@
 		 <div class="menu-main-nav-container">
 				 <ul id="menu-main-nav" class="menu">
 						 <li class="gradient light-blue-gradient score-card">
-								 <a href="http://heritageaction.dev/score-card/">
+								 <a href="/score-card/">
 										 <span class="nav-title">Score Card</span>
 								 </a>
 								 <span class="nav-desc">&ldquo;The final source for congressional accountability.&rdquo;<span class="author">– Jeffy Smithbo</span></span>
 						 </li>
 									 <li class="gradient red-gradient dashboard">
-											 <a href="http://heritageaction.dev/dashboard/">
+											 <a href="/dashboard/">
 													 <span class="nav-title">Dashboard</span>
 											 </a>
 											 <span class="nav-desc nav-search">
@@ -90,7 +90,7 @@
 											 </span>
 									 </li>
 									 <li class="gradient orange-gradient the-forge-blog">
-											 <a href="http://heritageaction.dev/blog/">
+											 <a href="/blog/">
 													 <span class="nav-title">The Forge Blog</span>
 											 </a>
 											 <span class="nav-desc">
