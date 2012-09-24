@@ -107,6 +107,7 @@ get_header(); ?>
     </div> <!-- #main-inner -->
     
     <div id="black-bg"></div>
+    <div id="signup-scroll-target"></div>
     
     <section id="sign-up" class="fixed">
       <div id="sign-up-tab" class="gradient medium-blue-gradient">Sign Up</div>
