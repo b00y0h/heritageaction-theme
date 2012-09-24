@@ -40,8 +40,8 @@ a {
 	color: lighten($link-color, 20);
   }
   &:hover,
-  :focus,
-  :active {
+  &:focus,
+  &:active {
 	color: #000;
 	text-decoration:underline;
   }

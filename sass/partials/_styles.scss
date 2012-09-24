@@ -82,6 +82,75 @@ footer {
   @extend .uppercase;
   @extend .display-inline-block;
   @extend .text-shadow-dark;
+  &:hover {
+    text-decoration:none;
+  }
+  &.red-gradient {
+    &:hover, &.hover {
+    background-color:$red;
+    color:white;
+    @include gradient-vertical(darken($red, 5), darken(#9c0c0a, 15));
+    }
+    &:active {
+      @include gradient-vertical(darken(#9c0c0a, 15),darken($red, 5));
+    }
+  }
+  &.light-red-gradient {
+    &:hover, &.light-red-gradient.hover {
+    background-color:$redLight;
+    color:$white;
+    @include gradient-vertical(darken($redLight, 10), darken(#c91211, 20));
+    }
+    &:active {
+      @include gradient-vertical(darken(#c91211, 20),darken($redLight, 10));
+    }
+  }
+  &.light-blue-gradient {
+    &:hover, &.light-blue-gradient.hover {
+    background-color:$blueLighter;
+    color:white;
+    @include gradient-vertical(darken($blueLighter,10),darken(#73bbf8,20));
+    }
+    &:active {
+      @include gradient-vertical(darken(#73bbf8,20),darken($blueLighter,10));
+    }
+  }
+  &.medium-blue-gradient {
+    &:hover, &.medium-blue-gradient.hover {
+    background-color:$blueLight;
+    color:white;
+    @include gradient-vertical(darken($blueLight, 10), darken(#1d61d7, 20));
+    }
+    &:active {
+      @include gradient-vertical(darken(#1d61d7, 20),darken($blueLight, 10));
+    }
+  }
+  &.blue-gradient {
+    &:hover, &.blue-gradient.hover {
+    background-color:$blueDarker;
+    color:white;
+    @include gradient-vertical(darken($blueDarker,5),darken(#05203e,15));
+    }
+    &:active {
+      @include gradient-vertical(darken(#05203e,15),darken($blueDarker,5));
+    }
+  }
+  &.orange-gradient {
+    &:hover, &.orange-gradient.hover {
+    background-color:$orange;
+    color:white;
+    @include gradient-vertical(darken($orange,10),darken(#f54a18,20));
+    }
+    &:active {
+      @include gradient-vertical(darken(#f54a18,20),darken($orange,10));
+    }
+  }
+  &:visited {
+    color:$white;
+  }
+  &:active {
+    @include box-shadow(inset 0 1px 5px rgba(0,0,0,.5)); 
+  }
 }
 .rounded {
   @include border-radius(37px);
@@ -259,7 +328,9 @@ background:transparent url('img/striped-bg.png');
   text-align: right;
 }
 
-
+.no-underline {
+  text-decoration:none;
+}
 
 
 

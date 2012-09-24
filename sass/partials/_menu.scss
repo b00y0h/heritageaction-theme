@@ -63,6 +63,7 @@ nav[role='navigation'] {
     @include font-shorthand(22px, bold, auto);
     @extend .alternate-font-family;
     @extend .uppercase;
+    @extend .no-underline;
     color:$base-text-color;
     display:inline-block;
     position:relative;
@@ -76,6 +77,10 @@ nav[role='navigation'] {
     &:hover {
       background-color:transparent;
       color:$white;
+    }
+    &:active {
+      color:$white!important;
+      text-decoration:none!important;
     }
     .nav-title, + .nav-desc {
       width:195px;
@@ -112,7 +117,6 @@ nav[role='navigation'] {
     &:hover {
       @extend .text-shadow-dark;
       color:$white;
-      text-decoration:none;
       z-index:1000;
       height:137px;
       cursor:pointer;
