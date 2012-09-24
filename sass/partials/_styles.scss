@@ -23,11 +23,19 @@ footer {
 }
 
 .site-title {
-  @include hide-text;
   @include size($nav-height,120px);
-  
+  @include hide-text;
+  @extend .position-relative;
   background:transparent url('img/logo.png') left center no-repeat;
-  border-right:1px solid #dddddd;
+  border-right:1px solid #ddd;
+  z-index:100;
+  a {
+    @include size($nav-height,120px);
+    @extend .display-inline-block;
+    &:hover {
+      @extend .no-underline;
+    }
+  }
 }
 
 .made-in-usa {
