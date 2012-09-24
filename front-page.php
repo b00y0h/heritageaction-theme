@@ -108,7 +108,7 @@ get_header(); ?>
     
     <div id="black-bg"></div>
     
-    <section id="sign-up">
+    <section id="sign-up" class="fixed">
       <div id="sign-up-tab" class="gradient medium-blue-gradient">Sign Up</div>
       <div class="centered max-width">
         <form action="front-page_submit" method="get" accept-charset="utf-8">

@@ -17,7 +17,7 @@
 .centered {
   margin: 0 auto;
 }
-.home #main-inner, .site-info, #hero .inner, .page-template #primary, .custom #primary {
+.home #main-inner, .site-info, #hero .inner, #primary, #primary {
   @extend .max-width;
 	@extend .centered;
 	z-index:5;
@@ -70,7 +70,7 @@
   }
 }
 
-.donate {
+.donate, .contact {
   #main {padding-top:0;}
   #hero {padding-top:25px;}
   #content {
