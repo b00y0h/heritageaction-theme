@@ -489,8 +489,8 @@ background:transparent url('img/striped-bg.png');
 #sign-up {
   @include box-shadow(inset 0 2px 5px rgba(0,0,0,.30));
   @include box-shadow(0 8px 15px rgba(0,0,0,.45));
-  @extend .position-fixed;
-  bottom:-166px;
+  @extend .position-relative;
+  bottom:0;
   width:100%;
   background-color:$white;
   border-top:10px solid $blue;
@@ -498,6 +498,10 @@ background:transparent url('img/striped-bg.png');
   text-align:center;
   padding-bottom:1em;
   z-index:50; //over top #under-cover
+  &.fixed {
+    @extend .position-fixed;
+    bottom:-166px;
+  }
   .btn {
     @extend .base-drop-shadow;
     @extend .display-inline-block;
