@@ -137,7 +137,7 @@ get_header(); ?>
         <div class="col1">
         <div id="recent-press-releases" class="widgets shadow-curl-left">
           <header class="gradient orange-gradient">
-            <h2 class="title">Recent Press Releases</h2>
+            <h2 class="title">Press Releases &amp; Statements</h2>
           </header>
           <article>
             <h4>Heritage Action Releases Legislative Scorecard.</h4>
