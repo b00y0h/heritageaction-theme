@@ -17,10 +17,10 @@
 			<?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
 			</nav>
 			<address>
-			  214 Massachusetts Avenue NE, Suite 400, Washington, DC 20002    <a href="#">VIEW GOOGLE MAP</a><br>
-        &copy; 2012 Heritage Action for America. All Rights Reserved.
+			  214 Massachusetts Avenue NE, Suite 400, Washington, DC 20002 <br>
+        &copy; <?php echo date('Y'); ?> Heritage Action for America. All Rights Reserved.
 			</address>
-			<span class="made-in-usa"></span>
+			
 		</div><!-- .site-info -->
 	</footer><!-- #colophon .site-footer -->
 </div><!-- #page .hfeed .site -->
