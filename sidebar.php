@@ -101,7 +101,7 @@
 			<?php endif; // end sidebar widget area ?>
 		</div><!-- #secondary .widget-area -->
 		
-		<?php if((date('N') <= 5) && (date('G', strtotime(current_time('mysql'))) >= 9 && date('G', strtotime(current_time('mysql'))) <= 12) ) : ?>
+		<?php if((date('N') <= 5) && (date('G', strtotime(current_time('mysql'))) >= 9 && date('G', strtotime(current_time('mysql'))) <= 11) ) : ?>
 		<div class="listenLiveWidget widget-area">
       <a id="listen-live" href="http://www.istook.com/f/live" target="_blank">Listen to Istook Live!</a>
 		</div>
