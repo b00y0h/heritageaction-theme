@@ -71,6 +71,28 @@
   .page-template-page-donate-php .menu-main-nav-container{
     display:none;
   }
+  .listenLiveWidget{
+    float:left;
+    width:293px;
+    position:relative;
+    text-align:center;
+    margin:10px 0 0 17px;
+  }
+  #listen-live {
+  	background: url(http://thf_media.s3.amazonaws.com/2012/png/istook_listenlive.png) no-repeat;
+  	display: block;
+  	height: 84px;
+  	width: 243px;
+  	margin-left: 15px;
+  	position: absolute;
+  	z-index: 99;
+  	text-indent: -9999px;
+  	top: 1px;
+  	left: 5px;
+  }
+  #listen-live:hover {
+  	background: url(http://thf_media.s3.amazonaws.com/2012/png/istook_listenlive_hover.png) no-repeat;
+  }
 </style>
 
 </head>

@@ -25,6 +25,11 @@
 				})
 			}	
 	    
+	
+			$("#listen-live").click(function(){
+				window.open($(this).attr('href'),'Listen_Live!','resizable=yes,scrollbars=yes,width=837,height=470');
+				return false;
+			})
 			
 		})
 	})(jQuery);
