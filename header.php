@@ -68,6 +68,9 @@
   #sign-up-tab{
     cursor:pointer;
   }
+  .page-template-page-donate-php .menu-main-nav-container{
+    display:none;
+  }
 </style>
 
 </head>
