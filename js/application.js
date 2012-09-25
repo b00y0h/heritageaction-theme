@@ -18,7 +18,7 @@
 			$("#sign-up").click(function(){
 				offset = $("#signup-scroll-target").offset();
 				height = offset.top - 30;
-				$('html, body').animate({scrollTop: (height + 300)},'fast');
+				$('html, body').animate({scrollTop: (height - $(window).height()) + 165},'fast');
 			})
 			
 		})
