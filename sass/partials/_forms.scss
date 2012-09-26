@@ -159,7 +159,7 @@ textarea:focus {
 }
 input[type=text],
 input[type=email] {
-	padding: 3px;
+	padding: 5px 3px 5px 5px;
 }
 textarea {
 	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
@@ -249,9 +249,16 @@ input[type="checkbox"] {
 // --------------------------
 
 .form-horizontal {
+  
+  label {
+    @extend .uppercase;
+    color:$black;
+    font-family:Arial, sans-serif;
+  }
+  
   // Increase spacing between groups
   .control-group {
-    margin-bottom: $base-line-height;
+    margin-bottom: 10px;
     @include clearfix();
   }
   // Float the labels left
@@ -271,6 +278,9 @@ input[type="checkbox"] {
     *margin-left: 0;
     &:first-child {
       *padding-left: 160px;
+    }
+    &.full {
+      margin-left:0;
     }
   }
   // Remove bottom margin on block level help text since that's accounted for on .control-group

@@ -713,11 +713,8 @@ h1 {
   }
   #main-inner {
     margin:-4em 0 4em 0;
-    label {
-      @extend .uppercase;
-      color:$black;
-      font-family:Arial, sans-serif;
-    }
+  input[type=text],
+  input[type=email] {width:100%;}
     .btn {
       @extend .display-block;
       @extend .centered;
@@ -770,7 +767,28 @@ h1 {
 
 .contact {
   #hero {
-    padding-bottom:60px;
+    margin-bottom:0;
+    padding-bottom:40px;
     background-color: #efefef;
+    h1 + p {padding-bottom:$base-line-height;border-bottom:1px dashed $grayLight;}
+  }
+  #contact_us_message {
+    height:225px;
+  }
+  input[type=text],
+   input[type=email] {width:100%;}
+  #captcha {
+    @extend .centered;
+    @extend .italic;
+    color:$black;
+    width:400px;
+    text-align:right;
+    img {margin-left:2em;@extend .base-drop-shadow;}
+  }
+  .btn {
+    @extend .centered;
+    @extend .display-block;
+    @extend .base-drop-shadow;
+    width:125px;
   }
 }
