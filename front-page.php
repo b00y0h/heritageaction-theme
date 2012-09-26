@@ -14,7 +14,7 @@ get_header(); ?>
    <div id="main-inner">
 		<div id="primary" class="content-area">
 		    <div id="hero">
-  		    <img src="<?php echo get_bloginfo('template_url'); ?>/import-image/slide1.jpg" alt="Slide1" class="size-full">
+		      <?php echo do_shortcode('[royalslider id="1"]'); ?>
   		    <div class="diag-stripes"></div>
   		  </div>
   		  

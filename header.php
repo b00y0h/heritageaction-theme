@@ -74,6 +74,7 @@
   .listenLiveWidget{
     float:left;
     width:293px;
+    height:60px;
     position:relative;
     text-align:center;
     margin:10px 0 0 17px;
@@ -92,6 +93,18 @@
   }
   #listen-live:hover {
   	background: url(http://thf_media.s3.amazonaws.com/2012/png/istook_listenlive_hover.png) no-repeat;
+  }
+  .royalHtmlContent{
+    color:#fff;
+    width:643px;
+    padding:70px 20px 0px 130px;
+    font-size:28px;
+    line-height:29px;
+  }
+  .sliderReadMore{
+    display:block;
+    margin-top:10px;
+    width:130px;
   }
 </style>
 

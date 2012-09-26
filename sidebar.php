@@ -105,4 +105,5 @@
 		<div class="listenLiveWidget widget-area">
       <a id="listen-live" href="http://www.istook.com/f/live" target="_blank">Listen to Istook Live!</a>
 		</div>
+		<div style="clear:both;"></div>
     <?php endif; ?>
