@@ -167,13 +167,15 @@ get_header(); ?>
             <h2 class="title">About Us</h2>
           </header>
           <div id="about-us-video" class="video">
-            <img class="size-full" src="<?php echo get_bloginfo('template_url'); ?>/import-image/video-slug.jpg" alt="Video Slug">
+            <a href="http://www.youtube.com/watch?v=xwLCw1oKQcg" rel="prettyPhoto">
+            <img class="size-full" src="<?php echo get_bloginfo('template_url'); ?>/import-image/video-slug.jpg" alt="About Us">
+            </a>
             <div class="overlay"></div>
           </div>
           <div class="social">
             <img src="<?php echo get_bloginfo('template_url'); ?>/img/fb-recommend.gif" alt="Fb Recommend"> <img src="<?php echo get_bloginfo('template_url'); ?>/img/fb-send.gif" alt="Fb Send"> <img src="<?php echo get_bloginfo('template_url'); ?>/img/twitter.gif" alt="Twitter">
           </div>
-          <a href="#" class='btn rounded gradient medium-blue-gradient'>More</a>
+          <a href="/about" class='btn rounded gradient medium-blue-gradient'>More</a>
         </div> <!-- #about-us -->
 
           </div>
