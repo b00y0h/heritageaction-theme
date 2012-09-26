@@ -1,0 +1,35 @@
+.blog {
+  article {
+    border-bottom:4px solid $grayMedium;
+    margin-bottom: $base-line-height+7px;
+    header {
+      .shadow {
+        line-height:0;
+      }
+    }
+    h1 {
+      @extend .uppercase;
+      @include font-shorthand(36px, bold, 36px);
+      margin-bottom:0;
+      padding-bottom:10px;
+      a {
+        &:link, &:visited {
+        color:$black;
+        }
+      }
+      font-family:$alternate-font-family;
+  }
+  .featured-image {
+    @extend .position-relative;
+    width:100%;
+    line-height:0;
+  }
+  }
+  .post-meta {
+    font-size:.8em;
+  }
+  #secondary {
+    @extend .position-relative;
+    background-color:$grayDark;
+  }
+}

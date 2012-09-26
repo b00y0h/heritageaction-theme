@@ -81,6 +81,14 @@ function my_neat_body_class( $classes ) {
      return $classes;
 }
 
+add_filter( 'post_thumbnail_html', 'my_post_image_html', 10, 3 );
+
+function my_post_image_html( $html, $post_id, $post_image_id ) {
+
+  $html = '<div class="shadow shadow-curl-left"><a href="' . get_permalink( $post_id ) . '" title="' . esc_attr( get_post_field( 'post_title', $post_id ) ) . '"">' . $html . '</a></div>';
+  return $html;
+
+}
 
 
 /**

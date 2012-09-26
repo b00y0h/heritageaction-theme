@@ -82,3 +82,17 @@
     }
   }
 }
+
+.blog {
+  #main {
+    @extend .max-width;
+    @extend .centered;
+    @extend .clearfix;
+  }
+  #primary {
+    @extend .column8;
+  }
+  #secondary {
+    @extend .column4;
+  }
+}
