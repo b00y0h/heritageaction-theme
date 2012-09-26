@@ -77,7 +77,7 @@ get_header(); ?>
               <div id="scorecard-map">
                 <img src="<?php echo get_bloginfo('template_url'); ?>/img/scorecard-map.gif" alt="Scorecard Map" class="size-full">
               </div>
-              <a href="#" class="btn rounded gradient medium-blue-gradient">Get the scores</a>
+              <a href="http://heritageactionscorecard.com" class="btn rounded gradient medium-blue-gradient">Get the scores</a>
             </div>
             
             <div id="action-dashboard" class="widgets">
