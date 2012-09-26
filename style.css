@@ -74,7 +74,7 @@ input[type="color"],
   display: inline; }
 
 /* line 18, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-misc.scss */
-.display-inline-block, nav[role='navigation'] li, .footer-navigation li, .site-title a, .made-in-usa, .btn, #sign-up .btn, #sign-up form .inline, #select-your-donation .btn {
+.display-inline-block, nav[role='navigation'] li, .footer-navigation li, .site-title a, .made-in-usa, .btn, #sign-up .btn, #sign-up form .inline, #select-your-donation .btn, .slider-title span {
   display: -moz-inline-box;
   -moz-box-orient: vertical;
   display: inline-block;
@@ -464,7 +464,7 @@ table {
   font-family: Georgia, serif; }
 
 /* line 10, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-typography.scss */
-.alternate-font-family, h1, h2, h3, h4, h5, h6, blockquote cite, nav[role='navigation'] a, .widgets .post-title, .home #secondary .post-title, #sign-up-tab {
+.alternate-font-family, h1, h2, h3, h4, h5, h6, blockquote cite, nav[role='navigation'] a, .widgets .post-title, .home #secondary .post-title, #sign-up-tab, .slider-title .line2 {
   font-family: "HelveticaNeue-CondensedBold", "Open Sans Condensed", Arial, sans-serif; }
 
 /* line 14, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-typography.scss */
@@ -546,7 +546,7 @@ dl dt {
   text-decoration: underline; }
 
 /* line 86, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-typography.scss */
-.uppercase, h6, nav[role='navigation'] a, .btn, .post-meta, .home #secondary .meta, .team-info .title, .widgets .title, .home #secondary h3, .home #secondary .post-title, #sign-up form .inline, #sign-up-tab, .donate #main-inner label {
+.uppercase, h6, nav[role='navigation'] a, .btn, .post-meta, .home #secondary .meta, .team-info .title, .widgets .title, .home #secondary h3, .home #secondary .post-title, #sign-up form .inline, #sign-up-tab, .donate #main-inner label, .slider-title .line2 {
   text-transform: uppercase; }
 
 /* line 92, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-typography.scss */
@@ -1344,7 +1344,7 @@ footer {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35); }
 
 /* line 238, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
-.uppercase, h6, nav[role='navigation'] a, .btn, .post-meta, .home #secondary .meta, .team-info .title, .widgets .title, .home #secondary h3, .home #secondary .post-title, #sign-up form .inline, #sign-up-tab, .donate #main-inner label {
+.uppercase, h6, nav[role='navigation'] a, .btn, .post-meta, .home #secondary .meta, .team-info .title, .widgets .title, .home #secondary h3, .home #secondary .post-title, #sign-up form .inline, #sign-up-tab, .donate #main-inner label, .slider-title .line2 {
   text-transform: uppercase; }
 
 /* line 242, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
@@ -2382,6 +2382,19 @@ input[type="checkbox"] {
 /* line 78, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
 .donate #hero, .contact #hero {
   padding-top: 25px; }
+
+/* line 3, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_slides.scss */
+.slider-title .line1 {
+  font-size: 1.5em;
+  font-weight: normal;
+  line-height: 1.4em;
+  font-family: "IM Fell Great Primer SC", serif;
+  padding-top: .7em; }
+/* line 8, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_slides.scss */
+.slider-title .line2 {
+  font-size: 1.75em;
+  font-weight: normal;
+  line-height: 1.2em; }
 
 /* line 1, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/ie.scss */
 .lt-ie9 .gradient {

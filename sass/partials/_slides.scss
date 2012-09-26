@@ -1,0 +1,13 @@
+.slider-title {
+  span {@extend .display-inline-block;}
+  .line1 {
+    @include font-shorthand(1.5em, normal, 1.4em);
+    font-family:$header-font-family;
+    padding-top:.7em;
+  }
+  .line2 {
+    @include font-shorthand(1.75em, normal, 1.2em);
+    @extend .alternate-font-family;
+    @extend .uppercase;
+  }
+}
