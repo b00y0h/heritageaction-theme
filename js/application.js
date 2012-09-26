@@ -18,7 +18,7 @@
 		        }
 		    });
 	
-				$("#sign-up").click(function(){
+				$("#sign-up-tab").click(function(){
 					offset = $("#signup-scroll-target").offset();
 					height = offset.top - 30;
 					$('html, body').animate({scrollTop: (height - $(window).height()) + 165},'fast');
@@ -30,6 +30,13 @@
 				window.open($(this).attr('href'),'Listen_Live!','resizable=yes,scrollbars=yes,width=837,height=470');
 				return false;
 			})
+			
+			$("#signup-form-submit-button").click(function(){
+				var form_data = $("#signup-form").serialize();
+				$("#signup-form-result").load("/bluehornet.php?" + form_data);
+				return false;
+			})
+			
 			
 		})
 	})(jQuery);
