@@ -74,6 +74,7 @@
 }
 
 .donate, .contact {
+  .menu-main-nav-container {@extend .display-none;}
   #main {padding-top:0;}
   #hero {padding-top:25px;}
   #content {

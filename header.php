@@ -63,50 +63,6 @@
 <!-- BOBBY add this to functions -->
 <script src="<?php echo get_template_directory_uri(); ?>/js/application.js"></script>
 
-<!-- BOBBY add this to styles -->
-<style type="text/css" media="screen">
-  #sign-up-tab{
-    cursor:pointer;
-  }
-  .page-template-page-donate-php .menu-main-nav-container{
-    display:none;
-  }
-  .listenLiveWidget{
-    float:left;
-    width:293px;
-    height:60px;
-    position:relative;
-    text-align:center;
-    margin:10px 0 0 17px;
-  }
-  #listen-live {
-  	background: url(http://thf_media.s3.amazonaws.com/2012/png/istook_listenlive.png) no-repeat;
-  	display: block;
-  	height: 84px;
-  	width: 243px;
-  	margin-left: 15px;
-  	position: absolute;
-  	z-index: 99;
-  	text-indent: -9999px;
-  	top: 1px;
-  	left: 5px;
-  }
-  #listen-live:hover {
-  	background: url(http://thf_media.s3.amazonaws.com/2012/png/istook_listenlive_hover.png) no-repeat;
-  }
-  .royalHtmlContent{
-    color:#fff;
-    width:643px;
-    padding:70px 20px 0px 130px;
-    font-size:28px;
-    line-height:29px;
-  }
-  .sliderReadMore{
-    display:block;
-    margin-top:10px;
-    width:130px;
-  }
-</style>
 
 </head>
 <body <?php body_class(); ?>>
