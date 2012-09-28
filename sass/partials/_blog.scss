@@ -35,4 +35,26 @@
     }
     p {color:$white;@include font-shorthand(12px, normal, 16px);}
   }
+  #subscribe {
+    @extend .medium-blue-gradient;
+    margin:0 -15px 20px; 
+    text-align:center;
+    h2 {
+      @include font-shorthand(20px, normal, 34px);
+      @extend .button-font-family;
+      @extend .uppercase;
+      color:$white;
+      font-weight:normal;
+      padding-top:.2em;
+    	background: url("img/rss-cones.png") no-repeat 55px 5px;
+    	@extend .text-shadow-dark;
+      span {
+        @include font-shorthand(12px, normal, 18px);
+        @extend .display-block;
+      	background: #6d6d6d url("img/rss-bug.png") no-repeat 55px 13px;
+        padding:1em;
+        text-transform:normal;
+      }
+    }
+  }
 }

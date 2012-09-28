@@ -66,7 +66,7 @@ input[type="color"],
   display: none; }
 
 /* line 12, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-misc.scss */
-.display-block, nav[role='navigation'] li:hover > .nav-desc, .post-meta, #secondary .meta, .team-info .title, .widgets .btn, .widgets .post-title, #secondary .post-title, #secondary #read-the-forge, #secondary #follow-twitter, .donate #main-inner .btn, .contact .btn {
+.display-block, nav[role='navigation'] li:hover > .nav-desc, .post-meta, #secondary .meta, .team-info .title, .widgets .btn, .widgets .post-title, #secondary .post-title, #secondary #read-the-forge, #secondary #follow-twitter, .donate #main-inner .btn, .contact .btn, .blog #subscribe h2 span {
   display: block; }
 
 /* line 15, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-misc.scss */
@@ -546,7 +546,7 @@ dl dt {
   text-decoration: underline; }
 
 /* line 86, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-typography.scss */
-.uppercase, h6, nav[role='navigation'] a, .btn, .post-meta, #secondary .meta, .team-info .title, .widgets .title, #secondary h3, #secondary .post-title, #sign-up form .inline, #sign-up-tab, .form-horizontal label, .slider-title .line2, .blog article h1 {
+.uppercase, h6, nav[role='navigation'] a, .btn, .post-meta, #secondary .meta, .team-info .title, .widgets .title, #secondary h3, #secondary .post-title, #sign-up form .inline, #sign-up-tab, .form-horizontal label, .slider-title .line2, .blog article h1, .blog #subscribe h2 {
   text-transform: uppercase; }
 
 /* line 92, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-typography.scss */
@@ -899,7 +899,7 @@ nav[role='navigation'] {
     nav[role='navigation'] li.blue-gradient:hover, nav[role='navigation'] li.blue-gradient:hover {
       border-right-color: #1e65d8; }
     /* line 149, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
-    nav[role='navigation'] li.medium-blue-gradient:hover, nav[role='navigation'] li.medium-blue-gradient:hover {
+    nav[role='navigation'] li.medium-blue-gradient:hover, nav[role='navigation'] li.medium-blue-gradient:hover, nav[role='navigation'] .blog li#subscribe:hover, .blog nav[role='navigation'] li#subscribe:hover {
       border-right-color: #1e65d8; }
   /* line 154, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   nav[role='navigation'] .nav-title {
@@ -972,7 +972,7 @@ li#search {
   display: none; }
 
 /* line 1, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
-.button-font-family, #secondary h3, #sign-up #interest, .donate h4 {
+.button-font-family, #secondary h3, #sign-up #interest, .donate h4, .blog #subscribe h2 {
   font-family: "IM Fell Great Primer SC", serif; }
 
 /* line 5, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
@@ -1064,7 +1064,7 @@ footer {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a7d4fb', endColorstr='#73bbf8', GradientType=0); }
 
 /* line 64, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
-.medium-blue-gradient, nav[role='navigation'] li.medium-blue-gradient:hover {
+.medium-blue-gradient, nav[role='navigation'] li.medium-blue-gradient:hover, .blog #subscribe {
   background-color: #43b2ec;
   color: white;
   background-image: -ms-linear-gradient(top, #43b2ec, #1d61d7);
@@ -1194,7 +1194,7 @@ footer {
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#128cf3', endColorstr='#76bcf9', GradientType=0); }
   /* line 127, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
-  .btn.medium-blue-gradient:hover, nav[role='navigation'] li.btn.medium-blue-gradient:hover, .btn.medium-blue-gradient.medium-blue-gradient.hover, nav[role='navigation'] li.btn.hover.medium-blue-gradient:hover {
+  .btn.medium-blue-gradient:hover, nav[role='navigation'] li.btn.medium-blue-gradient:hover, .blog .btn#subscribe:hover, .btn.medium-blue-gradient.medium-blue-gradient.hover, nav[role='navigation'] li.btn.hover.medium-blue-gradient:hover, .blog .btn.hover#subscribe {
     background-color: #43b2ec;
     color: white;
     background-image: -ms-linear-gradient(top, #179ee5, #11387d);
@@ -1206,7 +1206,7 @@ footer {
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#179ee5', endColorstr='#11387d', GradientType=0); }
   /* line 132, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
-  .btn.medium-blue-gradient:active, nav[role='navigation'] li.btn.medium-blue-gradient:active:hover {
+  .btn.medium-blue-gradient:active, nav[role='navigation'] li.btn.medium-blue-gradient:active:hover, .blog .btn#subscribe:active {
     background-image: -ms-linear-gradient(top, #11387d, #179ee5);
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#11387d), to(#179ee5));
     background-image: -webkit-linear-gradient(top, #11387d, #179ee5);
@@ -1363,11 +1363,11 @@ footer {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35); }
 
 /* line 240, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
-.uppercase, h6, nav[role='navigation'] a, .btn, .post-meta, #secondary .meta, .team-info .title, .widgets .title, #secondary h3, #secondary .post-title, #sign-up form .inline, #sign-up-tab, .form-horizontal label, .slider-title .line2, .blog article h1 {
+.uppercase, h6, nav[role='navigation'] a, .btn, .post-meta, #secondary .meta, .team-info .title, .widgets .title, #secondary h3, #secondary .post-title, #sign-up form .inline, #sign-up-tab, .form-horizontal label, .slider-title .line2, .blog article h1, .blog #subscribe h2 {
   text-transform: uppercase; }
 
 /* line 244, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
-.text-shadow-dark, nav[role='navigation'] li:hover, .btn, #sign-up-tab {
+.text-shadow-dark, nav[role='navigation'] li:hover, .btn, #sign-up-tab, .blog #subscribe h2 {
   text-shadow: 1px 0 5px rgba(0, 0, 0, 0.35); }
 
 /* line 247, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
@@ -2527,6 +2527,27 @@ input[type="checkbox"] {
   font-size: 12px;
   font-weight: normal;
   line-height: 16px; }
+/* line 38, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+.blog #subscribe {
+  margin: 0 -15px 20px;
+  text-align: center; }
+  /* line 42, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+  .blog #subscribe h2 {
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 34px;
+    color: white;
+    font-weight: normal;
+    padding-top: .2em;
+    background: url("img/rss-cones.png") no-repeat 55px 5px; }
+    /* line 51, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+    .blog #subscribe h2 span {
+      font-size: 12px;
+      font-weight: normal;
+      line-height: 18px;
+      background: #6d6d6d url("img/rss-bug.png") no-repeat 55px 13px;
+      padding: 1em;
+      text-transform: normal; }
 
 /* line 1, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/ie.scss */
 .lt-ie9 .gradient {
