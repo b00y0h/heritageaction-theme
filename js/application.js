@@ -79,6 +79,18 @@
 				}, 200 );
 			} );
 
+// remove placeholder text on focus and put it back on unfocus
+$('.search-input').data('holder',$('.search-input').attr('placeholder'));
+
+$('.search-input').focusin(function(){
+    $(this).attr('placeholder','');
+});
+$('.search-input').focusout(function(){
+    $(this).attr('placeholder',$(this).data('holder'));
+});
+
+
+
 
 		});
 	})(jQuery);

@@ -108,7 +108,7 @@
 									 <li id="search" class="gradient blue-gradient search">
 											 <a href="#" id="search-trigger"></a>
 										   <span id="search-form" class="nav-desc">
-											    <input type="search" name="search site" value="" placeholder="Search..."><div id="seach-btn" class="go gradient blue-gradient"><div class="arrow-right"></div></div>
+											    <input type="search" name="search site" class="search-input" value="" placeholder="Search..."><div id="seach-btn" class="go gradient blue-gradient"><div class="arrow-right"></div></div>
 											 </span>
 									 </li>
 							 </ul>
