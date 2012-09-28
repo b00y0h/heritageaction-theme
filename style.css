@@ -83,7 +83,7 @@ input[type="color"],
   #vertical-align: auto; }
 
 /* line 22, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-misc.scss */
-.position-relative, .site-title, [class*="shadow-curl-"], #sign-up, #under-cover, .video, .blog article .featured-image, .blog #secondary {
+.position-relative, .site-title, [class*="shadow-curl-"], .featured-image, #sign-up, #under-cover, .video, .blog article .featured-image, .blog #secondary {
   position: relative; }
 
 /* line 25, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-misc.scss */
@@ -1315,10 +1315,10 @@ footer {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); }
 
 /* line 207, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
-[class*="shadow-curl-"] {
+[class*="shadow-curl-"], .featured-image {
   margin-bottom: 1em; }
   /* line 210, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
-  [class*="shadow-curl-"]:before, [class*="shadow-curl-"]:after {
+  [class*="shadow-curl-"]:before, [class*="shadow-curl-"]:after, .featured-image:before, .featured-image:after {
     position: absolute;
     width: 85%;
     height: 200px;
@@ -1329,7 +1329,7 @@ footer {
     pointer-events: none; }
 
 /* line 221, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
-.shadow-curl-left:before {
+.shadow-curl-left:before, .featured-image:before {
   -webkit-box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.15);
   box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.15);

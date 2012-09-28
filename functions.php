@@ -81,15 +81,6 @@ function my_neat_body_class( $classes ) {
      return $classes;
 }
 
-add_filter( 'post_thumbnail_html', 'my_post_image_html', 10, 3 );
-
-function my_post_image_html( $html, $post_id, $post_image_id ) {
-
-  $html = '<div class="shadow shadow-curl-left"><a href="' . get_permalink( $post_id ) . '" title="' . esc_attr( get_post_field( 'post_title', $post_id ) ) . '"">' . $html . '</a></div>';
-  return $html;
-
-}
-
 
 /**
  * Register widgetized area and update sidebar with default widgets
@@ -97,15 +88,6 @@ function my_post_image_html( $html, $post_id, $post_image_id ) {
  * @since Heritage Action 1.0
  */
 function heritageaction_widgets_init() {
-  // register_sidebar( array(
-  //   'name' => __( 'Sidebar', 'heritageaction' ),
-  //   'id' => 'sidebar-1',
-  //   'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-  //   'after_widget' => '</aside>',
-  //   'before_title' => '<h3 class="widget-title">',
-  //   'after_title' => '</h3>',
-  // ) );
-
   register_sidebar( array(
     'name' => __( 'Blog Sidebar', 'heritageaction' ),
     'id' => 'sidebar-2',
@@ -135,146 +117,3 @@ function heritageaction_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'heritageaction_scripts' );
-
-/**
- * Implement the Custom Header feature
- */
-//require( get_template_directory() . '/inc/custom-header.php' );
-
-class My_Walker extends Walker_Nav_Menu
-{
-    function start_el(&$output, $item, $depth, $args) {
-        global $wp_query;
-        $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
-
-        $class_names = $value = '';
-
-        $classes = empty( $item->classes ) ? array() : (array) $item->classes;
-
-        $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) );
-        $class_names = ' class="' . esc_attr( $class_names ) . '"';
-
-        $output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
-
-        $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
-        $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
-        $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
-        $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
-
-        $item_output = $args->before;
-        $item_output .= '<a'. $attributes .'>';
-        $item_output .= '<span class="title">' . $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . '</span>' . $args->link_after;
-        $item_output .= '<span class="sub">' . $item->attr_title. '</span></a>'; /* This is where I changed things. */
-        $item_output .= $args->after;
-
-        $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
-    }
-}
-
-
-class MV_Cleaner_Walker_Nav_Menu extends Walker {
-    var $tree_type = array( 'post_type', 'taxonomy', 'custom' );
-    var $db_fields = array( 'parent' => 'menu_item_parent', 'id' => 'db_id' );
-    function start_lvl(&$output, $depth) {
-        $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<ul class=\"sub-menu\">\n";
-    }
-    function end_lvl(&$output, $depth) {
-        $indent = str_repeat("\t", $depth);
-        $output .= "$indent</ul>\n";
-    }
-    function start_el(&$output, $item, $depth, $args) {
-        global $wp_query;
-        $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
-        $class_names = $value = '';
-        $classes = empty( $item->classes ) ? array() : (array) $item->classes;
-        $classes = in_array( 'current-menu-item', $classes ) ? array( 'current-menu-item' ) : array();
-        $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
-        $class_names = strlen( trim( $class_names ) ) > 0 ? ' class="' . esc_attr( $class_names ) . '"' : '';
-        $id = apply_filters( 'nav_menu_item_id', '', $item, $args );
-        $id = strlen( $id ) ? ' id="' . esc_attr( $id ) . '"' : '';
-        $output .= $indent . '<li' . $id . $value . $class_names .'>';
-        $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
-        $attributes .= ! empty( $item->target )     ? ' target="' . esc_attr( $item->target     ) .'"' : '';
-        $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
-        $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
-        $attributes .= ! empty( $item->description )? ' href="'   . esc_attr( $item->description        ) .'"' : '';
-        $item_output = $args->before;
-        $item_output .= '<a'. $attributes .'>';
-        $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-        $item_output .= '</a>';
-        $item_output .= $args->after;
-        $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
-    }
-    function end_el(&$output, $item, $depth) {
-        $output .= "</li>\n";
-    }
-}
-
-class Description_Walker extends Walker_Nav_Menu
-{
-    /**
-     * Start the element output.
-     *
-     * @param  string $output Passed by reference. Used to append additional content.
-     * @param  object $item   Menu item data object.
-     * @param  int $depth     Depth of menu item. May be used for padding.
-     * @param  array $args    Additional strings.
-     * @return void
-     */
-    function start_el(&$output, $item, $depth, $args)
-    {
-        $classes     = empty ( $item->classes ) ? array () : (array) $item->classes;
-
-        $class_names = join(
-            ' '
-        ,   apply_filters(
-                'nav_menu_css_class'
-            ,   array_filter( $classes ), $item
-            )
-        );
-
-        ! empty ( $class_names )
-            and $class_names = ' class="'. esc_attr( $class_names ) . '"';
-
-        $output .= "<li id='menu-item-$item->ID' $class_names>";
-
-        $attributes  = '';
-
-        ! empty( $item->attr_title )
-            and $attributes .= ' title="'  . esc_attr( $item->attr_title ) .'"';
-        ! empty( $item->target )
-            and $attributes .= ' target="' . esc_attr( $item->target     ) .'"';
-        ! empty( $item->xfn )
-            and $attributes .= ' rel="'    . esc_attr( $item->xfn        ) .'"';
-        ! empty( $item->url )
-            and $attributes .= ' href="'   . esc_attr( $item->url        ) .'"';
-
-        // insert description for top level elements only
-        // you may change this
-        $description = ( ! empty ( $item->description ) and 0 == $depth )
-            ? '<span class="nav-desc">' . esc_attr( $item->description ) . '</span>' : '';
-
-        $title = apply_filters( 'the_title', $item->title, $item->ID );
-        $title = '<span class="nav-title">' . $title . '</span>';
-
-        $item_output = $args->before
-            . "<a $attributes>"
-            . $args->link_before
-            . $title
-            . $description
-            . '</a> '
-            . $args->link_after
-            . $args->after;
-
-        // Since $output is called by reference we don't need to return anything.
-        $output .= apply_filters(
-            'walker_nav_menu_start_el'
-        ,   $item_output
-        ,   $item
-        ,   $depth
-        ,   $args
-        );
-    }
-}
-

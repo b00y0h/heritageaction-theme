@@ -204,7 +204,7 @@ footer {
   @include box-shadow(0 0 8px rgba(0,0,0,.20)); 
 }
 
-[class*="shadow-curl-"] {
+[class*="shadow-curl-"], .featured-image {
   @extend .position-relative;
   margin-bottom:1em;
   &:before, &:after {
@@ -218,7 +218,7 @@ footer {
     pointer-events:none;
   }
 }
-.shadow-curl-left:before {
+.shadow-curl-left:before, .featured-image:before {
 	@include box-shadow(0 10px 10px 5px rgba(0,0,0,.15));
   @include skew-rotate(-5deg, -2deg);
   left: 12px;
