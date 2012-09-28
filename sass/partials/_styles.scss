@@ -201,7 +201,7 @@ footer {
 .shadow {
   position: relative;  
   background-color: $white;
-  @include box-shadow(0 0 8px rgba(0,0,0,.15)); 
+  @include box-shadow(0 0 8px rgba(0,0,0,.20)); 
 }
 
 [class*="shadow-curl-"] {
@@ -215,6 +215,7 @@ footer {
   	bottom: 9px;
   	background: transparent;
     z-index: -1;    
+    pointer-events:none;
   }
 }
 .shadow-curl-left:before {
@@ -431,7 +432,7 @@ background:transparent url('img/striped-bg.png');
   }
 }
 
-.home #secondary {
+#secondary {
   background-color:$base-text-color;
   color:$weak-text-color;
   padding:0 15px 40px;
@@ -584,11 +585,15 @@ background:transparent url('img/striped-bg.png');
 .video {
   @extend .position-relative;
   line-height:0;
+  a {
+    @extend .display-inline-block;
+  }
   .overlay {
     @extend .position-absolute;
+    @include size(100%,100%);
     background: url('img/video-overlay.png');
     top:0;
-    @include size(100%,100%);
+    pointer-events: none;
   }
 }
 
