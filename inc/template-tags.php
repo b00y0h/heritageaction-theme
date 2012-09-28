@@ -52,6 +52,7 @@ endif; // heritageaction_content_nav
 if ( ! function_exists( 'heritageaction_signup_section' ) ):
 
 function heritageaction_signup_section( ) { ?>
+  <div id="signup-scroll-target"></div>
   <section id="sign-up" class="fixed">
     <div id="sign-up-tab" class="gradient medium-blue-gradient">Sign Up</div>
     <div class="centered max-width">

@@ -107,7 +107,6 @@ get_header(); ?>
     </div> <!-- #main-inner -->
     
     <div id="black-bg"></div>
-    <div id="signup-scroll-target"></div>
     
     <?php heritageaction_signup_section(); ?>
     
