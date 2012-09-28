@@ -49,6 +49,38 @@ endif; // heritageaction_content_nav
 
 
 
+if ( ! function_exists( 'heritageaction_signup_section' ) ):
+
+function heritageaction_signup_section( ) { ?>
+  <section id="sign-up" class="fixed">
+    <div id="sign-up-tab" class="gradient medium-blue-gradient">Sign Up</div>
+    <div class="centered max-width">
+      <form id="signup-form" action="front-page_submit" method="get" accept-charset="utf-8">
+        <input type="text" name="user[first_name]" id="first_name" placeholder="First Name">
+        <input type="text" name="user[email_address]" id="email_address" placeholder="Email Address">
+        <input type="text" name="user[zip_code]" id="zip_code" placeholder="Zip Code">
+        <a href="#" id="signup-form-submit-button" class="btn rounded gradient medium-blue-gradient">Sign Up</a>
+        <div id="interest">
+            <div class="control-group question">
+              <label class="control-label"><?php _e("I'm interested in:", 'heritageaction'); ?></label>
+              <div class="controls input choice">
+                <input type="hidden" name="group[]" value="968328">
+                <label class="checkbox inline"><input type="checkbox" checked="checked" name="group[]" value="847026"><?php _e('Action Alerts', 'heritageaction'); ?></label>
+                <label class="checkbox inline"><input type="checkbox" name="group[]" value="847031"><?php _e('Why We Fight', 'heritageaction'); ?></label>
+                <label class="checkbox inline"><input type="checkbox" name="group[]" value="847028"><?php _e('Insider', 'heritageaction'); ?></label>
+              </div>
+            </div>
+            <!-- ^^^^^ press updates ^^^^^^ -->
+        </div>
+      </form>
+      <div id="signup-form-result"></div>
+    </div>
+  </section>
+  <?php 
+  }
+endif; // heritageaction_signup_section
+  
+
 if ( ! function_exists( 'heritageaction_content_navlist' ) ):
 
 function heritageaction_content_navlist( $id, $scope = 2 ) {
