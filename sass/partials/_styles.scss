@@ -258,23 +258,22 @@ background:transparent url('img/striped-bg.png');
 .pagination {
   height: 40px;
   margin: 20px 0;
+  ul {
+    display: inline-block;
+    *display: inline;
+    font-family:Arial, sans-serif;
+    font-size:12px;
+    margin-bottom: 0;
+    margin-left: 0;
+    @include border-radius(30px);
+    *zoom: 1;
+    @include box-shadow(0 1px 2px rgba(0,0,0,.35));
+    > li {
+      display: inline;
+    }
+  }
 }
 
-.pagination ul {
-  display: inline-block;
-  *display: inline;
-  font-family:Arial, sans-serif;
-  font-size:12px;
-  margin-bottom: 0;
-  margin-left: 0;
-  @include border-radius(30px);
-  *zoom: 1;
-  @include box-shadow(0 1px 2px rgba(0,0,0,.35));
-}
-
-.pagination ul > li {
-  display: inline;
-}
 
 .pagination ul > li > a,
 .pagination ul > li > span {
@@ -298,7 +297,7 @@ background:transparent url('img/striped-bg.png');
   li > a:hover, .active > a, .active > span {@extend .orange-gradient;color:$white;}
   }
 .blue.pagination ul > {
-  li > a:hover, .active > a, .active > span {@extend .blue-gradient;color:$white!important;}
+  li > a:hover, .active > a, .active > span, .current {@extend .blue-gradient;color:$white!important;}
   }
 
 .pagination ul > .active > a,

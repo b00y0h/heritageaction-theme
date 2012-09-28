@@ -15,37 +15,115 @@ if ( ! function_exists( 'heritageaction_content_nav' ) ):
  * @since Heritage Action 1.0
  */
 function heritageaction_content_nav( $nav_id ) {
-	global $wp_query;
+  global $wp_query;
 
-	$nav_class = 'site-navigation paging-navigation';
-	if ( is_single() )
-		$nav_class = 'site-navigation post-navigation';
+  $nav_class = 'site-navigation paging-navigation';
+  if ( is_single() )
+    $nav_class = 'site-navigation post-navigation';
 
-	?>
-	<nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
-		<h1 class="assistive-text"><?php _e( 'Post navigation', 'heritageaction' ); ?></h1>
+  ?>
+  <nav role="navigation" id="<?php echo $nav_id; ?>" class="<?php echo $nav_class; ?>">
+    <h1 class="assistive-text"><?php _e( 'Post navigation', 'heritageaction' ); ?></h1>
 
-	<?php if ( is_single() ) : // navigation links for single posts ?>
+  <?php if ( is_single() ) : // navigation links for single posts ?>
 
-		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'heritageaction' ) . '</span> %title' ); ?>
-		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'heritageaction' ) . '</span>' ); ?>
+    <?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'heritageaction' ) . '</span> %title' ); ?>
+    <?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'heritageaction' ) . '</span>' ); ?>
 
-	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
+  <?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
-		<?php if ( get_next_posts_link() ) : ?>
-		<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'heritageaction' ) ); ?></div>
-		<?php endif; ?>
+    <?php if ( get_next_posts_link() ) : ?>
+    <div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'heritageaction' ) ); ?></div>
+    <?php endif; ?>
 
-		<?php if ( get_previous_posts_link() ) : ?>
-		<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'heritageaction' ) ); ?></div>
-		<?php endif; ?>
+    <?php if ( get_previous_posts_link() ) : ?>
+    <div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'heritageaction' ) ); ?></div>
+    <?php endif; ?>
 
-	<?php endif; ?>
+  <?php endif; ?>
 
-	</nav><!-- #<?php echo $nav_id; ?> -->
-	<?php
+  </nav><!-- #<?php echo $nav_id; ?> -->
+  <?php
 }
 endif; // heritageaction_content_nav
+
+
+
+if ( ! function_exists( 'heritageaction_content_navlist' ) ):
+
+function heritageaction_content_navlist( $id, $scope = 2 ) {
+  // custom pagination
+     	global $wp, $posts_per_page, $page;
+     	$mypage = $page;
+
+  	$numPages = (int) ( wp_count_posts()->publish / $posts_per_page );
+  	if( $numPages <= 1 )
+  		return; // no need for pagination
+
+  	$queryVars = $wp->query_vars;
+  	$curPage = isset( $queryVars[ 'paged' ] ) ? (int) $queryVars[ 'paged' ] : 1;
+
+  	// page bounds
+  	$start = $curPage - $scope;
+  	$end = $curPage + $scope;
+
+  	// if we can't satisfy the scope (add enough pages) on one side,
+  	// add pages to the other side
+  	if( $start <= 1 ) {
+  		$end += ( 1 - $start );
+  		$start = 2;
+  	}
+  	else if( $end >= $numPages ) {
+  		$start -= ( $end - $numPages );
+  		$end = $numPages - 1;
+  	}
+
+  	// limit the start and end to their extreme values
+  	$start = max( $start, 2 );
+  	$end = min( $end, $numPages - 1 );
+
+  	$pagesToLinkTo = array( 1 );
+  	for( $page = $start; $page <= $end; $page++ )
+  		$pagesToLinkTo[] = $page;
+  	$pagesToLinkTo[] = $numPages;
+
+  	$prevPage = $pagesToLinkTo[0];
+
+
+    echo '<div id="' . $id . '" class="pagination pagination-centered blue">';
+    echo '<ul>';
+
+
+    // ANDRE: can you make this find the first page and the last <li> find the last page?
+  	echo '<li><a href="' . get_bloginfo( 'home' ) . '/blog/page/' . $start . '">&lt;</a></li>';
+
+  	foreach( $pagesToLinkTo as $page ) {
+  		if( $page - $prevPage > 1 ) // skipped a few pages
+  		echo '<li><span class="page-numbers dots">&hellip;</span></li>'; // add a spacer
+      if ($curPage == $page) {
+    		echo '<li class="active"><a href="' . get_bloginfo( 'home' ) . '/blog/page/' . $page . '">' . $page . '</a></li>';      
+      } else {
+    		echo '<li><a href="' . get_bloginfo( 'home' ) . '/blog/page/' . $page . '">' . $page . '</a></li>';
+    }
+  		$prevPage = $page;
+
+  	}
+
+
+  	echo '<li><a href="' . get_bloginfo( 'home' ) . '/blog/page/' . $end . '">&gt;</a></li>';
+
+  	echo '</ul>';
+    echo '</div>';
+    
+}
+endif; // heritageaction_content_navlist
+
+
+
+
+
+
+
 
 if ( ! function_exists( 'heritageaction_comment' ) ) :
 /**

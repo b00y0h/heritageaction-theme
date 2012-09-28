@@ -33,8 +33,8 @@ get_header(); ?>
 					?>
 
 				<?php endwhile; ?>
-
-				<?php heritageaction_content_nav( 'nav-below' ); ?>
+				
+				<?php heritageaction_content_navlist( 'nav-below', 2 ); ?>
 
 			<?php elseif ( current_user_can( 'edit_posts' ) ) : ?>
 
