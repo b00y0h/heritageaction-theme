@@ -827,29 +827,28 @@ nav[role='navigation'] {
     white-space: nowrap;
     width: 195px;
     z-index: 100;
-    border-right: 1px solid #dddddd;
     background-color: white; }
-    /* line 77, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+    /* line 76, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
     nav[role='navigation'] a:hover {
       background-color: transparent;
       color: white; }
-    /* line 81, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+    /* line 80, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
     nav[role='navigation'] a:active {
       color: white !important;
       text-decoration: none!important; }
-    /* line 85, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+    /* line 84, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
     nav[role='navigation'] a .nav-title, nav[role='navigation'] a + .nav-desc {
       width: 195px;
       z-index: 1000; }
-    /* line 89, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+    /* line 88, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
     nav[role='navigation'] a .nav-desc {
       padding-top: 40px; }
-  /* line 94, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+  /* line 93, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   nav[role='navigation'] ul {
     position: relative;
     height: 70px;
     overflow: visible; }
-  /* line 95, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+  /* line 94, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   nav[role='navigation'] .nav-desc {
     font-size: 12px;
     font-weight: normal;
@@ -857,14 +856,15 @@ nav[role='navigation'] {
     text-transform: none;
     top: 70px;
     padding: 0 10px; }
-  /* line 104, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+  /* line 103, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   nav[role='navigation'] li {
     height: 70px;
     text-align: center;
     z-index: 950;
     position: relative;
     top: 0;
-    vertical-align: top; }
+    vertical-align: top;
+    border-right: 1px solid #dddddd; }
     /* line 112, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
     nav[role='navigation'] li.gradient {
       filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
@@ -883,13 +883,31 @@ nav[role='navigation'] {
       /* line 124, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
       nav[role='navigation'] li:hover > .nav-desc {
         z-index: 1001; }
-  /* line 152, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+    /* line 129, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+    nav[role='navigation'] li.red-gradient:hover, nav[role='navigation'] li.red-gradient:hover, nav[role='navigation'] li.ribbon:hover {
+      border-right-color: #fe4e4c; }
+    /* line 133, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+    nav[role='navigation'] li.light-red-gradient:hover, nav[role='navigation'] li.light-red-gradient:hover {
+      border-right-color: #fe4e4c; }
+    /* line 137, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+    nav[role='navigation'] li.light-blue-gradient:hover, nav[role='navigation'] li.light-blue-gradient:hover {
+      border-right-color: #a7d4fb; }
+    /* line 141, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+    nav[role='navigation'] li.orange-gradient:hover, nav[role='navigation'] li.orange-gradient:hover {
+      border-right-color: #fa8f4c; }
+    /* line 145, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+    nav[role='navigation'] li.blue-gradient:hover, nav[role='navigation'] li.blue-gradient:hover {
+      border-right-color: #1e65d8; }
+    /* line 149, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+    nav[role='navigation'] li.medium-blue-gradient:hover, nav[role='navigation'] li.medium-blue-gradient:hover {
+      border-right-color: #1e65d8; }
+  /* line 154, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   nav[role='navigation'] .nav-title {
     top: 30px; }
-  /* line 155, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+  /* line 157, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   nav[role='navigation'] .author {
     margin-top: 10px; }
-  /* line 158, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+  /* line 160, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   nav[role='navigation'] .blog-title {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -899,7 +917,7 @@ nav[role='navigation'] {
     font-weight: bold;
     line-height: 16px;
     font-style: normal; }
-  /* line 164, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+  /* line 166, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   nav[role='navigation'] .go {
     width: 22px;
     height: 22px;
@@ -911,45 +929,45 @@ nav[role='navigation'] {
     bottom: 15px;
     padding: 5px 9px; }
 
-/* line 174, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+/* line 176, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
 li#search {
   width: 276px;
   right: 0;
   z-index: 900; }
-  /* line 180, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+  /* line 182, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   li#search:hover a, li#search:hover a:hover {
     background-image: url("img/search-hover.png"); }
-  /* line 182, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+  /* line 184, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   li#search a {
     width: 60px;
     height: 70px;
     right: 0;
     background: transparent url("img/search.png") center center no-repeat; }
-  /* line 189, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+  /* line 191, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   li#search .nav-desc {
     top: 85px;
     width: 95%; }
-  /* line 190, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+  /* line 192, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   li#search input[type="search"] {
     width: 80%;
     font-size: 12px; }
 
-/* line 193, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+/* line 195, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
 .nav-desc.nav-search input[type="search"] {
   width: 75%;
   margin-left: -40px; }
-/* line 194, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+/* line 196, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
 .nav-desc.nav-search .go {
   position: absolute;
   right: 10px;
   bottom: 40px; }
 
 /* Small menu */
-/* line 208, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+/* line 210, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
 .menu-toggle {
   cursor: pointer; }
 
-/* line 211, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+/* line 213, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
 .main-small-navigation .menu {
   display: none; }
 
@@ -1007,7 +1025,7 @@ footer {
   color: white; }
 
 /* line 49, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
-.red-gradient, .ribbon {
+.red-gradient, nav[role='navigation'] li.red-gradient:hover, .ribbon {
   background-color: #d51f1b;
   color: white;
   background-image: -ms-linear-gradient(top, #d51f1b, #9c0c0a);
@@ -1020,7 +1038,7 @@ footer {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d51f1b', endColorstr='#9c0c0a', GradientType=0); }
 
 /* line 54, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
-.light-red-gradient, nav[role='navigation'] li.red-gradient:hover, nav[role='navigation'] li.ribbon:hover, nav[role='navigation'] li.light-red-gradient:hover {
+.light-red-gradient, nav[role='navigation'] li.light-red-gradient:hover {
   background-color: #fe4e4c;
   color: white;
   background-image: -ms-linear-gradient(top, #fe4e4c, #c91211);
@@ -1110,7 +1128,7 @@ footer {
   .btn:hover {
     text-decoration: none; }
   /* line 97, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
-  .btn.red-gradient:hover, .btn.ribbon:hover, .btn.red-gradient.hover, .btn.hover.ribbon {
+  .btn.red-gradient:hover, nav[role='navigation'] li.btn.red-gradient:hover, .btn.ribbon:hover, .btn.red-gradient.hover, nav[role='navigation'] li.btn.hover.red-gradient:hover, .btn.hover.ribbon {
     background-color: #d51f1b;
     color: white;
     background-image: -ms-linear-gradient(top, #be1c18, #540605);
@@ -1122,7 +1140,7 @@ footer {
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#be1c18', endColorstr='#540605', GradientType=0); }
   /* line 102, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
-  .btn.red-gradient:active, .btn.ribbon:active {
+  .btn.red-gradient:active, nav[role='navigation'] li.btn.red-gradient:active:hover, .btn.ribbon:active {
     background-image: -ms-linear-gradient(top, #540605, #be1c18);
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#540605), to(#be1c18));
     background-image: -webkit-linear-gradient(top, #540605, #be1c18);
@@ -1132,7 +1150,7 @@ footer {
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#540605', endColorstr='#be1c18', GradientType=0); }
   /* line 107, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
-  .btn.light-red-gradient:hover, nav[role='navigation'] li.btn.red-gradient:hover, nav[role='navigation'] li.btn.ribbon:hover, nav[role='navigation'] li.btn.light-red-gradient:hover, .btn.light-red-gradient.light-red-gradient.hover, nav[role='navigation'] li.btn.hover.red-gradient:hover, nav[role='navigation'] li.btn.hover.ribbon:hover, nav[role='navigation'] li.btn.hover.light-red-gradient:hover {
+  .btn.light-red-gradient:hover, nav[role='navigation'] li.btn.light-red-gradient:hover, .btn.light-red-gradient.light-red-gradient.hover, nav[role='navigation'] li.btn.hover.light-red-gradient:hover {
     background-color: #fe4e4c;
     color: white;
     background-image: -ms-linear-gradient(top, #fe1c19, #6b0a09);
@@ -1144,7 +1162,7 @@ footer {
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fe1c19', endColorstr='#6b0a09', GradientType=0); }
   /* line 112, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
-  .btn.light-red-gradient:active, nav[role='navigation'] li.btn.red-gradient:active:hover, nav[role='navigation'] li.btn.ribbon:active:hover, nav[role='navigation'] li.btn.light-red-gradient:active:hover {
+  .btn.light-red-gradient:active, nav[role='navigation'] li.btn.light-red-gradient:active:hover {
     background-image: -ms-linear-gradient(top, #6b0a09, #fe1c19);
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6b0a09), to(#fe1c19));
     background-image: -webkit-linear-gradient(top, #6b0a09, #fe1c19);

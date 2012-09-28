@@ -72,7 +72,6 @@ nav[role='navigation'] {
     white-space: nowrap;
     width:195px;
     z-index:100;
-    border-right:1px solid #dddddd;
     background-color:$white;
     &:hover {
       background-color:transparent;
@@ -109,6 +108,7 @@ nav[role='navigation'] {
     position:relative;
     top:0;
     vertical-align:top;
+    border-right:1px solid #dddddd;
     &.gradient {
       @include gradient-reset-filter();
       background-image:none;
@@ -126,27 +126,29 @@ nav[role='navigation'] {
         z-index:1001;
       }
     }
-    
     &.red-gradient:hover {
-      @extend .light-red-gradient;
+      @extend .red-gradient;
+      border-right-color:$redLight;
     }
     &.light-red-gradient:hover {
       @extend .light-red-gradient;
+      border-right-color:$redLight;
     }
     &.light-blue-gradient:hover {
       @extend .light-blue-gradient;
+      border-right-color:$blueLighter;
     }
     &.orange-gradient:hover {
       @extend .orange-gradient;
-    }
-    &.light-blue-gradient:hover {
-      @extend .light-blue-gradient;
+      border-right-color:$orange;
     }
     &.blue-gradient:hover {
       @extend .blue-gradient;
+      border-right-color:$blue;
     }
     &.medium-blue-gradient:hover {
       @extend .medium-blue-gradient;
+      border-right-color:$blue;
     }
   }
   .nav-title {
