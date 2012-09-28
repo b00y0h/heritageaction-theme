@@ -602,7 +602,7 @@ background:transparent url('img/striped-bg.png');
 
 h1 {
   font-family:$header-font-family;
-  padding-bottom:40px;
+  padding-bottom:32px;
 }
 
 
@@ -709,7 +709,12 @@ h1 {
     }
   }
 }
-
+.page {
+  #hero {
+    padding:40px 0;
+    background-color: #efefef;
+  }
+}
 .donate {
   #about_us+.col1 {padding-right:6em;}
   #hero {

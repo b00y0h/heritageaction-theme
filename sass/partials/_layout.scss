@@ -33,10 +33,6 @@
     @extend .float-left;
   }
 }
-#main {
-  padding-top:25px;
-	position:relative;
-}
 #main-inner {
   @extend .clearfix;
   .home & {
@@ -60,6 +56,10 @@
       @include column(4,8);
     }
   }
+  #main {
+    padding-top:25px;
+  	position:relative;
+  }
 }
 
 .page-template {
@@ -73,17 +73,15 @@
   }
 }
 
-.donate, .contact {
-  .menu-main-nav-container {@extend .display-none;}
+.page {
   #main {padding-top:0;}
-  #hero {padding-top:25px;}
   #content {
     .col1, .col2 {
       @extend .column6;
     }
   }
 }
-
+.donate .menu-main-nav-container {@extend .display-none;}
 .blog {
   #main {
     @extend .max-width;

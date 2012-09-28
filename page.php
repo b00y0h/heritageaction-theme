@@ -13,6 +13,12 @@
 
 get_header(); ?>
 
+		    <div id="hero">
+          <div class="inner clearfix">
+            <h1 class="entry-title"><?php the_title(); ?></h1>
+            <p class='page-excerpt'><?php echo get_post_meta($post->ID, 'page_excerpt', true); ?></p>
+          </div>
+        </div>
 		<div id="primary" class="content-area">
 			<div id="content" class="site-content" role="main">
 
@@ -27,5 +33,4 @@ get_header(); ?>
 			</div><!-- #content .site-content -->
 		</div><!-- #primary .content-area -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

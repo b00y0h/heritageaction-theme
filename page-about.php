@@ -210,8 +210,5 @@ get_header(); ?>
     <div id="signup-scroll-target"></div>
     
     <?php heritageaction_signup_section(); ?>
-    
-    
-    
    
 <?php get_footer(); ?>
