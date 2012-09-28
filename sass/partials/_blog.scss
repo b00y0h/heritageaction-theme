@@ -30,6 +30,9 @@
   }
   #secondary {
     @extend .position-relative;
-    background-color:$grayDark;
+    .video {
+      margin:1.5em 0;
+    }
+    p {color:$white;@include font-shorthand(12px, normal, 16px);}
   }
 }

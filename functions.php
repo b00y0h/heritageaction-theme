@@ -97,14 +97,23 @@ function my_post_image_html( $html, $post_id, $post_image_id ) {
  * @since Heritage Action 1.0
  */
 function heritageaction_widgets_init() {
-	register_sidebar( array(
-		'name' => __( 'Sidebar', 'heritageaction' ),
-		'id' => 'sidebar-1',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget' => '</aside>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
-	) );
+  // register_sidebar( array(
+  //   'name' => __( 'Sidebar', 'heritageaction' ),
+  //   'id' => 'sidebar-1',
+  //   'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+  //   'after_widget' => '</aside>',
+  //   'before_title' => '<h3 class="widget-title">',
+  //   'after_title' => '</h3>',
+  // ) );
+
+  register_sidebar( array(
+    'name' => __( 'Blog Sidebar', 'heritageaction' ),
+    'id' => 'sidebar-2',
+    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+    'after_widget' => '</aside>',
+    'before_title' => '<h3 class="widget-title">',
+    'after_title' => '</h3>',
+  ) );
 }
 add_action( 'widgets_init', 'heritageaction_widgets_init' );
 

@@ -7,37 +7,7 @@
  */
 ?>
 		<div id="secondary" class="widget-area shadow-curl-right" role="complementary">
-		  <header id="subscribe" class="widget-main-header">
-		    <a href="#">
-		      <h2>Subscribe
-		        <span class="via">via Feedburner</span>
-		      </h2>
-		      </a>
-		    </header>
-		    
-		    <aside id="widget-search" class="widget">
-		      <?php get_search_form(); ?>
-		    </aside>
-		    
-		    <aside id="widget-about-us" class="widget">
-		      <h3>About Us</h3>
-		      <div class="video shadow">
-		        <a href="http://www.youtube.com/watch?v=xwLCw1oKQcg" rel="prettyPhoto">
-            <img class="size-full" src="<?php echo get_bloginfo('template_url'); ?>/import-image/video-slug.jpg" alt="About Us">
-            </a>
-            <div class="overlay"></div>
-          </div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <div class="social">
-            <img src="<?php echo get_bloginfo('template_url'); ?>/img/fb-recommend.gif" alt="Fb Recommend"> <img src="<?php echo get_bloginfo('template_url'); ?>/img/fb-send.gif" alt="Fb Send"> <img src="<?php echo get_bloginfo('template_url'); ?>/img/twitter.gif" alt="Twitter">
-          </div>
-          
-		    </aside>
-		    
-		    <aside id="disqus-comments" class="widget">
-			    <img style="width:100%" src="<?php echo get_bloginfo('template_url'); ?>/img/disqus-plugin-widget.gif" alt="Disqus Plugin Widget">
-			  </aside>
-			  
+		  <header id="the-forge" class="widget-main-header"><h2>The Forge</h2></header>
 			  
 			  <aside id="featured-posts" class="widget">
 			    <h3 class='widget-title'>Featured Posts</h3>
@@ -90,6 +60,9 @@
                 
                 $recent_posts = wp_get_recent_posts( $args );
                 
+                
+                
+                
                 foreach( $recent_posts as $recent ){
                   $user_info = get_userdata($recent["post_author"]);
                   $first = $user_info->first_name;
@@ -100,10 +73,7 @@
               	}
                 ?>
           </ul>
-			  </aside>
-			  
-			  <aside id="facebook-page-wall" class="widget">
-			    <img style="width:100%" src="<?php echo get_bloginfo('template_url'); ?>/img/facebook-plugin-widget.gif" alt="Facebook Plugin Widget">
+          <a href='#' class='btn rounded gradient orange-gradient' id="read-the-forge">Read The Forge</a>
 			  </aside>
 			  
 			  <aside id='latest-tweets'>
