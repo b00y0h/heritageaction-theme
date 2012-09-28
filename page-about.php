@@ -209,28 +209,7 @@ get_header(); ?>
     </div> <!-- #main-inner -->
     <div id="signup-scroll-target"></div>
     
-    <section id="sign-up" class="fixed">
-      <div id="sign-up-tab" class="gradient medium-blue-gradient">Sign Up</div>
-      <div class="centered max-width">
-        <form action="front-page_submit" method="get" accept-charset="utf-8">
-          <input type="text" name="ARRAY[first_name]" id="first_name" placeholder="First Name">
-          <input type="text" name="ARRAY[email_address]" id="email_address" placeholder="Email Address">
-          <input type="text" name="ARRAY[zip_code]" id="zip_code" placeholder="Zip Code">
-          <a href="#" class="btn rounded gradient medium-blue-gradient">Sign Up</a>
-          <div id="interest">
-              <div class="control-group question">
-                <label class="control-label"><?php _e("I'm interested in:", 'heritageaction'); ?></label>
-                <div class="controls input choice">
-                  <label class="checkbox inline"><input type="checkbox" checked="checked" name="ARRAY[email_interest]" value=""><?php _e('Action Alerts', 'heritageaction'); ?></label>
-                  <label class="checkbox inline"><input type="checkbox" name="ARRAY[email_interest]" value=""><?php _e('Why We Fight', 'heritageaction'); ?></label>
-                  <label class="checkbox inline"><input type="checkbox" name="ARRAY[email_interest]" value=""><?php _e('Insider', 'heritageaction'); ?></label>
-                </div>
-              </div>
-              <!-- ^^^^^ press updates ^^^^^^ -->
-          </div>
-        </form>
-      </div>
-    </section>
+    <?php heritageaction_signup_section(); ?>
     
     
     
