@@ -81,6 +81,11 @@ footer {
   color:$white;
   @include gradient-vertical(#727272,#555555);
 }
+.light-gray-gradient {
+  background-color:#dfdfdf;
+  color:$white;
+  @include gradient-vertical(#ededed,#d1d1d1);
+}
 
 .btn {
   @include size(37px, auto);

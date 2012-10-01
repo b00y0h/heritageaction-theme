@@ -70,3 +70,37 @@
     }
   }
 }
+#blog-sidebar-header {
+  @include font-shorthand(12px, normal, 25px);
+  @extend .pagination-centered;
+  font-family:Arial, sans-serif;
+  margin-bottom:30px;
+  aside {
+    @extend .light-gray-gradient;
+    @extend .shadow;
+    border-bottom:1px solid #bdbdbe;
+    height:25px;
+    margin-bottom:0;
+  }
+  a {
+    text-transform:capitalize;
+  }
+  h3 {
+    @include font-shorthand(12px, normal, 25px);
+    @extend .display-inline;
+    @extend .uppercase;
+  }
+  a, h3 {
+    padding-right:12px;
+  }
+}
+
+#the-forge-header {
+  line-height:50px;
+  span {
+    @include size(29px, 287px);
+    @include hide-text;
+    @extend .display-inline-block;
+    background:  url("img/the-forge-blog-logo.png") no-repeat;
+	}
+}

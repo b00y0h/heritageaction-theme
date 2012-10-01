@@ -124,4 +124,12 @@
 	 </nav><!-- .site-navigation .main-navigation -->
  </header><!-- #masthead .site-header -->
 
+ <?php if ( is_home() ) :
+ 
+ get_sidebar('blog');
+  
+ endif; ?>
+
+
+
  <div id="main" class="site-main">

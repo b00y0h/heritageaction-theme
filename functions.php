@@ -89,8 +89,8 @@ function my_neat_body_class( $classes ) {
  */
 function heritageaction_widgets_init() {
   register_sidebar( array(
-    'name' => __( 'Blog Sidebar', 'heritageaction' ),
-    'id' => 'sidebar-2',
+    'name' => __( 'Blog Sidebar/Header', 'heritageaction' ),
+    'id' => 'sidebar-1',
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     'after_widget' => '</aside>',
     'before_title' => '<h3 class="widget-title">',
