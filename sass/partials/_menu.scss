@@ -144,7 +144,7 @@ nav[role='navigation'] {
     }
     &.blue-gradient:hover {
       @extend .blue-gradient;
-      border-right-color:$blue;
+      border-right-color:$blueDarker;
     }
     &.medium-blue-gradient:hover {
       @extend .medium-blue-gradient;
