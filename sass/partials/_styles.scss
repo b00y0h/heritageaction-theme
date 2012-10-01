@@ -347,17 +347,6 @@ background:transparent url('img/striped-bg.png');
 }
 
 
-#hero {
-  position:relative;
-  margin-bottom:2em;
-  .diag-stripes {
-    height:185px;
-    width:100%;
-    position:absolute;
-    bottom:-155px;
-  }
-}
-
 // WIDGETS
 .widgets {
   @extend .shadow;
@@ -615,12 +604,6 @@ h1 {
 // = Pages =
 // =========
 .page-template {
-  #hero {
-    @include box-shadow(0 2px 5px rgba(0,0,0,.25));
-    padding-bottom:2em;
-    margin-bottom:0;
-    @extend .clearfix;
-  }
   &.page-template-page-about-php #main-inner {
     background:#eff0f0 url('img/bg-capital-center.jpg') center bottom no-repeat;
     padding-top:2em;
@@ -714,18 +697,49 @@ h1 {
     }
   }
 }
-.page {
-  #hero {
+
+// ================
+// = Hero Section =
+// ================
+
+#hero {
+  position:relative;
+  margin-bottom:2em;
+  .diag-stripes {
+    height:185px;
+    width:100%;
+    position:absolute;
+    bottom:-155px;
+  }
+  .page-template & {
+      @include box-shadow(0 2px 5px rgba(0,0,0,.25));
+      padding-bottom:2em;
+      margin-bottom:0;
+      @extend .clearfix;
+  }
+  .page-template-default & { padding-top:40px; }
+  .page & {
     background-color: #efefef;
     margin-bottom:55px;
   }
-}
-.donate {
-  #about_us+.col1 {padding-right:6em;}
-  #hero {
+  .home & {
+    padding-top:0;
+  }
+  .donate & {
     padding-bottom:60px;
     background: #efefef url('img/donate-bg.png') no-repeat center bottom;
   }
+  .contact & {
+    margin-bottom:0;
+    padding-bottom:40px;
+    background-color: #efefef;
+    h1 + p {padding-bottom:$base-line-height;border-bottom:1px dashed $grayLight;}
+  }
+}
+
+
+.donate {
+  #about_us+.col1 {padding-right:6em;}
   #main-inner {
     margin:-4em 0 4em 0;
   input[type=text],
@@ -781,12 +795,6 @@ h1 {
 }
 
 .contact {
-  #hero {
-    margin-bottom:0;
-    padding-bottom:40px;
-    background-color: #efefef;
-    h1 + p {padding-bottom:$base-line-height;border-bottom:1px dashed $grayLight;}
-  }
   #contact_us_message {
     height:225px;
   }
