@@ -419,8 +419,8 @@ background:transparent url('img/striped-bg.png');
 }
 
 .home {
-  #main {
-    background:#f3f3f3 url('img/bg-capital-left.jpg') left center no-repeat; 
+  #main-outer {
+    background:#f3f3f3 url('img/bg-capital-left.jpg') left bottom no-repeat; 
   }
   #black-bg {
     @include size(377px,100%);

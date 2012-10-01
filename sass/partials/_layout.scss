@@ -33,12 +33,6 @@
     @extend .float-left;
   }
 }
-#main-inner {
-  @extend .clearfix;
-  .home & {
-    margin-bottom:80px;
-  }
-}
 .row {@include row();}
 .home {
   #primary {
@@ -59,6 +53,13 @@
   #main {
     padding-top:25px;
   	position:relative;
+  }
+  #main-inner {
+    @extend .clearfix;
+    padding-bottom:80px;
+  }
+  #main-outer {
+    @extend .clearfix;
   }
 }
 

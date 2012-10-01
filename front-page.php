@@ -11,6 +11,7 @@
  */
 
 get_header(); ?>
+<div id="main-outer">
    <div id="main-inner">
 		<div id="primary" class="content-area">
 		    <div id="hero">
@@ -106,6 +107,8 @@ get_header(); ?>
     
     </div> <!-- #main-inner -->
     
+    </div> <!-- #main-outer -->
+
     <div id="black-bg"></div>
     
     <?php heritageaction_signup_section(); ?>
