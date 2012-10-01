@@ -128,22 +128,22 @@ function heritageaction_content_navlist( $id, $scope = 2 ) {
 
 
     // ANDRE: can you make this find the first page and the last <li> find the last page?
-  	echo '<li><a href="' . get_bloginfo( 'home' ) . '/blog/page/' . $start . '">&lt;</a></li>';
+  	echo '<li><a href="' . get_bloginfo( 'url' ) . '/blog/page/' . $start . '">&lt;</a></li>';
 
   	foreach( $pagesToLinkTo as $page ) {
   		if( $page - $prevPage > 1 ) // skipped a few pages
   		echo '<li><span class="page-numbers dots">&hellip;</span></li>'; // add a spacer
       if ($curPage == $page) {
-    		echo '<li class="active"><a href="' . get_bloginfo( 'home' ) . '/blog/page/' . $page . '">' . $page . '</a></li>';      
+    		echo '<li class="active"><a href="' . get_bloginfo( 'url' ) . '/blog/page/' . $page . '">' . $page . '</a></li>';      
       } else {
-    		echo '<li><a href="' . get_bloginfo( 'home' ) . '/blog/page/' . $page . '">' . $page . '</a></li>';
+    		echo '<li><a href="' . get_bloginfo( 'url' ) . '/blog/page/' . $page . '">' . $page . '</a></li>';
     }
   		$prevPage = $page;
 
   	}
 
 
-  	echo '<li><a href="' . get_bloginfo( 'home' ) . '/blog/page/' . $end . '">&gt;</a></li>';
+  	echo '<li><a href="' . get_bloginfo( 'url' ) . '/blog/page/' . $end . '">&gt;</a></li>';
 
   	echo '</ul>';
     echo '</div>';
