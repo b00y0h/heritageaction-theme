@@ -1866,8 +1866,8 @@ h1 {
 
 /* line 718, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
 .page #hero {
-  padding: 40px 0;
-  background-color: #efefef; }
+  background-color: #efefef;
+  margin-bottom: 55px; }
 
 /* line 724, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
 .donate #about_us + .col1 {
