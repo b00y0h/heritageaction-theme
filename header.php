@@ -60,6 +60,14 @@
 
 <?php wp_head(); ?>
 
+<!-- to be added to the stylesheet -->
+<style type="text/css" media="screen">
+  .page #hero{
+    padding:0;
+    margin-bottom:55px;
+  }
+</style>
+
 </head>
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site wrap">
