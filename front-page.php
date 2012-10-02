@@ -40,7 +40,6 @@ get_header(); ?>
               </fieldset>
                 <!-- ^^^^^ house-senate switcher ^^^^^^ -->
 
-              </div> <!-- .switcher -->
               
               <ul class="items items_house">
                 <?php
