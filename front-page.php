@@ -39,32 +39,62 @@ get_header(); ?>
 
               </div> <!-- .switcher -->
               
-              <ul class="items">
-                <li><a href="#">
-                  <span class='post-title'>CO-SPONSORSHIP of the GSE Bailout Elimination and Taxpayer Protection Act.</span></a>
-                  <span class='excerpt'>This is a post excerpt that explains the key vote in brief.. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>                  
+              <ul class="items items_house">
+                <?php
+    			      $cat_id = 15;
+    			      $args = array(
+                    'numberposts' => 5,
+                    'offset' => 0,
+                    'category' => $cat_id,
+                    'orderby' => 'post_date',
+                    'order' => 'DESC',
+                    'post_type' => 'post'); 
+                    
+                $house_key_votes = wp_get_recent_posts( $args );
+                foreach( $house_key_votes as $house_key_vote ): 
+                   $post_id = $house_key_vote['ID'];
+                   $post = get_post($post_id);
+                   setup_postdata($post);
+                ?>
+                
+              	<li class='<?php echo get_post_meta($post_id,"key_vote_type",true); ?>'><a href="<?php the_permalink(); ?>">
+                  <span class='post-title'><?php the_title(); ?></span></a>
+                  <span class='excerpt'><?php echo mb_strimwidth(get_the_excerpt(),0,80,'[...]'); ?></span>                  
                 </li>
-                <li><a href="#">
-                  <span class='post-title'>CO-SPONSORSHIP of the Defending America’s Affordable Energy Act.</span></a>
-                  <span class='excerpt'>This is a post excerpt that explains the key vote in brief.. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>                  
+                
+              	<?php wp_reset_postdata(); endforeach; ?>
+                
+              </ul>
+
+              <ul class="items items_senate">
+                <?php
+    			      $cat_id = 16;
+    			      $args = array(
+                    'numberposts' => 5,
+                    'offset' => 0,
+                    'category' => $cat_id,
+                    'orderby' => 'post_date',
+                    'order' => 'DESC',
+                    'post_type' => 'post'); 
+                    
+                $house_key_votes = wp_get_recent_posts( $args );
+                foreach( $house_key_votes as $house_key_vote ): 
+                   $post_id = $house_key_vote['ID'];
+                   $post = get_post($post_id);
+                   setup_postdata($post);
+                ?>
+                
+              	<li class='<?php echo get_post_meta($post_id,"key_vote_type",true); ?>'><a href="<?php the_permalink(); ?>">
+                  <span class='post-title'><?php the_title(); ?></span></a>
+                  <span class='excerpt'><?php echo mb_strimwidth(get_the_excerpt(),0,80,'[...]'); ?></span>                  
                 </li>
-                <li class='yes'><a href="#">
-                  <span class='post-title'>&ldquo;YES&rdquo; on the Ryan Budget.</span></a>
-                  <span class='excerpt'>This is a post excerpt that explains the key vote in brief.. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>                  
-                </li>
-                <li class='no'><a href="#">
-                  <span class='post-title'>&ldquo;NO&rdquo; on something for sure.</span></a>
-                  <span class='excerpt'>This is a post excerpt that explains the key vote in brief.. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span>                  
-                </li>
+                
+              	<?php wp_reset_postdata(); endforeach; ?>
+            
               </ul>
               
               
-              <div class="pagination pagination-centered blue">
-                <ul>
-                  <li><a href="#">&lt;</a></li>
-                  <li><a href="#">&gt;</a></li>
-               </ul>
-              </div>
+              <a id="more-key-votes-link" href="/category/house-key-votes/" class="btn rounded gradient medium-blue-gradient">More Key Votes</a>
               
               
       			</div> <!-- #key-votes -->
