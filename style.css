@@ -546,7 +546,7 @@ dl dt {
   text-decoration: underline; }
 
 /* line 86, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-typography.scss */
-.uppercase, h6, nav[role='navigation'] a, .btn, .post-meta, #secondary .meta, .team-info .title, .widgets .title, #secondary h3, #secondary .post-title, #sign-up form .inline, #sign-up-tab, .form-horizontal label, .slider-title .line2, .blog article h1, .blog #subscribe h2, #blog-sidebar-header h3 {
+.uppercase, h6, nav[role='navigation'] a, .btn, .post-meta, #secondary .meta, .team-info .title, .widgets .title, #secondary h3, #secondary .post-title, #sign-up form .inline, #sign-up-tab, .switch label, .form-horizontal label, .slider-title .line2, .blog article h1, .blog #subscribe h2, #blog-sidebar-header h3 {
   text-transform: uppercase; }
 
 /* line 92, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-typography.scss */
@@ -1282,7 +1282,7 @@ footer {
     box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.5); }
 
 /* line 168, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
-.rounded, nav[role='navigation'] .go, .blog #secondary #searchform input {
+.rounded, nav[role='navigation'] .go, .switch legend:after, .switch .switch-button, .blog #secondary #searchform input {
   -webkit-border-radius: 37px;
   -moz-border-radius: 37px;
   border-radius: 37px; }
@@ -1376,7 +1376,7 @@ footer {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35); }
 
 /* line 245, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
-.uppercase, h6, nav[role='navigation'] a, .btn, .post-meta, #secondary .meta, .team-info .title, .widgets .title, #secondary h3, #secondary .post-title, #sign-up form .inline, #sign-up-tab, .form-horizontal label, .slider-title .line2, .blog article h1, .blog #subscribe h2, #blog-sidebar-header h3 {
+.uppercase, h6, nav[role='navigation'] a, .btn, .post-meta, #secondary .meta, .team-info .title, .widgets .title, #secondary h3, #secondary .post-title, #sign-up form .inline, #sign-up-tab, .switch label, .form-horizontal label, .slider-title .line2, .blog article h1, .blog #subscribe h2, #blog-sidebar-header h3 {
   text-transform: uppercase; }
 
 /* line 249, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
@@ -2021,6 +2021,81 @@ h1 {
   display: block;
   margin-top: 10px;
   width: 130px; }
+
+/* Switch */
+/* line 868, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+.switch {
+  position: relative;
+  border: 0;
+  padding: 0;
+  margin: 0 auto 6em;
+  width: 90px; }
+  /* line 875, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+  .switch legend:after {
+    background-image: -ms-linear-gradient(top, #eeeeee, #fefefe);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#eeeeee), to(#fefefe));
+    background-image: -webkit-linear-gradient(top, #eeeeee, #fefefe);
+    background-image: -o-linear-gradient(top, #eeeeee, #fefefe);
+    background-image: -moz-linear-gradient(top, #eeeeee, #fefefe);
+    background-image: linear-gradient(top, #eeeeee, #fefefe);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeeeee', endColorstr='#fefefe', GradientType=0);
+    border: 1px solid #e5e5e5;
+    content: '';
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    width: 100%;
+    height: 20px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2); }
+  /* line 891, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+  .switch input {
+    position: absolute;
+    opacity: 0; }
+    /* line 894, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+    .switch input:checked + label {
+      font-weight: bold;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); }
+    /* line 898, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+    .switch input :focus + label {
+      outline: 1px dotted #fff; }
+    /* line 901, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+    .switch input:last-of-type:checked ~ .switch-button {
+      left: 50%; }
+  /* line 905, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+  .switch label {
+    position: absolute;
+    color: #b7b7b7;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    z-index: 2;
+    top: 0px;
+    padding-top: 25px;
+    width: 60%; }
+    /* line 914, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+    .switch label:last-of-type {
+      left: 60%; }
+  /* line 918, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+  .switch .switch-button {
+    clear: both;
+    position: absolute;
+    top: 1px;
+    left: 0;
+    z-index: 1;
+    width: 50%;
+    height: 19px;
+    background-image: -ms-linear-gradient(top, white, #f1f1f1);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(white), to(#f1f1f1));
+    background-image: -webkit-linear-gradient(top, white, #f1f1f1);
+    background-image: -o-linear-gradient(top, white, #f1f1f1);
+    background-image: -moz-linear-gradient(top, white, #f1f1f1);
+    background-image: linear-gradient(top, white, #f1f1f1);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='white', endColorstr='#f1f1f1', GradientType=0);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.27);
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out; }
 
 /* line 6, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_forms.scss */
 label,
