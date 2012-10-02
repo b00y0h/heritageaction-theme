@@ -41,11 +41,10 @@ get_header(); ?>
               
               <ul class="items items_house">
                 <?php
-    			      $cat_id = 15;
     			      $args = array(
-                    'numberposts' => 5,
+                    'numberposts' => 4,
                     'offset' => 0,
-                    'category' => $cat_id,
+                    'category' => 15,
                     'orderby' => 'post_date',
                     'order' => 'DESC',
                     'post_type' => 'post'); 
@@ -68,11 +67,10 @@ get_header(); ?>
 
               <ul class="items items_senate">
                 <?php
-    			      $cat_id = 16;
     			      $args = array(
-                    'numberposts' => 5,
+                    'numberposts' => 4,
                     'offset' => 0,
-                    'category' => $cat_id,
+                    'category' => 16,
                     'orderby' => 'post_date',
                     'order' => 'DESC',
                     'post_type' => 'post'); 
@@ -94,7 +92,7 @@ get_header(); ?>
               </ul>
               
               
-              <a id="more-key-votes-link" href="/category/house-key-votes/" class="btn rounded gradient medium-blue-gradient">More Key Votes</a>
+              <a id="more-key-votes-link" href="/category/house-key-votes/" class="btn rounded gradient blue-gradient">More Key Votes</a>
               
               
       			</div> <!-- #key-votes -->
