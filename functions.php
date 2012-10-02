@@ -114,6 +114,9 @@ function heritageaction_scripts() {
 	if ( is_singular() && wp_attachment_is_image() ) {
 		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
+	
+	wp_enqueue_script('jquery-ui-core');
+	wp_enqueue_script( 'jquery-effects-custom', get_template_directory_uri() . '/js/jquery-ui-1.8.24.custom.min.js', array( 'jquery' ), '20121002', true );
 }
 add_action( 'wp_enqueue_scripts', 'heritageaction_scripts' );
 

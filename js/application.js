@@ -24,6 +24,19 @@
 					$('html, body').animate({scrollTop: (height - $(window).height()) + 165},'fast');
 				});
 			}
+			
+			$(".dashboardZipGo").click(function(){
+        actionDashboardGo();
+      })
+      
+      $(document).keypress(function(e){
+        if($(".dashboardZipSearch").is(":focus")){
+          code = (e.keyCode ? e.keyCode : e.which);
+          if (code == 13){
+            actionDashboardGo();
+          } 
+        }
+      });
 
 
 			$("#listen-live").click(function(){
@@ -94,3 +107,21 @@ $('.search-input').focusout(function(){
 
 		});
 	})(jQuery);
+	
+	function actionDashboardGo(){
+		 var context;
+		 if(false){
+			
+		 }
+		 else{
+			context = jQuery("#action-dashboard");
+		 }
+			if(jQuery(".dashboardZipSearch", context).val() != '' && jQuery(".dashboardZipSearch", context).val() != "Enter your zip"){
+	       window.location = '/congress/' + jQuery(".dashboardZipSearch", context).val();
+	    }
+	    else{
+	       jQuery(".dashboardZipSearch", context).effect("shake", { times:3 }, 250);
+	    }
+	
+     
+   }

@@ -90,7 +90,7 @@ get_header(); ?>
               <!-- enter your zip -->
               <div class="control-group question">
                 <div class="controls input">
-                  <input type="search" name="ARRAY[enter_your_zip]" id="enter_your_zip" placeholder="Enter your zip">
+                  <input type="search" name="" id="enter_your_zip" placeholder="Enter your zip" class="dashboardZipSearch">
                 </div>
               </div>
               <!-- ^^^^^ enter your zip ^^^^^^ -->

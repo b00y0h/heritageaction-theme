@@ -87,7 +87,7 @@
 													 <span class="nav-title">Dashboard</span>
 											 </a>
 											 <span class="nav-desc nav-search">
-											    <input type="search" name="search zip" value="" placeholder="Enter your zip"><div class="go gradient red-gradient"><div class="arrow-right"></div></div>
+											    <input id="headerNavDashboardSearch" type="search" name="search zip" value="" placeholder="Enter your zip" class="dashboardZipSearch"><div class="go gradient red-gradient dashboardZipGo"><div class="arrow-right"></div></div>
 											 </span>
 									 </li>
 									 <li class="gradient orange-gradient the-forge-blog">
