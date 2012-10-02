@@ -116,3 +116,38 @@ function heritageaction_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'heritageaction_scripts' );
+
+
+
+// [amount] shortcode
+// Returns numerical contents of variable "amt" from a querystring
+// e.g. returns "75" when url contains ?amt=75
+function amount_shortcode( $atts ){
+  if (isset($_GET['amt']) && trim($_GET['amt']) != '') { // Variable exists
+  	$amt = str_replace($RemoveText,'',trim($_GET['amt']));
+  	if (!is_numeric($amt)) { // If not numeric, just set to 0.
+  		$amt = 0;
+  	} 
+		else {
+  		$amt = number_format($amt,2,'.','');
+  	}
+  } 
+	else {
+  	$amt = 0;
+  }
+
+  return $amt;
+}
+add_shortcode( 'amount', 'amount_shortcode' );
+
+function gf_count( $attrs ){
+  $output = '';
+  if(class_exists('RGFormsModel')){
+    $summary = RGFormsModel::get_form_counts($attrs['formid']);
+    if($summary){
+      $output = number_format($summary['total']+2);
+    }
+  }
+  return $output;
+}
+add_shortcode( 'gf_count', 'gf_count');
