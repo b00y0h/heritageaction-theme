@@ -28,6 +28,9 @@
   .post-meta {
     font-size:.8em;
   }
+  #search-btn {
+    @extend .display-none;
+  }
   #secondary {
     @extend .position-relative;
     .video {

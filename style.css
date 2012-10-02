@@ -62,7 +62,7 @@ input[type="color"],
   box-sizing: content-box; }
 
 /* line 9, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-misc.scss */
-.display-none, nav[role='navigation'] .nav-desc, .items_senate, .donate .menu-main-nav-container {
+.display-none, nav[role='navigation'] .nav-desc, .items_senate, .donate .menu-main-nav-container, .blog #search-btn {
   display: none; }
 
 /* line 12, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-misc.scss */
@@ -74,7 +74,7 @@ input[type="color"],
   display: inline; }
 
 /* line 18, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-misc.scss */
-.display-inline-block, nav[role='navigation'] li, .footer-navigation li, .site-title a, .made-in-usa, .btn, #sign-up .btn, #sign-up form .inline, .video a, #select-your-donation .btn, .slider-title span, #the-forge-header span {
+.display-inline-block, .menu-main-nav-container #searchsubmit, nav[role='navigation'] li, .footer-navigation li, .site-title a, .made-in-usa, .btn, #sign-up .btn, #sign-up form .inline, .video a, #select-your-donation .btn, .slider-title span, #the-forge-header span {
   display: -moz-inline-box;
   -moz-box-orient: vertical;
   display: inline-block;
@@ -2626,16 +2626,16 @@ input[type="checkbox"] {
 /* line 28, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
 .blog .post-meta, .blog #secondary .meta, #secondary .blog .meta, .blog .team-info .title, .team-info .blog .title {
   font-size: .8em; }
-/* line 33, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+/* line 36, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
 .blog #secondary .video {
   margin: 1.5em 0; }
-/* line 36, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+/* line 39, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
 .blog #secondary p {
   color: white;
   font-size: 12px;
   font-weight: normal;
   line-height: 16px; }
-/* line 39, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+/* line 42, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
 .blog #secondary #searchform input {
   -webkit-box-shadow: inset 0 1px 3px black;
   -moz-box-shadow: inset 0 1px 3px black;
@@ -2645,11 +2645,11 @@ input[type="checkbox"] {
   padding: 1em 2em;
   width: 70%;
   background: #797979 url("img/search-blog.png") 14.5em center no-repeat; }
-/* line 50, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+/* line 53, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
 .blog #subscribe {
   margin: 0 -15px 20px;
   text-align: center; }
-  /* line 54, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+  /* line 57, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
   .blog #subscribe h2 {
     font-size: 20px;
     font-weight: normal;
@@ -2658,7 +2658,7 @@ input[type="checkbox"] {
     font-weight: normal;
     padding-top: .2em;
     background: url("img/rss-cones.png") no-repeat 55px 5px; }
-    /* line 63, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+    /* line 66, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
     .blog #subscribe h2 span {
       font-size: 12px;
       font-weight: normal;
@@ -2667,34 +2667,34 @@ input[type="checkbox"] {
       padding: 1em;
       text-transform: normal; }
 
-/* line 73, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+/* line 76, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
 #blog-sidebar-header {
   font-size: 12px;
   font-weight: normal;
   line-height: 25px;
   font-family: Arial, sans-serif;
   margin-bottom: 30px; }
-  /* line 78, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+  /* line 81, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
   #blog-sidebar-header aside {
     border-bottom: 1px solid #bdbdbe;
     height: 25px;
     margin-bottom: 0; }
-  /* line 85, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+  /* line 88, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
   #blog-sidebar-header a {
     text-transform: capitalize; }
-  /* line 88, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+  /* line 91, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
   #blog-sidebar-header h3 {
     font-size: 12px;
     font-weight: normal;
     line-height: 25px; }
-  /* line 93, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+  /* line 96, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
   #blog-sidebar-header a, #blog-sidebar-header h3 {
     padding-right: 12px; }
 
-/* line 98, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+/* line 101, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
 #the-forge-header {
   line-height: 50px; }
-  /* line 100, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+  /* line 103, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
   #the-forge-header span {
     width: 287px;
     height: 29px;

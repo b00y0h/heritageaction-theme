@@ -109,7 +109,6 @@
 											 <a href="#" id="search-trigger"></a>
 										   <span id="search-form" class="nav-desc">
                          <?php get_search_form(); ?>
-                         <div id="seach-btn" class="go gradient blue-gradient"><div class="arrow-right"></div></div> 
 											 </span>
 									 </li>
 							 </ul>

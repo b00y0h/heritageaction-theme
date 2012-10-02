@@ -175,5 +175,9 @@ object {
 /* Search widget */
 #searchsubmit {
 	display: none;
+	.menu-main-nav-container & {
+	  @extend .display-inline-block;
+	}
 }
+
 
