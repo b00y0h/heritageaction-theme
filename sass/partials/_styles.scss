@@ -881,6 +881,11 @@ h1 {
 	
 }
 
+.items_senate{
+  @extend .display-none;
+}
+
+
 @media only screen {
 .switch {
   width: 90px;

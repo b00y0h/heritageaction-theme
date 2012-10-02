@@ -60,12 +60,6 @@
 
 <?php wp_head(); ?>
 
-<style type="text/css" media="screen">
-  .items_senate{
-    display:none;
-  }
-</style>
-
 </head>
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site wrap">

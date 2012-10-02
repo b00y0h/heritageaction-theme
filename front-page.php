@@ -46,7 +46,7 @@ get_header(); ?>
     			      $args = array(
                     'numberposts' => 4,
                     'offset' => 0,
-                    'category' => 15,
+                    'category' => 'Key Votes: House',
                     'orderby' => 'post_date',
                     'order' => 'DESC',
                     'post_type' => 'post'); 
@@ -72,7 +72,7 @@ get_header(); ?>
     			      $args = array(
                     'numberposts' => 4,
                     'offset' => 0,
-                    'category' => 16,
+                    'category' => 'Key Votes: Senate',
                     'orderby' => 'post_date',
                     'order' => 'DESC',
                     'post_type' => 'post'); 

@@ -62,7 +62,7 @@ input[type="color"],
   box-sizing: content-box; }
 
 /* line 9, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-misc.scss */
-.display-none, nav[role='navigation'] .nav-desc, .donate .menu-main-nav-container {
+.display-none, nav[role='navigation'] .nav-desc, .items_senate, .donate .menu-main-nav-container {
   display: none; }
 
 /* line 12, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-misc.scss */
@@ -2039,10 +2039,10 @@ h1 {
   text-transform: uppercase; }
 
 @media only screen {
-  /* line 885, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+  /* line 890, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
   .switch {
     width: 90px; }
-    /* line 888, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+    /* line 893, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
     .switch legend:after {
       background-image: -ms-linear-gradient(top, #eeeeee, #fefefe);
       background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#eeeeee), to(#fefefe));
@@ -2063,21 +2063,21 @@ h1 {
       width: 100%;
       height: 20px;
       box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.2); }
-    /* line 904, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+    /* line 909, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
     .switch input {
       position: absolute;
       opacity: 0; }
-      /* line 907, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+      /* line 912, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
       .switch input:checked + label {
         font-weight: bold;
         text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); }
-      /* line 911, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+      /* line 916, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
       .switch input :focus + label {
         outline: 1px dotted #fff; }
-      /* line 914, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+      /* line 919, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
       .switch input:last-of-type:checked ~ .switch-button {
         left: 50%; }
-    /* line 918, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+    /* line 923, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
     .switch label {
       float: left;
       display: inline;
@@ -2086,10 +2086,10 @@ h1 {
       top: 0px;
       padding-top: 25px;
       width: 60%; }
-      /* line 926, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+      /* line 931, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
       .switch label:last-of-type {
         left: 60%; }
-    /* line 930, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+    /* line 935, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
     .switch .switch-button {
       clear: both;
       position: absolute;
