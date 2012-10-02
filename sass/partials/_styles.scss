@@ -865,16 +865,29 @@ h1 {
 // = Home page switch =
 // ====================
 /* Switch */
+
 .switch {
-	position: relative;
+  position: relative;
 	border: 0;
 	padding: 0;
 	margin: 0 auto 6em;	
-	width: 90px;
+	width: 150px;
+}
+.switch label {
+  font-family:$alternate-font-family2;
+  display:inline;
+  color:#b7b7b7;
+  text-transform:uppercase;
+	
+}
+
+@media only screen {
+.switch {
+  width: 90px;
 	legend {
   	&:after {
   	  @include gradient-vertical(#eeeeee, #fefefe);
-    	@extend .rounded;
+    	@include border-radius(37px);
   	  border:1px solid #e5e5e5;
     	content: '';
 
@@ -890,7 +903,7 @@ h1 {
   }
   input {
   	position: absolute;
-  	opacity: 0;
+    opacity: 0;
   	&:checked + label {
     	font-weight:bold;
     	text-shadow: 0 1px 0 rgba(255,255,255,0.5);
@@ -903,10 +916,9 @@ h1 {
     }
   }
   label {
-    @extend .uppercase;
+    float:left;
+    display:inline;
   	position: absolute;
-  	color:#b7b7b7;
-  	font-family:$alternate-font-family2;
   	z-index: 2;
   	top:0px;
   	padding-top:25px;
@@ -926,7 +938,7 @@ h1 {
   	height: 19px;
 
   	@include gradient-vertical(#ffffff, #f1f1f1);
-    @extend .rounded;
+    @include border-radius(37px);
 
   	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.27);
 
@@ -937,4 +949,5 @@ h1 {
   	-o-transition: all 0.3s ease-out;
   	transition: all 0.3s ease-out;
   }
+}
 }
