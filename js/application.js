@@ -38,6 +38,10 @@
         }
       });
 
+			$(".dashboardZipSearch").keyup(function(){
+				$(this).css('color','#000');
+			})
+
 
 			$("#listen-live").click(function(){
 				window.open($(this).attr('href'),'Listen_Live!','resizable=yes,scrollbars=yes,width=837,height=470');
@@ -109,9 +113,10 @@ $('.search-input').focusout(function(){
 	})(jQuery);
 	
 	function actionDashboardGo(){
+		 jQuery(".dashboardZipSearch").removeClass('error');
 		 var context;
-		 if(false){
-			
+		 if(jQuery("li.dashboard").css('text-shadow') != 'none'){
+			context = jQuery("li.dashboard");
 		 }
 		 else{
 			context = jQuery("#action-dashboard");
@@ -120,7 +125,9 @@ $('.search-input').focusout(function(){
 	       window.location = '/congress/' + jQuery(".dashboardZipSearch", context).val();
 	    }
 	    else{
-	       jQuery(".dashboardZipSearch", context).effect("shake", { times:3 }, 250);
+	
+	       jQuery(".dashboardZipSearch", context).addClass('error')
+	
 	    }
 	
      
