@@ -26,15 +26,18 @@ get_header(); ?>
                 <h2 class="title">Key Votes</h2>
               </header>
               
-              <div class="switcher">
-                <!-- house-senate switcher -->
-                <div class="control-group question">
-                  <label class="control-label"><?php _e('House', 'heritageaction'); ?></label>
-                  <div class="controls input choice">
-                    <label class="radio inline"><input type="radio" name="ARRAY[house-senate_switcher]" id="house-senate_switcher_yes" value="1"><?php _e('Yes', 'heritageaction'); ?></label>
-                    <label class="radio inline"><input type="radio" name="ARRAY[house-senate_switcher]" id="house-senate_switcher_no" value=""><?php _e('No', 'heritageaction'); ?></label>    
-                  </div>
-                </div>
+
+              <fieldset class="switch">
+              	<legend></legend>
+
+              	<input id="house" name="view" type="radio" checked>
+              	<label for="house">House</label>
+
+              	<input id="senate" name="view" type="radio">	
+              	<label for="senate">Senate</label>
+
+              	<span class="switch-button"></span>
+              </fieldset>
                 <!-- ^^^^^ house-senate switcher ^^^^^^ -->
 
               </div> <!-- .switcher -->
@@ -81,16 +84,15 @@ get_header(); ?>
                    $post = get_post($post_id);
                    setup_postdata($post);
                 ?>
-                
-              	<li class='<?php echo get_post_meta($post_id,"key_vote_type",true); ?>'><a href="<?php the_permalink(); ?>">
-                  <span class='post-title'><?php the_title(); ?></span></a>
-                  <span class='excerpt'><?php echo mb_strimwidth(get_the_excerpt(),0,80,'[...]'); ?></span>                  
-                </li>
-                
-              	<?php wp_reset_postdata(); endforeach; ?>
-            
-              </ul>
-              
+
+                	<li class='<?php echo get_post_meta($post_id,"key_vote_type",true); ?>'><a href="<?php the_permalink(); ?>">
+                    <span class='post-title'><?php the_title(); ?></span></a>
+                    <span class='excerpt'><?php echo mb_strimwidth(get_the_excerpt(),0,80,'[...]'); ?></span>                  
+                  </li>
+
+                	<?php wp_reset_postdata(); endforeach; ?>
+
+                </ul>
               
               <a id="more-key-votes-link" href="/category/house-key-votes/" class="btn rounded gradient blue-gradient">More Key Votes</a>
               
@@ -118,7 +120,7 @@ get_header(); ?>
               <!-- enter your zip -->
               <div class="control-group question">
                 <div class="controls input">
-                  <input type="search" name="" id="enter_your_zip" placeholder="Enter your zip" class="dashboardZipSearch">
+                  <input type="search" name="ARRAY[enter_your_zip]" id="enter_your_zip" placeholder="Enter your zip">
                 </div>
               </div>
               <!-- ^^^^^ enter your zip ^^^^^^ -->
