@@ -154,3 +154,75 @@ function gf_count( $attrs ){
   return $output;
 }
 add_shortcode( 'gf_count', 'gf_count');
+
+function post_key_vote_meta_box( $post ) {
+  // Use nonce for verification
+  wp_nonce_field( plugin_basename( __FILE__ ), 'key_vote_noncename' );  
+    $key_vote_type = get_post_meta($post->ID,'key_vote_type',true);
+    ?>
+    
+    <script type="text/javascript">
+      (function($){
+        $(document).ready(function(){
+          $("#taxonomy-category .selectit input[type=checkbox]").change(function(){
+            
+            if($("#taxonomy-category .selectit:contains('Key Vote') input[type=checkbox]:checked").size() > 1 ||
+              ($("#taxonomy-category .selectit:contains('Key Vote') input[type=checkbox]:checked").size() == 1 && 
+               $(this).attr('checked') =='checked') 
+            ){
+              $("#key_vote_type_meta").show();
+            }
+            else{
+              $("#key_vote_type_meta").hide();
+            }
+            
+          })
+        })
+      })(jQuery);
+    </script> 
+  
+    <style type="text/css" media="screen">
+      #key_vote_type_meta{
+        <?php if ( in_category(array('key-vote', 'key-vote-recap', 'house-key-votes', 'senate-key-votes')) ) : ?>
+        display:block;
+        <?php else: ?>
+        display:none;
+        <?php endif; ?>
+      }
+    </style>
+    
+  <select id="key_vote_type" name="key_vote_type">
+    <option  value="">Co Sponsorship</option>
+    <option <?php echo ($key_vote_type == 'yes') ? 'selected="selected"' : '';  ?> value="yes">Yes</option>
+    <option <?php echo ($key_vote_type == 'no') ? 'selected="selected"' : '';  ?> value="no">No</option>
+  </select>
+<?php ?>
+<?php
+}
+add_action('add_meta_boxes','add_key_vote_metabox');
+function add_key_vote_metabox() {
+    add_meta_box('key_vote_type_meta', __('Key Vote Recommendation'), 'post_key_vote_meta_box', 'post', 'side', 'high');
+}
+add_action( 'save_post', 'ha_save_key_vote_type' );
+function ha_save_key_vote_type( $post_id ) {
+  if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
+      return;
+
+  if ( !wp_verify_nonce( $_POST['key_vote_noncename'], plugin_basename( __FILE__ ) ) )
+      return;
+
+  // Check permissions
+  if ( 'page' == $_POST['post_type'] ) 
+  {
+    if ( !current_user_can( 'edit_page', $post_id ) )
+        return;
+  }
+  else
+  {
+    if ( !current_user_can( 'edit_post', $post_id ) )
+        return;
+  }
+
+  update_post_meta($post_id, 'key_vote_type', $_POST['key_vote_type']);
+}
+
