@@ -3,22 +3,24 @@
 }
 
 footer {
-  background-color:#000;
-  color:#fff;
-  font-size:12px;
-  padding:45px 0;
-  text-align:center;
-  color:$footer-text-color;
-  a {
+  &.site-footer {
+    background-color:#000;
+    color:#fff;
+    font-size:12px;
+    padding:45px 0;
+    text-align:center;
     color:$footer-text-color;
-    padding:0 1em;
-    &:hover {
-      color:white;
+    a {
+      color:$footer-text-color;
+      padding:0 1em;
+      &:hover {
+        color:white;
+      }
     }
-  }
-  address {
-    margin:0 0 1.5em 0;
-    a {text-decoration:underline;}
+    address {
+      margin:0 0 1.5em 0;
+      a {text-decoration:underline;}
+    }
   }
 }
 
