@@ -121,12 +121,12 @@ get_header(); ?>
               <!-- enter your zip -->
               <div class="control-group question">
                 <div class="controls input">
-                  <input type="search" name="ARRAY[enter_your_zip]" id="enter_your_zip" placeholder="Enter your zip">
+                  <input type="search" class="dashboardZipSearch" name="enter_your_zip" id="enter_your_zip" placeholder="Enter your zip">
                 </div>
               </div>
               <!-- ^^^^^ enter your zip ^^^^^^ -->
               
-              <a href="#" class="btn rounded gradient red-gradient">Find your district</a>
+              <a href="#" class="btn rounded gradient red-gradient dashboardZipGo">Find your district</a>
             </div>
             
           </div> <!-- .col2 -->
