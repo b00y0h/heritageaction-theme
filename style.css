@@ -2079,7 +2079,7 @@ h1 {
         outline: 1px dotted #fff; }
       /* line 922, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
       .switch input:last-of-type:checked ~ .switch-button {
-        left: 50%; }
+        left: 55%; }
     /* line 926, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
     .switch label {
       float: left;
