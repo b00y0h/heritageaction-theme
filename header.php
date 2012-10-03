@@ -60,6 +60,12 @@
 
 <?php wp_head(); ?>
 
+
+<style type="text/css" media="screen">
+  .switch input:last-of-type:checked ~ .switch-button {
+        left: 55%; } /* fix for the switcher button not quite going all the way to the right, from line 2082 of style.css, line 922 of sass */
+</style>
+
 </head>
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site wrap">

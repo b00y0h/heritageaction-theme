@@ -43,10 +43,11 @@ get_header(); ?>
               
               <ul class="items items_house">
                 <?php
+                $house = get_term_by('name', 'Key Votes: House', 'category');  
     			      $args = array(
                     'numberposts' => 4,
                     'offset' => 0,
-                    'category' => 'Key Votes: House',
+                    'category' => $house->term_id,
                     'orderby' => 'post_date',
                     'order' => 'DESC',
                     'post_type' => 'post'); 
@@ -69,10 +70,11 @@ get_header(); ?>
 
               <ul class="items items_senate">
                 <?php
+                $senate = get_term_by('name', 'Key Votes: Senate', 'category');              
     			      $args = array(
                     'numberposts' => 4,
                     'offset' => 0,
-                    'category' => 'Key Votes: Senate',
+                    'category' => $senate->term_id,
                     'orderby' => 'post_date',
                     'order' => 'DESC',
                     'post_type' => 'post'); 
