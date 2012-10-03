@@ -90,6 +90,10 @@ nav[role='navigation'] {
       padding-top:40px;
     }
   }
+  &.paging-navigation a:hover {
+    color:$black;
+    text-decoration:underline;
+  }
   ul {position:relative;@extend .no-margin-or-padding;height:$nav-height;overflow:visible;}
   .nav-desc {
     @include font-shorthand(12px, normal, 16px);

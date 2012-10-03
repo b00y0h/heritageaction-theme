@@ -62,7 +62,7 @@ input[type="color"],
   box-sizing: content-box; }
 
 /* line 9, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-misc.scss */
-.display-none, nav[role='navigation'] .nav-desc, .items_senate, .donate .menu-main-nav-container, .blog #search-btn, .archive #search-btn, .search #search-btn, .error404 #search-btn {
+.display-none, nav[role='navigation'] .nav-desc, .items_senate, .donate .menu-main-nav-container, .blog #secondary #search-btn, .archive #secondary #search-btn, .search #secondary #search-btn, .error404 #secondary #search-btn {
   display: none; }
 
 /* line 12, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-misc.scss */
@@ -844,11 +844,15 @@ nav[role='navigation'] {
     nav[role='navigation'] a .nav-desc {
       padding-top: 40px; }
   /* line 93, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+  nav[role='navigation'].paging-navigation a:hover {
+    color: black;
+    text-decoration: underline; }
+  /* line 97, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   nav[role='navigation'] ul {
     position: relative;
     height: 70px;
     overflow: visible; }
-  /* line 94, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+  /* line 98, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   nav[role='navigation'] .nav-desc {
     font-size: 12px;
     font-weight: normal;
@@ -856,7 +860,7 @@ nav[role='navigation'] {
     text-transform: none;
     top: 70px;
     padding: 0 10px; }
-  /* line 103, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+  /* line 107, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   nav[role='navigation'] li {
     height: 70px;
     text-align: center;
@@ -865,49 +869,49 @@ nav[role='navigation'] {
     top: 0;
     vertical-align: top;
     border-right: 1px solid #dddddd; }
-    /* line 112, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+    /* line 116, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
     nav[role='navigation'] li.gradient {
       filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
       background-image: none;
       background-color: transparent; }
-    /* line 117, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+    /* line 121, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
     nav[role='navigation'] li:hover {
       color: white;
       z-index: 1000;
       height: 137px;
       cursor: pointer; }
-      /* line 123, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+      /* line 127, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
       nav[role='navigation'] li:hover a {
         color: white;
         background-color: transparent; }
-      /* line 124, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+      /* line 128, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
       nav[role='navigation'] li:hover > .nav-desc {
         z-index: 1001; }
-    /* line 129, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+    /* line 133, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
     nav[role='navigation'] li.red-gradient:hover, nav[role='navigation'] li.red-gradient:hover, nav[role='navigation'] li.ribbon:hover {
       border-right-color: #fe4e4c; }
-    /* line 133, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+    /* line 137, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
     nav[role='navigation'] li.light-red-gradient:hover, nav[role='navigation'] li.light-red-gradient:hover {
       border-right-color: #fe4e4c; }
-    /* line 137, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+    /* line 141, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
     nav[role='navigation'] li.light-blue-gradient:hover, nav[role='navigation'] li.light-blue-gradient:hover {
       border-right-color: #a7d4fb; }
-    /* line 141, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+    /* line 145, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
     nav[role='navigation'] li.orange-gradient:hover, nav[role='navigation'] li.orange-gradient:hover {
       border-right-color: #fa8f4c; }
-    /* line 145, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+    /* line 149, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
     nav[role='navigation'] li.blue-gradient:hover, nav[role='navigation'] li.blue-gradient:hover, nav[role='navigation'] .blue.pagination ul > li.current:hover, .blue.pagination nav[role='navigation'] ul > li.current:hover {
       border-right-color: #0c4686; }
-    /* line 149, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+    /* line 153, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
     nav[role='navigation'] li.medium-blue-gradient:hover, nav[role='navigation'] li.medium-blue-gradient:hover, nav[role='navigation'] li#subscribe:hover {
       border-right-color: #1e65d8; }
-  /* line 154, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+  /* line 158, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   nav[role='navigation'] .nav-title {
     top: 30px; }
-  /* line 157, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+  /* line 161, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   nav[role='navigation'] .author {
     margin-top: 10px; }
-  /* line 160, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+  /* line 164, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   nav[role='navigation'] .blog-title {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -917,7 +921,7 @@ nav[role='navigation'] {
     font-weight: bold;
     line-height: 16px;
     font-style: normal; }
-  /* line 166, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+  /* line 170, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   nav[role='navigation'] .go {
     width: 22px;
     height: 22px;
@@ -929,45 +933,45 @@ nav[role='navigation'] {
     bottom: 15px;
     padding: 5px 9px; }
 
-/* line 176, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+/* line 180, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
 li#search {
   width: 276px;
   right: 0;
   z-index: 900; }
-  /* line 182, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+  /* line 186, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   li#search:hover a, li#search:hover a:hover {
     background-image: url("img/search-hover.png"); }
-  /* line 184, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+  /* line 188, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   li#search a {
     width: 60px;
     height: 70px;
     right: 0;
     background: transparent url("img/search.png") center center no-repeat; }
-  /* line 191, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+  /* line 195, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   li#search .nav-desc {
     top: 85px;
     width: 95%; }
-  /* line 192, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+  /* line 196, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   li#search input[type="search"] {
     width: 80%;
     font-size: 12px; }
 
-/* line 195, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+/* line 199, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
 .nav-desc.nav-search input[type="search"] {
   width: 75%;
   margin-left: -40px; }
-/* line 196, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+/* line 200, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
 .nav-desc.nav-search .go {
   position: absolute;
   right: 10px;
   bottom: 40px; }
 
 /* Small menu */
-/* line 210, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+/* line 214, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
 .menu-toggle {
   cursor: pointer; }
 
-/* line 213, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+/* line 217, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
 .main-small-navigation .menu {
   display: none; }
 
