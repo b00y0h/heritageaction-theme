@@ -25,7 +25,7 @@ get_header(); ?>
 			<article id="post-0" class="post error404 not-found">
 
 				<div class="entry-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one a search?', 'heritageaction' ); ?></p>
+					<p><?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'heritageaction' ); ?></p>
 
 					<?php get_search_form(); ?>
 
