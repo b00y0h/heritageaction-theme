@@ -1,5 +1,12 @@
 	(function($){
 		$(document).ready(function(){
+			
+			// home key votes toggle
+			$(".keyVoteSelector").change(function(){
+				$(".items").slideUp();
+				$(".items_" + $(".keyVoteSelector:checked").val() ).slideDown();
+				$("#more-key-votes-link").attr('href','/category/' + $(".keyVoteSelector:checked").val() + '-key-votes/')
+			})
 
 			if($("#signup-scroll-target").length > 0){
 				// only do signup scroll if its on the page

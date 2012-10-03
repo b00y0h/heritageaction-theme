@@ -30,10 +30,10 @@ get_header(); ?>
               <fieldset class="switch">
               	<legend></legend>
 
-              	<input id="house" name="view" type="radio" checked>
+              	<input id="house" name="view" type="radio" value="house"  class="keyVoteSelector" checked>
               	<label for="house">House</label>
 
-              	<input id="senate" name="view" type="radio">	
+              	<input id="senate" name="view" type="radio" value="senate" class="keyVoteSelector">	
               	<label for="senate">Senate</label>
 
               	<span class="switch-button"></span>
