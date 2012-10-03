@@ -83,7 +83,7 @@
   }
 }
 .donate .menu-main-nav-container {@extend .display-none;}
-.blog, .search {
+.blog {
   #main {
     @extend .max-width;
     @extend .centered;
@@ -97,7 +97,7 @@
   }
 }
 
-.archive {
+.archive, .search {
   #main-inner {
     @extend .max-width;
   	@extend .centered;

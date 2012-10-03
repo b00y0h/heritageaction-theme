@@ -8,14 +8,22 @@
 
 get_header(); ?>
 
+<?php if ( have_posts() ) : ?>
+<div id="hero">
+  <div class="inner clearfix">
+		<header class="page-header">
+			<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'heritageaction' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+		</header><!-- .page-header -->
+  </div>
+</div>
+<?php endif; ?>
+
+<div id="main-inner">
+
 		<section id="primary" class="content-area">
 			<div id="content" class="site-content" role="main">
 
 			<?php if ( have_posts() ) : ?>
-
-				<header class="page-header">
-					<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'heritageaction' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-				</header><!-- .page-header -->
 
 				<?php heritageaction_content_nav( 'nav-above' ); ?>
 
@@ -36,6 +44,6 @@ get_header(); ?>
 
 			</div><!-- #content .site-content -->
 		</section><!-- #primary .content-area -->
-
-<?php get_sidebar(); ?>
+  <?php get_sidebar(); ?>
+</div> <!-- #main-inner -->
 <?php get_footer(); ?>
