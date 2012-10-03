@@ -8,16 +8,24 @@
 
 get_header(); ?>
 
+<div id="hero">
+  <div class="inner clearfix">
+		<header class="entry-header">
+			<h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'heritageaction' ); ?></h1>
+		</header><!-- .entry-header -->
+    </div>
+  </div>
+  
+  <div id="main-inner">
+
+
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 
 			<article id="post-0" class="post error404 not-found">
-				<header class="entry-header">
-					<h1 class="entry-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'heritageaction' ); ?></h1>
-				</header><!-- .entry-header -->
 
 				<div class="entry-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'heritageaction' ); ?></p>
+					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one a search?', 'heritageaction' ); ?></p>
 
 					<?php get_search_form(); ?>
 
@@ -43,5 +51,7 @@ get_header(); ?>
 
 		</div><!-- #content .site-content -->
 	</div><!-- #primary .content-area -->
+    <?php get_sidebar(); ?>
+  </div> <!-- #main-inner -->
 
 <?php get_footer(); ?>

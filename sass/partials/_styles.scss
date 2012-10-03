@@ -722,7 +722,7 @@ h1 {
       margin-bottom:0;
       @extend .clearfix;
   }
-  .single &, .page-template-default &, .page &, .archive &, .search & {
+  .single &, .page-template-default &, .page &, .archive &, .search &, .error404 & {
     background-color: #efefef;
     margin-bottom:55px;
     padding-top:40px;
