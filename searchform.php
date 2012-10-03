@@ -6,7 +6,7 @@
  * @since Heritage Action 1.0
  */
 ?>
-	<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+	  <form id="searchform" action=";/index.php" method="get" onsubmit="location.href='/search/' + encodeURIComponent(this.s.value).replace(/%20/g, '+'); return false;" role="search">
 		<label for="s" class="assistive-text"><?php _e( 'Search', 'heritageaction' ); ?></label>
 		<input type="text" class="field search-input" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" id="s" placeholder="<?php esc_attr_e( 'Search &hellip;', 'heritageaction' ); ?>" />
 		<div id="search-btn" class="go gradient blue-gradient"><div class="arrow-right"></div></div> 
