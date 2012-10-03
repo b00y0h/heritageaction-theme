@@ -73,26 +73,15 @@
               	}
                 ?>
           </ul>
-          <a href='#' class='btn rounded gradient orange-gradient' id="read-the-forge">Read The Forge</a>
+          <a href='/blog' class='btn rounded gradient orange-gradient' id="read-the-forge">Read The Forge</a>
 			  </aside>
 			  
 			  <aside id='latest-tweets'>
 			    <h3 class='widget-title'>Latest Tweets</h3>
 			    <ul>
-           <li>
-             <span class="meta">30 MINUTES</span>
-             <span class="excerpt"><b>@Heritage_Action</b> More fallout from #solyndra http://heritageaction.com/2012/07/can-president-obama-name-one-clean-energy-success/ … via @heritage_action</span>
-           </li>
-           <li>
-             <span class="meta">1 Hour</span>
-             <span class="excerpt"><b>@Heritage_Action</b> Heritage Action Daily is out! http://bit.ly/qzLtTL </span>
-           </li>
-           <li>
-             <span class="meta">2 Hour</span>
-             <span class="excerpt"><b>@Heritage_Action</b> More fallout from #solyndra http://heritageaction.com/2012/07/can-president-obama-name-one-clean-energy-success/ … via @heritage_action</span>
-           </li>
-			    </ul>
-          <a href="#" id="follow-twitter">Follow @Heritage_Action</a>
+			      <?php echo twitter_feed($user='heritage_action', $count='5'); ?>
+			    </ul>			    
+          <a href="https://twitter.com/Heritage_Action" id="follow-twitter" target="_blank">Follow @Heritage_Action</a>
 			  </aside>
 
 		</div><!-- #secondary .widget-area -->

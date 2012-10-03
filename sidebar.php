@@ -103,26 +103,15 @@
 			  </aside>
 			  
 			  <aside id="facebook-page-wall" class="widget">
-			    <img style="width:100%" src="<?php echo get_bloginfo('template_url'); ?>/img/facebook-plugin-widget.gif" alt="Facebook Plugin Widget">
+			    <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fheritageforamerica&amp;width=263&amp;height=590&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=true&amp;header=true&amp;appId=230985136998283" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:263px; height:590px;" allowTransparency="true"></iframe>			    
 			  </aside>
 			  
 			  <aside id='latest-tweets'>
 			    <h3 class='widget-title'>Latest Tweets</h3>
 			    <ul>
-           <li>
-             <span class="meta">30 MINUTES</span>
-             <span class="excerpt"><b>@Heritage_Action</b> More fallout from #solyndra http://heritageaction.com/2012/07/can-president-obama-name-one-clean-energy-success/ … via @heritage_action</span>
-           </li>
-           <li>
-             <span class="meta">1 Hour</span>
-             <span class="excerpt"><b>@Heritage_Action</b> Heritage Action Daily is out! http://bit.ly/qzLtTL </span>
-           </li>
-           <li>
-             <span class="meta">2 Hour</span>
-             <span class="excerpt"><b>@Heritage_Action</b> More fallout from #solyndra http://heritageaction.com/2012/07/can-president-obama-name-one-clean-energy-success/ … via @heritage_action</span>
-           </li>
+           <?php echo twitter_feed($user='heritage_action', $count='5'); ?>
 			    </ul>
-          <a href="#" id="follow-twitter">Follow @Heritage_Action</a>
+          <a href="https://twitter.com/Heritage_Action" id="follow-twitter" target="_blank">Follow @Heritage_Action</a>
 			  </aside>
 
 		</div><!-- #secondary .widget-area -->
