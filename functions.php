@@ -226,3 +226,20 @@ function ha_save_key_vote_type( $post_id ) {
   update_post_meta($post_id, 'key_vote_type', $_POST['key_vote_type']);
 }
 
+// ==========================================================================
+// = Rewrite rule for pretty permalinks for search http://d.com/search/term =
+// ==========================================================================
+
+
+function search_url_rewrite_rule() {
+    if ( is_search() && !empty($_GET['s'])) {
+        wp_redirect(home_url("/search/") . urlencode(get_query_var('s')));
+        exit();
+    }   
+}
+add_action('template_redirect', 'search_url_rewrite_rule');
+
+add_action( 'init', 'search_rule' );
+function search_rule(){
+    add_rewrite_rule('^search/([^/]*)?', 'index.php?s=$matches[1]', 'top');
+}
