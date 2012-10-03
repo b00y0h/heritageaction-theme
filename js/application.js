@@ -34,6 +34,7 @@
 			
 			$(".dashboardZipGo").click(function(){
         actionDashboardGo();
+				return false;
       })
       
       $(document).keypress(function(e){
@@ -45,9 +46,7 @@
         }
       });
 
-			$(".dashboardZipSearch").keyup(function(){
-				$(this).css('color','#000');
-			})
+			
 
 
 			$("#listen-live").click(function(){
