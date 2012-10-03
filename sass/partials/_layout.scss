@@ -83,7 +83,7 @@
   }
 }
 .donate .menu-main-nav-container {@extend .display-none;}
-.blog {
+.blog, .search {
   #main {
     @extend .max-width;
     @extend .centered;

@@ -60,12 +60,6 @@
 
 <?php wp_head(); ?>
 
-<style type="text/css" media="screen">
-  .items_senate{
-    display:none;
-  }
-</style>
-
 </head>
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site wrap">
@@ -115,7 +109,6 @@
 											 <a href="#" id="search-trigger"></a>
 										   <span id="search-form" class="nav-desc">
                          <?php get_search_form(); ?>
-                         <div id="seach-btn" class="go gradient blue-gradient"><div class="arrow-right"></div></div> 
 											 </span>
 									 </li>
 							 </ul>

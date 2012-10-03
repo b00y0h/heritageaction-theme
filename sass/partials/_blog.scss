@@ -1,4 +1,4 @@
-.blog {
+.blog, .search {
   article {
     border-bottom:4px solid $grayMedium;
     margin-bottom: $base-line-height+7px;
@@ -27,6 +27,9 @@
   }
   .post-meta {
     font-size:.8em;
+  }
+  #search-btn {
+    @extend .display-none;
   }
   #secondary {
     @extend .position-relative;
