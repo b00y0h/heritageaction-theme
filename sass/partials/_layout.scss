@@ -96,3 +96,17 @@
     @extend .column4;
   }
 }
+
+.archive {
+  #main-inner {
+    @extend .max-width;
+  	@extend .centered;
+  	@extend .clearfix;
+  }
+  #primary {
+    @extend .column8;
+  }
+  #secondary {
+    @extend .column4;
+  }
+}

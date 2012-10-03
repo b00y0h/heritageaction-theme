@@ -122,7 +122,7 @@
 	 </nav><!-- .site-navigation .main-navigation -->
  </header><!-- #masthead .site-header -->
 
- <?php if ( is_home() ) :
+ <?php if ( is_home() || is_category() || is_tag() ) :
  
  get_sidebar('blog');
   

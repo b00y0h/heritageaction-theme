@@ -1,4 +1,4 @@
-.blog, .search {
+.blog, .archive {
   article {
     border-bottom:4px solid $grayMedium;
     margin-bottom: $base-line-height+7px;
@@ -50,34 +50,13 @@
       }
     }
   }
-  #subscribe {
-    @extend .medium-blue-gradient;
-    margin:0 -15px 20px; 
-    text-align:center;
-    h2 {
-      @include font-shorthand(20px, normal, 34px);
-      @extend .button-font-family;
-      @extend .uppercase;
-      color:$white;
-      font-weight:normal;
-      padding-top:.2em;
-    	background: url("img/rss-cones.png") no-repeat 55px 5px;
-    	@extend .text-shadow-dark;
-      span {
-        @include font-shorthand(12px, normal, 18px);
-        @extend .display-block;
-      	background: #6d6d6d url("img/rss-bug.png") no-repeat 55px 13px;
-        padding:1em;
-        text-transform:normal;
-      }
-    }
-  }
 }
 #blog-sidebar-header {
   @include font-shorthand(12px, normal, 25px);
   @extend .pagination-centered;
   font-family:Arial, sans-serif;
   margin-bottom:30px;
+  .archive & {margin-bottom:0;}
   aside {
     @extend .light-gray-gradient;
     @extend .shadow;
@@ -106,4 +85,26 @@
     @extend .display-inline-block;
     background:  url("img/the-forge-blog-logo.png") no-repeat;
 	}
+}
+#subscribe {
+  @extend .medium-blue-gradient;
+  margin:0 -15px 20px; 
+  text-align:center;
+  h2 {
+    @include font-shorthand(20px, normal, 34px);
+    @extend .button-font-family;
+    @extend .uppercase;
+    color:$white;
+    font-weight:normal;
+    padding-top:.2em;
+  	background: url("img/rss-cones.png") no-repeat 55px 5px;
+  	@extend .text-shadow-dark;
+    span {
+      @include font-shorthand(12px, normal, 18px);
+      @extend .display-block;
+    	background: #6d6d6d url("img/rss-bug.png") no-repeat 55px 13px;
+      padding:1em;
+      text-transform:normal;
+    }
+  }
 }
