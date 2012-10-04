@@ -16,6 +16,7 @@ get_header(); ?>
 			<h1 class="page-title">
 			  <?php if ( have_posts() ) : ?>
 				<?php
+				  global $post;
 					if ( is_category() ) {
 						printf( __( 'Category Archives: %s', 'heritageaction' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 
@@ -45,7 +46,9 @@ get_header(); ?>
           } elseif ( is_post_type_archive('press-releases') ){            
             _e( 'Press Releases', 'heritageaction' );  
           } elseif ( is_post_type_archive('key-votes') ){            
-            _e( 'Key Votes', 'heritageaction' );                      
+            _e( 'Key Votes', 'heritageaction' );   
+          } elseif ( is_tax('chamber') ){ 
+            _e( single_tag_title( '', false ) . ' Key Votes' , 'heritageaction' );                     
 					} else {
 						_e( 'Archives', 'heritageaction' );
 

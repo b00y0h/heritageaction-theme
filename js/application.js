@@ -5,7 +5,7 @@
 			$(".keyVoteSelector").change(function(){
 				$(".items").slideUp();
 				$(".items_" + $(".keyVoteSelector:checked").val() ).slideDown();
-				$("#more-key-votes-link").attr('href','/category/' + $(".keyVoteSelector:checked").val() + '-key-votes/')
+				$("#more-key-votes-link").attr('href','/chamber/key-vote-' + $(".keyVoteSelector:checked").val() + '/')
 			})
 
 			if($("#signup-scroll-target").length > 0){

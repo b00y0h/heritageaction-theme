@@ -42,15 +42,15 @@ get_header(); ?>
 
               
               <ul class="items items_house">
-                <?php
-                $house = get_term_by('name', 'Key Votes: House', 'category');  
+                <?php 
     			      $args = array(
                     'numberposts' => 4,
                     'offset' => 0,
-                    'category' => $house->term_id,
+                    'taxonomy' => 'chamber',
+                    'term' => 'key-vote-house',
                     'orderby' => 'post_date',
                     'order' => 'DESC',
-                    'post_type' => 'post'); 
+                    'post_type' => 'key-votes'); 
                     
                 $house_key_votes = wp_get_recent_posts( $args );
                 foreach( $house_key_votes as $house_key_vote ): 
@@ -70,14 +70,15 @@ get_header(); ?>
 
               <ul class="items items_senate">
                 <?php
-                $senate = get_term_by('name', 'Key Votes: Senate', 'category');              
+                         
     			      $args = array(
                     'numberposts' => 4,
                     'offset' => 0,
-                    'category' => $senate->term_id,
+                    'taxonomy' => 'chamber',
+                    'term' => 'key-vote-senate',
                     'orderby' => 'post_date',
                     'order' => 'DESC',
-                    'post_type' => 'post'); 
+                    'post_type' => 'key-votes'); 
                     
                 $house_key_votes = wp_get_recent_posts( $args );
                 foreach( $house_key_votes as $house_key_vote ): 
@@ -95,7 +96,7 @@ get_header(); ?>
 
                 </ul>
               
-              <a id="more-key-votes-link" href="/category/house-key-votes/" class="btn rounded gradient blue-gradient">More Key Votes</a>
+              <a id="more-key-votes-link" href="/chamber/key-vote-house/" class="btn rounded gradient blue-gradient">More Key Votes</a>
               
               
       			</div> <!-- #key-votes -->

@@ -160,7 +160,7 @@ add_shortcode( 'gf_count', 'gf_count');
 
 function post_key_vote_meta_box( $post ) {
   // Use nonce for verification
-  wp_nonce_field( plugin_basename( __FILE__ ), 'key_vote_noncename' );  
+  wp_nonce_field( plugin_basename( __FILE__ ), 'key_vote_nonce' );  
     $key_vote_type = get_post_meta($post->ID,'key_vote_type',true);
     ?>
     
@@ -184,28 +184,32 @@ add_action('add_meta_boxes','add_key_vote_metabox');
 function add_key_vote_metabox() {
     add_meta_box('key_vote_type_meta', __('Key Vote Recommendation'), 'post_key_vote_meta_box', 'key-votes', 'side', 'high');
 }
-//add_action( 'save_post', 'ha_save_key_vote_type' );
+add_action( 'save_post', 'ha_save_key_vote_type' );
 function ha_save_key_vote_type( $post_id ) {
   $post = get_post($post_id);
-  if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
-      return;
-
-  if (isset($_POST['key_vote_noncename']) && !wp_verify_nonce( $_POST['key_vote_noncename'], plugin_basename( __FILE__ ) ) )
-      return;
-
-  // Check permissions
-  if ( 'page' == $_POST['post_type'] ) 
-  {
-    if ( !current_user_can( 'edit_page', $post_id ) )
+  
+  if($post->post_type == 'key-votes'){
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
         return;
-  }
-  else
-  {
-    if ( !current_user_can( 'edit_post', $post_id ) )
-        return;
-  }
 
-  update_post_meta($post_id, 'key_vote_type', $_POST['key_vote_type']);
+    if (isset($_POST['key_vote_nonce']) && !wp_verify_nonce( $_POST['key_vote_nonce'], plugin_basename( __FILE__ ) ) )
+        return;
+
+    // Check permissions
+    if ( 'page' == $_POST['post_type'] ) 
+    {
+      if ( !current_user_can( 'edit_page', $post_id ) )
+          return;
+    }
+    else
+    {
+      if ( !current_user_can( 'edit_post', $post_id ) )
+          return;
+    }
+
+    update_post_meta($post_id, 'key_vote_type', $_POST['key_vote_type']);
+  }
+  
 }
 
 // ==========================================================================
