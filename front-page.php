@@ -179,7 +179,7 @@ get_header(); ?>
             <h2 class="title">About Us</h2>
           </header>
           <div id="about-us-video" class="video">
-            <a href="http://www.youtube.com/watch?v=xwLCw1oKQcg" rel="prettyPhoto">
+            <a href="http://www.youtube.com/watch?v=xwLCw1oKQcg" rel="lightbox" data-ob_share="false">
             <img class="size-full" src="<?php echo get_bloginfo('template_url'); ?>/import-image/video-slug.jpg" alt="About Us">
             </a>
             <div class="overlay"></div>
