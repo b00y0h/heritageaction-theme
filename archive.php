@@ -42,7 +42,10 @@ get_header(); ?>
 
 					} elseif ( is_year() ) {
 						printf( __( 'Yearly Archives: %s', 'heritageaction' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
-
+          } elseif ( is_post_type_archive('press-releases') ){            
+            _e( 'Press Releases', 'heritageaction' );  
+          } elseif ( is_post_type_archive('key-votes') ){            
+            _e( 'Key Votes', 'heritageaction' );                      
 					} else {
 						_e( 'Archives', 'heritageaction' );
 

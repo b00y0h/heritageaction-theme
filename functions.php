@@ -167,33 +167,11 @@ function post_key_vote_meta_box( $post ) {
     <script type="text/javascript">
       (function($){
         $(document).ready(function(){
-          $("#taxonomy-category .selectit input[type=checkbox]").change(function(){
-            
-            if($("#taxonomy-category .selectit:contains('Key Vote') input[type=checkbox]:checked").size() > 1 ||
-              ($("#taxonomy-category .selectit:contains('Key Vote') input[type=checkbox]:checked").size() == 1 && 
-               $(this).attr('checked') =='checked') 
-            ){
-              $("#key_vote_type_meta").show();
-            }
-            else{
-              $("#key_vote_type_meta").hide();
-            }
-            
-          })
+          
         })
       })(jQuery);
     </script> 
   
-    <style type="text/css" media="screen">
-      #key_vote_type_meta{
-        <?php if ( in_category(array('key-vote', 'key-vote-recap', 'house-key-votes', 'senate-key-votes')) ) : ?>
-        display:block;
-        <?php else: ?>
-        display:none;
-        <?php endif; ?>
-      }
-    </style>
-    
   <select id="key_vote_type" name="key_vote_type">
     <option  value="">Co Sponsorship</option>
     <option <?php echo ($key_vote_type == 'yes') ? 'selected="selected"' : '';  ?> value="yes">Yes</option>
@@ -204,14 +182,15 @@ function post_key_vote_meta_box( $post ) {
 }
 add_action('add_meta_boxes','add_key_vote_metabox');
 function add_key_vote_metabox() {
-    add_meta_box('key_vote_type_meta', __('Key Vote Recommendation'), 'post_key_vote_meta_box', 'post', 'side', 'high');
+    add_meta_box('key_vote_type_meta', __('Key Vote Recommendation'), 'post_key_vote_meta_box', 'key-votes', 'side', 'high');
 }
-add_action( 'save_post', 'ha_save_key_vote_type' );
+//add_action( 'save_post', 'ha_save_key_vote_type' );
 function ha_save_key_vote_type( $post_id ) {
+  $post = get_post($post_id);
   if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) 
       return;
 
-  if ( !wp_verify_nonce( $_POST['key_vote_noncename'], plugin_basename( __FILE__ ) ) )
+  if (isset($_POST['key_vote_noncename']) && !wp_verify_nonce( $_POST['key_vote_noncename'], plugin_basename( __FILE__ ) ) )
       return;
 
   // Check permissions
@@ -331,3 +310,38 @@ function twitter_feed($user = 'twitter', $count = '3'){
     return $output;
 }
 
+register_post_type('press-releases', array(	'label' => 'Press Releases','description' => '','public' => true,'show_ui' => true,'show_in_menu' => true,'capability_type' => 'post','hierarchical' => false,'rewrite' => array('slug' => ''),'query_var' => true,'has_archive' => true,'exclude_from_search' => false,'supports' => array('title','editor','excerpt','custom-fields','revisions','thumbnail','page-attributes',),'labels' => array (
+  'name' => 'Press Releases',
+  'singular_name' => 'Press Release',
+  'menu_name' => 'Press Releases',
+  'add_new' => 'Add Press Release',
+  'add_new_item' => 'Add New Press Release',
+  'edit' => 'Edit',
+  'edit_item' => 'Edit Press Release',
+  'new_item' => 'New Press Release',
+  'view' => 'View Press Release',
+  'view_item' => 'View Press Release',
+  'search_items' => 'Search Press Releases',
+  'not_found' => 'No Press Releases Found',
+  'not_found_in_trash' => 'No Press Releases Found in Trash',
+  'parent' => 'Parent Press Release',
+),) );
+register_post_type('press-releases', array(	'label' => 'Press Releases','description' => '','public' => true,'show_ui' => true,'show_in_menu' => true,'capability_type' => 'post','hierarchical' => false,'rewrite' => array('slug' => ''),'query_var' => true,'has_archive' => true,'exclude_from_search' => false,'supports' => array('title','editor','excerpt','custom-fields','revisions','thumbnail','page-attributes',),'labels' => array (
+  'name' => 'Press Releases',
+  'singular_name' => 'Press Release',
+  'menu_name' => 'Press Releases',
+  'add_new' => 'Add Press Release',
+  'add_new_item' => 'Add New Press Release',
+  'edit' => 'Edit',
+  'edit_item' => 'Edit Press Release',
+  'new_item' => 'New Press Release',
+  'view' => 'View Press Release',
+  'view_item' => 'View Press Release',
+  'search_items' => 'Search Press Releases',
+  'not_found' => 'No Press Releases Found',
+  'not_found_in_trash' => 'No Press Releases Found in Trash',
+  'parent' => 'Parent Press Release',
+),) );
+register_taxonomy('chamber',array (
+  0 => 'key-votes',
+),array( 'hierarchical' => true, 'label' => 'Chamber','show_ui' => true,'query_var' => true,'rewrite' => array('slug' => ''),'singular_label' => 'Chamber') );
