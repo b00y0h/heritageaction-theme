@@ -152,25 +152,51 @@ get_header(); ?>
           <header class="gradient orange-gradient">
             <h2 class="title">Press Releases &amp; Statements</h2>
           </header>
-          <article>
-            <h4>Heritage Action Releases Legislative Scorecard.</h4>
-            <span class="post-meta">heritageaction    |   August 25, 2011</span>
-            <p>Conservative Scorecard Doesn’t Grade on a Curve Washington – On Thursday, Heritage Action for America unveiled its legislative scorecard, a comprehensive and revealing barometer of a lawmaker’s willingness to fight for conservative policies in Congress. “With each vote cast in Congress, freedom either advances or recedes,” Heritage Action’s CEO Michael A. Needham said.  “Heritage Action’s [...]</p>
-            <a href="#">READ FULL PRESS RELEASE</a>
-          </article>
+          <div id="press-release-slider" >
+            
+            <div class="viewport">
+              <div class="overview">
+                    <?php
+                   
+          		      $args = array(
+                        'numberposts' => 4,
+                        'offset' => 0,
+                        'orderby' => 'post_date',
+                        'order' => 'DESC',
+                        'post_type' => 'press-releases'); 
+              
+                    $house_key_votes = wp_get_recent_posts( $args );
+                    foreach( $house_key_votes as $house_key_vote ): 
+                       $post_id = $house_key_vote['ID'];
+                       $post = get_post($post_id);
+                       setup_postdata($post);
+                    ?>
+
+                  <div class="press-release-slide">
+                    <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+                    <span class="post-meta"><?php echo date('F d, Y', strtotime($post->post_date)); ?></span>
+                    <p><?php echo mb_strimwidth(get_the_excerpt(),0,350); ?> </p>
+                    <a href="<?php the_permalink(); ?>">READ FULL PRESS RELEASE</a>
+                  </div>
+
+                  <?php wp_reset_postdata(); endforeach; ?>
+               </div>
+            </div>
+         
           
-          
+            
           <div class="pagination pagination-centered orange">
-            <ul>
-              <li><a href="#">&lt;</a></li>
-              <li><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">&gt;</a></li>
+            <ul class="pager">
+              <li><a class="prev" href="#">&lt;</a></li>
+              <li><a rel="0" class="pagenum" href="#">1</a></li>
+              <li><a rel="1" class="pagenum" href="#">2</a></li>
+              <li><a rel="2" class="pagenum" href="#">3</a></li>
+              <li><a rel="3" class="pagenum" href="#">4</a></li>
+              <li><a class="next" href="#">&gt;</a></li>
            </ul>
           </div>
           
+          </div>
           
         </div> <!-- #recent-press-releases -->
         </div>

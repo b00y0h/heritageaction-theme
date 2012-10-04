@@ -67,6 +67,38 @@
   #facebook-page-wall{
     background:#fff;
   }
+  #under-cover h4 {
+    line-height:24px;
+  }
+  
+  #press-release-slider { height: 240px; overflow:hidden;  width:600px}
+  #press-release-slider .viewport { float: left; width:600px; height: 200px; overflow: hidden; position: relative; }
+  #press-release-slider .buttons { display: block; margin: 30px 10px 0 0; float: left; }
+  #press-release-slider .next { }
+  #press-release-slider .disable { }
+  #press-release-slider .overview { list-style: none; padding: 0; margin: 0;  position: absolute; left: 0; top: 0; }
+  #press-release-slider .overview li{ float: left; margin: 0 20px 0 0; padding: 1px; height: 121px; border: 1px solid #dcdcdc; width: 236px;}
+
+  #press-release-slider .pager { overflow:hidden; list-style: none; clear: both; margin: 0 0 0 45px; }
+  #press-release-slider .pager li { float: left; }
+  #press-release-slider .pagenum {  }
+  #press-release-slider .active { 
+    background-color: #fa8f4c;    
+    color: white;
+    background-image: -ms-linear-gradient(top, #fa8f4c, #f54a18);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fa8f4c), to(#f54a18));
+    background-image: -webkit-linear-gradient(top, #fa8f4c, #f54a18);
+    background-image: -o-linear-gradient(top, #fa8f4c,#f54a18);
+    background-image: -moz-linear-gradient(top, #fa8f4c, #f54a18);
+    background-image: linear-gradient(top, #fa8f4c,#f54a18);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa8f4c', endColorstr='#f54a18', GradientType=0);
+  }
+  .press-release-slide{
+    float:left;
+    width:600px;
+    height:200px;
+  }
 </style>
 
 </head>

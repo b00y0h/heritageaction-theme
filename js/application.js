@@ -1,6 +1,13 @@
 	(function($){
 		$(document).ready(function(){
 			
+			// press release slider
+			$("#press-release-slider").tinycarousel({ 
+        pager: true, 
+        interval: true,
+        intervaltime: 3000
+      });
+			
 			// home key votes toggle
 			$(".keyVoteSelector").change(function(){
 				$(".items").slideUp();
@@ -124,6 +131,8 @@
       return false;
     });
 
+
+		
 
 
 		});
