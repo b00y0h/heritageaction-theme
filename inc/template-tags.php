@@ -84,16 +84,19 @@ endif; // heritageaction_signup_section
 
 if ( ! function_exists( 'heritageaction_content_navlist' ) ):
 
-function heritageaction_content_navlist( $id, $scope = 2 ) {
+function heritageaction_content_navlist( $id, $scope = 2) {
   // custom pagination
-     	global $wp, $posts_per_page, $page;
+     	global $wp, $posts_per_page, $page, $wp_query;    
      	$mypage = $page;
 
-  	$numPages = (int) ( wp_count_posts()->publish / $posts_per_page );
+  	$numPages = ceil($wp_query->found_posts / $posts_per_page );
+
+  
   	if( $numPages <= 1 )
   		return; // no need for pagination
 
   	$queryVars = $wp->query_vars;
+ 
   	$curPage = isset( $queryVars[ 'paged' ] ) ? (int) $queryVars[ 'paged' ] : 1;
 
   	// page bounds
@@ -120,30 +123,29 @@ function heritageaction_content_navlist( $id, $scope = 2 ) {
   		$pagesToLinkTo[] = $page;
   	$pagesToLinkTo[] = $numPages;
 
-  	$prevPage = $pagesToLinkTo[0];
-
+  	$prevPage = (1 <= $curPage-1) ? $curPage-1 : 1;
+  	
+    $nextPage = ($numPages >= $curPage+1) ? $curPage+1 : $numPages;
 
     echo '<div id="' . $id . '" class="pagination pagination-centered blue">';
     echo '<ul>';
 
-
-    // ANDRE: can you make this find the first page and the last <li> find the last page?
-  	echo '<li><a href="' . get_bloginfo( 'url' ) . '/blog/page/' . $start . '">&lt;</a></li>';
+  	echo '<li><a href="' . update_pager_url($prevPage) . '">&lt;</a></li>';
 
   	foreach( $pagesToLinkTo as $page ) {
   		if( $page - $prevPage > 1 ) // skipped a few pages
   		echo '<li><span class="page-numbers dots">&hellip;</span></li>'; // add a spacer
       if ($curPage == $page) {
-    		echo '<li class="active"><a href="' . get_bloginfo( 'url' ) . '/blog/page/' . $page . '">' . $page . '</a></li>';      
+    		echo '<li class="active"><a href="' . update_pager_url($page) . '">' . $page . '</a></li>';      
       } else {
-    		echo '<li><a href="' . get_bloginfo( 'url' ) . '/blog/page/' . $page . '">' . $page . '</a></li>';
+    		echo '<li><a href="' . update_pager_url($page) . '">' . $page . '</a></li>';
     }
   		$prevPage = $page;
 
   	}
 
 
-  	echo '<li><a href="' . get_bloginfo( 'url' ) . '/blog/page/' . $end . '">&gt;</a></li>';
+  	echo '<li><a href="' . update_pager_url($nextPage) . '">&gt;</a></li>';
 
   	echo '</ul>';
     echo '</div>';
@@ -151,9 +153,11 @@ function heritageaction_content_navlist( $id, $scope = 2 ) {
 }
 endif; // heritageaction_content_navlist
 
-
-
-
+function update_pager_url($page_number){
+  $bare_url = preg_replace('/page\/(\d+)\//','', $_SERVER['REQUEST_URI']);
+  $output = $bare_url . 'page/' . $page_number .'/';
+  return $output;
+}
 
 
 
