@@ -60,6 +60,13 @@
 
 <?php wp_head(); ?>
 
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <style type="text/css" media="screen">
   .switch input:last-of-type:checked ~ .switch-button {
@@ -99,10 +106,25 @@
     width:600px;
     height:200px;
   }
+  
+  #fb-widget-like{
+    width:175px;
+    margin: 13px 0px 0 20px;
+    float: left;
+  }
+  #fb-widget-like span{
+    width:455px !important;
+  }
+  .twitter-widget-share{
+    position: absolute;
+    right: 5px;
+    margin: 12px 0px 0px 20px;
+  }
 </style>
 
 </head>
 <body <?php body_class(); ?>>
+<div id="fb-root"></div>
 <div id="page" class="hfeed site wrap">
  <?php do_action( 'before' ); ?>
  <header id="masthead" class="site-header" role="banner">
