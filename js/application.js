@@ -5,7 +5,7 @@
 			$("#press-release-slider").tinycarousel({ 
         pager: true, 
         interval: true,
-        intervaltime: 3000
+        intervaltime: 7000
       });
 			
 			// home key votes toggle
