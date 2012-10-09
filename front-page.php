@@ -47,7 +47,7 @@ get_header(); ?>
                     'numberposts' => 4,
                     'offset' => 0,
                     'taxonomy' => 'chamber',
-                    'term' => 'house',
+                    'term' => 'key-vote-house',
                     'orderby' => 'post_date',
                     'order' => 'DESC',
                     'post_type' => 'key-votes'); 
@@ -75,7 +75,7 @@ get_header(); ?>
                     'numberposts' => 4,
                     'offset' => 0,
                     'taxonomy' => 'chamber',
-                    'term' => 'senate',
+                    'term' => 'key-vote-senate',
                     'orderby' => 'post_date',
                     'order' => 'DESC',
                     'post_type' => 'key-votes'); 

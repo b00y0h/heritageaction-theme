@@ -42,7 +42,7 @@ function post_type_key_votes()
     'menu_position' => 6,
     'taxonomies' => array('chamber'),
     // Uncomment the folowing line to change the slug
-    'rewrite' => array( 'slug' => 'chamber' ), 
+    //'rewrite' => array( 'slug' => 'chamber' ), 
     'supports' => array('title','editor','excerpt','custom-fields','revisions','thumbnail','page-attributes')
   );
   
@@ -68,7 +68,7 @@ function post_type_key_votes()
 		'hierarchical' => true,
 		'labels' => $labels,
 		'query_var' => true,
-    'rewrite' => array( 'slug' => 'chambers' ),
+    'rewrite' => array( 'slug' => 'chamber' ),
 		'show_ui' => true,
 	));
 	
