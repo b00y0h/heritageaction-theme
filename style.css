@@ -238,14 +238,38 @@ body.responsive-help {
       /* line 103, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-grid.scss */
       body.responsive-help:after {
         content: "handheld"; } }
+    @media only screen and (min-width: 321px) {
+      /* line 103, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-grid.scss */
+      body.responsive-help:after {
+        content: "handheld"; } }
+    @media only screen and (max-width: 320px) {
+      /* line 103, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-grid.scss */
+      body.responsive-help:after {
+        content: "handheld"; } }
     @media only screen and (min-width: 600px) {
       /* line 103, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-grid.scss */
       body.responsive-help:after {
         content: "tablet"; } }
+    @media only screen and (min-width: 600px) and (orientation: landscape) {
+      /* line 103, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-grid.scss */
+      body.responsive-help:after {
+        content: "tablet-landscape"; } }
+    @media only screen and (min-width: 600px) and (orientation: portrait) {
+      /* line 103, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-grid.scss */
+      body.responsive-help:after {
+        content: "tablet-portrait"; } }
     @media only screen and (min-width: 768px) {
       /* line 103, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-grid.scss */
       body.responsive-help:after {
         content: "tablet-large"; } }
+    @media only screen and (min-width: 768px) and (orientation: landscape) {
+      /* line 103, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-grid.scss */
+      body.responsive-help:after {
+        content: "tablet-large-landscape"; } }
+    @media only screen and (min-width: 768px) and (orientation: portrait) {
+      /* line 103, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-grid.scss */
+      body.responsive-help:after {
+        content: "tablet-large-portrait"; } }
     @media only screen and (min-width: 1224px) {
       /* line 103, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-grid.scss */
       body.responsive-help:after {
@@ -254,6 +278,10 @@ body.responsive-help {
       /* line 103, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-grid.scss */
       body.responsive-help:after {
         content: "desktop-large"; } }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+      /* line 103, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-grid.scss */
+      body.responsive-help:after {
+        content: "retina-display"; } }
 
 /* line 7, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-normalize.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {

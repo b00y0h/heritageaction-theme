@@ -317,38 +317,40 @@ function twitter_feed($user = 'twitter', $count = '3'){
     return $output;
 }
 
-register_post_type('press-releases', array(	'label' => 'Press Releases','description' => '','public' => true,'show_ui' => true,'show_in_menu' => true,'capability_type' => 'post','hierarchical' => false,'rewrite' => array('slug' => ''),'query_var' => true,'has_archive' => true,'exclude_from_search' => false,'supports' => array('title','editor','excerpt','custom-fields','revisions','thumbnail','page-attributes',),'labels' => array (
-  'name' => 'Press Releases',
-  'singular_name' => 'Press Release',
-  'menu_name' => 'Press Releases',
-  'add_new' => 'Add Press Release',
-  'add_new_item' => 'Add New Press Release',
-  'edit' => 'Edit',
-  'edit_item' => 'Edit Press Release',
-  'new_item' => 'New Press Release',
-  'view' => 'View Press Release',
-  'view_item' => 'View Press Release',
-  'search_items' => 'Search Press Releases',
-  'not_found' => 'No Press Releases Found',
-  'not_found_in_trash' => 'No Press Releases Found in Trash',
-  'parent' => 'Parent Press Release',
-),) );
-register_post_type('key-votes', array(	'label' => 'Key Votes','description' => '','public' => true,'show_ui' => true,'show_in_menu' => true,'capability_type' => 'post','hierarchical' => false,'rewrite' => array('slug' => ''),'query_var' => true,'has_archive' => true,'exclude_from_search' => false,'supports' => array('title','editor','excerpt','custom-fields','revisions','thumbnail','author','page-attributes',),'taxonomies' => array('chamber',),'labels' => array (
-  'name' => 'Key Votes',
-  'singular_name' => 'Key Vote',
-  'menu_name' => 'Key Votes',
-  'add_new' => 'Add Key Vote',
-  'add_new_item' => 'Add New Key Vote',
-  'edit' => 'Edit',
-  'edit_item' => 'Edit Key Vote',
-  'new_item' => 'New Key Vote',
-  'view' => 'View Key Vote',
-  'view_item' => 'View Key Vote',
-  'search_items' => 'Search Key Votes',
-  'not_found' => 'No Key Votes Found',
-  'not_found_in_trash' => 'No Key Votes Found in Trash',
-  'parent' => 'Parent Key Vote',
-),) );
-register_taxonomy('chamber',array (
-  0 => 'key-votes',
-),array( 'hierarchical' => true, 'label' => 'Chamber','show_ui' => true,'query_var' => true,'rewrite' => array('slug' => ''),'singular_label' => 'Chamber') );
+
+
+/**
+ * Generate the labels for custom post types
+ *
+ * @param string $singular The singular post type name
+ * @param string $plural The plural post type name
+ * @return array Array of labels
+ */
+function reversetype_post_type_labels( $singular, $plural = '' )
+{
+    if( $plural == '') $plural = $singular .'s';
+    
+    return array(
+        'name' => _x( $plural, 'post type general name', 'heritageaction' ),
+        'singular_name' => _x( $singular, 'post type singular name', 'heritageaction' ),
+        'add_new' => __( 'Add New', 'heritageaction' ),
+        'add_new_item' => sprintf( __( 'Add New %s', 'heritageaction' ), $singular),
+        'edit_item' => sprintf( __( 'Edit %s', 'heritageaction' ), $singular),
+        'new_item' => sprintf( __( 'New %s', 'heritageaction' ), $singular),
+        'view_item' => sprintf( __( 'View %s', 'heritageaction' ), $singular),
+        'search_items' => sprintf( __( 'Search %s', 'heritageaction' ), $plural),
+        'not_found' =>  sprintf( __( 'No %s found', 'heritageaction' ), $plural),
+        'not_found_in_trash' => sprintf( __( 'No %s found in Trash', 'heritageaction' ), $plural),
+        'parent_item_colon' => ''
+    );
+}
+
+
+$incdir = get_template_directory() . '/inc/';
+
+/*-----------------------------------------------------------------------------------*/
+/*	Load Theme Specific Components
+/*-----------------------------------------------------------------------------------*/
+
+require_once($incdir .'custom-posttypes.php');
+

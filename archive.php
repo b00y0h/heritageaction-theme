@@ -21,7 +21,7 @@ get_header(); ?>
 						printf( __( 'Category Archives: %s', 'heritageaction' ), '<span>' . single_cat_title( '', false ) . '</span>' );
 
 					} elseif ( is_tag() ) {
-						printf( __( 'Tag Archives: %s', 'heritageaction' ), '<span>' . single_tag_title( '', false ) . '</span>' );
+						printf( __( 'Keyword Archives: %s', 'heritageaction' ), '<span>' . single_tag_title( '', false ) . '</span>' );
 
 					} elseif ( is_author() ) {
 						/* Queue the first post, that way we know
