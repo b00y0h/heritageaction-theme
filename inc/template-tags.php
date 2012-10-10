@@ -51,13 +51,16 @@ endif; // heritageaction_content_nav
 
 if ( ! function_exists( 'heritageaction_signup_section' ) ):
 
-function heritageaction_signup_section( ) { ?>
+function heritageaction_signup_section( ) { 
+  
+  if(!isset($_COOKIE['_signup_submitted']) || $_COOKIE['_signup_submitted'] !='true') :
+  ?>
   <div id="signup-scroll-target"></div>
   <section id="sign-up" class="fixed">
     <div id="sign-up-tab" class="gradient medium-blue-gradient">Sign Up</div>
-    <div class="centered max-width">
+    <div id="signup-content" class="centered max-width">
       <form id="signup-form" action="front-page_submit" method="get" accept-charset="utf-8">
-        <input type="text" name="user[first_name]" id="first_name" placeholder="First Name">
+        <input type="text" name="user[name]" id="signup_name" placeholder="Name">
         <input type="text" name="user[email_address]" id="email_address" placeholder="Email Address">
         <input type="text" name="user[zip_code]" id="zip_code" placeholder="Zip Code">
         <a href="#" id="signup-form-submit-button" class="btn rounded gradient medium-blue-gradient">Sign Up</a>
@@ -78,6 +81,8 @@ function heritageaction_signup_section( ) { ?>
     </div>
   </section>
   <?php 
+    
+    endif;
   }
 endif; // heritageaction_signup_section
   

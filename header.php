@@ -120,6 +120,13 @@
     right: 5px;
     margin: 12px 0px 0px 20px;
   }
+  
+  .signupSubmissionResult{
+    
+    padding-top:15px;
+    font-size:18px;
+    
+  }
 </style>
 
 </head>

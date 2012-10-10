@@ -63,7 +63,18 @@
 
 			$("#signup-form-submit-button").click(function(){
 				var form_data = $("#signup-form").serialize();
-				$("#signup-form-result").load("/bluehornet.php?" + form_data);
+				$("#signup-content").load("/bluehornet.php?" + form_data);
+				
+				_gaq.push(['_trackEvent', 'Signup', 'Footer Signup', $("#signup_name").val()+' '+$("#email_address").val()]);
+				
+				// set cookie
+				var now = new Date();
+				var time = now.getDate();
+				time += 365 * 20;
+				now.setDate(time);
+				document.cookie = '_signup_submitted=true; expires=' + now.toGMTString() + '; path=/';
+
+				
 				return false;
 			});
 
