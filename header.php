@@ -127,6 +127,7 @@
     font-size:18px;
     
   }
+  .nav-desc.nav-search input[type="search"] {width: 76%; }
 </style>
 
 </head>
