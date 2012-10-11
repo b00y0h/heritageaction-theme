@@ -280,3 +280,23 @@ function heritageaction_category_transient_flusher() {
 }
 add_action( 'edit_category', 'heritageaction_category_transient_flusher' );
 add_action( 'save_post', 'heritageaction_category_transient_flusher' );
+
+function heritageaction_hot_disqus_threads($limit=5){
+  $disqus_public_key = 'xL2iKTqNOZd7hy9ntVt9Q0wPNm8PZ8OrnVUAbyAcx8G31brRnrw69nWh2GGDIkFw';
+  $disqus_shortname = 'haction';
+  
+  $output = false;
+  $listHot = file_get_contents("https://disqus.com/api/3.0/threads/listHot.json?api_key=$disqus_public_key&forum=$disqus_shortname&limit=$limit");
+  if($listHot){
+    $response = json_decode($listHot);
+    $hot_threads = $response->response;
+    
+    if(count($hot_threads) > 0){
+      $output = $hot_threads;
+    }
+    
+  }
+  
+  return $output;
+  
+}

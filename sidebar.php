@@ -42,8 +42,31 @@
           
 		    </aside>
 		    
-		    <aside id="disqus-comments" class="widget">
-			    <img style="width:100%" src="<?php echo get_bloginfo('template_url'); ?>/img/disqus-plugin-widget.gif" alt="Disqus Plugin Widget">
+		    
+		    <aside id="hot_threads" class="widget">
+  			    <h3 class='widget-title'>Popular Threads</h3>
+			    <?php
+			      
+			        $hot_threads = heritageaction_hot_disqus_threads();
+			        if($hot_threads) {
+			          foreach($hot_threads as $thread) : ?>
+			          
+			            <div class="hot_disqus_thread">
+			              <a href="<?php echo $thread->link; ?>"><?php echo $thread->title; ?></a><br>
+			              <span class="small">Comments <?php echo $thread->posts; ?></span> &nbsp;
+			              <span class="small">Likes <?php echo $thread->likes; ?></span> &nbsp;
+			              <span class="small">Dislikes <?php echo $thread->dislikes; ?></span> &nbsp;
+			              <span class="small">Reactions <?php echo $thread->reactions; ?></span>
+			            </div>
+			            <hr/>
+			          
+			          <?php   
+			          endforeach;
+			        }
+			          
+
+			    ?>
+			    
 			  </aside>
 			  
 			  

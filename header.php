@@ -128,6 +128,15 @@
     
   }
   .nav-desc.nav-search input[type="search"] {width: 76%; }
+  .hot_disqus_thread{
+    color:#fff;
+  }
+  .hot_disqus_thread .small{
+    font-size:11px;
+  }
+  #hot_threads h3{
+    margin-bottom:8px;
+  }
 </style>
 
 </head>
