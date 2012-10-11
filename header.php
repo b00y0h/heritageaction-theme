@@ -137,6 +137,22 @@
   #hot_threads h3{
     margin-bottom:8px;
   }
+  .site-title a{
+    text-indent:-99999px;
+  }
+  .logo-hover{
+    width:120px;
+    height:70px;
+    display:none;
+    position:absolute;
+    background-color:rgba(255,255,255,0.7);
+    background-image: url(/wp-content/themes/heritageaction/img/home-logo-hover.png);
+    background-repeat:no-repeat;
+    background-position: top center;
+  }
+  .site-title:hover .logo-hover{
+    display:block;
+  }
 </style>
 
 </head>
@@ -146,12 +162,18 @@
  <?php do_action( 'before' ); ?>
  <header id="masthead" class="site-header" role="banner">
 	 <hgroup>
-		 <h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		 <h1 class="site-title">		   
+		   <a href="<?php echo home_url( '/' ); ?>" rel="home">
+		     <span class="logo-hover"></span>
+		     <?php bloginfo( 'name' ); ?>
+		  </a>
+		 </h1>
 	 </hgroup>
-
 	 <nav role="navigation" class="site-navigation main-navigation">
 		 <h1 class="assistive-text"><?php _e( 'Menu', 'heritageaction' ); ?></h1>
-		 <div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'heritageaction' ); ?>"><?php _e( 'Skip to content', 'heritageaction' ); ?></a></div>
+		 <div class="assistive-text skip-link">		   
+		   <a href="#content" title="<?php esc_attr_e( 'Skip to content', 'heritageaction' ); ?>"><?php _e( 'Skip to content', 'heritageaction' ); ?></a>
+		 </div>
 
 
 		 <div class="menu-main-nav-container">
