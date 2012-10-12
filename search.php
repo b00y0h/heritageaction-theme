@@ -12,7 +12,9 @@ get_header(); ?>
 <div id="hero">
   <div class="inner clearfix">
 		<header class="page-header">
-			<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'heritageaction' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+			<h1 class="page-title"><?php 
+			$title_pre = (get_query_var('post_type') == 'post') ? "Forge " : '';
+			printf( __( $title_pre . 'Search Results for: %s', 'heritageaction' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 		</header><!-- .page-header -->
   </div>
 </div>

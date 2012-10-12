@@ -19,7 +19,7 @@
 		      <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
             <input type="hidden" name="search_post_type" value="post" />
         		<label for="s" class="assistive-text"><?php _e( 'Search', 'heritageaction' ); ?></label>
-        		<input type="text" class="field search-input" name="s" value="" id="s" placeholder="<?php esc_attr_e( 'Search &hellip;', 'heritageaction' ); ?>" />
+        		<input type="text" class="field search-input" name="s" value="" id="s" placeholder="<?php esc_attr_e( 'Search the Forge &hellip;', 'heritageaction' ); ?>" />
         		<div id="search-btn" class="go gradient blue-gradient"><div class="arrow-right"></div></div> 
 
         	</form>
