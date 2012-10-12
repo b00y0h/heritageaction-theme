@@ -15,8 +15,14 @@
 		      </a>
 		    </header>
 		    
-		    <aside id="widget-search" class="widget">
-		      <?php get_search_form(); ?>
+		    <aside id="widget-search" class="widget">		      
+		      <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
+            <input type="hidden" name="search_post_type" value="post" />
+        		<label for="s" class="assistive-text"><?php _e( 'Search', 'heritageaction' ); ?></label>
+        		<input type="text" class="field search-input" name="s" value="" id="s" placeholder="<?php esc_attr_e( 'Search &hellip;', 'heritageaction' ); ?>" />
+        		<div id="search-btn" class="go gradient blue-gradient"><div class="arrow-right"></div></div> 
+
+        	</form>
 		    </aside>
 		    
 		    <aside id="widget-about-us" class="widget">

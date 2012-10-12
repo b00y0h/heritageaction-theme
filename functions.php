@@ -221,16 +221,24 @@ function ha_save_key_vote_type( $post_id ) {
 
 
 function search_url_rewrite_rule() {
-    if ( is_search() && !empty($_GET['s'])) {
-        wp_redirect(home_url("/search/") . urlencode(get_query_var('s')));
+    if (is_search() && !empty($_GET['s'])) {
+        if(isset($_GET['search_post_type']) && $_GET['search_post_type'] == 'post'){
+          wp_redirect(home_url("/search-blog/") . urlencode(get_query_var('s')) );        
+        }
+        else{
+          wp_redirect(home_url("/search/") . urlencode(get_query_var('s')) );
+        }  
+          
         exit();
     }   
 }
 add_action('template_redirect', 'search_url_rewrite_rule');
 
 add_action( 'init', 'search_rule' );
-function search_rule(){
-    add_rewrite_rule('^search/([^/]*)?', 'index.php?s=$matches[1]', 'top');
+function search_rule(){    
+      add_rewrite_rule('^search-blog/([^/]*)?', 'index.php?s=$matches[1]&post_type=post', 'top');
+      add_rewrite_rule('^search/([^/]*)?', 'index.php?s=$matches[1]', 'top');
+    
 }
 
 /**
