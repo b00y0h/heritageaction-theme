@@ -152,6 +152,13 @@
   .site-title:hover .logo-hover{
     display:block;
   }
+  #congresspages-wrapper{
+    width:986px;
+    margin:0 auto;
+  }
+  .page-template-page-congresspages-php #hero{
+    margin-bottom:15px;
+  }
 </style>
 
 </head>
@@ -177,13 +184,13 @@
 		 <div class="menu-main-nav-container">
 				 <ul id="menu-main-nav" class="menu">
 						 <li class="gradient light-blue-gradient score-card">
-								 <a href="/score-card/">
+								 <a href="http://heritageactionscorecard.com" target="_blank">
 										 <span class="nav-title">Score Card</span>
 								 </a>
 								 <span class="nav-desc">&ldquo;The final source for congressional accountability.&rdquo;<span class="author">– Jeffy Smithbo</span></span>
 						 </li>
 									 <li class="gradient red-gradient dashboard">
-											 <a href="/dashboard/">
+											 <a href="/congress/">
 													 <span class="nav-title">Dashboard</span>
 											 </a>
 											 <span class="nav-desc nav-search">
@@ -195,8 +202,13 @@
 													 <span class="nav-title">The Forge Blog</span>
 											 </a>
 											 <span class="nav-desc">
-											   <h6 class="blog-title">This is a blog post title</h6>
-											   <p class="blog-excerpt">This is a post excerpt. Lorem ipsum dolor sit amet...</p>
+											   <?php
+											    $latest_post = new WP_Query(array('posts_per_page'=>'1', 'post_type'=>'post','orderby' => 'post_date',
+                          'order' => 'DESC', 'ignore_sticky_posts' => 1));
+											    while($latest_post->have_posts()): $latest_post->the_post();?>
+											   <h6 class="blog-title"><?php echo the_title(); ?></h6>
+											   <p class="blog-excerpt"><?php echo mb_strimwidth(get_the_excerpt(),0,50,'...'); ?></p>
+											   <?php endwhile; wp_reset_postdata(); ?>
 											 </span>
 									 </li>
 									 <li class="gradient light-red-gradient donate">
