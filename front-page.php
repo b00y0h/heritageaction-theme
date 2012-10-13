@@ -11,6 +11,45 @@
  */
 
 get_header(); ?>
+
+<?php /* set_transient('ha_takeover', serialize(array(
+	'url' => urlencode('http://www.youtube.com/watch?v=39sKHeK3l0Y'), 
+	'title' => urlencode('Fight for Freedom'), 
+	'description' => urlencode('If you listen to the media, conservatives are fading everywhere from Congress to the campaign trail. Nothing could be further from the truth; the strength of conservative principles continues to endure and thrive.
+
+	There is an awakening across the country, and the fight is on to return power to individuals and localities, empower individuals and unleash America\'s entrepreneurial spirit.
+
+	Join the fight: http://heritageaction.com/join/fight-for-freedom/') )));  */ ?>
+
+
+
+<script type="text/javascript" charset="utf-8">		
+		(function($){
+			$(document).ready(function(){
+				
+				<?php  
+				$takeover = (get_transient('ha_takeover'));
+				$takeover = @unserialize($takeover);
+				if($takeover) : 
+					$takeover_url = $takeover['url'];
+					$takeover_title = $takeover['title'];
+					$takeover_description = $takeover['description'];
+				?>
+				if(getCookie('seen_takeover') != '<?php echo $takeover_url; ?>'){
+					$(document).orangeBox('createCustom', {
+						href : decodeURIComponent(('<?php echo $takeover_url; ?>' + '').replace(/\+/g, '%20')), 
+						title: decodeURIComponent(('<?php echo $takeover_title; ?>' + '').replace(/\+/g, '%20')), 
+						caption: decodeURIComponent(('<?php echo $takeover_description; ?>' + '').replace(/\+/g, '%20'))});
+					setCookie('seen_takeover', '<?php echo $takeover_url; ?>', '1776');
+				}
+				
+				
+				<?php endif; ?>
+				
+			})
+		})(jQuery);
+</script>
+
 <div id="main-outer">
    <div id="main-inner">
 		<div id="primary" class="content-area">

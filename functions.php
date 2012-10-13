@@ -119,7 +119,7 @@ function heritageaction_scripts() {
 	
 	wp_enqueue_script('jquery-ui-core');
 	wp_enqueue_script( 'jquery-effects-custom', get_template_directory_uri() . '/js/jquery-ui-1.8.24.custom.min.js', array( 'jquery' ), '20121002', true );
-	wp_enqueue_script( 'orangebox', get_template_directory_uri() . '/js/orangebox.min.js', array( 'jquery' ), '20121004', true );
+	wp_enqueue_script( 'orangebox', get_template_directory_uri() . '/js/orangebox.min.js', array( 'jquery' ), '20121004');
 	wp_enqueue_script( 'tinycarousel', get_template_directory_uri() . '/js/jquery.tinycarousel.js', array( 'jquery' ), '20121004', true );
 	
 	
@@ -167,14 +167,6 @@ function post_key_vote_meta_box( $post ) {
     $key_vote_type = get_post_meta($post->ID,'key_vote_type',true);
     ?>
     
-    <script type="text/javascript">
-      (function($){
-        $(document).ready(function(){
-          
-        })
-      })(jQuery);
-    </script> 
-  
   <select id="key_vote_type" name="key_vote_type">
     <option  value="">Co Sponsorship</option>
     <option <?php echo ($key_vote_type == 'yes') ? 'selected="selected"' : '';  ?> value="yes">Yes</option>
