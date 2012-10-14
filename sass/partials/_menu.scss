@@ -1,76 +1,26 @@
 /* =Menu
 ----------------------------------------------- */
-
-//.main-navigation {
-//  clear: both;
-//  display: block;
-//  float: left;
-//  width: 100%;
+//hgroup {
+//  margin-left:1.38889%;
 //}
-//.main-navigation ul {
-//  list-style: none;
-//  margin: 0;
-//  padding-left: 0;
-//}
-//.main-navigation li {
-//  float: left;
-//  position: relative;
-//}
-//.main-navigation a {
-//  display: block;
-//  text-decoration: none;
-//}
-//.main-navigation ul ul {
-//  -moz-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
-//  -webkit-box-shadow: 0 3px 3px rgba(0,0,0,0.2);
-//  box-shadow: 0 3px 3px rgba(0,0,0,0.2);
-//  display: none;
-//  float: left;
-//  position: absolute;
-//    top: 1.5em;
-//    left: 0;
-//  z-index: 99999;
-//}
-//.main-navigation ul ul ul {
-//  left: 100%;
-//  top: 0;
-//}
-//.main-navigation ul ul a {
-//  width: 200px;
-//}
-//.main-navigation ul ul li {
-//}
-//.main-navigation li:hover > a {
-//}
-//.main-navigation ul ul :hover > a {
-//}
-//.main-navigation ul ul a:hover {
-//}
-//.main-navigation ul li:hover > ul {
-//  display: block;
-//}
-//.main-navigation li.current_page_item a,
-//.main-navigation li.current-menu-item a {
-//}
-
-
-
+#masthead {
+  @include box-shadow(0 0 4px rgba(0,0,0,.20));
+}
 nav[role='navigation'] {
   font-size:0;
   overflow:visible;
   vertical-align: top;
+  margin:0 1.38889%;
   a {
-    @include font-shorthand(22px, bold, auto);
+    @include font-shorthand(14px, bold, auto);
     @extend .alternate-font-family;
     @extend .uppercase;
     @extend .no-underline;
     color:$base-text-color;
-    display:inline-block;
     position:relative;
     height:$nav-height;
     line-height:$nav-height;
     white-space: nowrap;
-    width:195px;
     z-index:100;
     background-color:$white;
     &:hover {
@@ -94,7 +44,13 @@ nav[role='navigation'] {
     color:$black;
     text-decoration:underline;
   }
-  ul {position:relative;@extend .no-margin-or-padding;height:$nav-height;overflow:visible;}
+  ul {
+    @extend .no-margin-or-padding;
+    position:relative;
+    height:$nav-height;
+    overflow:visible;
+    z-index:1000;
+  }
   .nav-desc {
     @include font-shorthand(12px, normal, 16px);
     @extend .base-font-family;
@@ -116,19 +72,27 @@ nav[role='navigation'] {
     &.gradient {
       @include gradient-reset-filter();
       background-image:none;
-      background-color:transparent;
+      background-color:$white;
     }
     &:hover {
       @extend .text-shadow-dark;
       color:$white;
       z-index:1000;
-      height:137px;
       cursor:pointer;
+      @include respond-to(desktop) {
+        height:137px;
+      }
+      &#home-link:hover {
+        height:$nav-height;
+      }
       a {color:$white;background-color:transparent;}
       > .nav-desc {
-        @extend .display-block;
+        @include respond-to(desktop) {
+        display:block;
         z-index:1001;
+        }
       }
+      
     }
     &.red-gradient:hover {
       @extend .red-gradient;
@@ -177,26 +141,54 @@ nav[role='navigation'] {
     padding:5px 9px;
   }
 }
+.site-title {
+  @include size($nav-height,120px);
+  text-indent:-9999em;
+  background:transparent url('img/logo.png') left center no-repeat;
+  a {
+    @include size($nav-height,120px);
+    @extend .display-block;
+    background-color:transparent!important;
+    &:hover {
+      @extend .no-underline;
+      background-image: url(img/home-logo-hover.png) no-repeat;
+    }
+  }
+  &:hover .logo-hover{
+    display:block;
+  }
+}
+.logo-hover{
+  width:119px;
+  height:70px;
+  display:none;
+  position:absolute;
+  background: url(img/home-logo-hover.png) no-repeat;
+}
+
+
 li#search {
-  width:276px;
-  @extend .position-absolute;
-  right:0;
   z-index:900;
+  position:absolute;
+  width:220px!important;
+  right:0;
   &:hover {
-    a, a:hover {background-image: url('img/search-hover.png');}
+    z-index:949;
   }
   a {
     @extend .position-absolute;
-    width:60px;
+    width:100%;
     height:$nav-height;
-    right:0;
-    background:transparent url('img/search.png') center center no-repeat;
+    background:transparent url('img/search.png') 190px center no-repeat;
     }
+  &:hover {
+    a, a:hover {background-image: url('img/search-hover.png');}
+  }
     .nav-desc {@extend .position-absolute;top:85px;width:95%;}
-  input[type="search"] {width:80%;font-size:12px;}
+  input {width:82%;font-size:12px;margin-left:-16px;}
 }
 .nav-desc.nav-search {
-  input[type="search"] {width:75%;margin-left:-40px;}
+  input[type="search"] {width:76%;margin-left:-40px;}
   .go {
     position:absolute;
     right:10px;
