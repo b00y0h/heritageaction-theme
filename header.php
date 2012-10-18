@@ -69,12 +69,6 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <style type="text/css" media="screen">
-  .rightSidebar .block {
-    width:257px;
-  }
-  .leftContentColumn {
-    width: 670px;
-  }
   
   .dashboardTwitterFeed{
     margin-left:5px;

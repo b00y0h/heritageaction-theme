@@ -1026,3 +1026,21 @@ h1 {
 .page-template-page-congresspages-php #hero{
   margin-bottom:15px;
 }
+
+// ====================================
+// = Action Dashboard / Congress Page =
+// ====================================
+
+.CPTitle {
+  @extend .display-none;
+}
+.page-template-page-congresspages-php {
+  #hero {
+    @include box-shadow(0 0 0 transparent);
+    margin-bottom:0;
+  }
+  .CPWrapper {
+    background-image:none;
+    background-color:#efefef;
+  }
+}

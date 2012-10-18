@@ -23,12 +23,21 @@ nav[role='navigation'] {
     width:25%;
   }
 }
-.home #main-inner, .site-info, #hero .inner, #primary, #primary {
+.home #main-inner, .site-info, #hero .inner, #primary, #primary, .CPContent, .CPHeader {
   @extend .max-width;
 	@extend .centered;
 	z-index:5;
 	position:relative;
 }
+.CPContent {
+  .leftContentColumn {
+    @extend .column8;
+  }
+  .rightSidebar {
+    @extend .column4;
+  }
+}
+
 #masthead .inner {
   @extend .max-width;
   @extend .centered;
