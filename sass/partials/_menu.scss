@@ -99,7 +99,13 @@ nav[role='navigation'] {
         z-index:1001;
         }
       }
-      
+    }
+    &.hover {
+      height:137px;
+      > .nav-desc {
+      @extend .display-block;
+      z-index:1001;
+      }
     }
     &.red-gradient:hover {
       @extend .red-gradient;
