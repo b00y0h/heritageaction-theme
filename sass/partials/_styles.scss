@@ -384,6 +384,12 @@ background:transparent url('img/striped-bg.png');
       &.no {
         background: url('img/bullet-no.png') 0 4px no-repeat;      
       }
+      &:last-of-type {
+        display:none;
+        @include respond-to(desktop) {
+          display:block;
+        }
+      }
     }
     a {
       text-decoration:none;
