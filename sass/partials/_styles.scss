@@ -24,22 +24,6 @@ footer {
   }
 }
 
-.site-title {
-  @include size($nav-height,120px);
-  @include hide-text;
-  @extend .position-relative;
-  background:transparent url('img/logo.png') left center no-repeat;
-  border-right:1px solid #ddd;
-  z-index:100;
-  a {
-    @include size($nav-height,120px);
-    @extend .display-inline-block;
-    &:hover {
-      @extend .no-underline;
-    }
-  }
-}
-
 .made-in-usa {
   background:transparent url('img/made-in-usa.png') left center no-repeat;
   @include size(22px, 44px);
@@ -90,9 +74,12 @@ footer {
 }
 
 .btn {
-  @include size(37px, auto);
-  @include font-shorthand(14px, normal,37px);
-  padding:0 1em;
+  font-size:.8em;
+    @include size(90%, auto);
+    @include respond-to('desktop') {
+      font-size:1em;
+    }
+  padding:.7em 1em;
   text-align:center;
   @extend .uppercase;
   @extend .display-inline-block;
@@ -416,14 +403,22 @@ background:transparent url('img/striped-bg.png');
 
 .home {
   #main-outer {
-    background:#f3f3f3 url('img/bg-capital-left.jpg') left bottom no-repeat; 
+    padding-top:40px;
+    background:#f3f3f3 url('img/bg-capital-left.jpg') left top no-repeat; 
+    @include respond-to(tablet-large-landscape) {
+      background-position: bottom; 
+      padding-top:0;
+    }
   }
   #black-bg {
-    @include size(377px,100%);
+    @include respond-to(tablet-large-landscape) {
+    height: 377px;
+    width:100%;
     background-color:$black;
     position:absolute;
     top:0;
     z-index:1;
+    }
   }
 }
 
@@ -466,6 +461,12 @@ background:transparent url('img/striped-bg.png');
     background:transparent url('img/follow-twitter.png') center no-repeat;
     margin:auto auto;
     text-indent:-9999em;
+  }
+}
+#latest-tweets {
+  @extend .display-none;
+  @include respond-to(tablet-large-landscape) {
+    display:block;
   }
 }
 
@@ -557,14 +558,9 @@ background:transparent url('img/striped-bg.png');
     @extend .centered;
     @extend .max-width;
   }
-  .col1 {
-    @include column(8);    
-  }
-  .col2 {
-    @include column(4);
-  }
   h4 {
     font-size:24px;
+    line-height:24px;
   }
   .social {
     margin-top:.6em;
@@ -729,6 +725,14 @@ h1 {
   }
   .home & {
     padding-top:0;
+    display:none;
+    @include respond-to('desktop') {
+      display:block;
+    }
+    @include respond-to('tablet-large-landscape') {
+      padding-top:0;
+      display:block;
+    }
   }
   .donate & {
     padding-bottom:60px;
@@ -890,6 +894,11 @@ h1 {
   @extend .display-none;
 }
 
+#facebook-page-wall{
+  background:#fff;
+}
+
+
 
 @media only screen {
 .switch {
@@ -960,4 +969,58 @@ h1 {
   	transition: all 0.3s ease-out;
   }
 }
+}
+
+#press-release-slider .viewport { float: left; position: relative; }
+#press-release-slider .buttons { display: block; margin: 30px 10px 0 0; float: left; }
+#press-release-slider .next { }
+#press-release-slider .disable { }
+#press-release-slider .overview { list-style: none; padding: 0; margin: 0;  position: absolute; left: 0; top: 0;overflow:hidden; }
+#press-release-slider .overview li{ float: left; margin: 0 20px 0 0; padding: 1px; height: 121px; border: 1px solid #dcdcdc; width: 236px;}
+
+#press-release-slider .pager { overflow:hidden; list-style: none; clear: both; margin: 0 0 0 45px; }
+#press-release-slider .pager li { float: left; }
+#press-release-slider .pagenum {  }
+#press-release-slider .active { 
+  background-color: #fa8f4c;    
+  color: white;
+  background-image: -ms-linear-gradient(top, #fa8f4c, #f54a18);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fa8f4c), to(#f54a18));
+  background-image: -webkit-linear-gradient(top, #fa8f4c, #f54a18);
+  background-image: -o-linear-gradient(top, #fa8f4c,#f54a18);
+  background-image: -moz-linear-gradient(top, #fa8f4c, #f54a18);
+  background-image: linear-gradient(top, #fa8f4c,#f54a18);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa8f4c', endColorstr='#f54a18', GradientType=0);
+}
+.press-release-slide{
+  float:left;
+  height:200px;
+}
+
+#fb-widget-like span{
+  display:block;
+  clear:both;
+}
+
+.signupSubmissionResult{
+  padding-top:15px;
+  font-size:18px;
+  
+}
+.hot_disqus_thread{
+  color:#fff;
+}
+.hot_disqus_thread .small{
+  font-size:11px;
+}
+#hot_threads h3{
+  margin-bottom:8px;
+}
+#congresspages-wrapper{
+  width:986px;
+  margin:0 auto;
+}
+.page-template-page-congresspages-php #hero{
+  margin-bottom:15px;
 }
