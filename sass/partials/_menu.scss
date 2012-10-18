@@ -4,47 +4,28 @@
 //  margin-left:1.38889%;
 //}
 #masthead {
-  @include box-shadow(0 0 4px rgba(0,0,0,.20));
+  @include box-shadow(0 0 -4px rgba(0,0,0,.20));
+  position:fixed;
+  bottom:0;
+  z-index:1000;
+  overflow:auto;
 }
 nav[role='navigation'] {
-  font-size:0;
-  overflow:visible;
-  vertical-align: top;
-  margin:0 1.38889%;
+  font: 0/0 a;
+  white-space: nowrap;
   a {
-    @include font-shorthand(14px, bold, auto);
-    @include respond-to(tablet-large){
-      font-size:18px;
-    }
-    @include respond-to(desktop){
-      font-size:22px;
-    }
+    @include font-shorthand(12px, auto, $nav-height);
     @extend .alternate-font-family;
     @extend .uppercase;
     @extend .no-underline;
+    @extend .display-inline-block;
     color:$base-text-color;
+    padding:0 2em;
     position:relative;
     height:$nav-height;
     line-height:$nav-height;
     white-space: nowrap;
-    z-index:100;
-    background-color:$white;
-    &:hover {
-      background-color:transparent;
-      color:$white;
-    }
-    &:active {
-      color:$white!important;
-      text-decoration:none!important;
-    }
-    .nav-title, + .nav-desc {
-      width:195px;
-      z-index:1000;
-    }
-    .nav-desc {
-      @extend .position-absolute;
-      padding-top:40px;
-    }
+    background-color:transparent;
   }
   &.paging-navigation a:hover {
     color:$black;
@@ -53,176 +34,17 @@ nav[role='navigation'] {
   ul {
     @extend .no-margin-or-padding;
     position:relative;
-    height:$nav-height;
-    overflow:visible;
-    z-index:1000;
-    margin:0 46px 0 119px;
-  }
-  .nav-desc {
-    @include font-shorthand(12px, normal, 16px);
-    @extend .base-font-family;
-    @extend .italic;
-    @extend .display-none;
-    text-transform:none;
-    top:70px;
-    padding:0 10px;
   }
   li {
     @extend .display-inline-block;
     height:$nav-height;
     text-align:center;
-    z-index:950;
     position:relative;
-    top:0;
-    vertical-align:top;
     border-right:1px solid #dddddd;
     &.gradient {
-      @include gradient-reset-filter();
-      background-image:none;
-      background-color:$white;
-    }
-    &:hover {
-      @extend .text-shadow-dark;
-      color:$white;
-      z-index:1000;
-      cursor:pointer;
-      @include respond-to(desktop) {
-        height:137px;
+//      @include gradient-reset-filter();
+//      background-image:none;
+//      background-color:$white;
       }
-      &#home-link:hover {
-        height:$nav-height;
-      }
-      a {color:$white;background-color:transparent;}
-      > .nav-desc {
-        @include respond-to(desktop) {
-        display:block;
-        z-index:1001;
-        }
-      }
-      
-    }
-    &.red-gradient:hover {
-      @extend .red-gradient;
-      border-right-color:$redLight;
-    }
-    &.light-red-gradient:hover {
-      @extend .light-red-gradient;
-      border-right-color:$redLight;
-    }
-    &.light-blue-gradient:hover {
-      @extend .light-blue-gradient;
-      border-right-color:$blueLighter;
-    }
-    &.orange-gradient:hover {
-      @extend .orange-gradient;
-      border-right-color:$orange;
-    }
-    &.blue-gradient:hover {
-      @extend .blue-gradient;
-      border-right-color:$blueDarker;
-    }
-    &.medium-blue-gradient:hover {
-      @extend .medium-blue-gradient;
-      border-right-color:$blue;
     }
   }
-  .nav-title {
-    top:30px;
-  }
-  .author {
-    margin-top:10px;
-  }
-  .blog-title {
-    @include text-overflow();
-    color:white;
-    @include font-shorthand(16px, bold, 16px);
-    font-style:normal;
-  }
-  .go {
-    @extend .rounded;
-    @include square(22px);
-    @include box-shadow(rgba(0, 0, 0, .35) 0 1px 5px);
-    position:absolute;
-    right:0px;
-    bottom:15px;
-    padding:5px 9px;
-  }
-}
-#home-link {
- width:119px!important; 
- position:absolute;
- left:-119px;
- background:transparent url('img/logo.png') left center no-repeat;
-}
-
-.site-title {
-  @include size($nav-height,120px);
-  text-indent:-9999em;
-  #home-link:hover & {
-    background: url(img/home-logo-hover.png) no-repeat;    
-  }
-  a {
-    @include size($nav-height,120px);
-    @extend .display-block;
-    background-color:transparent!important;
-    &:hover {
-      @extend .no-underline;
-      background-image: url(img/home-logo-hover.png) no-repeat;
-    }
-  }
-  &:hover .logo-hover{
-    display:block;
-  }
-}
-.logo-hover{
-  width:119px;
-  height:70px;
-  display:none;
-  position:absolute;
-  background: url(img/home-logo-hover.png) no-repeat;
-}
-
-
-li#search {
-  z-index:900;
-  position:absolute;
-  width:220px!important;
-  right:-46px;
-  &:hover {
-    z-index:949;
-  }
-  a {
-    @extend .position-absolute;
-    width:100%;
-    height:$nav-height;
-    background:transparent url('img/search.png') 190px center no-repeat;
-    }
-  &:hover {
-    a, a:hover {background-image: url('img/search-hover.png');}
-  }
-    .nav-desc {@extend .position-absolute;top:85px;width:95%;}
-  input {width:82%;font-size:12px;margin-left:-16px;}
-}
-.nav-desc.nav-search {
-  input[type="search"] {width:76%;margin-left:-40px;}
-  .go {
-    position:absolute;
-    right:10px;
-    bottom:40px;
-  }
-  
-}
-.footer-navigation {
-  li {
-    @extend .display-inline-block;
-  }
-}
-
-/* Small menu */
-.menu-toggle {
-	cursor: pointer;
-}
-.main-small-navigation .menu {
-	display: none;
-}
-

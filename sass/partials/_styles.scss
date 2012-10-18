@@ -401,26 +401,10 @@ background:transparent url('img/striped-bg.png');
   }
 }
 
-.home {
-  #main-outer {
-    padding-top:40px;
+  #main {
     background:#f3f3f3 url('img/bg-capital-left.jpg') left top no-repeat; 
-    @include respond-to(tablet-large-landscape) {
-      background-position: bottom; 
-      padding-top:0;
-    }
+    padding:0 35px 70px;
   }
-  #black-bg {
-    @include respond-to(tablet-large-landscape) {
-    height: 377px;
-    width:100%;
-    background-color:$black;
-    position:absolute;
-    top:0;
-    z-index:1;
-    }
-  }
-}
 
 #secondary {
   background-color:$base-text-color;
@@ -438,7 +422,6 @@ background:transparent url('img/striped-bg.png');
   li {margin:1em 0;}
   a {
     text-decoration:none;color:$white;
-    &:hover .post-title {text-decoration:underline;}
     }
   .post-title {
     @extend .uppercase;
@@ -450,18 +433,8 @@ background:transparent url('img/striped-bg.png');
   .meta {
     @extend .post-meta;
   }
-  #latest-tweets .meta {
-    margin-bottom:-.4em;
-  }
   .excerpt {@extend .small-font;}
   #read-the-forge {width:65%;margin:2em auto;@extend .display-block;}
-  #follow-twitter {
-    @include size(20px,146px);
-    @extend .display-block;
-    background:transparent url('img/follow-twitter.png') center no-repeat;
-    margin:auto auto;
-    text-indent:-9999em;
-  }
 }
 #latest-tweets {
   @extend .display-none;

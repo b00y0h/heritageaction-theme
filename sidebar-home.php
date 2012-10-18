@@ -6,7 +6,7 @@
  * @since Heritage Action 1.0
  */
 ?>
-		<div id="secondary" class="widget-area shadow-curl-right" role="complementary">
+		<div id="secondary" class="widget-area" role="complementary">
 		  <header id="the-forge" class="widget-main-header"><h2>The Forge</h2></header>
 			  
 			  <aside id="featured-posts" class="widget">
@@ -15,7 +15,7 @@
 			      <?php
 			      $cat_id = get_cat_ID('featured');
 			      $args = array(
-                'numberposts' => 2,
+                'numberposts' => 3,
                 'offset' => 0,
                 'category' => $cat_id,
                 'orderby' => 'post_date',
@@ -76,19 +76,5 @@
           <a href='/blog' class='btn rounded gradient orange-gradient' id="read-the-forge">Read The Forge</a>
 			  </aside>
 			  
-			  <aside id='latest-tweets'>
-			    <h3 class='widget-title'>Latest Tweets</h3>
-			    <ul>
-			      <?php echo twitter_feed($user='heritage_action', $count='5'); ?>
-			    </ul>			    
-          <a href="https://twitter.com/Heritage_Action" id="follow-twitter" target="_blank">Follow @Heritage_Action</a>
-			  </aside>
 
 		</div><!-- #secondary .widget-area -->
-		
-		<?php if((date('N') <= 5) && (date('G', strtotime(current_time('mysql'))) >= 9 && date('G', strtotime(current_time('mysql'))) <= 11) ) : ?>
-		<div class="listenLiveWidget widget-area">
-      <a id="listen-live" href="http://www.istook.com/f/live" target="_blank">Listen to Istook Live!</a>
-		</div>
-		<div style="clear:both;"></div>
-    <?php endif; ?>
