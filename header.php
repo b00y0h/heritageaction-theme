@@ -68,121 +68,27 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<style type="text/css" media="screen">
-  .switch input:last-of-type:checked ~ .switch-button {
-        left: 55%; } /* fix for the switcher button not quite going all the way to the right, from line 2082 of style.css, line 922 of sass */
-  #facebook-page-wall{
-    background:#fff;
-  }
-  #under-cover h4 {
-    line-height:24px;
-  }
-  
-  #press-release-slider { height: 240px; overflow:hidden;  width:600px}
-  #press-release-slider .viewport { float: left; width:600px; height: 200px; overflow: hidden; position: relative; }
-  #press-release-slider .buttons { display: block; margin: 30px 10px 0 0; float: left; }
-  #press-release-slider .next { }
-  #press-release-slider .disable { }
-  #press-release-slider .overview { list-style: none; padding: 0; margin: 0;  position: absolute; left: 0; top: 0; }
-  #press-release-slider .overview li{ float: left; margin: 0 20px 0 0; padding: 1px; height: 121px; border: 1px solid #dcdcdc; width: 236px;}
-
-  #press-release-slider .pager { overflow:hidden; list-style: none; clear: both; margin: 0 0 0 45px; }
-  #press-release-slider .pager li { float: left; }
-  #press-release-slider .pagenum {  }
-  #press-release-slider .active { 
-    background-color: #fa8f4c;    
-    color: white;
-    background-image: -ms-linear-gradient(top, #fa8f4c, #f54a18);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fa8f4c), to(#f54a18));
-    background-image: -webkit-linear-gradient(top, #fa8f4c, #f54a18);
-    background-image: -o-linear-gradient(top, #fa8f4c,#f54a18);
-    background-image: -moz-linear-gradient(top, #fa8f4c, #f54a18);
-    background-image: linear-gradient(top, #fa8f4c,#f54a18);
-    background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa8f4c', endColorstr='#f54a18', GradientType=0);
-  }
-  .press-release-slide{
-    float:left;
-    width:600px;
-    height:200px;
-  }
-  
-  #fb-widget-like{
-    width:175px;
-    margin: 13px 0px 0 20px;
-    float: left;
-  }
-  #fb-widget-like span{
-    width:455px !important;
-  }
-  .twitter-widget-share{
-    position: absolute;
-    right: 5px;
-    margin: 12px 0px 0px 20px;
-  }
-  
-  .signupSubmissionResult{
-    
-    padding-top:15px;
-    font-size:18px;
-    
-  }
-  .nav-desc.nav-search input[type="search"] {width: 76%; }
-  .hot_disqus_thread{
-    color:#fff;
-  }
-  .hot_disqus_thread .small{
-    font-size:11px;
-  }
-  #hot_threads h3{
-    margin-bottom:8px;
-  }
-  .site-title a{
-    text-indent:-99999px;
-  }
-  .logo-hover{
-    width:119px;
-    height:70px;
-    display:none;
-    position:absolute;
-    background-image: url(/wp-content/themes/heritageaction/img/home-logo-hover.png);
-    background-repeat:no-repeat;
-    background-position: top left;
-  }
-  .site-title:hover .logo-hover{
-    display:block;
-  }
-  #congresspages-wrapper{
-    width:986px;
-    margin:0 auto;
-  }
-  .page-template-page-congresspages-php #hero{
-    margin-bottom:15px;
-  }
-</style>
-
 </head>
 <body <?php body_class(); ?>>
-<div id="fb-root"></div>
 <div id="page" class="hfeed site wrap">
  <?php do_action( 'before' ); ?>
  <header id="masthead" class="site-header" role="banner">
-	 <hgroup>
-		 <h1 class="site-title">		   
-		   <a href="<?php echo home_url( '/' ); ?>" rel="home">
-		     <span class="logo-hover"></span>
-		     <?php bloginfo( 'name' ); ?>
-		  </a>
-		 </h1>
-	 </hgroup>
+   <div class="inner">
 	 <nav role="navigation" class="site-navigation main-navigation">
-		 <h1 class="assistive-text"><?php _e( 'Menu', 'heritageaction' ); ?></h1>
+		 <h2 class="assistive-text"><?php _e( 'Menu', 'heritageaction' ); ?></h2>
 		 <div class="assistive-text skip-link">		   
 		   <a href="#content" title="<?php esc_attr_e( 'Skip to content', 'heritageaction' ); ?>"><?php _e( 'Skip to content', 'heritageaction' ); ?></a>
 		 </div>
-
 		 <div class="menu-main-nav-container">
 				 <ul id="menu-main-nav" class="menu">
+				    <li id="home-link">
+				      <h1 class="site-title">		   
+         		   <a href="<?php echo home_url( '/' ); ?>" rel="home">
+         		     <span class="logo-hover"></span>
+         		     <?php bloginfo( 'name' ); ?>
+         		  </a>
+         		 </h1>
+				    </li>
 						 <li class="gradient light-blue-gradient score-card">
 								 <a href="http://heritageactionscorecard.com" target="_blank">
 										 <span class="nav-title">Score Card</span>
@@ -226,6 +132,7 @@
 							 </ul>
 					 </div>
 	 </nav><!-- .site-navigation .main-navigation -->
+    </div> <!-- .inner -->
  </header><!-- #masthead .site-header -->
 
  <?php if ( is_home() || is_category() || is_tag() ) :

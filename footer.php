@@ -25,8 +25,7 @@
 	</footer><!-- #colophon .site-footer -->
 </div><!-- #page .hfeed .site -->
 
-<script type="text/javascript">
-
+<script>
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-5004756-2']);
   _gaq.push(['_setDomainName', 'ha.andrefredette.com']);
@@ -37,9 +36,8 @@
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
-
 </script>
-
+<div id="fb-root"></div>
 <?php wp_footer(); ?>
 
 </body>

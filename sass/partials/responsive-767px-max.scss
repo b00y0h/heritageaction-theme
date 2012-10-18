@@ -1,0 +1,29 @@
+//
+// Responsive: Landscape phone to desktop/tablet
+// --------------------------------------------------
+
+
+@media (max-width: 767px) {
+
+  body.responsive-debug {
+    &:after {
+      content: "Landscape phone to desktop/tablet";
+    }
+  }
+
+}
+
+
+
+// UP TO LANDSCAPE PHONE
+// ---------------------
+
+@media (max-width: 480px) {
+  body.responsive-debug {
+    &:after {
+      content: "up to Landscape phone";
+    }
+  }
+
+
+}
