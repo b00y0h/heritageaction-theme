@@ -50,6 +50,7 @@ nav[role='navigation'] {
     height:$nav-height;
     overflow:visible;
     z-index:1000;
+    margin:0 46px 0 119px;
   }
   .nav-desc {
     @include font-shorthand(12px, normal, 16px);
@@ -141,6 +142,12 @@ nav[role='navigation'] {
     padding:5px 9px;
   }
 }
+#home-link {
+ width:119px!important; 
+ position:absolute;
+ left:-119px;
+}
+
 .site-title {
   @include size($nav-height,120px);
   text-indent:-9999em;
@@ -171,7 +178,7 @@ li#search {
   z-index:900;
   position:absolute;
   width:220px!important;
-  right:0;
+  right:-46px;
   &:hover {
     z-index:949;
   }

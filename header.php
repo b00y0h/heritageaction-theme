@@ -89,7 +89,7 @@
          		  </a>
          		 </h1>
 				    </li>
-						 <li class="gradient light-blue-gradient score-card">
+						 <li id="score-card" class="gradient light-blue-gradient score-card">
 								 <a href="http://heritageactionscorecard.com" target="_blank">
 										 <span class="nav-title">Score Card</span>
 								 </a>
@@ -117,7 +117,7 @@
 											   <?php endwhile; wp_reset_postdata(); ?>
 											 </span>
 									 </li>
-									 <li class="gradient light-red-gradient donate">
+									 <li id="donate" class="gradient light-red-gradient donate">
 											 <a href="/donate/">
 													 <span class="nav-title">Donate</span>
 											 </a>

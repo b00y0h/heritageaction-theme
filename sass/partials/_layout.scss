@@ -20,13 +20,7 @@
 nav[role='navigation'] {
   @extend .max-width;
   li {
-    width:20.833%;
-    &#home-link {
-      width:12.187%;
-    }
-    &#search {
-      width:4.418%;
-    }
+    width:25%;
   }
 }
 .home #main-inner, .site-info, #hero .inner, #primary, #primary {
