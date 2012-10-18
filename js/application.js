@@ -14,6 +14,15 @@
 				$(".items_" + $(".keyVoteSelector:checked").val() ).slideDown();
 				$("#more-key-votes-link").attr('href','/chamber/key-vote-' + $(".keyVoteSelector:checked").val() + '/')
 			})
+			
+			$("#search-trigger").click(function(){
+				if($("#search").hasClass('hover')){
+					$("#search").removeClass('hover');
+				}
+				else if(!$("#search").hasClass('hover')){
+					$("#search").addClass('hover');
+				}
+			})
 
 			if($("#signup-scroll-target").length > 0){
 				// only do signup scroll if its on the page
