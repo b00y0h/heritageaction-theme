@@ -146,12 +146,15 @@ nav[role='navigation'] {
  width:119px!important; 
  position:absolute;
  left:-119px;
+ background:transparent url('img/logo.png') left center no-repeat;
 }
 
 .site-title {
   @include size($nav-height,120px);
   text-indent:-9999em;
-  background:transparent url('img/logo.png') left center no-repeat;
+  #home-link:hover & {
+    background: url(img/home-logo-hover.png) no-repeat;    
+  }
   a {
     @include size($nav-height,120px);
     @extend .display-block;

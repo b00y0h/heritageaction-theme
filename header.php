@@ -84,7 +84,6 @@
 				    <li id="home-link">
 				      <h1 class="site-title">		   
          		   <a href="<?php echo home_url( '/' ); ?>" rel="home">
-         		     <span class="logo-hover"></span>
          		     <?php bloginfo( 'name' ); ?>
          		  </a>
          		 </h1>
