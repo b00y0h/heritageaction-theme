@@ -13,6 +13,12 @@ nav[role='navigation'] {
   margin:0 1.38889%;
   a {
     @include font-shorthand(14px, bold, auto);
+    @include respond-to(tablet-large){
+      font-size:18px;
+    }
+    @include respond-to(desktop){
+      font-size:22px;
+    }
     @extend .alternate-font-family;
     @extend .uppercase;
     @extend .no-underline;
