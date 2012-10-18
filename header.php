@@ -159,6 +159,29 @@
   .page-template-page-congresspages-php #hero{
     margin-bottom:15px;
   }
+  
+  .rightSidebar .block {
+    width:257px;
+  }
+  .leftContentColumn {
+    width: 670px;
+  }
+  
+  .dashboardTwitterFeed{
+    margin-left:5px;
+  }
+  .dashboardTwitterFeed li {
+    list-style:none;
+    margin: 1em 0;
+  }
+  .dashboardTwitterFeed .meta {
+    margin-bottom: -0.4em;
+    display:block;
+    
+  }
+  .twitterBlockTitle{
+    font-size:14px;
+  }
 </style>
 
 </head>
@@ -207,7 +230,7 @@
                           'order' => 'DESC', 'ignore_sticky_posts' => 1));
 											    while($latest_post->have_posts()): $latest_post->the_post();?>
 											   <h6 class="blog-title"><?php echo the_title(); ?></h6>
-											   <p class="blog-excerpt"><?php echo mb_strimwidth(get_the_excerpt(),0,50,'...'); ?></p>
+											   <p class="blog-excerpt"><?php echo truncateWords(get_the_excerpt(),50); ?>[...]</p>
 											   <?php endwhile; wp_reset_postdata(); ?>
 											 </span>
 									 </li>

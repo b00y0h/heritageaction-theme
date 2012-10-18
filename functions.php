@@ -75,7 +75,7 @@ function heritageaction_setup() {
 endif; // heritageaction_setup
 add_action( 'after_setup_theme', 'heritageaction_setup' );
 
-add_filter( 'body_class', 'my_neat_body_class');
+//add_filter( 'body_class', 'my_neat_body_class');
 function my_neat_body_class( $classes ) {
       $classes[] = 'responsive-help';
      return $classes;
@@ -317,6 +317,19 @@ function twitter_feed($user = 'twitter', $count = '3'){
     return $output;
 }
 
+function truncateWords($string, $your_desired_width) {
+  $parts = preg_split('/([\s\n\r]+)/', $string, null, PREG_SPLIT_DELIM_CAPTURE);
+  $parts_count = count($parts);
+
+  $length = 0;
+  $last_part = 0;
+  for (; $last_part < $parts_count; ++$last_part) {
+    $length += strlen($parts[$last_part]);
+    if ($length > $your_desired_width) { break; }
+  }
+
+  return implode(array_slice($parts, 0, $last_part));
+}
 
 
 /**

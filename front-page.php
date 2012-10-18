@@ -12,14 +12,12 @@
 
 get_header(); ?>
 
-<?php /* set_transient('ha_takeover', serialize(array(
+<?php set_transient('ha_takeover', serialize(array(
 	'url' => urlencode('http://www.youtube.com/watch?v=39sKHeK3l0Y'), 
-	'title' => urlencode('Fight for Freedom'), 
-	'description' => urlencode('If you listen to the media, conservatives are fading everywhere from Congress to the campaign trail. Nothing could be further from the truth; the strength of conservative principles continues to endure and thrive.
-
-	There is an awakening across the country, and the fight is on to return power to individuals and localities, empower individuals and unleash America\'s entrepreneurial spirit.
-
-	Join the fight: http://heritageaction.com/join/fight-for-freedom/') )));  */ ?>
+	'title' => '', 
+	'description' => '',
+	'link' => '',
+	'link_text' => '' )));  ?>
 
 
 
@@ -30,17 +28,21 @@ get_header(); ?>
 				<?php  
 				$takeover = (get_transient('ha_takeover'));
 				$takeover = @unserialize($takeover);
-				if($takeover) : 
+				if($takeover && isset($takeover['url']) && !empty($takeover['url'])) : 
 					$takeover_url = $takeover['url'];
-					$takeover_title = $takeover['title'];
-					$takeover_description = $takeover['description'];
+					$takeover_title = (!empty($takeover['title'])) ? $takeover['title'] : '';
+					$takeover_description = (!empty($takeover['description'])) ? $takeover['description'] : '';
+					if(!empty($takeover['link'])) {
+					  $takeover_link_text = (!empty($takeover['link_text'])) ? $takeover['link_text'] : 'Take Action';
+					  $takeover_description .= urlencode("<div align='center'><a href=\"{$takeover['link']}\" class=\"btn rounded gradient medium-blue-gradient\">$takeover_link_text</a></div>");
+					}
 				?>
 				if(getCookie('seen_takeover') != '<?php echo $takeover_url; ?>'){
 					$(document).orangeBox('createCustom', {
 						href : decodeURIComponent(('<?php echo $takeover_url; ?>' + '').replace(/\+/g, '%20')), 
 						title: decodeURIComponent(('<?php echo $takeover_title; ?>' + '').replace(/\+/g, '%20')), 
 						caption: decodeURIComponent(('<?php echo $takeover_description; ?>' + '').replace(/\+/g, '%20'))});
-					setCookie('seen_takeover', '<?php echo $takeover_url; ?>', '1776');
+					  setCookie('seen_takeover', '<?php echo $takeover_url; ?>', '1776');
 				}
 				
 				
@@ -100,7 +102,7 @@ get_header(); ?>
                 
               	<li class='<?php echo get_post_meta($post_id,"key_vote_type",true); ?>'><a href="<?php the_permalink(); ?>">
                   <span class='post-title'><?php the_title(); ?></span></a>
-                  <span class='excerpt'><?php echo mb_strimwidth(get_the_excerpt(),0,80,'[...]'); ?></span>                  
+                  <span class='excerpt'><?php echo truncateWords(get_the_excerpt(),95); ?>[...]</span>                  
                 </li>
                 
               	<?php wp_reset_postdata(); endforeach; ?>
@@ -128,7 +130,7 @@ get_header(); ?>
 
                 	<li class='<?php echo get_post_meta($post_id,"key_vote_type",true); ?>'><a href="<?php the_permalink(); ?>">
                     <span class='post-title'><?php the_title(); ?></span></a>
-                    <span class='excerpt'><?php echo mb_strimwidth(get_the_excerpt(),0,80,'[...]'); ?></span>                  
+                    <span class='excerpt'><?php echo truncateWords(get_the_excerpt(),95); ?>[...]</span>                  
                   </li>
 
                 	<?php wp_reset_postdata(); endforeach; ?>
@@ -214,7 +216,7 @@ get_header(); ?>
                   <div class="press-release-slide">
                     <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
                     <span class="post-meta"><?php echo date('F d, Y', strtotime($post->post_date)); ?></span>
-                    <p><?php echo mb_strimwidth(get_the_excerpt(),0,350); ?> </p>
+                    <p><?php echo truncateWords(get_the_excerpt(),350); ?></p>
                     <a href="<?php the_permalink(); ?>">READ FULL PRESS RELEASE</a>
                   </div>
 
