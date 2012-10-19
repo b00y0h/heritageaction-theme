@@ -88,7 +88,7 @@
   
   .home #hero {
    height: 377px;
-   width: 639px; 
+   width: 640px; 
   }
   .royalHtmlContent a{
     font-size:17px;
