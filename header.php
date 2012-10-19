@@ -85,6 +85,14 @@
   .twitterBlockTitle{
     font-size:14px;
   }
+  
+  .home #hero {
+   height: 377px;
+   width: 639px; 
+  }
+  .royalHtmlContent a{
+    font-size:17px;
+  }
 </style>
 
 </head>
