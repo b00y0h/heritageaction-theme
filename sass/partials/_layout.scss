@@ -23,11 +23,15 @@ nav[role='navigation'] {
     width:25%;
   }
 }
-.home #main-inner, .site-info, #hero .inner, #primary, #primary, .CPContent, .CPHeader {
+.home #main-inner, .site-info, #hero .inner, #primary, #primary {
   @extend .max-width;
 	@extend .centered;
 	z-index:5;
 	position:relative;
+}
+.CPContent, .CPHeader {
+  @extend .max-width;
+	@extend .centered;
 }
 .CPContent {
   .leftContentColumn {
