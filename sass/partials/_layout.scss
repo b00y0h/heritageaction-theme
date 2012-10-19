@@ -37,7 +37,10 @@ nav[role='navigation'] {
     @extend .column4;
   }
 }
-
+.site-content, #main-inner, #hero .inner {
+  padding-left: 1.38889%;
+  padding-right: 1.38889%;
+}
 #masthead .inner {
   @extend .max-width;
   @extend .centered;
@@ -69,6 +72,10 @@ nav[role='navigation'] {
   #main-inner {
     @extend .clearfix;
     padding-bottom:80px;
+  }
+  .site-content, #main-inner {
+    padding-left:0;
+    padding-right:0;
   }
   #main-outer {
     @extend .clearfix;
