@@ -67,34 +67,6 @@
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-
-<style type="text/css" media="screen">
-  
-  .dashboardTwitterFeed{
-    margin-left:5px;
-  }
-  .dashboardTwitterFeed li {
-    list-style:none;
-    margin: 1em 0;
-  }
-  .dashboardTwitterFeed .meta {
-    margin-bottom: -0.4em;
-    display:block;
-    
-  }
-  .twitterBlockTitle{
-    font-size:14px;
-  }
-  
-  .home #hero {
-   height: 377px;
-   width: 640px; 
-  }
-  .royalHtmlContent a{
-    font-size:17px;
-  }
-</style>
-
 </head>
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site wrap">

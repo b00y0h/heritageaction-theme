@@ -2307,18 +2307,44 @@ h1 {
 .page-template-page-congresspages-php #hero {
   margin-bottom: 15px; }
 
-/* line 1038, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+/* line 1032, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+.dashboardTwitterFeed {
+  margin-left: 5px; }
+
+/* line 1035, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+.dashboardTwitterFeed li {
+  list-style: none;
+  margin: 1em 0; }
+
+/* line 1039, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+.dashboardTwitterFeed .meta {
+  margin-bottom: -0.4em;
+  display: block; }
+
+/* line 1044, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+.twitterBlockTitle {
+  font-size: 14px; }
+
+/* line 1048, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+.royalHtmlContent a {
+  font-size: 17px; }
+
+/* line 1051, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+.royalSlider.minimal .arrow.right {
+  right: 10px; }
+
+/* line 1065, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
 .page-template-page-congresspages-php #hero {
   -webkit-box-shadow: 0 0 0 transparent;
   -moz-box-shadow: 0 0 0 transparent;
   box-shadow: 0 0 0 transparent;
   margin-bottom: 0; }
-/* line 1042, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+/* line 1069, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
 .page-template-page-congresspages-php .CPWrapper {
   background-image: none;
   background-color: #efefef; }
 
-/* line 1047, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+/* line 1074, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
 .tabBgCenter {
   height: 42px!important; }
 
@@ -2771,10 +2797,16 @@ nav[role='navigation'] li {
   .row:after {
     clear: both; }
 
-/* line 63, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
+/* line 57, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
+.home #primary {
+  z-index: 5; }
+/* line 61, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
+.home #secondary {
+  z-index: 100; }
+/* line 65, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
 .home #hero {
-  margin-right: -5%; }
-/* line 66, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
+  margin-right: -6%; }
+/* line 68, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
 .home #content {
   display: block;
   width: 104.16667%;
@@ -2787,51 +2819,51 @@ nav[role='navigation'] li {
   /* line 31, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-grid.scss */
   .home #content:after {
     clear: both; }
-  /* line 68, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
+  /* line 70, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
   .home #content .col1, .home #content .col2 {
     display: inline;
     float: left;
     width: 45.83333%;
     margin: 0 2.08333%; }
-/* line 72, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
+/* line 74, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
 .home #main {
   padding-top: 25px;
   position: relative; }
-/* line 76, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
+/* line 78, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
 .home #main-inner {
   padding-bottom: 80px; }
-/* line 80, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
+/* line 82, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
 .home .site-content, .home #main-inner {
   padding-left: 0;
   padding-right: 0; }
 
-/* line 90, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
+/* line 92, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
 #under-cover .col1 {
   display: inline;
   float: left;
   width: 63.88889%;
   margin: 0 1.38889%; }
-  /* line 92, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
+  /* line 94, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
   #under-cover .col1 #press-release-slider, #under-cover .col1 .viewport {
     height: 200px;
     overflow: hidden;
     width: 100%; }
-  /* line 98, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
+  /* line 100, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
   #under-cover .col1 #press-release-slider {
     height: 240px; }
-  /* line 101, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
+  /* line 103, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
   #under-cover .col1 .press-release-slide {
     float: left;
     width: 600px;
     height: 200px; }
-/* line 107, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
+/* line 109, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
 #under-cover .col2 {
   display: inline;
   float: left;
   width: 30.55556%;
   margin: 0 1.38889%; }
 
-/* line 124, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
+/* line 126, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
 .page #main {
   padding-top: 0; }
 

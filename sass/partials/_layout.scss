@@ -56,12 +56,14 @@ nav[role='navigation'] {
 .home {
   #primary {
     @extend .column8;
+    z-index:5;
   }
   #secondary {
     @extend .column4;
+    z-index:100;
   }
   #hero {
-    margin-right:-5%;
+    margin-right:-6%;
   }
   #content {
     @include row(8);
