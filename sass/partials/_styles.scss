@@ -403,8 +403,9 @@ background:transparent url('img/striped-bg.png');
 
   #main {
     background:#f3f3f3 url('img/bg-capital-left.jpg') left top no-repeat; 
-    padding:0 35px 70px;
+    padding:0 20px 70px;
   }
+  .widgets {margin-top:20px;}
 
 #secondary {
   background-color:$base-text-color;

@@ -1,6 +1,14 @@
 	(function($){
 		$(document).ready(function(){
 			
+      // prevent more/less nav buttons from jumping
+			$(".no-click").on("click", function(e) {
+			  alert("Handling link click");
+        e.preventDefault();
+        history.pushState({}, "", this.href);
+      });
+      
+			
 			// press release slider
 			$("#press-release-slider").tinycarousel({ 
         pager: true, 
@@ -53,7 +61,6 @@
         }
       });
 
-			
 
 
 			$("#listen-live").click(function(){

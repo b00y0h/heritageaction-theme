@@ -4,23 +4,31 @@
 //  margin-left:1.38889%;
 //}
 #masthead {
-  @include box-shadow(0 0 -4px rgba(0,0,0,.20));
+  @include box-shadow(0 0px 4px rgba(0,0,0,.20));
   position:fixed;
   bottom:0;
-  z-index:1000;
+  z-index:500;
   overflow:auto;
+  @include gradient-vertical(#ffffff, #ececec);
+  height:$nav-height;
 }
 nav[role='navigation'] {
   font: 0/0 a;
+  position:relative;
   white-space: nowrap;
-  a {
-    @include font-shorthand(12px, auto, $nav-height);
+  -webkit-transition: .5s;
+     -moz-transition: .5s;
+      -ms-transition: .5s;
+       -o-transition: .5s;
+          transition: .5s;
+  a, #more-nav, #less-nav {
+    @include font-shorthand(10px, auto, $nav-height);
     @extend .alternate-font-family;
     @extend .uppercase;
     @extend .no-underline;
     @extend .display-inline-block;
     color:$base-text-color;
-    padding:0 2em;
+    padding:0 .9em;
     position:relative;
     height:$nav-height;
     line-height:$nav-height;
@@ -42,9 +50,55 @@ nav[role='navigation'] {
     position:relative;
     border-right:1px solid #dddddd;
     &.gradient {
-//      @include gradient-reset-filter();
-//      background-image:none;
-//      background-color:$white;
+      @include gradient-reset-filter();
+      background-image:none;
+      background-color:transparent;
       }
     }
+  }  
+body {position:relative;}
+#more-nav, #less-nav {
+  @include font-shorthand(10px, auto, $nav-height);
+  @extend .alternate-font-family;
+  @extend .uppercase;
+  @extend .no-underline;
+  @extend .display-inline-block;
+  @extend .position-fixed;
+  color:$base-text-color;
+  padding:0 .8em;
+  height:$nav-height;
+  line-height:$nav-height;
+  white-space: nowrap;
+  @include gradient-vertical(#ffffff, #ececec);
+  bottom:0;
+  z-index:1000;
+  cursor:pointer;
+}
+#search a {
+  padding:0 2em;
+}
+#more-nav {
+  right:0;
+}
+#less-nav {
+  left:0;
+  @extend .invisible;
+}
+#more-nav:target {
+  @extend .invisible;
+  ~ nav {
+  left:-240px;
   }
+  + #less-nav {
+    visibility:visible;
+  }
+}
+#less-nav:target {
+  @extend .invisible;
+  ~ nav {
+  left:0;
+  }
+  + #more-nav {
+    visibility:visible;
+  }
+}
