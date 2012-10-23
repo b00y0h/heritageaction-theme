@@ -207,8 +207,5 @@ get_header(); ?>
 
 		</div><!-- #primary .content-area -->    
     </div> <!-- #main-inner -->
-    <div id="signup-scroll-target"></div>
-    
-    <?php heritageaction_signup_section(); ?>
-   
+       
 <?php get_footer(); ?>
