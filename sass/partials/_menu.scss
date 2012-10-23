@@ -7,6 +7,8 @@
   @include box-shadow(0 0px 4px rgba(0,0,0,.20));
   position:fixed;
   bottom:0;
+  left:0;
+  width:100%;
   z-index:500;
   overflow:auto;
   @include gradient-vertical(#ffffff, #ececec);
