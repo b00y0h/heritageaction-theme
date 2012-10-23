@@ -503,10 +503,11 @@ background:transparent url('img/striped-bg.png');
   padding-bottom:1em;
   z-index:50; //over top #under-cover
   margin-top:-40px!important;
-  
-  &.fixed {
-    @extend .position-fixed;
-    bottom:-166px;
+  @include respond-to(desktop) {
+    &.fixed {
+      position:fixed;
+      bottom:-166px;
+    }    
   }
   .btn {
     @extend .base-drop-shadow;
