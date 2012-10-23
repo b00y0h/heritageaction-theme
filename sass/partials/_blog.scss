@@ -97,14 +97,31 @@
     color:$white;
     font-weight:normal;
     padding-top:.2em;
-  	background: url("img/rss-cones.png") no-repeat 55px 5px;
   	@extend .text-shadow-dark;
     span {
       @include font-shorthand(12px, normal, 18px);
       @extend .display-block;
-    	background: #6d6d6d url("img/rss-bug.png") no-repeat 55px 13px;
       padding:1em;
       text-transform:normal;
     }
   }
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  @extend .display-inline-block;
+  vertical-align: text-bottom;
+  background-repeat: no-repeat;
+  margin-top: 1px;
+  margin-right:.3em;
+}
+
+.icon-rss-bug {
+  background: transparent url("img/rss-bug.png");
+  @include size(15px,27px);
+	
+}
+.icon-rss-cones {
+  background: transparent url("img/rss-cones.png");
+  @include size(31px,31px);
 }

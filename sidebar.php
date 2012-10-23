@@ -9,8 +9,8 @@
 		<div id="secondary" class="widget-area shadow-curl-right" role="complementary">
 		  <header id="subscribe" class="widget-main-header">
 		    <a href="#">
-		      <h2>Subscribe
-		        <span class="via">via Feedburner</span>
+		      <h2><i class="icon-rss-cones"></i>Subscribe
+		        <span class="via"><i class="icon-rss-bug"></i>via Feedburner</span>
 		      </h2>
 		      </a>
 		    </header>

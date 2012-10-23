@@ -74,7 +74,8 @@ input[type="color"],
   display: inline; }
 
 /* line 18, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-misc.scss */
-.display-inline-block, .menu-main-nav-container #searchsubmit, nav[role='navigation'] li, .footer-navigation li, .made-in-usa, .btn, #sign-up .btn, #sign-up form .inline, .video a, #select-your-donation .btn, .slider-title span, #the-forge-header span {
+.display-inline-block, .menu-main-nav-container #searchsubmit, nav[role='navigation'] li, .footer-navigation li, .made-in-usa, .btn, #sign-up .btn, #sign-up form .inline, .video a, #select-your-donation .btn, .slider-title span, #the-forge-header span, [class^="icon-"],
+[class*=" icon-"] {
   display: -moz-inline-box;
   -moz-box-orient: vertical;
   display: inline-block;
@@ -2980,16 +2981,34 @@ nav[role='navigation'] li {
     line-height: 34px;
     color: white;
     font-weight: normal;
-    padding-top: .2em;
-    background: url("img/rss-cones.png") no-repeat 55px 5px; }
-    /* line 102, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+    padding-top: .2em; }
+    /* line 101, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
     #subscribe h2 span {
       font-size: 12px;
       font-weight: normal;
       line-height: 18px;
-      background: #6d6d6d url("img/rss-bug.png") no-repeat 55px 13px;
       padding: 1em;
       text-transform: normal; }
+
+/* line 111, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+[class^="icon-"],
+[class*=" icon-"] {
+  vertical-align: text-bottom;
+  background-repeat: no-repeat;
+  margin-top: 1px;
+  margin-right: .3em; }
+
+/* line 119, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+.icon-rss-bug {
+  background: transparent url("img/rss-bug.png");
+  width: 27px;
+  height: 15px; }
+
+/* line 124, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+.icon-rss-cones {
+  background: transparent url("img/rss-cones.png");
+  width: 31px;
+  height: 31px; }
 
 /* line 1, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/ie.scss */
 .lt-ie9 .gradient {
