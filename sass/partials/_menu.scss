@@ -201,7 +201,8 @@ li#search {
     @extend .position-absolute;
     width:100%;
     height:$nav-height;
-    background:transparent url('img/search.png') 190px center no-repeat;
+    background:transparent url('img/search.png') 190px 30px no-repeat;
+    left:0;
     }
   &:hover, &.hover {
     a, a:hover {background-image: url('img/search-hover.png');}

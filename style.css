@@ -1038,36 +1038,37 @@ li#search {
   li#search a {
     width: 100%;
     height: 70px;
-    background: transparent url("img/search.png") 190px center no-repeat; }
-  /* line 207, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+    background: transparent url("img/search.png") 190px 30px no-repeat;
+    left: 0; }
+  /* line 208, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   li#search:hover a, li#search:hover a:hover, li#search.hover a, li#search.hover a:hover {
     background-image: url("img/search-hover.png"); }
-  /* line 209, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+  /* line 210, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   li#search .nav-desc {
     top: 85px;
     width: 95%; }
-  /* line 210, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+  /* line 211, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
   li#search input {
     width: 82%;
     font-size: 12px;
     margin-left: -16px; }
 
-/* line 213, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+/* line 214, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
 .nav-desc.nav-search input[type="search"] {
   width: 76%;
   margin-left: -40px; }
-/* line 214, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+/* line 215, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
 .nav-desc.nav-search .go {
   position: absolute;
   right: 10px;
   bottom: 40px; }
 
 /* Small menu */
-/* line 228, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+/* line 229, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
 .menu-toggle {
   cursor: pointer; }
 
-/* line 231, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+/* line 232, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
 .main-small-navigation .menu {
   display: none; }
 
