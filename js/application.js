@@ -3,11 +3,11 @@
 
 
       // press release slider
-      $("#press-release-slider").tinycarousel({
-        pager: true,
-        interval: true,
-        intervaltime: 7000
-      });
+      // $("#press-release-slider").tinycarousel({
+      //   pager: true,
+      //   interval: true,
+      //   intervaltime: 7000
+      // });
 
       // home key votes toggle
       $(".keyVoteSelector").change(function(){
@@ -137,10 +137,13 @@
         }
      }
 
-
+     $.backstretch(["/wp-content/themes/heritageaction/img/bg-capital-mobile.jpg"],{duration:3000,fade:750});
 
     });
   })(jQuery);
   
-  // @codekit-append "jquery-ui-1.8.24.custom.min.js"
-  // @codekit-append "jquery.tinycarousel.js"
+  
+  
+  // @codekit-prepend "jquery-ui-1.8.24.custom.min.js"
+  // @codekit-prepend "jquery.tinycarousel.js"
+  // @codekit-prepend "backstretch.js"

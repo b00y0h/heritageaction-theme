@@ -17,6 +17,13 @@ get_header(); ?>
 		<div id="primary" class="content-area">
   		  <div id="content" class="site-content" role="main">
   		    
+  		    <!-- =========================== -->
+  		    <!-- = Landing Widget. HA Logo = -->
+  		    <!-- =========================== -->
+  		    <div id="landing-widget" class="widgets">
+  		      <img src="<?php echo get_bloginfo('template_url'); ?>/img/logo@2x.png" alt="Logo@2x">
+  		    </div>
+  		    
   		    <!-- ============== -->
   		    <!-- = Score Card = -->
   		    <!-- ============== -->
@@ -64,7 +71,7 @@ get_header(); ?>
           <!-- = Donate = -->
           <!-- ========== -->
           <div id="donate" class="widgets">
-            
+            donate
     			</div>
 
           <!-- ============= -->
@@ -160,11 +167,11 @@ get_header(); ?>
             <div id="press-release-slider" >
 
               <div class="viewport">
-                <div class="overview">
+                <ul class="overview">
                       <?php
 
             		      $args = array(
-                          'numberposts' => 4,
+                          'numberposts' => 2,
                           'offset' => 0,
                           'orderby' => 'post_date',
                           'order' => 'DESC',
@@ -177,29 +184,20 @@ get_header(); ?>
                          setup_postdata($post);
                       ?>
 
-                    <div class="press-release-slide">
+                    <li class="press-release-slide">
                       <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-                      <span class="post-meta"><?php echo date('F d, Y', strtotime($post->post_date)); ?></span>
-                      <p><?php echo mb_strimwidth(get_the_excerpt(),0,350); ?> </p>
-                      <a href="<?php the_permalink(); ?>">READ FULL PRESS RELEASE</a>
-                    </div>
+                      <span class="post-meta"><?php heritageaction_posted_on(); ?></span>
+                      <p><?php echo mb_strimwidth(get_the_excerpt(),0,100); ?> </p>
+                      <a href="<?php the_permalink(); ?>" class="read-more">READ FULL PRESS RELEASE</a>
+                    </li>
 
                     <?php wp_reset_postdata(); endforeach; ?>
-                 </div>
+                 </ul>
               </div>
 
 
 
-            <div class="pagination pagination-centered orange">
-              <ul class="pager">
-                <li><a class="prev" href="#">&lt;</a></li>
-                <li><a rel="0" class="pagenum" href="#">1</a></li>
-                <li><a rel="1" class="pagenum" href="#">2</a></li>
-                <li><a rel="2" class="pagenum" href="#">3</a></li>
-                <li><a rel="3" class="pagenum" href="#">4</a></li>
-                <li><a class="next" href="#">&gt;</a></li>
-             </ul>
-            </div>
+            <a href='/press-releases/' class='btn rounded gradient orange-gradient'>Read More</a>
 
             </div>
 
