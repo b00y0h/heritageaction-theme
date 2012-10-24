@@ -2365,8 +2365,17 @@ h1 {
 .page-template-page-congresspages-php .CPWrapper {
   background-image: none;
   background-color: #efefef; }
+  /* line 1095, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+  .page-template-page-congresspages-php .CPWrapper .CPDistrict {
+    display: block;
+    clear: both;
+    float: none;
+    margin-top: 0; }
+  /* line 1101, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+  .page-template-page-congresspages-php .CPWrapper .changeDistrict {
+    float: none; }
 
-/* line 1097, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+/* line 1106, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
 .tabBgCenter {
   height: 42px!important; }
 

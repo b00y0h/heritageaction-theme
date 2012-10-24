@@ -1092,6 +1092,15 @@ h1 {
   .CPWrapper {
     background-image:none;
     background-color:#efefef;
+    .CPDistrict {
+      display:block;
+      clear:both;
+      float:none;
+      margin-top:0;
+    }
+    .changeDistrict {
+      float:none;
+    }
   }
 }
 .tabBgCenter {
