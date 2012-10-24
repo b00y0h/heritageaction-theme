@@ -600,7 +600,9 @@ background:transparent url('img/striped-bg.png');
 }
 
 h1 {
+  @include respond-to(desktop){
   font-family:$header-font-family;
+  }
   padding-bottom:32px;
 }
 
@@ -660,12 +662,15 @@ h1 {
   background: $red;
   @extend .red-gradient;
   @extend .pagination-centered;
+  @include respond-to(desktop){
   font-family:$header-font-family;
+  }
   font-size:30px;
   position: relative;
   padding: .5em 1em; /* Adjust to suit */
   margin: 0 -.5em .5em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
   &:before, &:after {
+    @include respond-to(desktop){
     content: "";
     position: absolute;
     display: block;
@@ -673,15 +678,20 @@ h1 {
     border: .75em solid darken($red, 10);
     z-index: -1;
   }
+  }
   &:before {
+    @include respond-to(desktop){
     left: -1em;
     border-right-width: .75em;
     border-left-color: transparent;
   }
+  }
   &:after {
+    @include respond-to(desktop){
     right: -1em;
     border-left-width: .75em;
     border-right-color: transparent;
+  }
   }
   .ribbon-content {
    &:before, &:after {
@@ -806,8 +816,14 @@ h1 {
     margin-left:-2em;
     padding-left:2em;
     .help-block {margin-left:15px;}
+    margin-bottom:1em
   }
-  .btn {@extend .display-inline-block;margin:1em 0 0 -2em;}
+  .btn {
+    @extend .display-block;
+    margin:1em auto 0;
+    width:50%;
+    clear:both;
+    }
 }
 
 .contact {

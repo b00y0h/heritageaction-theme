@@ -130,7 +130,11 @@ nav[role='navigation'] {
     }
   }
 }
-.donate .menu-main-nav-container {@extend .display-none;}
+.donate .menu-main-nav-container {
+  @include respond-to(desktop){
+  display:none;
+  }
+}
 .blog {
   #main {
     @extend .max-width;
