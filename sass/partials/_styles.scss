@@ -1101,6 +1101,21 @@ h1 {
     .changeDistrict {
       float:none;
     }
+    .bioBlock {
+      width:auto;
+      float:none;
+    }
+    .miniColumn {
+      .miniBlock {
+        width:50%;
+      }
+    }
+  }
+  .enlargeButton {
+    left:50%;
+  }
+  .district-map-thumb {
+    width:100%;
   }
 }
 .tabBgCenter {

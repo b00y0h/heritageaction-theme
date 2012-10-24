@@ -2374,8 +2374,21 @@ h1 {
   /* line 1101, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
   .page-template-page-congresspages-php .CPWrapper .changeDistrict {
     float: none; }
+  /* line 1104, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+  .page-template-page-congresspages-php .CPWrapper .bioBlock {
+    width: auto;
+    float: none; }
+  /* line 1109, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+  .page-template-page-congresspages-php .CPWrapper .miniColumn .miniBlock {
+    width: 50%; }
+/* line 1114, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+.page-template-page-congresspages-php .enlargeButton {
+  left: 50%; }
+/* line 1117, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+.page-template-page-congresspages-php .district-map-thumb {
+  width: 100%; }
 
-/* line 1106, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+/* line 1121, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
 .tabBgCenter {
   height: 42px!important; }
 
