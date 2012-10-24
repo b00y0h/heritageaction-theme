@@ -1121,3 +1121,10 @@ h1 {
 .tabBgCenter {
   height:42px!important;
 }
+
+.only-desktop {
+  display:none;
+  @include respond-to(desktop) {
+    display:inherit;
+  }
+}

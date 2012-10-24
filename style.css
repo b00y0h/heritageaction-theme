@@ -2392,6 +2392,14 @@ h1 {
 .tabBgCenter {
   height: 42px!important; }
 
+/* line 1125, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+.only-desktop {
+  display: none; }
+  @media only screen and (min-width: 1224px) {
+    /* line 1125, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+    .only-desktop {
+      display: inherit; } }
+
 /* line 6, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_forms.scss */
 label,
 input,
