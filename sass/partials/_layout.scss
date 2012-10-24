@@ -111,6 +111,16 @@ nav[role='navigation'] {
   }
 }
 
+
+@media only screen and (max-width: 768px) {
+  .page-template-page-about-php #hero .col1 {
+    display: block;
+    width: auto; } }
+@media only screen and (max-width: 768px) {
+  .page-template-page-about-php #hero .col2 {
+    display: none; } }
+
+
 .page-template {
   #hero {
     .col1 {
@@ -121,6 +131,8 @@ nav[role='navigation'] {
     }
   }
 }
+
+
 
 .page {
   #main {padding-top:0;}

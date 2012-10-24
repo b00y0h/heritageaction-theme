@@ -2907,12 +2907,21 @@ nav[role='navigation'] li {
   width: 30.55556%;
   margin: 0 1.38889%; }
 
-/* line 126, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
+@media only screen and (max-width: 768px) {
+  /* line 116, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
+  .page-template-page-about-php #hero .col1 {
+    display: block;
+    width: auto; } }
+@media only screen and (max-width: 768px) {
+  /* line 120, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
+  .page-template-page-about-php #hero .col2 {
+    display: none; } }
+/* line 138, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
 .page #main {
   padding-top: 0; }
 
 @media only screen and (min-width: 1224px) {
-  /* line 133, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
+  /* line 145, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
   .donate .menu-main-nav-container {
     display: none; } }
 
