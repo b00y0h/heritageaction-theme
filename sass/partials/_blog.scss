@@ -61,11 +61,14 @@
     @extend .light-gray-gradient;
     @extend .shadow;
     border-bottom:1px solid #bdbdbe;
-    height:25px;
     margin-bottom:0;
   }
   a {
     text-transform:capitalize;
+    white-space:nowrap;
+    @include respond-to(tablet){
+     font-size:15px!important; 
+    }
   }
   h3 {
     @include font-shorthand(12px, normal, 25px);

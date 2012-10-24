@@ -2959,24 +2959,28 @@ nav[role='navigation'] li {
   /* line 60, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
   #blog-sidebar-header aside {
     border-bottom: 1px solid #bdbdbe;
-    height: 25px;
     margin-bottom: 0; }
-  /* line 67, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+  /* line 66, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
   #blog-sidebar-header a {
-    text-transform: capitalize; }
-  /* line 70, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+    text-transform: capitalize;
+    white-space: nowrap; }
+    @media only screen and (min-width: 600px) {
+      /* line 66, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+      #blog-sidebar-header a {
+        font-size: 15px!important; } }
+  /* line 73, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
   #blog-sidebar-header h3 {
     font-size: 12px;
     font-weight: normal;
     line-height: 25px; }
-  /* line 75, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+  /* line 78, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
   #blog-sidebar-header a, #blog-sidebar-header h3 {
     padding-right: 12px; }
 
-/* line 80, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+/* line 83, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
 #the-forge-header {
   line-height: 50px; }
-  /* line 82, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+  /* line 85, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
   #the-forge-header span {
     width: 287px;
     height: 29px;
@@ -2987,11 +2991,11 @@ nav[role='navigation'] li {
     border: 0;
     background: url("img/the-forge-blog-logo.png") no-repeat; }
 
-/* line 89, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+/* line 92, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
 #subscribe {
   margin: 0 -15px 20px;
   text-align: center; }
-  /* line 93, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+  /* line 96, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
   #subscribe h2 {
     font-size: 20px;
     font-weight: normal;
@@ -2999,7 +3003,7 @@ nav[role='navigation'] li {
     color: white;
     font-weight: normal;
     padding-top: .2em; }
-    /* line 101, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+    /* line 104, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
     #subscribe h2 span {
       font-size: 12px;
       font-weight: normal;
@@ -3007,7 +3011,7 @@ nav[role='navigation'] li {
       padding: 1em;
       text-transform: normal; }
 
-/* line 111, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+/* line 114, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
 [class^="icon-"],
 [class*=" icon-"] {
   vertical-align: text-bottom;
@@ -3015,13 +3019,13 @@ nav[role='navigation'] li {
   margin-top: 1px;
   margin-right: .3em; }
 
-/* line 119, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+/* line 122, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
 .icon-rss-bug {
   background: transparent url("img/rss-bug.png");
   width: 27px;
   height: 15px; }
 
-/* line 124, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
+/* line 127, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_blog.scss */
 .icon-rss-cones {
   background: transparent url("img/rss-cones.png");
   width: 31px;
