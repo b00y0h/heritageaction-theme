@@ -1024,6 +1024,12 @@ h1 {
 #fb-widget-like span{
   display:block;
   clear:both;
+  width:auto!important;
+}
+.twitter-widget-share{
+  @include respond-to(desktop){
+  float:right;
+  }
 }
 
 .signupSubmissionResult{

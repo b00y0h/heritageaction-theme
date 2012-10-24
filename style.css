@@ -2300,67 +2300,73 @@ h1 {
 /* line 1024, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
 #fb-widget-like span {
   display: block;
-  clear: both; }
+  clear: both;
+  width: auto!important; }
 
-/* line 1029, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+@media only screen and (min-width: 1224px) {
+  /* line 1029, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+  .twitter-widget-share {
+    float: right; } }
+
+/* line 1035, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
 .signupSubmissionResult {
   padding-top: 15px;
   font-size: 18px; }
 
-/* line 1034, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+/* line 1040, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
 .hot_disqus_thread {
   color: #fff; }
 
-/* line 1037, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+/* line 1043, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
 .hot_disqus_thread .small {
   font-size: 11px; }
 
-/* line 1040, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+/* line 1046, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
 #hot_threads h3 {
   margin-bottom: 8px; }
 
-/* line 1043, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+/* line 1049, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
 .page-template-page-congresspages-php #hero {
   margin-bottom: 15px; }
 
-/* line 1049, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+/* line 1055, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
 .dashboardTwitterFeed {
   margin-left: 5px; }
 
-/* line 1052, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+/* line 1058, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
 .dashboardTwitterFeed li {
   list-style: none;
   margin: 1em 0; }
 
-/* line 1056, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+/* line 1062, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
 .dashboardTwitterFeed .meta {
   margin-bottom: -0.4em;
   display: block; }
 
-/* line 1061, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+/* line 1067, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
 .twitterBlockTitle {
   font-size: 14px; }
 
-/* line 1065, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+/* line 1071, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
 .royalHtmlContent a {
   font-size: 17px; }
 
-/* line 1068, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+/* line 1074, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
 .royalSlider.minimal .arrow.right {
   right: 10px; }
 
-/* line 1082, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+/* line 1088, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
 .page-template-page-congresspages-php #hero {
   -webkit-box-shadow: 0 0 0 transparent;
   -moz-box-shadow: 0 0 0 transparent;
   box-shadow: 0 0 0 transparent;
   margin-bottom: 0; }
-/* line 1086, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+/* line 1092, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
 .page-template-page-congresspages-php .CPWrapper {
   background-image: none;
   background-color: #efefef; }
 
-/* line 1091, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
+/* line 1097, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_styles.scss */
 .tabBgCenter {
   height: 42px!important; }
 
