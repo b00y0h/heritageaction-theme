@@ -409,21 +409,21 @@ background:transparent url('img/striped-bg.png');
 
 .home {
   #main-outer {
-    padding-top:40px;
     background:#f3f3f3 url('img/bg-capital-left.jpg') left top no-repeat; 
-    @include respond-to(tablet-large-landscape) {
+    .touch & {
+      padding-top:40px;
       background-position: bottom; 
-      padding-top:0;
     }
   }
   #black-bg {
-    @include respond-to(tablet-large-landscape) {
     height: 377px;
     width:100%;
     background-color:$black;
     position:absolute;
     top:0;
     z-index:1;
+    .touch & {
+      display:none;
     }
   }
 }
@@ -469,11 +469,8 @@ background:transparent url('img/striped-bg.png');
     text-indent:-9999em;
   }
 }
-#latest-tweets {
+.touch #latest-tweets {
   @extend .display-none;
-  @include respond-to(tablet-large-landscape) {
-    display:block;
-  }
 }
 
 #the-forge {
@@ -745,14 +742,10 @@ h1 {
   }
   .home & {
     padding-top:0;
+    display:block;
+  }
+  .touch .home & {
     display:none;
-    @include respond-to('desktop') {
-      display:block;
-    }
-    @include respond-to('tablet-large-landscape') {
-      padding-top:0;
-      display:block;
-    }
   }
   .donate & {
     padding-bottom:60px;
