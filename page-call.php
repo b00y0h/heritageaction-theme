@@ -179,8 +179,6 @@ if ($_GET['printer'] == true){
 <?php get_header(); ?>
 <?php the_post(); ?>
 
-<script src="<?php bloginfo('template_directory'); ?>/js/modernizr-2.5.3.js"></script>
-
 <link href='http://fonts.googleapis.com/css?family=Damion' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="<?php bloginfo('template_directory');?>/call-alert-styles.css" type="text/css">
 <script type="text/javascript">
