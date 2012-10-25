@@ -572,6 +572,9 @@ background:transparent url('img/striped-bg.png');
   .social {
     margin-top:.6em;
     text-align:center;
+    @include respond-to(tablet) {
+      text-align:left;
+    }
     img {
       padding:0 .2em;
     }
