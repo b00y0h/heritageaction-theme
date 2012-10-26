@@ -94,7 +94,7 @@ function heritageaction_widgets_init() {
 add_action( 'widgets_init', 'heritageaction_widgets_init' );
 
 /**
- * Enqueue scripts and styles
+ * de/Enqueue scripts and styles
  */
 function heritageaction_scripts() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
@@ -103,11 +103,14 @@ function heritageaction_scripts() {
 		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 	
-	wp_enqueue_script('jquery-ui-core');
 	wp_enqueue_script( 'application', get_template_directory_uri() . '/js/application-ck.js', array( 'jquery' ), '20121028', false );	
+  // get rid of unused scripts for this theme
+  wp_deregister_style( 'royalslider-frontend-css');		
+  wp_deregister_style( 'royalslider-skin-minimal');		
+	wp_deregister_script( 'royalslider-js');
+	wp_deregister_script( 'jquery-easing-js');
 }
 add_action( 'wp_enqueue_scripts', 'heritageaction_scripts' );
-
 
 
 // [amount] shortcode
