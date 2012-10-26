@@ -19,7 +19,7 @@ $cpSenate = new CPSenate();
 $common = new CPCommon();
 $CallLog = new CPCallLog();
 
-$zipcode = (isset($wp_query->query_vars['zipdist'])) ? $wp_query->query_vars['zipdist'] : $_GET['zipdist'];
+$zipcode = (isset($wp_query->query_vars['zipdist'])) ? $wp_query->query_vars['zipdist'] : @$_GET['zipdist'];
 $zipcode = str_replace("/","",$zipcode);
 
 $chamber = get_query_var('chamber');
@@ -113,8 +113,10 @@ function prepForPrint($post, $zipcode, $chamber,  $members){
   <body>";
   ob_start();
   ?>
+  
+    
   <div id="printContent">
-    <img src="<?php echo get_bloginfo('template_directory') ; ?>/images/header_blank2.jpg">
+    <img src="<?php echo get_bloginfo('template_directory') ; ?>/img/header_blank2.jpg">
     <h1>Call Alert</h1>
   
       <?php
@@ -170,7 +172,7 @@ function prepForPrint($post, $zipcode, $chamber,  $members){
 $Chamber = ucwords(get_query_var('chamber'));
 
 
-if ($_GET['printer'] == true){
+if (@$_GET['printer'] == true){
   echo prepForPrint($post, $zipcode, $chamber, $members);
   die();
 }
@@ -197,7 +199,7 @@ if ($_GET['printer'] == true){
       
       $(".talkingPoints li").wrapInner('<span class="talkingPointBulletContent" />');
       
-      <?php if(stripos($_SERVER['HTTP_REFERER'], '/call/house') || stripos($_SERVER['HTTP_REFERER'], '/call/senate') ) :?>
+      <?php if(stripos(@$_SERVER['HTTP_REFERER'], '/call/house') || stripos(@$_SERVER['HTTP_REFERER'], '/call/senate') ) :?>
         window.scrollTo(0,144);
       <?php endif; ?>
       
@@ -368,6 +370,8 @@ if ($_GET['printer'] == true){
     
   }
   
+  <?php if(isset($zipcode) && !empty($zipcode)): ?>
+  
   function printPage(){
     var popupHeight = jQuery(".entry-content").height();
     popupHeight = parseFloat(popupHeight + 240);
@@ -378,6 +382,8 @@ if ($_GET['printer'] == true){
     printerFriendlyWindow.document.write(decodeURIComponent('<?php echo rawurlencode(prepForPrint($post, $zipcode, $chamber, $members)); ?>' + ''));
     return false;
   }
+  
+  <?php endif; ?>
   
   function updateZipcode(){
     if(jQuery("#myZip").val() != '' && jQuery("#myZip").val() != 'Enter your ZIP code'){
@@ -414,12 +420,10 @@ if ($_GET['printer'] == true){
     })
   }
 </script> 
+<div class="col1">
 
-<style type="text/css" media="screen">
+<div id="callpage-wrapper"> 
   
-</style>
-
-<div id="content-sidebar-wrap"> 
   <div class="callCongressHeader">
      <div class="subHeader"><?php echo CPSetting::getValue('call_alert_' . $chamber . '_tagline'); ?></div>
      <div class="headerInfo">
@@ -429,17 +433,16 @@ if ($_GET['printer'] == true){
         <?php echo ($chamber == "house") ? "Representatives" : "Senators"; ?> for ZIP <?php echo $zipcode; ?> <a href="/call/<?php echo $chamber; ?>/"><span id="changeZip" class="fakeLink">Change</span></a>
       </div>
       <div class="callHelp">
-        Can't call while online? Want to call later? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="<?php bloginfo('template_directory'); ?>/images/call/printer-icon.png" valign="middle"> &nbsp; <span class="fakeLink" id="printAlert">Print this alert.</span>
+        Can't call while online? Want to call later? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="<?php bloginfo('template_directory'); ?>/img/call/printer-icon.png" valign="middle"> &nbsp; <span class="fakeLink" id="printAlert">Print this alert.</span>
       </div>
       
      <?php endif; ?>
       
      </div>
   </div>
- <!-- <div id="single-content-top"></div> -->
- <div id="content" class="hfeed noSidebar"> 
-  <div id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="width:960px;">
-   <div class="entry-content call-entry">
+ 
+ 
+   <div class="call-entry">
      
      <?php if(!isset($chamber) || empty($chamber)): ?>
         
@@ -497,7 +500,7 @@ if ($_GET['printer'] == true){
           <p><?php echo CPSetting::getValue('call_alert_welcome_message'); ?></p>
         
           <div class="cpZipCodeForm" align="left">
-            <input name="zip" id="myZip" value="Enter your ZIP code" onblur="if (this.value == '') {this.value = 'Enter your ZIP code';}" onfocus="if (this.value == 'Enter your ZIP code') {this.value = '';}"> <div id="validZip"><img src="<?php bloginfo('template_directory'); ?>/images/Check.png"></div><div id="submitZip">Find Your District</div>
+            <input name="zip" id="myZip" value="Enter your ZIP code" onblur="if (this.value == '') {this.value = 'Enter your ZIP code';}" onfocus="if (this.value == 'Enter your ZIP code') {this.value = '';}"> <div id="validZip"><img src="<?php bloginfo('template_directory'); ?>/img/Check.png"></div><div id="submitZip">Find Your District</div>
           </div>
     
        </div>
@@ -630,7 +633,7 @@ if ($_GET['printer'] == true){
       
           <div class="submitButtonWrapper" align="center">
             <a href="#" id="submitAll" class="goButton">
-              <img src="<?php bloginfo('template_directory'); ?>/images/call/submit-icon.png" valign="middle">
+              <img src="<?php bloginfo('template_directory'); ?>/img/call/submit-icon.png" valign="middle">
               Submit to Heritage Action
             </a>
           </div>
@@ -661,9 +664,6 @@ if ($_GET['printer'] == true){
       
      <?php endif; ?>
      
-   </div>
-  
-  </div>
- </div>
  
+</div> <!-- col1 -->
 <?php get_footer(); ?>

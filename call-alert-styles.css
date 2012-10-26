@@ -1,0 +1,256 @@
+.fakeLink{
+  text-decoration:underline;
+  cursor:pointer;
+  text-transform:normal;
+  color:#fff;
+}
+
+.sidebar-content #content, .content-sidebar #content {
+  margin:0;
+}
+
+.callCongressHeader{
+  background:url('img/call/call-header.png');
+  width:960px;
+  height:165px;
+}
+#single-content-top{
+  height:37px;
+}
+
+#content{
+  width:960px !important;
+}
+
+.call-entry{
+  width:960px;
+}
+.callHelp{
+  cursor:pointer;
+}
+.memberListMember{
+  
+}
+
+.memberName{
+  position:absolute;
+  margin:20px 0px 0px 140px;
+  font-size:24px;
+  color:#fff;
+  cursor:pointer;
+}
+.memberNameWrapper{
+  cursor:pointer;
+}
+.memberInfo, .submitInfo{
+  background:url('img/call/member-info-bg.png') repeat-y left;
+}
+.contactInfo{
+  padding-left:10px;
+}
+.callResponse{
+  padding:5px 10px;
+}
+
+.fillBoxes{
+  margin-bottom:10px;
+}
+.fillbox{
+  float:left;
+  width:120px;
+  background-color:#1e456c;
+  height:7px;
+  margin-right:12px;
+}
+
+.talkingPoints{
+	padding-bottom:20px;
+}
+.talkingPoints li{
+  list-style-type:decimal;
+  font-family: 'Damion', cursive;
+  font-size:28px;
+	line-height:20px !important;
+}
+.talkingPoints li .talkingPointBulletContent{
+  font-size: 16px !important;
+  font-family: Arial, Verdana, sans-serif;
+}
+
+.slidingRack{
+  display:none;
+}
+
+#validZip{
+  display:none;
+  position:absolute;
+  margin-right:185px;
+  right:0;
+  margin-top:3px;
+}
+.welcomeWrapper{
+  padding:20px;
+}
+
+.subHeader{
+  color:#fff;
+  font-size:20px;
+  margin:95px 0px 0px 55px;
+  position:absolute;
+}
+.headerInfo{
+  position:absolute;
+  color:#fff;
+  margin:130px 0px 0px 55px;
+  font-size:12px;
+  text-transform:uppercase;
+}
+.currentZipInfo, .callHelp{
+  float:left;
+  margin-right:50px;
+}
+.step1{
+  width:960px;
+  height:75px;
+  background:url('img/call/first-call-header.png');
+  text-align:center;
+}
+.step2{
+  width:960px;
+  height:75px;
+  background:url('img/call/second-call-header.png');
+  text-align:center;
+}
+.step3{
+  width:960px;
+  height:75px;
+  background:url('img/call/third-call-header.png');
+  text-align:center;
+}
+.memberInfo, .submitInfo{
+  width:780px;
+  margin:15px 55px 0px 55px;
+  padding-left:50px;
+  padding-bottom:15px;
+}
+
+.subStep1{
+  width:850px;
+  height:62px;
+  background:url('img/call/phone-header-background.png');
+  float:left;
+  margin:-5px 0px 0px -59px;
+}
+
+.subStep2{
+  width:850px;
+  height:62px;
+  background:url('img/call/message-header-background.png');
+  float:left;
+  margin:-5px 0px 0px -59px;
+}
+
+.subStep3{
+  width:850px;
+  height:62px;
+  background:url('img/call/report-header-background.png');
+  float:left;
+  margin:-5px 0px 0px -59px;
+}
+.stepHeadingText{
+  font-size:20px;
+  color:#fff;
+  position:absolute;
+  margin:18px 0px 0px 75px;
+}
+.reportFormField{
+  /*background-color:#e1e1e1;*/
+  float:left;
+  padding:3px 10px 3px 27px;
+  margin-left:-26px;
+}
+
+.infoInput{
+  float:left;
+  margin-right:20px;
+}
+
+.infoInput input{
+  padding:5px 8px;
+  font-size:14px;
+  width:200px;
+  color:#5a5a5a;
+}
+
+.submitButtonWrapper{
+  padding:15px;
+}
+
+.goButton {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #acd918), color-stop(1, #388008) );
+	background:-moz-linear-gradient( center top, #acd918 5%, #388008 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#acd918', endColorstr='#388008');
+	background-color:#acd918;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #63a10d;
+	display:inline-block;
+	color:#ffffff!important;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:8px 24px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #383838;
+}
+.goButton:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #388008), color-stop(1, #acd918) );
+	background:-moz-linear-gradient( center top, #388008 5%, #acd918 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#388008', endColorstr='#acd918');
+	background-color:#388008;
+	color:#ffffff;
+	text-decoration:none;
+}
+.goButton:active {
+	position:relative;
+	top:1px;
+	color:#ffffff;
+}
+#chamberSelect{
+  font-size:24px;
+  padding:3px 5px;
+}
+
+.callAlertErrorWrapper{
+  display:none;
+  position:fixed;
+  width:100%;
+  top:0;   
+  padding:5px;
+  border:2px solid #cf3e3e;
+  background-color:#fff;
+	z-index:50000;
+	margin:0 auto;
+}
+.callAlertError{
+  text-align:center;
+  font-size:18px;
+}
+.thankyouMessage{
+  display:none;
+  height:175px;
+}
+.submitInfo{
+  margin-top:0;
+  padding-top:20px;
+  min-height:;
+}
+
+#callpage-wrapper{
+	width:960px;
+	margin:0 auto;
+}
