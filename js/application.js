@@ -1,14 +1,22 @@
   (function($){
     $(document).ready(function(){
 
-
-      // press release slider
-      // $("#press-release-slider").tinycarousel({
-      //   pager: true,
-      //   interval: true,
-      //   intervaltime: 7000
-      // });
-
+      // resize .hs-content when browser window is resized
+      function resizeContent(elem) {
+        // get height of window
+        var windowHeight = $(window).height();
+        var windowWidth = $(window).width();
+        // resize
+        $(elem).css('width',(windowWidth) + "px").css('max-width',(windowWidth) + "px");
+      }
+      // invoke as soon as page loads
+      resizeContent('.hs-content');
+      
+      // window resize events
+      $(window).resize(function () { 
+        resizeContent('.hs-content');
+        });
+      
       // home key votes toggle
       $(".keyVoteSelector").change(function(){
         $(".items").slideUp();
@@ -141,9 +149,3 @@
 
     });
   })(jQuery);
-  
-  
-  
-  // @codekit-prepend "jquery-ui-1.8.24.custom.min.js"
-  // @codekit-prepend "jquery.tinycarousel.js"
-  // @codekit-prepend "backstretch.js"
