@@ -11,10 +11,10 @@
 <html <?php language_attributes(); ?> class="no-js">
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
 <title>Heritage Action</title>
 <link href='http://fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC|Open+Sans+Condensed:700|Bree+Serif' rel='stylesheet' type='text/css'>
-<script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.custom.29806.js"></script>
+
 <?php wp_head(); ?>
 
 <script>(function(d, s, id) {
@@ -27,9 +27,6 @@
 
 </head>
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site wrap">
- <?php do_action( 'before' ); ?>
- <header id="masthead" class="site-header" role="banner">
   <div id="hs-container" class="hs-container">
     <header id="masthead" class="site-header" role="banner">
    <a href="#more-nav" id="more-nav">More</a>
