@@ -1,5 +1,1297 @@
-/*! jQuery UI - v1.8.24 - 2012-09-28
-* https://github.com/jquery/jquery-ui
-* Includes: jquery.ui.core.js
-* Copyright (c) 2012 AUTHORS.txt; Licensed MIT, GPL */(function(e,t){function n(t,n){var i=t.nodeName.toLowerCase();if("area"===i){var s=t.parentNode,o=s.name,u;return!t.href||!o||s.nodeName.toLowerCase()!=="map"?!1:(u=e("img[usemap=#"+o+"]")[0],!!u&&r(u))}return(/input|select|textarea|button|object/.test(i)?!t.disabled:"a"==i?t.href||n:n)&&r(t)}function r(t){return!e(t).parents().andSelf().filter(function(){return e.curCSS(this,"visibility")==="hidden"||e.expr.filters.hidden(this)}).length}e.ui=e.ui||{};if(e.ui.version)return;e.extend(e.ui,{version:"1.8.24",keyCode:{ALT:18,BACKSPACE:8,CAPS_LOCK:20,COMMA:188,COMMAND:91,COMMAND_LEFT:91,COMMAND_RIGHT:93,CONTROL:17,DELETE:46,DOWN:40,END:35,ENTER:13,ESCAPE:27,HOME:36,INSERT:45,LEFT:37,MENU:93,NUMPAD_ADD:107,NUMPAD_DECIMAL:110,NUMPAD_DIVIDE:111,NUMPAD_ENTER:108,NUMPAD_MULTIPLY:106,NUMPAD_SUBTRACT:109,PAGE_DOWN:34,PAGE_UP:33,PERIOD:190,RIGHT:39,SHIFT:16,SPACE:32,TAB:9,UP:38,WINDOWS:91}}),e.fn.extend({propAttr:e.fn.prop||e.fn.attr,_focus:e.fn.focus,focus:function(t,n){return typeof t=="number"?this.each(function(){var r=this;setTimeout(function(){e(r).focus(),n&&n.call(r)},t)}):this._focus.apply(this,arguments)},scrollParent:function(){var t;return e.browser.msie&&/(static|relative)/.test(this.css("position"))||/absolute/.test(this.css("position"))?t=this.parents().filter(function(){return/(relative|absolute|fixed)/.test(e.curCSS(this,"position",1))&&/(auto|scroll)/.test(e.curCSS(this,"overflow",1)+e.curCSS(this,"overflow-y",1)+e.curCSS(this,"overflow-x",1))}).eq(0):t=this.parents().filter(function(){return/(auto|scroll)/.test(e.curCSS(this,"overflow",1)+e.curCSS(this,"overflow-y",1)+e.curCSS(this,"overflow-x",1))}).eq(0),/fixed/.test(this.css("position"))||!t.length?e(document):t},zIndex:function(n){if(n!==t)return this.css("zIndex",n);if(this.length){var r=e(this[0]),i,s;while(r.length&&r[0]!==document){i=r.css("position");if(i==="absolute"||i==="relative"||i==="fixed"){s=parseInt(r.css("zIndex"),10);if(!isNaN(s)&&s!==0)return s}r=r.parent()}}return 0},disableSelection:function(){return this.bind((e.support.selectstart?"selectstart":"mousedown")+".ui-disableSelection",function(e){e.preventDefault()})},enableSelection:function(){return this.unbind(".ui-disableSelection")}}),e("<a>").outerWidth(1).jquery||e.each(["Width","Height"],function(n,r){function i(t,n,r,i){return e.each(s,function(){n-=parseFloat(e.curCSS(t,"padding"+this,!0))||0,r&&(n-=parseFloat(e.curCSS(t,"border"+this+"Width",!0))||0),i&&(n-=parseFloat(e.curCSS(t,"margin"+this,!0))||0)}),n}var s=r==="Width"?["Left","Right"]:["Top","Bottom"],o=r.toLowerCase(),u={innerWidth:e.fn.innerWidth,innerHeight:e.fn.innerHeight,outerWidth:e.fn.outerWidth,outerHeight:e.fn.outerHeight};e.fn["inner"+r]=function(n){return n===t?u["inner"+r].call(this):this.each(function(){e(this).css(o,i(this,n)+"px")})},e.fn["outer"+r]=function(t,n){return typeof t!="number"?u["outer"+r].call(this,t):this.each(function(){e(this).css(o,i(this,t,!0,n)+"px")})}}),e.extend(e.expr[":"],{data:e.expr.createPseudo?e.expr.createPseudo(function(t){return function(n){return!!e.data(n,t)}}):function(t,n,r){return!!e.data(t,r[3])},focusable:function(t){return n(t,!isNaN(e.attr(t,"tabindex")))},tabbable:function(t){var r=e.attr(t,"tabindex"),i=isNaN(r);return(i||r>=0)&&n(t,!i)}}),e(function(){var t=document.body,n=t.appendChild(n=document.createElement("div"));n.offsetHeight,e.extend(n.style,{minHeight:"100px",height:"auto",padding:0,borderWidth:0}),e.support.minHeight=n.offsetHeight===100,e.support.selectstart="onselectstart"in n,t.removeChild(n).style.display="none"}),e.curCSS||(e.curCSS=e.css),e.extend(e.ui,{plugin:{add:function(t,n,r){var i=e.ui[t].prototype;for(var s in r)i.plugins[s]=i.plugins[s]||[],i.plugins[s].push([n,r[s]])},call:function(e,t,n){var r=e.plugins[t];if(!r||!e.element[0].parentNode)return;for(var i=0;i<r.length;i++)e.options[r[i][0]]&&r[i][1].apply(e.element,n)}},contains:function(e,t){return document.compareDocumentPosition?e.compareDocumentPosition(t)&16:e!==t&&e.contains(t)},hasScroll:function(t,n){if(e(t).css("overflow")==="hidden")return!1;var r=n&&n==="left"?"scrollLeft":"scrollTop",i=!1;return t[r]>0?!0:(t[r]=1,i=t[r]>0,t[r]=0,i)},isOverAxis:function(e,t,n){return e>t&&e<t+n},isOver:function(t,n,r,i,s,o){return e.ui.isOverAxis(t,r,s)&&e.ui.isOverAxis(n,i,o)}})})(jQuery);(function(e,t){if(e.cleanData){var n=e.cleanData;e.cleanData=function(t){for(var r=0,i;(i=t[r])!=null;r++)try{e(i).triggerHandler("remove")}catch(s){}n(t)}}else{var r=e.fn.remove;e.fn.remove=function(t,n){return this.each(function(){return n||(!t||e.filter(t,[this]).length)&&e("*",this).add([this]).each(function(){try{e(this).triggerHandler("remove")}catch(t){}}),r.call(e(this),t,n)})}}e.widget=function(t,n,r){var i=t.split(".")[0],s;t=t.split(".")[1],s=i+"-"+t,r||(r=n,n=e.Widget),e.expr[":"][s]=function(n){return!!e.data(n,t)},e[i]=e[i]||{},e[i][t]=function(e,t){arguments.length&&this._createWidget(e,t)};var o=new n;o.options=e.extend(!0,{},o.options),e[i][t].prototype=e.extend(!0,o,{namespace:i,widgetName:t,widgetEventPrefix:e[i][t].prototype.widgetEventPrefix||t,widgetBaseClass:s},r),e.widget.bridge(t,e[i][t])},e.widget.bridge=function(n,r){e.fn[n]=function(i){var s=typeof i=="string",o=Array.prototype.slice.call(arguments,1),u=this;return i=!s&&o.length?e.extend.apply(null,[!0,i].concat(o)):i,s&&i.charAt(0)==="_"?u:(s?this.each(function(){var r=e.data(this,n),s=r&&e.isFunction(r[i])?r[i].apply(r,o):r;if(s!==r&&s!==t)return u=s,!1}):this.each(function(){var t=e.data(this,n);t?t.option(i||{})._init():e.data(this,n,new r(i,this))}),u)}},e.Widget=function(e,t){arguments.length&&this._createWidget(e,t)},e.Widget.prototype={widgetName:"widget",widgetEventPrefix:"",options:{disabled:!1},_createWidget:function(t,n){e.data(n,this.widgetName,this),this.element=e(n),this.options=e.extend(!0,{},this.options,this._getCreateOptions(),t);var r=this;this.element.bind("remove."+this.widgetName,function(){r.destroy()}),this._create(),this._trigger("create"),this._init()},_getCreateOptions:function(){return e.metadata&&e.metadata.get(this.element[0])[this.widgetName]},_create:function(){},_init:function(){},destroy:function(){this.element.unbind("."+this.widgetName).removeData(this.widgetName),this.widget().unbind("."+this.widgetName).removeAttr("aria-disabled").removeClass(this.widgetBaseClass+"-disabled "+"ui-state-disabled")},widget:function(){return this.element},option:function(n,r){var i=n;if(arguments.length===0)return e.extend({},this.options);if(typeof n=="string"){if(r===t)return this.options[n];i={},i[n]=r}return this._setOptions(i),this},_setOptions:function(t){var n=this;return e.each(t,function(e,t){n._setOption(e,t)}),this},_setOption:function(e,t){return this.options[e]=t,e==="disabled"&&this.widget()[t?"addClass":"removeClass"](this.widgetBaseClass+"-disabled"+" "+"ui-state-disabled").attr("aria-disabled",t),this},enable:function(){return this._setOption("disabled",!1)},disable:function(){return this._setOption("disabled",!0)},_trigger:function(t,n,r){var i,s,o=this.options[t];r=r||{},n=e.Event(n),n.type=(t===this.widgetEventPrefix?t:this.widgetEventPrefix+t).toLowerCase(),n.target=this.element[0],s=n.originalEvent;if(s)for(i in s)i in n||(n[i]=s[i]);return this.element.trigger(n,r),!(e.isFunction(o)&&o.call(this.element[0],n,r)===!1||n.isDefaultPrevented())}}})(jQuery);(function(e,t){var n=!1;e(document).mouseup(function(e){n=!1}),e.widget("ui.mouse",{options:{cancel:":input,option",distance:1,delay:0},_mouseInit:function(){var t=this;this.element.bind("mousedown."+this.widgetName,function(e){return t._mouseDown(e)}).bind("click."+this.widgetName,function(n){if(!0===e.data(n.target,t.widgetName+".preventClickEvent"))return e.removeData(n.target,t.widgetName+".preventClickEvent"),n.stopImmediatePropagation(),!1}),this.started=!1},_mouseDestroy:function(){this.element.unbind("."+this.widgetName),this._mouseMoveDelegate&&e(document).unbind("mousemove."+this.widgetName,this._mouseMoveDelegate).unbind("mouseup."+this.widgetName,this._mouseUpDelegate)},_mouseDown:function(t){if(n)return;this._mouseStarted&&this._mouseUp(t),this._mouseDownEvent=t;var r=this,i=t.which==1,s=typeof this.options.cancel=="string"&&t.target.nodeName?e(t.target).closest(this.options.cancel).length:!1;if(!i||s||!this._mouseCapture(t))return!0;this.mouseDelayMet=!this.options.delay,this.mouseDelayMet||(this._mouseDelayTimer=setTimeout(function(){r.mouseDelayMet=!0},this.options.delay));if(this._mouseDistanceMet(t)&&this._mouseDelayMet(t)){this._mouseStarted=this._mouseStart(t)!==!1;if(!this._mouseStarted)return t.preventDefault(),!0}return!0===e.data(t.target,this.widgetName+".preventClickEvent")&&e.removeData(t.target,this.widgetName+".preventClickEvent"),this._mouseMoveDelegate=function(e){return r._mouseMove(e)},this._mouseUpDelegate=function(e){return r._mouseUp(e)},e(document).bind("mousemove."+this.widgetName,this._mouseMoveDelegate).bind("mouseup."+this.widgetName,this._mouseUpDelegate),t.preventDefault(),n=!0,!0},_mouseMove:function(t){return!e.browser.msie||document.documentMode>=9||!!t.button?this._mouseStarted?(this._mouseDrag(t),t.preventDefault()):(this._mouseDistanceMet(t)&&this._mouseDelayMet(t)&&(this._mouseStarted=this._mouseStart(this._mouseDownEvent,t)!==!1,this._mouseStarted?this._mouseDrag(t):this._mouseUp(t)),!this._mouseStarted):this._mouseUp(t)},_mouseUp:function(t){return e(document).unbind("mousemove."+this.widgetName,this._mouseMoveDelegate).unbind("mouseup."+this.widgetName,this._mouseUpDelegate),this._mouseStarted&&(this._mouseStarted=!1,t.target==this._mouseDownEvent.target&&e.data(t.target,this.widgetName+".preventClickEvent",!0),this._mouseStop(t)),!1},_mouseDistanceMet:function(e){return Math.max(Math.abs(this._mouseDownEvent.pageX-e.pageX),Math.abs(this._mouseDownEvent.pageY-e.pageY))>=this.options.distance},_mouseDelayMet:function(e){return this.mouseDelayMet},_mouseStart:function(e){},_mouseDrag:function(e){},_mouseStop:function(e){},_mouseCapture:function(e){return!0}})})(jQuery);(function(e,t){e.widget("ui.draggable",e.ui.mouse,{widgetEventPrefix:"drag",options:{addClasses:!0,appendTo:"parent",axis:!1,connectToSortable:!1,containment:!1,cursor:"auto",cursorAt:!1,grid:!1,handle:!1,helper:"original",iframeFix:!1,opacity:!1,refreshPositions:!1,revert:!1,revertDuration:500,scope:"default",scroll:!0,scrollSensitivity:20,scrollSpeed:20,snap:!1,snapMode:"both",snapTolerance:20,stack:!1,zIndex:!1},_create:function(){this.options.helper=="original"&&!/^(?:r|a|f)/.test(this.element.css("position"))&&(this.element[0].style.position="relative"),this.options.addClasses&&this.element.addClass("ui-draggable"),this.options.disabled&&this.element.addClass("ui-draggable-disabled"),this._mouseInit()},destroy:function(){if(!this.element.data("draggable"))return;return this.element.removeData("draggable").unbind(".draggable").removeClass("ui-draggable ui-draggable-dragging ui-draggable-disabled"),this._mouseDestroy(),this},_mouseCapture:function(t){var n=this.options;return this.helper||n.disabled||e(t.target).is(".ui-resizable-handle")?!1:(this.handle=this._getHandle(t),this.handle?(n.iframeFix&&e(n.iframeFix===!0?"iframe":n.iframeFix).each(function(){e('<div class="ui-draggable-iframeFix" style="background: #fff;"></div>').css({width:this.offsetWidth+"px",height:this.offsetHeight+"px",position:"absolute",opacity:"0.001",zIndex:1e3}).css(e(this).offset()).appendTo("body")}),!0):!1)},_mouseStart:function(t){var n=this.options;return this.helper=this._createHelper(t),this.helper.addClass("ui-draggable-dragging"),this._cacheHelperProportions(),e.ui.ddmanager&&(e.ui.ddmanager.current=this),this._cacheMargins(),this.cssPosition=this.helper.css("position"),this.scrollParent=this.helper.scrollParent(),this.offset=this.positionAbs=this.element.offset(),this.offset={top:this.offset.top-this.margins.top,left:this.offset.left-this.margins.left},e.extend(this.offset,{click:{left:t.pageX-this.offset.left,top:t.pageY-this.offset.top},parent:this._getParentOffset(),relative:this._getRelativeOffset()}),this.originalPosition=this.position=this._generatePosition(t),this.originalPageX=t.pageX,this.originalPageY=t.pageY,n.cursorAt&&this._adjustOffsetFromHelper(n.cursorAt),n.containment&&this._setContainment(),this._trigger("start",t)===!1?(this._clear(),!1):(this._cacheHelperProportions(),e.ui.ddmanager&&!n.dropBehaviour&&e.ui.ddmanager.prepareOffsets(this,t),this._mouseDrag(t,!0),e.ui.ddmanager&&e.ui.ddmanager.dragStart(this,t),!0)},_mouseDrag:function(t,n){this.position=this._generatePosition(t),this.positionAbs=this._convertPositionTo("absolute");if(!n){var r=this._uiHash();if(this._trigger("drag",t,r)===!1)return this._mouseUp({}),!1;this.position=r.position}if(!this.options.axis||this.options.axis!="y")this.helper[0].style.left=this.position.left+"px";if(!this.options.axis||this.options.axis!="x")this.helper[0].style.top=this.position.top+"px";return e.ui.ddmanager&&e.ui.ddmanager.drag(this,t),!1},_mouseStop:function(t){var n=!1;e.ui.ddmanager&&!this.options.dropBehaviour&&(n=e.ui.ddmanager.drop(this,t)),this.dropped&&(n=this.dropped,this.dropped=!1);var r=this.element[0],i=!1;while(r&&(r=r.parentNode))r==document&&(i=!0);if(!i&&this.options.helper==="original")return!1;if(this.options.revert=="invalid"&&!n||this.options.revert=="valid"&&n||this.options.revert===!0||e.isFunction(this.options.revert)&&this.options.revert.call(this.element,n)){var s=this;e(this.helper).animate(this.originalPosition,parseInt(this.options.revertDuration,10),function(){s._trigger("stop",t)!==!1&&s._clear()})}else this._trigger("stop",t)!==!1&&this._clear();return!1},_mouseUp:function(t){return e("div.ui-draggable-iframeFix").each(function(){this.parentNode.removeChild(this)}),e.ui.ddmanager&&e.ui.ddmanager.dragStop(this,t),e.ui.mouse.prototype._mouseUp.call(this,t)},cancel:function(){return this.helper.is(".ui-draggable-dragging")?this._mouseUp({}):this._clear(),this},_getHandle:function(t){var n=!this.options.handle||!e(this.options.handle,this.element).length?!0:!1;return e(this.options.handle,this.element).find("*").andSelf().each(function(){this==t.target&&(n=!0)}),n},_createHelper:function(t){var n=this.options,r=e.isFunction(n.helper)?e(n.helper.apply(this.element[0],[t])):n.helper=="clone"?this.element.clone().removeAttr("id"):this.element;return r.parents("body").length||r.appendTo(n.appendTo=="parent"?this.element[0].parentNode:n.appendTo),r[0]!=this.element[0]&&!/(fixed|absolute)/.test(r.css("position"))&&r.css("position","absolute"),r},_adjustOffsetFromHelper:function(t){typeof t=="string"&&(t=t.split(" ")),e.isArray(t)&&(t={left:+t[0],top:+t[1]||0}),"left"in t&&(this.offset.click.left=t.left+this.margins.left),"right"in t&&(this.offset.click.left=this.helperProportions.width-t.right+this.margins.left),"top"in t&&(this.offset.click.top=t.top+this.margins.top),"bottom"in t&&(this.offset.click.top=this.helperProportions.height-t.bottom+this.margins.top)},_getParentOffset:function(){this.offsetParent=this.helper.offsetParent();var t=this.offsetParent.offset();this.cssPosition=="absolute"&&this.scrollParent[0]!=document&&e.ui.contains(this.scrollParent[0],this.offsetParent[0])&&(t.left+=this.scrollParent.scrollLeft(),t.top+=this.scrollParent.scrollTop());if(this.offsetParent[0]==document.body||this.offsetParent[0].tagName&&this.offsetParent[0].tagName.toLowerCase()=="html"&&e.browser.msie)t={top:0,left:0};return{top:t.top+(parseInt(this.offsetParent.css("borderTopWidth"),10)||0),left:t.left+(parseInt(this.offsetParent.css("borderLeftWidth"),10)||0)}},_getRelativeOffset:function(){if(this.cssPosition=="relative"){var e=this.element.position();return{top:e.top-(parseInt(this.helper.css("top"),10)||0)+this.scrollParent.scrollTop(),left:e.left-(parseInt(this.helper.css("left"),10)||0)+this.scrollParent.scrollLeft()}}return{top:0,left:0}},_cacheMargins:function(){this.margins={left:parseInt(this.element.css("marginLeft"),10)||0,top:parseInt(this.element.css("marginTop"),10)||0,right:parseInt(this.element.css("marginRight"),10)||0,bottom:parseInt(this.element.css("marginBottom"),10)||0}},_cacheHelperProportions:function(){this.helperProportions={width:this.helper.outerWidth(),height:this.helper.outerHeight()}},_setContainment:function(){var t=this.options;t.containment=="parent"&&(t.containment=this.helper[0].parentNode);if(t.containment=="document"||t.containment=="window")this.containment=[t.containment=="document"?0:e(window).scrollLeft()-this.offset.relative.left-this.offset.parent.left,t.containment=="document"?0:e(window).scrollTop()-this.offset.relative.top-this.offset.parent.top,(t.containment=="document"?0:e(window).scrollLeft())+e(t.containment=="document"?document:window).width()-this.helperProportions.width-this.margins.left,(t.containment=="document"?0:e(window).scrollTop())+(e(t.containment=="document"?document:window).height()||document.body.parentNode.scrollHeight)-this.helperProportions.height-this.margins.top];if(!/^(document|window|parent)$/.test(t.containment)&&t.containment.constructor!=Array){var n=e(t.containment),r=n[0];if(!r)return;var i=n.offset(),s=e(r).css("overflow")!="hidden";this.containment=[(parseInt(e(r).css("borderLeftWidth"),10)||0)+(parseInt(e(r).css("paddingLeft"),10)||0),(parseInt(e(r).css("borderTopWidth"),10)||0)+(parseInt(e(r).css("paddingTop"),10)||0),(s?Math.max(r.scrollWidth,r.offsetWidth):r.offsetWidth)-(parseInt(e(r).css("borderLeftWidth"),10)||0)-(parseInt(e(r).css("paddingRight"),10)||0)-this.helperProportions.width-this.margins.left-this.margins.right,(s?Math.max(r.scrollHeight,r.offsetHeight):r.offsetHeight)-(parseInt(e(r).css("borderTopWidth"),10)||0)-(parseInt(e(r).css("paddingBottom"),10)||0)-this.helperProportions.height-this.margins.top-this.margins.bottom],this.relative_container=n}else t.containment.constructor==Array&&(this.containment=t.containment)},_convertPositionTo:function(t,n){n||(n=this.position);var r=t=="absolute"?1:-1,i=this.options,s=this.cssPosition!="absolute"||this.scrollParent[0]!=document&&!!e.ui.contains(this.scrollParent[0],this.offsetParent[0])?this.scrollParent:this.offsetParent,o=/(html|body)/i.test(s[0].tagName);return{top:n.top+this.offset.relative.top*r+this.offset.parent.top*r-(e.browser.safari&&e.browser.version<526&&this.cssPosition=="fixed"?0:(this.cssPosition=="fixed"?-this.scrollParent.scrollTop():o?0:s.scrollTop())*r),left:n.left+this.offset.relative.left*r+this.offset.parent.left*r-(e.browser.safari&&e.browser.version<526&&this.cssPosition=="fixed"?0:(this.cssPosition=="fixed"?-this.scrollParent.scrollLeft():o?0:s.scrollLeft())*r)}},_generatePosition:function(t){var n=this.options,r=this.cssPosition!="absolute"||this.scrollParent[0]!=document&&!!e.ui.contains(this.scrollParent[0],this.offsetParent[0])?this.scrollParent:this.offsetParent,i=/(html|body)/i.test(r[0].tagName),s=t.pageX,o=t.pageY;if(this.originalPosition){var u;if(this.containment){if(this.relative_container){var f=this.relative_container.offset();u=[this.containment[0]+f.left,this.containment[1]+f.top,this.containment[2]+f.left,this.containment[3]+f.top]}else u=this.containment;t.pageX-this.offset.click.left<u[0]&&(s=u[0]+this.offset.click.left),t.pageY-this.offset.click.top<u[1]&&(o=u[1]+this.offset.click.top),t.pageX-this.offset.click.left>u[2]&&(s=u[2]+this.offset.click.left),t.pageY-this.offset.click.top>u[3]&&(o=u[3]+this.offset.click.top)}if(n.grid){var l=n.grid[1]?this.originalPageY+Math.round((o-this.originalPageY)/n.grid[1])*n.grid[1]:this.originalPageY;o=u?l-this.offset.click.top<u[1]||l-this.offset.click.top>u[3]?l-this.offset.click.top<u[1]?l+n.grid[1]:l-n.grid[1]:l:l;var c=n.grid[0]?this.originalPageX+Math.round((s-this.originalPageX)/n.grid[0])*n.grid[0]:this.originalPageX;s=u?c-this.offset.click.left<u[0]||c-this.offset.click.left>u[2]?c-this.offset.click.left<u[0]?c+n.grid[0]:c-n.grid[0]:c:c}}return{top:o-this.offset.click.top-this.offset.relative.top-this.offset.parent.top+(e.browser.safari&&e.browser.version<526&&this.cssPosition=="fixed"?0:this.cssPosition=="fixed"?-this.scrollParent.scrollTop():i?0:r.scrollTop()),left:s-this.offset.click.left-this.offset.relative.left-this.offset.parent.left+(e.browser.safari&&e.browser.version<526&&this.cssPosition=="fixed"?0:this.cssPosition=="fixed"?-this.scrollParent.scrollLeft():i?0:r.scrollLeft())}},_clear:function(){this.helper.removeClass("ui-draggable-dragging"),this.helper[0]!=this.element[0]&&!this.cancelHelperRemoval&&this.helper.remove(),this.helper=null,this.cancelHelperRemoval=!1},_trigger:function(t,n,r){return r=r||this._uiHash(),e.ui.plugin.call(this,t,[n,r]),t=="drag"&&(this.positionAbs=this._convertPositionTo("absolute")),e.Widget.prototype._trigger.call(this,t,n,r)},plugins:{},_uiHash:function(e){return{helper:this.helper,position:this.position,originalPosition:this.originalPosition,offset:this.positionAbs}}}),e.extend(e.ui.draggable,{version:"1.8.24"}),e.ui.plugin.add("draggable","connectToSortable",{start:function(t,n){var r=e(this).data("draggable"),i=r.options,s=e.extend({},n,{item:r.element});r.sortables=[],e(i.connectToSortable).each(function(){var n=e.data(this,"sortable");n&&!n.options.disabled&&(r.sortables.push({instance:n,shouldRevert:n.options.revert}),n.refreshPositions(),n._trigger("activate",t,s))})},stop:function(t,n){var r=e(this).data("draggable"),i=e.extend({},n,{item:r.element});e.each(r.sortables,function(){this.instance.isOver?(this.instance.isOver=0,r.cancelHelperRemoval=!0,this.instance.cancelHelperRemoval=!1,this.shouldRevert&&(this.instance.options.revert=!0),this.instance._mouseStop(t),this.instance.options.helper=this.instance.options._helper,r.options.helper=="original"&&this.instance.currentItem.css({top:"auto",left:"auto"})):(this.instance.cancelHelperRemoval=!1,this.instance._trigger("deactivate",t,i))})},drag:function(t,n){var r=e(this).data("draggable"),i=this,s=function(t){var n=this.offset.click.top,r=this.offset.click.left,i=this.positionAbs.top,s=this.positionAbs.left,o=t.height,u=t.width,f=t.top,l=t.left;return e.ui.isOver(i+n,s+r,f,l,o,u)};e.each(r.sortables,function(s){this.instance.positionAbs=r.positionAbs,this.instance.helperProportions=r.helperProportions,this.instance.offset.click=r.offset.click,this.instance._intersectsWith(this.instance.containerCache)?(this.instance.isOver||(this.instance.isOver=1,this.instance.currentItem=e(i).clone().removeAttr("id").appendTo(this.instance.element).data("sortable-item",!0),this.instance.options._helper=this.instance.options.helper,this.instance.options.helper=function(){return n.helper[0]},t.target=this.instance.currentItem[0],this.instance._mouseCapture(t,!0),this.instance._mouseStart(t,!0,!0),this.instance.offset.click.top=r.offset.click.top,this.instance.offset.click.left=r.offset.click.left,this.instance.offset.parent.left-=r.offset.parent.left-this.instance.offset.parent.left,this.instance.offset.parent.top-=r.offset.parent.top-this.instance.offset.parent.top,r._trigger("toSortable",t),r.dropped=this.instance.element,r.currentItem=r.element,this.instance.fromOutside=r),this.instance.currentItem&&this.instance._mouseDrag(t)):this.instance.isOver&&(this.instance.isOver=0,this.instance.cancelHelperRemoval=!0,this.instance.options.revert=!1,this.instance._trigger("out",t,this.instance._uiHash(this.instance)),this.instance._mouseStop(t,!0),this.instance.options.helper=this.instance.options._helper,this.instance.currentItem.remove(),this.instance.placeholder&&this.instance.placeholder.remove(),r._trigger("fromSortable",t),r.dropped=!1)})}}),e.ui.plugin.add("draggable","cursor",{start:function(t,n){var r=e("body"),i=e(this).data("draggable").options;r.css("cursor")&&(i._cursor=r.css("cursor")),r.css("cursor",i.cursor)},stop:function(t,n){var r=e(this).data("draggable").options;r._cursor&&e("body").css("cursor",r._cursor)}}),e.ui.plugin.add("draggable","opacity",{start:function(t,n){var r=e(n.helper),i=e(this).data("draggable").options;r.css("opacity")&&(i._opacity=r.css("opacity")),r.css("opacity",i.opacity)},stop:function(t,n){var r=e(this).data("draggable").options;r._opacity&&e(n.helper).css("opacity",r._opacity)}}),e.ui.plugin.add("draggable","scroll",{start:function(t,n){var r=e(this).data("draggable");r.scrollParent[0]!=document&&r.scrollParent[0].tagName!="HTML"&&(r.overflowOffset=r.scrollParent.offset())},drag:function(t,n){var r=e(this).data("draggable"),i=r.options,s=!1;if(r.scrollParent[0]!=document&&r.scrollParent[0].tagName!="HTML"){if(!i.axis||i.axis!="x")r.overflowOffset.top+r.scrollParent[0].offsetHeight-t.pageY<i.scrollSensitivity?r.scrollParent[0].scrollTop=s=r.scrollParent[0].scrollTop+i.scrollSpeed:t.pageY-r.overflowOffset.top<i.scrollSensitivity&&(r.scrollParent[0].scrollTop=s=r.scrollParent[0].scrollTop-i.scrollSpeed);if(!i.axis||i.axis!="y")r.overflowOffset.left+r.scrollParent[0].offsetWidth-t.pageX<i.scrollSensitivity?r.scrollParent[0].scrollLeft=s=r.scrollParent[0].scrollLeft+i.scrollSpeed:t.pageX-r.overflowOffset.left<i.scrollSensitivity&&(r.scrollParent[0].scrollLeft=s=r.scrollParent[0].scrollLeft-i.scrollSpeed)}else{if(!i.axis||i.axis!="x")t.pageY-e(document).scrollTop()<i.scrollSensitivity?s=e(document).scrollTop(e(document).scrollTop()-i.scrollSpeed):e(window).height()-(t.pageY-e(document).scrollTop())<i.scrollSensitivity&&(s=e(document).scrollTop(e(document).scrollTop()+i.scrollSpeed));if(!i.axis||i.axis!="y")t.pageX-e(document).scrollLeft()<i.scrollSensitivity?s=e(document).scrollLeft(e(document).scrollLeft()-i.scrollSpeed):e(window).width()-(t.pageX-e(document).scrollLeft())<i.scrollSensitivity&&(s=e(document).scrollLeft(e(document).scrollLeft()+i.scrollSpeed))}s!==!1&&e.ui.ddmanager&&!i.dropBehaviour&&e.ui.ddmanager.prepareOffsets(r,t)}}),e.ui.plugin.add("draggable","snap",{start:function(t,n){var r=e(this).data("draggable"),i=r.options;r.snapElements=[],e(i.snap.constructor!=String?i.snap.items||":data(draggable)":i.snap).each(function(){var t=e(this),n=t.offset();this!=r.element[0]&&r.snapElements.push({item:this,width:t.outerWidth(),height:t.outerHeight(),top:n.top,left:n.left})})},drag:function(t,n){var r=e(this).data("draggable"),i=r.options,s=i.snapTolerance,o=n.offset.left,u=o+r.helperProportions.width,f=n.offset.top,l=f+r.helperProportions.height;for(var c=r.snapElements.length-1;c>=0;c--){var h=r.snapElements[c].left,p=h+r.snapElements[c].width,d=r.snapElements[c].top,v=d+r.snapElements[c].height;if(!(h-s<o&&o<p+s&&d-s<f&&f<v+s||h-s<o&&o<p+s&&d-s<l&&l<v+s||h-s<u&&u<p+s&&d-s<f&&f<v+s||h-s<u&&u<p+s&&d-s<l&&l<v+s)){r.snapElements[c].snapping&&r.options.snap.release&&r.options.snap.release.call(r.element,t,e.extend(r._uiHash(),{snapItem:r.snapElements[c].item})),r.snapElements[c].snapping=!1;continue}if(i.snapMode!="inner"){var m=Math.abs(d-l)<=s,g=Math.abs(v-f)<=s,y=Math.abs(h-u)<=s,b=Math.abs(p-o)<=s;m&&(n.position.top=r._convertPositionTo("relative",{top:d-r.helperProportions.height,left:0}).top-r.margins.top),g&&(n.position.top=r._convertPositionTo("relative",{top:v,left:0}).top-r.margins.top),y&&(n.position.left=r._convertPositionTo("relative",{top:0,left:h-r.helperProportions.width}).left-r.margins.left),b&&(n.position.left=r._convertPositionTo("relative",{top:0,left:p}).left-r.margins.left)}var w=m||g||y||b;if(i.snapMode!="outer"){var m=Math.abs(d-f)<=s,g=Math.abs(v-l)<=s,y=Math.abs(h-o)<=s,b=Math.abs(p-u)<=s;m&&(n.position.top=r._convertPositionTo("relative",{top:d,left:0}).top-r.margins.top),g&&(n.position.top=r._convertPositionTo("relative",{top:v-r.helperProportions.height,left:0}).top-r.margins.top),y&&(n.position.left=r._convertPositionTo("relative",{top:0,left:h}).left-r.margins.left),b&&(n.position.left=r._convertPositionTo("relative",{top:0,left:p-r.helperProportions.width}).left-r.margins.left)}!r.snapElements[c].snapping&&(m||g||y||b||w)&&r.options.snap.snap&&r.options.snap.snap.call(r.element,t,e.extend(r._uiHash(),{snapItem:r.snapElements[c].item})),r.snapElements[c].snapping=m||g||y||b||w}}}),e.ui.plugin.add("draggable","stack",{start:function(t,n){var r=e(this).data("draggable").options,i=e.makeArray(e(r.stack)).sort(function(t,n){return(parseInt(e(t).css("zIndex"),10)||0)-(parseInt(e(n).css("zIndex"),10)||0)});if(!i.length)return;var s=parseInt(i[0].style.zIndex)||0;e(i).each(function(e){this.style.zIndex=s+e}),this[0].style.zIndex=s+i.length}}),e.ui.plugin.add("draggable","zIndex",{start:function(t,n){var r=e(n.helper),i=e(this).data("draggable").options;r.css("zIndex")&&(i._zIndex=r.css("zIndex")),r.css("zIndex",i.zIndex)},stop:function(t,n){var r=e(this).data("draggable").options;r._zIndex&&e(n.helper).css("zIndex",r._zIndex)}})})(jQuery);(function(e){"use strict";function t(t,n){function g(){if(n.controls){a.toggleClass("disable",h<=0);u.toggleClass("disable",!(h+1<c))}if(n.pager){var t=e(".pagenum",f);t.removeClass("active");e(t[h]).addClass("active")}}function y(t){e(this).hasClass("pagenum")&&r.move(parseInt(this.rel,10),!0);return!1}function b(){if(n.interval&&!d){clearTimeout(p);p=setTimeout(function(){h=h+1===c?-1:h;v=h+1===c?!1:h===0?!0:v;r.move(v?1:-1)},n.intervaltime)}}function w(){if(n.controls&&a.length>0&&u.length>0){a.click(function(){r.move(-1);return!1});u.click(function(){r.move(1);return!1})}n.interval&&t.hover(r.stop,r.start);n.pager&&f.length>0&&e("a",f).click(y)}function E(){l=m?e(o[0]).outerWidth(!0):e(o[0]).outerHeight(!0);var t=Math.ceil((m?i.outerWidth():i.outerHeight())/(l*n.display)-1);c=Math.max(1,Math.ceil(o.length/n.display)-t);h=Math.min(c,Math.max(1,n.start))-2;s.css(m?"width":"height",l*o.length);r.move(1);w();return r}var r=this,i=e(".viewport:first",t),s=e(".overview:first",t),o=s.children(),u=e(".next:first",t),a=e(".prev:first",t),f=e(".pager:first",t),l=0,c=0,h=0,p=undefined,d=!1,v=!0,m=n.axis==="x";this.stop=function(){clearTimeout(p);d=!0};this.start=function(){d=!1;b()};this.move=function(e,t){h=t?e:h+=e;if(h>-1&&h<c){var r={};r[m?"left":"top"]=-(h*l*n.display);s.animate(r,{queue:!1,duration:n.animation?n.duration:0,complete:function(){typeof n.callback=="function"&&n.callback.call(this,o[h],h)}});g();b()}};return E()}e.tiny=e.tiny||{};e.tiny.carousel={options:{start:1,display:1,axis:"x",controls:!0,pager:!1,interval:!1,intervaltime:3e3,rewind:!1,animation:!0,duration:1e3,callback:null}};e.fn.tinycarousel_start=function(){e(this).data("tcl").start()};e.fn.tinycarousel_stop=function(){e(this).data("tcl").stop()};e.fn.tinycarousel_move=function(t){e(this).data("tcl").move(t-1,!0)};e.fn.tinycarousel=function(n){var r=e.extend({},e.tiny.carousel.options,n);this.each(function(){e(this).data("tcl",new t(e(this),r))});return this}})(jQuery);(function(e,t,n){"use strict";e.fn.backstretch=function(r,s){return(r===n||r.length===0)&&e.error("No images were supplied for Backstretch"),e(t).scrollTop()===0&&t.scrollTo(0,0),this.each(function(){var t=e(this),n=t.data("backstretch");n&&(s=e.extend(n.options,s),n.destroy(!0)),n=new i(this,r,s),t.data("backstretch",n)})},e.backstretch=function(t,n){return e("body").backstretch(t,n).data("backstretch")},e.expr[":"].backstretch=function(t){return e(t).data("backstretch")!==n},e.fn.backstretch.defaults={centeredX:!0,centeredY:!0,duration:5e3,fade:0};var r={wrap:{left:0,top:0,overflow:"hidden",margin:0,padding:0,height:"100%",width:"100%",zIndex:-999999},img:{position:"absolute",display:"none",margin:0,padding:0,border:"none",width:"auto",height:"auto",maxWidth:"none",zIndex:-999999}},i=function(n,i,o){this.options=e.extend({},e.fn.backstretch.defaults,o||{}),this.images=e.isArray(i)?i:[i],e.each(this.images,function(){e("<img />")[0].src=this}),this.isBody=n===document.body,this.$container=e(n),this.$wrap=e('<div class="backstretch"></div>').css(r.wrap).appendTo(this.$container),this.$root=this.isBody?s?e(t):e(document):this.$container;if(!this.isBody){var u=this.$container.css("position"),a=this.$container.css("zIndex");this.$container.css({position:u==="static"?"relative":u,zIndex:a==="auto"?0:a,background:"none"}),this.$wrap.css({zIndex:-999998})}this.$wrap.css({position:this.isBody&&s?"fixed":"absolute"}),this.index=0,this.show(this.index),e(t).on("resize.backstretch",e.proxy(this.resize,this)).on("orientationchange.backstretch",e.proxy(function(){this.isBody&&t.pageYOffset===0&&(t.scrollTo(0,1),this.resize())},this))};i.prototype={resize:function(){try{var e={left:0,top:0},n=this.isBody?this.$root.width():this.$root.innerWidth(),r=n,i=this.isBody?t.innerHeight?t.innerHeight:this.$root.height():this.$root.innerHeight(),s=r/this.$img.data("ratio"),o;s>=i?(o=(s-i)/2,this.options.centeredY&&(e.top="-"+o+"px")):(s=i,r=s*this.$img.data("ratio"),o=(r-n)/2,this.options.centeredX&&(e.left="-"+o+"px")),this.$wrap.css({width:n,height:i}).find("img:not(.deleteable)").css({width:r,height
-:s}).css(e)}catch(u){}return this},show:function(t){if(Math.abs(t)>this.images.length-1)return;this.index=t;var n=this,i=n.$wrap.find("img").addClass("deleteable"),s=e.Event("backstretch.show",{relatedTarget:n.$container[0]});return clearInterval(n.interval),n.$img=e("<img />").css(r.img).bind("load",function(t){var r=this.width||e(t.target).width(),o=this.height||e(t.target).height();e(this).data("ratio",r/o),n.resize(),e(this).fadeIn(n.options.speed||n.options.fade,function(){i.remove(),n.paused||n.cycle(),n.$container.trigger(s)})}).appendTo(n.$wrap),n.$img.attr("src",n.images[t]),n},next:function(){return this.show(this.index<this.images.length-1?this.index+1:0)},prev:function(){return this.show(this.index===0?this.images.length-1:this.index-1)},pause:function(){return this.paused=!0,this},resume:function(){return this.paused=!1,this.next(),this},cycle:function(){return this.images.length>1&&(clearInterval(this.interval),this.interval=setInterval(e.proxy(function(){this.paused||this.next()},this),this.options.duration)),this},destroy:function(n){e(t).off("resize.backstretch orientationchange.backstretch"),clearInterval(this.interval),n||this.$wrap.remove(),this.$container.removeData("backstretch")}};var s=function(){var e=navigator.userAgent,n=navigator.platform,r=e.match(/AppleWebKit\/([0-9]+)/),i=!!r&&r[1],s=e.match(/Fennec\/([0-9]+)/),o=!!s&&s[1],u=e.match(/Opera Mobi\/([0-9]+)/),a=!!u&&u[1],f=e.match(/MSIE ([0-9]+)/),l=!!f&&f[1];return!((n.indexOf("iPhone")>-1||n.indexOf("iPad")>-1||n.indexOf("iPod")>-1)&&i&&i<534||t.operamini&&{}.toString.call(t.operamini)==="[object OperaMini]"||u&&a<7458||e.indexOf("Android")>-1&&i&&i<533||o&&o<6||"palmGetResource"in t&&i&&i<534||e.indexOf("MeeGo")>-1&&e.indexOf("NokiaBrowser/8.5.0")>-1||l&&l<=6)}()})(jQuery,window);(function(e){e(document).ready(function(){function r(){e(".dashboardZipSearch").removeClass("error");var t;e("li.dashboard").css("text-shadow")!=="none"?t=e("li.dashboard"):t=e("#action-dashboard");e(".dashboardZipSearch",t).val()!==""&&e(".dashboardZipSearch",t).val()!=="Enter your zip"?window.location="/congress/"+e(".dashboardZipSearch",t).val():e(".dashboardZipSearch",t).addClass("error")}e(".keyVoteSelector").change(function(){e(".items").slideUp();e(".items_"+e(".keyVoteSelector:checked").val()).slideDown();e("#more-key-votes-link").attr("href","/chamber/key-vote-"+e(".keyVoteSelector:checked").val()+"/")});e(".dashboardZipGo").click(function(){r();return!1});e(document).keypress(function(t){if(e(".dashboardZipSearch").is(":focus")){var n=t.keyCode?t.keyCode:t.which;n===13&&r()}});e("#listen-live").click(function(){window.open(e(this).attr("href"),"Listen_Live!","resizable=yes,scrollbars=yes,width=837,height=470");return!1});e("#signup-form-submit-button").click(function(){var t=e("#signup-form").serialize();e("#signup-content").load("/bluehornet.php?"+t);var n=n||[];n.push(["_trackEvent","Signup","Footer Signup",e("#signup_name").val()+" "+e("#email_address").val()]);var r=new Date,i=r.getDate();i+=7300;r.setDate(i);document.cookie="_signup_submitted=true; expires="+r.toGMTString()+"; path=/";return!1});var t=e("#masthead"),n=!1;e(window).width()<600&&e.fn.smallMenu();e(window).resize(function(){var r=e(window).width();!1!==n&&clearTimeout(n);n=setTimeout(function(){if(r<600)e.fn.smallMenu();else{t.find(".site-navigation").removeClass("main-small-navigation").addClass("main-navigation");t.find(".site-navigation h1").removeClass("menu-toggle").addClass("assistive-text");t.find(".menu").removeAttr("style")}},200)});e(".search-input").data("holder",e(".search-input").attr("placeholder"));e(".search-input").focusin(function(){e(this).attr("placeholder","")});e(".search-input").focusout(function(){e(this).attr("placeholder",e(this).data("holder"))});e("#search-btn").click(function(){e("#searchform").submit();return!1});e.backstretch(["/wp-content/themes/heritageaction/img/bg-capital-mobile.jpg"],{duration:3e3,fade:750})})})(jQuery);
+/*! Backstretch - v2.0.1 - 2012-10-01
+* http://srobbin.com/jquery-plugins/backstretch/
+* Copyright (c) 2012 Scott Robbin; Licensed MIT */
+
+;(function ($, window, undefined) {
+  'use strict';
+
+  /* PLUGIN DEFINITION
+   * ========================= */
+
+  $.fn.backstretch = function (images, options) {
+    // We need at least one image
+    if (images === undefined || images.length === 0) {
+      $.error("No images were supplied for Backstretch");
+    }
+
+    /*
+     * Scroll the page one pixel to get the right window height on iOS
+     * Pretty harmless for everyone else
+    */
+    if ($(window).scrollTop() === 0 ) {
+      window.scrollTo(0, 0);
+    }
+
+    return this.each(function () {
+      var $this = $(this)
+        , obj = $this.data('backstretch');
+
+      // If we've already attached Backstretch to this element, remove the old instance.
+      if (obj) {
+        // Merge the old options with the new
+        options = $.extend(obj.options, options);
+
+        // Remove the old instance
+        obj.destroy(true);
+      }
+
+      obj = new Backstretch(this, images, options);
+      $this.data('backstretch', obj);
+    });
+  };
+
+  // If no element is supplied, we'll attach to body
+  $.backstretch = function (images, options) {
+    // Return the instance
+    return $('body')
+            .backstretch(images, options)
+            .data('backstretch');
+  };
+
+  // Custom selector
+  $.expr[':'].backstretch = function(elem) {
+    return $(elem).data('backstretch') !== undefined;
+  };
+
+  /* DEFAULTS
+   * ========================= */
+
+  $.fn.backstretch.defaults = {
+      centeredX: true   // Should we center the image on the X axis?
+    , centeredY: true   // Should we center the image on the Y axis?
+    , duration: 5000    // Amount of time in between slides (if slideshow)
+    , fade: 0           // Speed of fade transition between slides
+  };
+
+  /* STYLES
+   * 
+   * Baked-in styles that we'll apply to our elements.
+   * In an effort to keep the plugin simple, these are not exposed as options.
+   * That said, anyone can override these in their own stylesheet.
+   * ========================= */
+  var styles = {
+      wrap: {
+          left: 0
+        , top: 0
+        , overflow: 'hidden'
+        , margin: 0
+        , padding: 0
+        , height: '100%'
+        , width: '100%'
+        , zIndex: -999999
+      }
+    , img: {
+          position: 'absolute'
+        , display: 'none'
+        , margin: 0
+        , padding: 0
+        , border: 'none'
+        , width: 'auto'
+        , height: 'auto'
+        , maxWidth: 'none'
+        , zIndex: -999999
+      }
+  };
+
+  /* CLASS DEFINITION
+   * ========================= */
+  var Backstretch = function (container, images, options) {
+    this.options = $.extend({}, $.fn.backstretch.defaults, options || {});
+
+    /* In its simplest form, we allow Backstretch to be called on an image path.
+     * e.g. $.backstretch('/path/to/image.jpg')
+     * So, we need to turn this back into an array.
+     */
+    this.images = $.isArray(images) ? images : [images];
+
+    // Preload images
+    $.each(this.images, function () {
+      $('<img />')[0].src = this;
+    });    
+
+    // Convenience reference to know if the container is body.
+    this.isBody = container === document.body;
+
+    /* We're keeping track of a few different elements
+     *
+     * Container: the element that Backstretch was called on.
+     * Wrap: a DIV that we place the image into, so we can hide the overflow.
+     * Root: Convenience reference to help calculate the correct height.
+     */
+    this.$container = $(container);
+    this.$wrap = $('<div class="backstretch"></div>').css(styles.wrap).appendTo(this.$container);
+    this.$root = this.isBody ? supportsFixedPosition ? $(window) : $(document) : this.$container;
+
+    // Non-body elements need some style adjustments
+    if (!this.isBody) {
+      // If the container is statically positioned, we need to make it relative,
+      // and if no zIndex is defined, we should set it to zero.
+      var position = this.$container.css('position')
+        , zIndex = this.$container.css('zIndex');
+
+      this.$container.css({
+          position: position === 'static' ? 'relative' : position
+        , zIndex: zIndex === 'auto' ? 0 : zIndex
+        , background: 'none'
+      });
+      
+      // Needs a higher z-index
+      this.$wrap.css({zIndex: -999998});
+    }
+
+    // Fixed or absolute positioning?
+    this.$wrap.css({
+      position: this.isBody && supportsFixedPosition ? 'fixed' : 'absolute'
+    });
+
+    // Set the first image
+    this.index = 0;
+    this.show(this.index);
+
+    // Listen for resize
+    $(window).on('resize.backstretch', $.proxy(this.resize, this))
+             .on('orientationchange.backstretch', $.proxy(function () {
+                // Need to do this in order to get the right window height
+                if (this.isBody && window.pageYOffset === 0) {
+                  window.scrollTo(0, 1);
+                  this.resize();
+                }
+             }, this));
+  };
+
+  /* PUBLIC METHODS
+   * ========================= */
+  Backstretch.prototype = {
+      resize: function () {
+        try {
+          var bgCSS = {left: 0, top: 0}
+            , rootWidth = this.isBody ? this.$root.width() : this.$root.innerWidth()
+            , bgWidth = rootWidth
+            , rootHeight = this.isBody ? ( window.innerHeight ? window.innerHeight : this.$root.height() ) : this.$root.innerHeight()
+            , bgHeight = bgWidth / this.$img.data('ratio')
+            , bgOffset;
+
+            // Make adjustments based on image ratio
+            if (bgHeight >= rootHeight) {
+                bgOffset = (bgHeight - rootHeight) / 2;
+                if(this.options.centeredY) {
+                  bgCSS.top = '-' + bgOffset + 'px';
+                }
+            } else {
+                bgHeight = rootHeight;
+                bgWidth = bgHeight * this.$img.data('ratio');
+                bgOffset = (bgWidth - rootWidth) / 2;
+                if(this.options.centeredX) {
+                  bgCSS.left = '-' + bgOffset + 'px';
+                }
+            }
+
+            this.$wrap.css({width: rootWidth, height: rootHeight})
+                      .find('img:not(.deleteable)').css({width: bgWidth, height: bgHeight}).css(bgCSS);
+        } catch(err) {
+            // IE7 seems to trigger resize before the image is loaded.
+            // This try/catch block is a hack to let it fail gracefully.
+        }
+
+        return this;
+      }
+
+      // Show the slide at a certain position
+    , show: function (index) {
+        // Validate index
+        if (Math.abs(index) > this.images.length - 1) {
+          return;
+        } else {
+          this.index = index;
+        }
+
+        // Vars
+        var self = this
+          , oldImage = self.$wrap.find('img').addClass('deleteable')
+          , evt = $.Event('backstretch.show', {
+              relatedTarget: self.$container[0]
+            });
+
+        // Pause the slideshow
+        clearInterval(self.interval);
+
+        // New image
+        self.$img = $('<img />')
+                      .css(styles.img)
+                      .bind('load', function (e) {
+                        var imgWidth = this.width || $(e.target).width()
+                          , imgHeight = this.height || $(e.target).height();
+                        
+                        // Save the ratio
+                        $(this).data('ratio', imgWidth / imgHeight);
+
+                        // Resize
+                        self.resize();
+
+                        // Show the image, then delete the old one
+                        // "speed" option has been deprecated, but we want backwards compatibilty
+                        $(this).fadeIn(self.options.speed || self.options.fade, function () {
+                          oldImage.remove();
+
+                          // Resume the slideshow
+                          if (!self.paused) {
+                            self.cycle();
+                          }
+
+                          // Trigger the event
+                          self.$container.trigger(evt);
+                        });
+                      })
+                      .appendTo(self.$wrap);
+
+        // Hack for IE img onload event
+        self.$img.attr('src', self.images[index]);
+        return self;
+      }
+
+    , next: function () {
+        // Next slide
+        return this.show(this.index < this.images.length - 1 ? this.index + 1 : 0);
+      }
+
+    , prev: function () {
+        // Previous slide
+        return this.show(this.index === 0 ? this.images.length - 1 : this.index - 1);
+      }
+
+    , pause: function () {
+        // Pause the slideshow
+        this.paused = true;
+        return this;
+      }
+
+    , resume: function () {
+        // Resume the slideshow
+        this.paused = false;
+        this.next();
+        return this;
+      }
+
+    , cycle: function () {
+        // Start/resume the slideshow
+        if(this.images.length > 1) {
+          // Clear the interval, just in case
+          clearInterval(this.interval);
+
+          this.interval = setInterval($.proxy(function () {
+            // Check for paused slideshow
+            if (!this.paused) {
+              this.next();
+            }
+          }, this), this.options.duration);
+        }
+        return this;
+      }
+
+    , destroy: function (preserveBackground) {
+        // Stop the resize events
+        $(window).off('resize.backstretch orientationchange.backstretch');
+
+        // Clear the interval
+        clearInterval(this.interval);
+
+        // Remove Backstretch
+        if(!preserveBackground) {
+          this.$wrap.remove();          
+        }
+        this.$container.removeData('backstretch');
+      }
+  };
+
+  /* SUPPORTS FIXED POSITION?
+   *
+   * Based on code from jQuery Mobile 1.1.0
+   * http://jquerymobile.com/
+   *
+   * In a nutshell, we need to figure out if fixed positioning is supported.
+   * Unfortunately, this is very difficult to do on iOS, and usually involves
+   * injecting content, scrolling the page, etc.. It's ugly.
+   * jQuery Mobile uses this workaround. It's not ideal, but works.
+   *
+   * Modified to detect IE6
+   * ========================= */
+
+  var supportsFixedPosition = (function () {
+    var ua = navigator.userAgent
+      , platform = navigator.platform
+        // Rendering engine is Webkit, and capture major version
+      , wkmatch = ua.match( /AppleWebKit\/([0-9]+)/ )
+      , wkversion = !!wkmatch && wkmatch[ 1 ]
+      , ffmatch = ua.match( /Fennec\/([0-9]+)/ )
+      , ffversion = !!ffmatch && ffmatch[ 1 ]
+      , operammobilematch = ua.match( /Opera Mobi\/([0-9]+)/ )
+      , omversion = !!operammobilematch && operammobilematch[ 1 ]
+      , iematch = ua.match( /MSIE ([0-9]+)/ )
+      , ieversion = !!iematch && iematch[ 1 ];
+
+    return !(
+      // iOS 4.3 and older : Platform is iPhone/Pad/Touch and Webkit version is less than 534 (ios5)
+      ((platform.indexOf( "iPhone" ) > -1 || platform.indexOf( "iPad" ) > -1  || platform.indexOf( "iPod" ) > -1 ) && wkversion && wkversion < 534) ||
+      
+      // Opera Mini
+      (window.operamini && ({}).toString.call( window.operamini ) === "[object OperaMini]") ||
+      (operammobilematch && omversion < 7458) ||
+      
+      //Android lte 2.1: Platform is Android and Webkit version is less than 533 (Android 2.2)
+      (ua.indexOf( "Android" ) > -1 && wkversion && wkversion < 533) ||
+      
+      // Firefox Mobile before 6.0 -
+      (ffversion && ffversion < 6) ||
+      
+      // WebOS less than 3
+      ("palmGetResource" in window && wkversion && wkversion < 534) ||
+      
+      // MeeGo
+      (ua.indexOf( "MeeGo" ) > -1 && ua.indexOf( "NokiaBrowser/8.5.0" ) > -1) ||
+      
+      // IE6
+      (ieversion && ieversion <= 6)
+    );
+  }());
+
+}(jQuery, window));
+
+/* **********************************************
+     Begin mwheelIntent.js
+********************************************** */
+
+/**
+ * @author trixta
+ * @version 1.2
+ */
+(function($){
+
+var mwheelI = {
+			pos: [-260, -260]
+		},
+	minDif 	= 3,
+	doc 	= document,
+	root 	= doc.documentElement,
+	body 	= doc.body,
+	longDelay, shortDelay
+;
+
+function unsetPos(){
+	if(this === mwheelI.elem){
+		mwheelI.pos = [-260, -260];
+		mwheelI.elem = false;
+		minDif = 3;
+	}
+}
+
+$.event.special.mwheelIntent = {
+	setup: function(){
+		var jElm = $(this).bind('mousewheel', $.event.special.mwheelIntent.handler);
+		if( this !== doc && this !== root && this !== body ){
+			jElm.bind('mouseleave', unsetPos);
+		}
+		jElm = null;
+        return true;
+    },
+	teardown: function(){
+        $(this)
+			.unbind('mousewheel', $.event.special.mwheelIntent.handler)
+			.unbind('mouseleave', unsetPos)
+		;
+        return true;
+    },
+    handler: function(e, d){
+		var pos = [e.clientX, e.clientY];
+		if( this === mwheelI.elem || Math.abs(mwheelI.pos[0] - pos[0]) > minDif || Math.abs(mwheelI.pos[1] - pos[1]) > minDif ){
+            mwheelI.elem = this;
+			mwheelI.pos = pos;
+			minDif = 250;
+			
+			clearTimeout(shortDelay);
+			shortDelay = setTimeout(function(){
+				minDif = 10;
+			}, 200);
+			clearTimeout(longDelay);
+			longDelay = setTimeout(function(){
+				minDif = 3;
+			}, 1500);
+			e = $.extend({}, e, {type: 'mwheelIntent'});
+            return $.event.handle.apply(this, arguments);
+		}
+    }
+};
+$.fn.extend({
+	mwheelIntent: function(fn) {
+		return fn ? this.bind("mwheelIntent", fn) : this.trigger("mwheelIntent");
+	},
+	
+	unmwheelIntent: function(fn) {
+		return this.unbind("mwheelIntent", fn);
+	}
+});
+
+$(function(){
+	body = doc.body;
+	//assume that document is always scrollable, doesn't hurt if not
+	$(doc).bind('mwheelIntent.mwheelIntentDefault', $.noop);
+});
+})(jQuery);
+
+/* **********************************************
+     Begin core.string.js
+********************************************** */
+
+/**
+ * @depends nothing
+ * @name core.string
+ * @package jquery-sparkle {@link http://www.balupton/projects/jquery-sparkle}
+ */
+
+/**
+ * Return a new string with any spaces trimmed the left and right of the string
+ * @version 1.0.0
+ * @date June 30, 2010
+ * @package jquery-sparkle {@link http://www.balupton/projects/jquery-sparkle}
+ * @author Benjamin "balupton" Lupton {@link http://www.balupton.com}
+ * @copyright (c) 2009-2010 Benjamin Arthur Lupton {@link http://www.balupton.com}
+ * @license GNU Affero General Public License version 3 {@link http://www.gnu.org/licenses/agpl-3.0.html}
+ */
+String.prototype.trim = String.prototype.trim || function() {
+	// Trim off any whitespace from the front and back
+	return this.replace(/^\s+|\s+$/g, '');
+};
+
+/**
+ * Return a new string with the value stripped from the left and right of the string
+ * @version 1.1.1
+ * @date July 22, 2010
+ * @since 1.0.0, June 30, 2010
+ * @package jquery-sparkle {@link http://www.balupton/projects/jquery-sparkle}
+ * @author Benjamin "balupton" Lupton {@link http://www.balupton.com}
+ * @copyright (c) 2009-2010 Benjamin Arthur Lupton {@link http://www.balupton.com}
+ * @license GNU Affero General Public License version 3 {@link http://www.gnu.org/licenses/agpl-3.0.html}
+ */
+String.prototype.strip = String.prototype.strip || function(value,regex){
+	// Strip a value from left and right, with optional regex support (defaults to false)
+	value = String(value);
+	var str = this;
+	if ( value.length ) {
+		if ( !(regex||false) ) {
+			// We must escape value as we do not want regex support
+			value = value.replace(/([\[\]\(\)\^\$\.\?\|\/\\])/g, '\\$1');
+		}
+		str = str.replace(eval('/^'+value+'+|'+value+'+$/g'), '');
+	}
+	return String(str);
+}
+
+/**
+ * Return a new string with the value stripped from the left of the string
+ * @version 1.1.1
+ * @date July 22, 2010
+ * @package jquery-sparkle {@link http://www.balupton/projects/jquery-sparkle}
+ * @author Benjamin "balupton" Lupton {@link http://www.balupton.com}
+ * @copyright (c) 2009-2010 Benjamin Arthur Lupton {@link http://www.balupton.com}
+ * @license GNU Affero General Public License version 3 {@link http://www.gnu.org/licenses/agpl-3.0.html}
+ */
+String.prototype.stripLeft = String.prototype.stripLeft || function(value,regex){
+	// Strip a value from the left, with optional regex support (defaults to false)
+	value = String(value);
+	var str = this;
+	if ( value.length ) {
+		if ( !(regex||false) ) {
+			// We must escape value as we do not want regex support
+			value = value.replace(/([\[\]\(\)\^\$\.\?\|\/\\])/g, '\\$1');
+		}
+		str = str.replace(eval('/^'+value+'+/g'), '');
+	}
+	return String(str);
+}
+
+/**
+ * Return a new string with the value stripped from the right of the string
+ * @version 1.1.1
+ * @date July 22, 2010
+ * @package jquery-sparkle {@link http://www.balupton/projects/jquery-sparkle}
+ * @author Benjamin "balupton" Lupton {@link http://www.balupton.com}
+ * @copyright (c) 2009-2010 Benjamin Arthur Lupton {@link http://www.balupton.com}
+ * @license GNU Affero General Public License version 3 {@link http://www.gnu.org/licenses/agpl-3.0.html}
+ */
+String.prototype.stripRight = String.prototype.stripRight || function(value,regex){
+	// Strip a value from the right, with optional regex support (defaults to false)
+	value = String(value);
+	var str = this;
+	if ( value.length ) {
+		if ( !(regex||false) ) {
+			// We must escape value as we do not want regex support
+			value = value.replace(/([\[\]\(\)\^\$\.\?\|\/\\])/g, '\\$1');
+		}
+		str = str.replace(eval('/'+value+'+$/g'), '');
+	}
+	return String(str);
+}
+
+/**
+ * Return a int of the string
+ * @version 1.0.0
+ * @date June 30, 2010
+ * @package jquery-sparkle {@link http://www.balupton/projects/jquery-sparkle}
+ * @author Benjamin "balupton" Lupton {@link http://www.balupton.com}
+ * @copyright (c) 2009-2010 Benjamin Arthur Lupton {@link http://www.balupton.com}
+ * @license GNU Affero General Public License version 3 {@link http://www.gnu.org/licenses/agpl-3.0.html}
+ */
+String.prototype.toInt = String.prototype.toInt || function(){
+	// Convert to a Integer
+	return parseInt(this,10);
+};
+
+/**
+ * Return a new string of the old string wrapped with the start and end values
+ * @version 1.0.0
+ * @date June 30, 2010
+ * @package jquery-sparkle {@link http://www.balupton/projects/jquery-sparkle}
+ * @author Benjamin "balupton" Lupton {@link http://www.balupton.com}
+ * @copyright (c) 2009-2010 Benjamin Arthur Lupton {@link http://www.balupton.com}
+ * @license GNU Affero General Public License version 3 {@link http://www.gnu.org/licenses/agpl-3.0.html}
+ */
+String.prototype.wrap = String.prototype.wrap || function(start,end){
+	// Wrap the string
+	return start+this+end;
+};
+
+/**
+ * Return a new string of a selection of the old string wrapped with the start and end values
+ * @version 1.0.0
+ * @date June 30, 2010
+ * @package jquery-sparkle {@link http://www.balupton/projects/jquery-sparkle}
+ * @author Benjamin "balupton" Lupton {@link http://www.balupton.com}
+ * @copyright (c) 2009-2010 Benjamin Arthur Lupton {@link http://www.balupton.com}
+ * @license GNU Affero General Public License version 3 {@link http://www.gnu.org/licenses/agpl-3.0.html}
+ */
+String.prototype.wrapSelection = String.prototype.wrapSelection || function(start,end,a,z){
+	// Wrap the selection
+	if ( typeof a === 'undefined' || a === null ) a = this.length;
+	if ( typeof z === 'undefined' || z === null ) z = this.length;
+	return this.substring(0,a)+start+this.substring(a,z)+end+this.substring(z);
+};
+
+/**
+ * Return a new string of the slug of the old string
+ * @version 1.1.0
+ * @date July 16, 2010
+ * @since 1.0.0, June 30, 2010
+ * @package jquery-sparkle {@link http://www.balupton/projects/jquery-sparkle}
+ * @author Benjamin "balupton" Lupton {@link http://www.balupton.com}
+ * @copyright (c) 2009-2010 Benjamin Arthur Lupton {@link http://www.balupton.com}
+ * @license GNU Affero General Public License version 3 {@link http://www.gnu.org/licenses/agpl-3.0.html}
+ */
+String.prototype.toSlug = String.prototype.toSlug || function(){
+	// Convert a string to a slug
+	return this.toLowerCase().replace(/[\s_]/g, '-').replace(/[^-a-z0-9]/g, '').replace(/--+/g, '-').replace(/^-+|-+$/g,'');
+}
+
+/**
+ * Return a new JSON object of the old string.
+ * Turns:
+ * 		file.js?a=1&amp;b.c=3.0&b.d=four&a_false_value=false&a_null_value=null
+ * Into:
+ * 		{"a":1,"b":{"c":3,"d":"four"},"a_false_value":false,"a_null_value":null}
+ * @version 1.1.0
+ * @date July 16, 2010
+ * @since 1.0.0, June 30, 2010
+ * @package jquery-sparkle {@link http://www.balupton/projects/jquery-sparkle}
+ * @author Benjamin "balupton" Lupton {@link http://www.balupton.com}
+ * @copyright (c) 2009-2010 Benjamin Arthur Lupton {@link http://www.balupton.com}
+ * @license GNU Affero General Public License version 3 {@link http://www.gnu.org/licenses/agpl-3.0.html}
+ */
+String.prototype.queryStringToJSON = String.prototype.queryStringToJSON || function ( )
+{	// Turns a params string or url into an array of params
+	// Prepare
+	var params = String(this);
+	// Remove url if need be
+	params = params.substring(params.indexOf('?')+1);
+	// params = params.substring(params.indexOf('#')+1);
+	// Change + to %20, the %20 is fixed up later with the decode
+	params = params.replace(/\+/g, '%20');
+	// Do we have JSON string
+	if ( params.substring(0,1) === '{' && params.substring(params.length-1) === '}' )
+	{	// We have a JSON string
+		return eval(decodeURIComponent(params));
+	}
+	// We have a params string
+	params = params.split(/\&(amp\;)?/);
+	var json = {};
+	// We have params
+	for ( var i = 0, n = params.length; i < n; ++i )
+	{
+		// Adjust
+		var param = params[i] || null;
+		if ( param === null ) { continue; }
+		param = param.split('=');
+		if ( param === null ) { continue; }
+		// ^ We now have "var=blah" into ["var","blah"]
+
+		// Get
+		var key = param[0] || null;
+		if ( key === null ) { continue; }
+		if ( typeof param[1] === 'undefined' ) { continue; }
+		var value = param[1];
+		// ^ We now have the parts
+
+		// Fix
+		key = decodeURIComponent(key);
+		value = decodeURIComponent(value);
+		try {
+		    // value can be converted
+		    value = eval(value);
+		} catch ( e ) {
+		    // value is a normal string
+		}
+
+		// Set
+		// window.console.log({'key':key,'value':value}, split);
+		var keys = key.split('.');
+		if ( keys.length === 1 )
+		{	// Simple
+			json[key] = value;
+		}
+		else
+		{	// Advanced (Recreating an object)
+			var path = '',
+				cmd = '';
+			// Ensure Path Exists
+			$.each(keys,function(ii,key){
+				path += '["'+key.replace(/"/g,'\\"')+'"]';
+				jsonCLOSUREGLOBAL = json; // we have made this a global as closure compiler struggles with evals
+				cmd = 'if ( typeof jsonCLOSUREGLOBAL'+path+' === "undefined" ) jsonCLOSUREGLOBAL'+path+' = {}';
+				eval(cmd);
+				json = jsonCLOSUREGLOBAL;
+				delete jsonCLOSUREGLOBAL;
+			});
+			// Apply Value
+			jsonCLOSUREGLOBAL = json; // we have made this a global as closure compiler struggles with evals
+			valueCLOSUREGLOBAL = value; // we have made this a global as closure compiler struggles with evals
+			cmd = 'jsonCLOSUREGLOBAL'+path+' = valueCLOSUREGLOBAL';
+			eval(cmd);
+			json = jsonCLOSUREGLOBAL;
+			delete jsonCLOSUREGLOBAL;
+			delete valueCLOSUREGLOBAL;
+		}
+		// ^ We now have the parts added to your JSON object
+	}
+	return json;
+};
+
+/* **********************************************
+     Begin jquery.easing.1.3.js
+********************************************** */
+
+/*
+ * jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
+ *
+ * Uses the built in easing capabilities added In jQuery 1.1
+ * to offer multiple easing options
+ *
+ * TERMS OF USE - jQuery Easing
+ * 
+ * Open source under the BSD License. 
+ * 
+ * Copyright © 2008 George McGinley Smith
+ * All rights reserved.
+ * 
+ * Redistribution and use in source and binary forms, with or without modification, 
+ * are permitted provided that the following conditions are met:
+ * 
+ * Redistributions of source code must retain the above copyright notice, this list of 
+ * conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright notice, this list 
+ * of conditions and the following disclaimer in the documentation and/or other materials 
+ * provided with the distribution.
+ * 
+ * Neither the name of the author nor the names of contributors may be used to endorse 
+ * or promote products derived from this software without specific prior written permission.
+ * 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
+ * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+ *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
+ * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
+ * OF THE POSSIBILITY OF SUCH DAMAGE. 
+ *
+*/
+
+// t: current time, b: begInnIng value, c: change In value, d: duration
+jQuery.easing['jswing'] = jQuery.easing['swing'];
+
+jQuery.extend( jQuery.easing,
+{
+	def: 'easeOutQuad',
+	swing: function (x, t, b, c, d) {
+		//alert(jQuery.easing.default);
+		return jQuery.easing[jQuery.easing.def](x, t, b, c, d);
+	},
+	easeInQuad: function (x, t, b, c, d) {
+		return c*(t/=d)*t + b;
+	},
+	easeOutQuad: function (x, t, b, c, d) {
+		return -c *(t/=d)*(t-2) + b;
+	},
+	easeInOutQuad: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return c/2*t*t + b;
+		return -c/2 * ((--t)*(t-2) - 1) + b;
+	},
+	easeInCubic: function (x, t, b, c, d) {
+		return c*(t/=d)*t*t + b;
+	},
+	easeOutCubic: function (x, t, b, c, d) {
+		return c*((t=t/d-1)*t*t + 1) + b;
+	},
+	easeInOutCubic: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return c/2*t*t*t + b;
+		return c/2*((t-=2)*t*t + 2) + b;
+	},
+	easeInQuart: function (x, t, b, c, d) {
+		return c*(t/=d)*t*t*t + b;
+	},
+	easeOutQuart: function (x, t, b, c, d) {
+		return -c * ((t=t/d-1)*t*t*t - 1) + b;
+	},
+	easeInOutQuart: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return c/2*t*t*t*t + b;
+		return -c/2 * ((t-=2)*t*t*t - 2) + b;
+	},
+	easeInQuint: function (x, t, b, c, d) {
+		return c*(t/=d)*t*t*t*t + b;
+	},
+	easeOutQuint: function (x, t, b, c, d) {
+		return c*((t=t/d-1)*t*t*t*t + 1) + b;
+	},
+	easeInOutQuint: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return c/2*t*t*t*t*t + b;
+		return c/2*((t-=2)*t*t*t*t + 2) + b;
+	},
+	easeInSine: function (x, t, b, c, d) {
+		return -c * Math.cos(t/d * (Math.PI/2)) + c + b;
+	},
+	easeOutSine: function (x, t, b, c, d) {
+		return c * Math.sin(t/d * (Math.PI/2)) + b;
+	},
+	easeInOutSine: function (x, t, b, c, d) {
+		return -c/2 * (Math.cos(Math.PI*t/d) - 1) + b;
+	},
+	easeInExpo: function (x, t, b, c, d) {
+		return (t==0) ? b : c * Math.pow(2, 10 * (t/d - 1)) + b;
+	},
+	easeOutExpo: function (x, t, b, c, d) {
+		return (t==d) ? b+c : c * (-Math.pow(2, -10 * t/d) + 1) + b;
+	},
+	easeInOutExpo: function (x, t, b, c, d) {
+		if (t==0) return b;
+		if (t==d) return b+c;
+		if ((t/=d/2) < 1) return c/2 * Math.pow(2, 10 * (t - 1)) + b;
+		return c/2 * (-Math.pow(2, -10 * --t) + 2) + b;
+	},
+	easeInCirc: function (x, t, b, c, d) {
+		return -c * (Math.sqrt(1 - (t/=d)*t) - 1) + b;
+	},
+	easeOutCirc: function (x, t, b, c, d) {
+		return c * Math.sqrt(1 - (t=t/d-1)*t) + b;
+	},
+	easeInOutCirc: function (x, t, b, c, d) {
+		if ((t/=d/2) < 1) return -c/2 * (Math.sqrt(1 - t*t) - 1) + b;
+		return c/2 * (Math.sqrt(1 - (t-=2)*t) + 1) + b;
+	},
+	easeInElastic: function (x, t, b, c, d) {
+		var s=1.70158;var p=0;var a=c;
+		if (t==0) return b;  if ((t/=d)==1) return b+c;  if (!p) p=d*.3;
+		if (a < Math.abs(c)) { a=c; var s=p/4; }
+		else var s = p/(2*Math.PI) * Math.asin (c/a);
+		return -(a*Math.pow(2,10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )) + b;
+	},
+	easeOutElastic: function (x, t, b, c, d) {
+		var s=1.70158;var p=0;var a=c;
+		if (t==0) return b;  if ((t/=d)==1) return b+c;  if (!p) p=d*.3;
+		if (a < Math.abs(c)) { a=c; var s=p/4; }
+		else var s = p/(2*Math.PI) * Math.asin (c/a);
+		return a*Math.pow(2,-10*t) * Math.sin( (t*d-s)*(2*Math.PI)/p ) + c + b;
+	},
+	easeInOutElastic: function (x, t, b, c, d) {
+		var s=1.70158;var p=0;var a=c;
+		if (t==0) return b;  if ((t/=d/2)==2) return b+c;  if (!p) p=d*(.3*1.5);
+		if (a < Math.abs(c)) { a=c; var s=p/4; }
+		else var s = p/(2*Math.PI) * Math.asin (c/a);
+		if (t < 1) return -.5*(a*Math.pow(2,10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )) + b;
+		return a*Math.pow(2,-10*(t-=1)) * Math.sin( (t*d-s)*(2*Math.PI)/p )*.5 + c + b;
+	},
+	easeInBack: function (x, t, b, c, d, s) {
+		if (s == undefined) s = 1.70158;
+		return c*(t/=d)*t*((s+1)*t - s) + b;
+	},
+	easeOutBack: function (x, t, b, c, d, s) {
+		if (s == undefined) s = 1.70158;
+		return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
+	},
+	easeInOutBack: function (x, t, b, c, d, s) {
+		if (s == undefined) s = 1.70158; 
+		if ((t/=d/2) < 1) return c/2*(t*t*(((s*=(1.525))+1)*t - s)) + b;
+		return c/2*((t-=2)*t*(((s*=(1.525))+1)*t + s) + 2) + b;
+	},
+	easeInBounce: function (x, t, b, c, d) {
+		return c - jQuery.easing.easeOutBounce (x, d-t, 0, c, d) + b;
+	},
+	easeOutBounce: function (x, t, b, c, d) {
+		if ((t/=d) < (1/2.75)) {
+			return c*(7.5625*t*t) + b;
+		} else if (t < (2/2.75)) {
+			return c*(7.5625*(t-=(1.5/2.75))*t + .75) + b;
+		} else if (t < (2.5/2.75)) {
+			return c*(7.5625*(t-=(2.25/2.75))*t + .9375) + b;
+		} else {
+			return c*(7.5625*(t-=(2.625/2.75))*t + .984375) + b;
+		}
+	},
+	easeInOutBounce: function (x, t, b, c, d) {
+		if (t < d/2) return jQuery.easing.easeInBounce (x, t*2, 0, c, d) * .5 + b;
+		return jQuery.easing.easeOutBounce (x, t*2-d, 0, c, d) * .5 + c*.5 + b;
+	}
+});
+
+/*
+ *
+ * TERMS OF USE - EASING EQUATIONS
+ * 
+ * Open source under the BSD License. 
+ * 
+ * Copyright © 2001 Robert Penner
+ * All rights reserved.
+ * 
+ * Redistribution and use in source and binary forms, with or without modification, 
+ * are permitted provided that the following conditions are met:
+ * 
+ * Redistributions of source code must retain the above copyright notice, this list of 
+ * conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright notice, this list 
+ * of conditions and the following disclaimer in the documentation and/or other materials 
+ * provided with the distribution.
+ * 
+ * Neither the name of the author nor the names of contributors may be used to endorse 
+ * or promote products derived from this software without specific prior written permission.
+ * 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY 
+ * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+ *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+ *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED 
+ * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED 
+ * OF THE POSSIBILITY OF SUCH DAMAGE. 
+ *
+ */
+
+/* **********************************************
+     Begin jquery.smartresize.js
+********************************************** */
+
+(function( window, $, undefined ) {
+	/*
+	* smartresize: debounced resize event for jQuery
+	*
+	* latest version and complete README available on Github:
+	* https://github.com/louisremi/jquery.smartresize.js
+	*
+	* Copyright 2011 @louis_remi
+	* Licensed under the MIT license.
+	*/
+
+	var $event = $.event, resizeTimeout;
+
+	$event.special.smartresize 	= {
+		setup: function() {
+			$(this).bind( "resize", $event.special.smartresize.handler );
+		},
+		teardown: function() {
+			$(this).unbind( "resize", $event.special.smartresize.handler );
+		},
+		handler: function( event, execAsap ) {
+			// Save the context
+			var context = this,
+				args 	= arguments;
+
+			// set correct event type
+			event.type = "smartresize";
+
+			if ( resizeTimeout ) { clearTimeout( resizeTimeout ); }
+			resizeTimeout = setTimeout(function() {
+				jQuery.event.handle.apply( context, args );
+			}, execAsap === "execAsap"? 0 : 50 );
+		}
+	};
+
+	$.fn.smartresize 			= function( fn ) {
+		return fn ? this.bind( "smartresize", fn ) : this.trigger( "smartresize", ["execAsap"] );
+	};
+})( window, jQuery );
+
+/* **********************************************
+     Begin jquery.page.js
+********************************************** */
+
+(function(window, undefined) {
+
+  var Page  = (function() {
+
+    var $container      = $( '#hs-container' ),
+      // the scroll container that wraps the articles
+      $scroller     = $container.find( 'div.hs-content-scroller' ),
+      $menu       = $container.find( 'aside' ),
+      // menu links
+      $links        = $menu.find( 'nav > a' ),
+      $articles     = $container.find( 'div.hs-content-wrapper > article' ),
+      // button to scroll to the top of the page
+      // only shown when screen size < 715
+      $toTop        = $container.find( 'a.hs-totop-link' ),
+      // the browser nhistory object
+      History       = window.History,
+      // animation options
+      animation     = { speed : 800, easing : 'easeInOutExpo' },
+      // jScrollPane options
+      scrollOptions   = { verticalGutter : 0, hideFocus : true },
+      // init function
+      init        = function() {
+
+        // initialize the jScrollPane on both the menu and articles
+        // _initCustomScroll();
+        // initialize some events
+        _initEvents();
+        // sets some css properties
+        // _layout();
+        // jumps to the respective chapter
+        // according to the url
+        _goto();
+
+      },
+      _initCustomScroll = function() {
+
+        // Only add custom scroll to articles if screen size > 715.
+        // If not the articles will be expanded
+        if( $(window).width() > 715 ) {
+
+          $articles.jScrollPane( scrollOptions );
+
+        }
+        // add custom scroll to menu
+        $menu.children( 'nav' ).jScrollPane( scrollOptions );
+
+      },
+      _goto       = function( chapter ) {
+
+          // get the url from history state (e.g. chapter=3) and extract the chapter number
+        var chapter   = chapter || History.getState().url.queryStringToJSON().chapter,
+          isHome    = ( chapter === undefined ),
+          // we will jump to the introduction chapter if theres no chapter
+          $article  = $( chapter ? '#' + 'chapter' + chapter : '#' + 'introduction' );
+
+        if( $article.length ) {
+
+            // left / top of the element
+          var left    = $article.position().left,
+            top     = $article.position().top,
+            // check if we are scrolling down or left
+            // is_v will be true when the screen size < 715
+            is_v    = ( $(document).height() - $(window).height() > 0 ),
+            // animation parameters:
+            // if vertically scrolling then the body will animate the scrollTop,
+            // otherwise the scroller (div.hs-content-scroller) will animate the scrollLeft
+            param   = ( is_v ) ? { scrollTop : (isHome) ? top : top + $menu.outerHeight( true ) } : { scrollLeft : left },
+            $elScroller = ( is_v ) ? $( 'html, body' ) : $scroller;
+
+          $elScroller.stop().animate( param, animation.speed, animation.easing, function() {
+
+            // active class for selected chapter
+            $articles.removeClass( 'hs-content-active' );
+            $article.addClass( 'hs-content-active' );
+
+          } );
+
+        }
+
+      },
+      _saveState      = function( chapter ) {
+
+        // adds a new state to the history object
+        // this will trigger the statechange on the window
+        if( History.getState().url.queryStringToJSON().chapter !== chapter ) {
+
+          History.pushState( null, null, '?chapter=' + chapter );
+
+        }
+
+      },
+      _initEvents     = function() {
+
+        _initWindowEvents();
+        _initMenuEvents();
+        _initArticleEvents();
+
+      },
+      _initWindowEvents = function() {
+
+        $(window).on({
+          // when resizing the window we need to reinitialize or destroy the jScrollPanes
+          // depending on the screen size
+          'smartresize' : function( event ) {
+
+            $('article.hs-content').each( function() {
+
+              var $article  = $(this),
+                aJSP    = $article.data( 'jsp' );
+
+              if( $(window).width() > 715 ) {
+
+                ( aJSP === undefined ) ? $article.jScrollPane( scrollOptions ) : aJSP.reinitialise();
+
+                _initArticleEvents();
+
+              }
+              else {
+
+                // destroy article's custom scroll if screen size <= 715px
+                if( aJSP !== undefined )
+                  aJSP.destroy();
+
+                $container.off( 'click', 'article.hs-content' );
+
+              }
+
+            });
+
+            var nJSP = $menu.children( 'nav' ).data( 'jsp' );
+            nJSP.reinitialise();
+
+            // jumps to the current chapter
+            _goto();
+
+          },
+          // triggered when the history state changes - jumps to the respective chapter
+          'statechange' : function( event ) {
+
+            _goto();
+
+          }
+        });
+
+      },
+      _initMenuEvents   = function() {
+
+        // when we click a menu link we check which chapter the link refers to,
+        // and we save the state on the history obj.
+        // the statechange of the window is then triggered and the page/scroller scrolls to the
+        // respective chapter's position
+        $links.on( 'click', function( event ) {
+
+          var href    = $(this).attr('href'),
+            chapter   = ( href.search(/chapter/) !== -1 ) ? href.substring(8) : 0;
+
+          _saveState( chapter );
+
+          return false;
+
+        });
+
+        // scrolls to the top of the page.
+        // this button will only be visible for screen size < 715
+        $toTop.on( 'click', function( event ) {
+
+          $( 'html, body' ).stop().animate( { scrollTop : 0 }, animation.speed, animation.easing );
+
+          return false;
+
+        });
+
+      },
+      _initArticleEvents  = function() {
+
+        // when we click on an article we check which chapter the article refers to,
+        // and we save the state on the history obj.
+        // the statechange of the window is then triggered and the page/scroller scrolls to the
+        // respective chapter's position
+        $container.on( 'click', 'article.hs-content', function( event ) {
+
+          var id      = $(this).attr('id'),
+            chapter   = ( id.search(/chapter/) !== -1 ) ? id.substring(7) : 0;
+
+          _saveState( chapter );
+
+          return false;
+
+        });
+
+      };
+
+    return { init : init };
+
+  })();
+
+  Page.init();
+
+})(window);
+
+/* **********************************************
+     Begin application.js
+********************************************** */
+
+  (function($){
+    $(document).ready(function(){
+
+      // resize .hs-content when browser window is resized
+      function resizeContent(elem) {
+        // get height of window
+        var windowHeight = $(window).height();
+        var windowWidth = $(window).width();
+        // resize
+        $(elem).css('width',(windowWidth) + "px").css('max-width',(windowWidth) + "px");
+      }
+      // invoke as soon as page loads
+      resizeContent('.hs-content');
+      
+      // window resize events
+      $(window).resize(function () { 
+        resizeContent('.hs-content');
+        });
+      
+      // home key votes toggle
+      $(".keyVoteSelector").change(function(){
+        $(".items").slideUp();
+        $(".items_" + $(".keyVoteSelector:checked").val() ).slideDown();
+        $("#more-key-votes-link").attr('href','/chamber/key-vote-' + $(".keyVoteSelector:checked").val() + '/');
+      });
+
+      $(".dashboardZipGo").click(function(){
+        actionDashboardGo();
+        return false;
+      });
+
+      $(document).keypress(function(e){
+        if($(".dashboardZipSearch").is(":focus")){
+          var code = (e.keyCode ? e.keyCode : e.which);
+          if (code === 13){
+            actionDashboardGo();
+          }
+        }
+      });
+
+
+
+      $("#listen-live").click(function(){
+        window.open($(this).attr('href'),'Listen_Live!','resizable=yes,scrollbars=yes,width=837,height=470');
+        return false;
+      });
+
+      $("#signup-form-submit-button").click(function(){
+        var form_data = $("#signup-form").serialize();
+        $("#signup-content").load("/bluehornet.php?" + form_data);
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_trackEvent', 'Signup', 'Footer Signup', $("#signup_name").val()+' '+$("#email_address").val()]);
+
+        // set cookie
+        var now = new Date();
+        var time = now.getDate();
+        time += 365 * 20;
+        now.setDate(time);
+        document.cookie = '_signup_submitted=true; expires=' + now.toGMTString() + '; path=/';
+
+
+        return false;
+      });
+
+
+      /**
+       * Handles toggling the main navigation menu for small screens.
+       */
+
+      var $masthead = $( '#masthead' ),
+          timeout = false;
+
+      // $.fn.smallMenu = function() {
+      //  $masthead.find( '.site-navigation' ).removeClass( 'main-navigation' ).addClass( 'main-small-navigation' );
+      //  $masthead.find( '.site-navigation h1' ).removeClass( 'assistive-text' ).addClass( 'menu-toggle' );
+      //
+      //  $( '.menu-toggle' ).unbind( 'click' ).click( function() {
+      //    $masthead.find( '.menu' ).toggle();
+      //    $( this ).toggleClass( 'toggled-on' );
+      //  } );
+      // };
+
+      // Check viewport width on first load.
+      if ( $( window ).width() < 600 ){
+        $.fn.smallMenu();
+        }
+
+      // Check viewport width when user resizes the browser window.
+      $( window ).resize( function() {
+        var browserWidth = $( window ).width();
+
+        if ( false !== timeout ){
+          clearTimeout( timeout );
+        }
+
+        timeout = setTimeout( function() {
+          if ( browserWidth < 600 ) {
+            $.fn.smallMenu();
+          } else {
+            $masthead.find( '.site-navigation' ).removeClass( 'main-small-navigation' ).addClass( 'main-navigation' );
+            $masthead.find( '.site-navigation h1' ).removeClass( 'menu-toggle' ).addClass( 'assistive-text' );
+            $masthead.find( '.menu' ).removeAttr( 'style' );
+          }
+        }, 200 );
+      } );
+
+
+    // ===============================================================
+    // = remove placeholder text on focus and put it back on unfocus =
+    // ===============================================================
+    $('.search-input').data('holder',$('.search-input').attr('placeholder'));
+
+    $('.search-input').focusin(function(){
+        $(this).attr('placeholder','');
+    });
+    $('.search-input').focusout(function(){
+        $(this).attr('placeholder',$(this).data('holder'));
+    });
+
+
+    // =============================
+    // = Fake anchor search button =
+    // =============================
+    $("#search-btn").click(function() {
+      $("#searchform").submit();
+      return false;
+    });
+
+
+    function actionDashboardGo(){
+      $(".dashboardZipSearch").removeClass('error');
+       var context;
+       if($("li.dashboard").css('text-shadow') !== 'none'){
+        context = $("li.dashboard");
+       }
+       else{
+        context = $("#action-dashboard");
+       }
+        if($(".dashboardZipSearch", context).val() !== '' && $(".dashboardZipSearch", context).val() !== "Enter your zip"){
+           window.location = '/congress/' + $(".dashboardZipSearch", context).val();
+        }
+        else{
+           $(".dashboardZipSearch", context).addClass('error');
+        }
+     }
+
+     $.backstretch(["/wp-content/themes/heritageaction/img/bg-capital-mobile.jpg"],{duration:3000,fade:750});
+
+    });
+  })(jQuery);
