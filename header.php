@@ -11,7 +11,7 @@
 <html <?php language_attributes(); ?> class="no-js">
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Heritage Action</title>
 <link href='http://fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC|Open+Sans+Condensed:700|Bree+Serif' rel='stylesheet' type='text/css'>
 
@@ -28,53 +28,18 @@
 </head>
 <body <?php body_class(); ?>>
   <div id="hs-container" class="hs-container">
-    <header id="masthead" class="site-header" role="banner">
+    <aside id="masthead" class="site-header" role="banner">
    <a href="#more-nav" id="more-nav">More</a>
    <a href="#less-nav" id="less-nav">Less</a>
 	 <nav role="navigation" class="site-navigation main-navigation">
-		 <div class="menu-main-nav-container">
-				 <ul id="menu-main-nav" class="menu">
-						 <li id="score-card" class="gradient light-blue-gradient score-card">
-								 <a href="#score-card">
-										 <span class="nav-title">Score Card</span>
-								 </a>
-						 </li>
-									 <li class="gradient red-gradient dashboard">
-											 <a href="#action-dashboard">
-													 <span class="nav-title">Dashboard</span>
-											 </a>
-									 </li>
-									 <li class="gradient orange-gradient the-forge-blog">
-											 <a href="#secondary">
-													 <span class="nav-title">The Forge Blog</span>
-											 </a>
-									 </li>
-									 <li id="donate" class="gradient light-red-gradient donate">
-											 <a href="#">
-													 <span class="nav-title">Donate</span>
-											 </a>
-									 </li>
-                   <li id="key-votes-nav" class="gradient">
-                       <a href="#key-votes">
-                           <span class="nav-title">Key Votes</span>
-                       </a>
-                   </li>
-                   <li id="press-releases-nav" class="gradient">
-                       <a href="#recent-press-releases">
-                           <span class="nav-title">Press Releases</span>
-                       </a>
-                   </li>
-                   <li id="about-us-nav" class="gradient">
-                       <a href="#about-us">
-                           <span class="nav-title">About Us</span>
-                       </a>
-                   </li>
-									 <li id="search" class="gradient blue-gradient search">
-											 <a href="#search-widget" id="search-trigger">Search</a>
-									 </li>
-									 
-							 </ul>
-					 </div>
+      <a href="#panel1"><span class="nav-title">Score Card</span></a>
+      <a href="#panel2"><span class="nav-title">Dashboard</span></a>
+      <a href="#panel3"><span<span class="nav-title">The Forge Blog</span></a>
+      <a href="#panel4"><span<span class="nav-title">Donate</span></a>
+      <a href="#panel5"><span<span class="nav-title">Key Votes</span></a>
+      <a href="#panel6"><span<span class="nav-title">Press Releases</span></a>
+      <a href="#panel7"><span<span class="nav-title">About Us</span></a>
+      <a href="#panel8" id="search-trigger">Search</a>
 	 </nav><!-- .site-navigation .main-navigation -->
  </header><!-- #masthead .site-header -->
-    <div id="main" class="site-main hs-content-scroller">
+ <div id="main" class="site-main hs-content-scroller">
