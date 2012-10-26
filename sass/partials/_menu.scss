@@ -58,7 +58,6 @@ nav[role='navigation'] {
       }
     }
   }  
-body {position:relative;}
 #more-nav, #less-nav {
   @include font-shorthand(10px, auto, $nav-height);
   @extend .alternate-font-family;

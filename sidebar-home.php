@@ -6,7 +6,8 @@
  * @since Heritage Action 1.0
  */
 ?>
-		<div id="secondary" class="widget-area" role="complementary">
+		<div id="secondary" class="widget-area hs-content widgets" role="complementary">
+		  <div class="widgets-inner">
 		  <header id="the-forge" class="widget-main-header"><h2>The Forge</h2></header>
 			  
 			  <aside id="featured-posts" class="widget">
@@ -25,9 +26,6 @@
                 'suppress_filters' => true ); 
                 
                 $recent_posts = wp_get_recent_posts( $args );
-                
-                
-                
                 
                 foreach( $recent_posts as $recent ){
                   $user_info = get_userdata($recent["post_author"]);
@@ -76,5 +74,5 @@
           <a href='/blog' class='btn rounded gradient orange-gradient' id="read-the-forge">Read The Forge</a>
 			  </aside>
 			  
-
+        </div>
 		</div><!-- #secondary .widget-area -->

@@ -75,10 +75,6 @@ footer {
 
 .btn {
   font-size:.8em;
-    @include size(90%, auto);
-    @include respond-to('desktop') {
-      font-size:1em;
-    }
   padding:.7em 1em;
   text-align:center;
   @extend .uppercase;
@@ -151,7 +147,7 @@ footer {
     color:$white;
   }
   &:active {
-    @include box-shadow(inset 0 1px 5px rgba(0,0,0,.5)); 
+    @include box-shadow(inset 0 1px 5px rgba(0,0,0,.5));
   }
 }
 .rounded {
@@ -159,43 +155,43 @@ footer {
 }
 
 .arrow-up {
-	width: 0; 
-	height: 0; 
+	width: 0;
+	height: 0;
 	border-left: 5px solid transparent;
 	border-right: 5px solid transparent;
-	
+
 	border-bottom: 5px solid black;
 }
 
 .arrow-down {
-	width: 0; 
-	height: 0; 
+	width: 0;
+	height: 0;
 	border-left: 20px solid transparent;
 	border-right: 20px solid transparent;
-	
+
 	border-top: 20px solid #f00;
 }
 
 .arrow-right {
-	width: 0; 
-	height: 0; 
+	width: 0;
+	height: 0;
 	border-top: 6px solid transparent;
 	border-bottom: 6px solid transparent;
 	border-left: 6px solid $white;
 }
 
 .arrow-left {
-	width: 0; 
-	height: 0; 
+	width: 0;
+	height: 0;
 	border-top: 10px solid transparent;
-	border-bottom: 10px solid transparent; 
-	border-right:10px solid blue; 
+	border-bottom: 10px solid transparent;
+	border-right:10px solid blue;
 }
 
 .shadow {
-  position: relative;  
+  position: relative;
   background-color: $white;
-  @include box-shadow(0 0 8px rgba(0,0,0,.20)); 
+  @include box-shadow(0 0 8px rgba(0,0,0,.20));
 }
 
 [class*="shadow-curl-"], .featured-image {
@@ -208,7 +204,7 @@ footer {
   	content: ' ';
   	bottom: 9px;
   	background: transparent;
-    z-index: -1;    
+    z-index: -1;
     pointer-events:none;
   }
 }
@@ -339,6 +335,7 @@ background:transparent url('img/striped-bg.png');
 // WIDGETS
 .widgets {
   @extend .shadow;
+  position:relative;
   padding:0 10px 15px;
   margin-bottom:30px;
   header {
@@ -379,10 +376,10 @@ background:transparent url('img/striped-bg.png');
       padding-left:25px;
       background: url('img/bullet-default.png') 0 0 no-repeat;
       &.yes {
-        background: url('img/bullet-yes.png') 0 0 no-repeat;      
+        background: url('img/bullet-yes.png') 0 0 no-repeat;
       }
       &.no {
-        background: url('img/bullet-no.png') 0 4px no-repeat;      
+        background: url('img/bullet-no.png') 0 4px no-repeat;
       }
     }
     a {
@@ -390,7 +387,7 @@ background:transparent url('img/striped-bg.png');
       color:$base-text-color;
     }
   }
-  .post-title:hover {text-decoration:underline;}  
+  .post-title:hover {text-decoration:underline;}
 }
 #action-dashboard {
   text-align:center;
@@ -400,21 +397,21 @@ background:transparent url('img/striped-bg.png');
   	text-align:center;
   }
 }
-  #main {
-    z-index:1;
-    width:100%;
-    padding-top:20px;
-  }
-  #main-outer { // scrollable #scroll-content
-    position:absolute;
-    top:0;
-    z-index:1;
-    width:100%;
-    padding:0;
-    -webkit-overflow-scrolling:touch;
-    overflow:auto;
-    padding:0 20px;
-  }
+//  #main {
+//    z-index:1;
+//    width:100%;
+//    padding-top:20px;
+//  }
+//  #main-outer { // scrollable #scroll-content
+//    position:absolute;
+//    top:0;
+//    z-index:1;
+//    width:100%;
+//    padding:0;
+//    -webkit-overflow-scrolling:touch;
+//    overflow:auto;
+//    padding:0 20px;
+//  }
 
 
 
@@ -458,7 +455,7 @@ background:transparent url('img/striped-bg.png');
 #the-forge {
   @extend .base-drop-shadow;
   text-align:center;
-  margin:0 -15px 20px; 
+  margin:0 -15px 20px;
   h2 {
     line-height:40px;color:$white;
     background:transparent url('img/the-forge.png') center no-repeat;
@@ -482,7 +479,7 @@ background:transparent url('img/striped-bg.png');
   padding-bottom:1em;
   z-index:50; //over top #under-cover
   margin-top:-40px!important;
-  
+
   &.fixed {
     @extend .position-fixed;
     bottom:-166px;
@@ -586,19 +583,19 @@ h1 {
 // =========
 // = Pages =
 // =========
-.page-template {
-  &.page-template-page-about-php #main-inner {
-    background:#eff0f0 url('img/bg-capital-center.jpg') center bottom no-repeat;
-    padding-top:2em;
-  }
-  #content {
-    .col2 {
-      min-height: 12em;
-      display: table-cell;
-      vertical-align: middle; 
-    }
-  }
-}
+//.page-template {
+//  &.page-template-page-about-php #main-inner {
+//    background:#eff0f0 url('img/bg-capital-center.jpg') center bottom no-repeat;
+//    padding-top:2em;
+//  }
+//  #content {
+//    .col2 {
+//      min-height: 12em;
+//      display: table-cell;
+//      vertical-align: middle;
+//    }
+//  }
+//}
 
 // section.team-info on home page
 .team-info {
@@ -621,8 +618,8 @@ h1 {
       height:70%;
     }
     &::before {
-      @include skew-rotate(-11deg, -6deg); 
-      left:8px;     
+      @include skew-rotate(-11deg, -6deg);
+      left:8px;
     }
     &::after {
     @include skew-rotate(11deg, 6deg);
@@ -864,7 +861,7 @@ h1 {
   position: relative;
 	border: 0;
 	padding: 0;
-	margin: 0 auto 6em;	
+	margin: 0 auto 6em;
 	width: 150px;
 }
 .switch label {
@@ -872,7 +869,7 @@ h1 {
   display:inline;
   color:#b7b7b7;
   text-transform:uppercase;
-	
+
 }
 
 .items_senate{
@@ -980,8 +977,8 @@ h1 {
     li { float: left; }
   }
   .pagenum {  }
-  .active { 
-    background-color: #ff0000;    
+  .active {
+    background-color: #ff0000;
     color: white;
     background-image: -ms-linear-gradient(top, #fa8f4c, #f54a18);
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fa8f4c), to(#f54a18));
@@ -994,7 +991,6 @@ h1 {
   }
 }
 #recent-press-releases {
-  padding-top:20px;
   ul {padding:10px;margin:0;}
   ul,li {;list-style: none;}
   li {padding-bottom:1.5em;}
@@ -1010,7 +1006,7 @@ h1 {
 .signupSubmissionResult{
   padding-top:15px;
   font-size:18px;
-  
+
 }
 .hot_disqus_thread{
   color:#fff;
@@ -1028,3 +1024,53 @@ h1 {
 .page-template-page-congresspages-php #hero{
   margin-bottom:15px;
 }
+
+
+
+body {
+  overflow-y:hidden;
+  overflow-x:hidden;
+}
+.hs-content-scroller{
+	position: absolute;
+	top:10px;
+	left: 10px;
+	right: 10px;
+	overflow: hidden;
+	height: 100%;
+}
+.hs-content-wrapper{
+	width: 7950px;
+	position: absolute;
+	height: 100%;
+	overflow: hidden;
+}
+.hs-content{
+	width: 300px;
+	overflow-y: scroll;
+	height: 100%;
+	float: left;
+	border-right: 1px dashed #A9BECD;
+	border-left: 1px dashed #A9BECD;
+	border-right: 1px dashed rgba(126, 126, 126, 0.2);
+	border-left: 1px dashed rgba(255, 255, 255, 0.5);
+	background: transparent;
+	-webkit-transition: background 0.3s linear;
+	-moz-transition: background 0.3s linear;
+	-o-transition: background 0.3s linear;
+	-ms-transition: background 0.3s linear;
+	transition: background 0.3s linear;
+}
+
+    .jspVerticalBar{
+        opacity: 1;
+    }
+    .hs-content-scroller{
+        overflow-x: scroll;
+    }
+    .hs-content:hover{
+        background: transparent;
+    }
+    .hs-content-active:hover {
+        background: #f1f5f8;
+    }
