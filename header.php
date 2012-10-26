@@ -28,7 +28,7 @@
 </head>
 <body <?php body_class(); ?>>
   <div id="hs-container" class="hs-container">
-    <aside id="masthead" class="site-header" role="banner">
+  <aside id="masthead" class="site-header" role="banner">
    <a href="#more-nav" id="more-nav">More</a>
    <a href="#less-nav" id="less-nav">Less</a>
 	 <nav role="navigation" class="site-navigation main-navigation">
@@ -41,5 +41,5 @@
       <a href="#panel7"><span<span class="nav-title">About Us</span></a>
       <a href="#panel8" id="search-trigger">Search</a>
 	 </nav><!-- .site-navigation .main-navigation -->
- </header><!-- #masthead .site-header -->
+ </aside><!-- #masthead .site-header -->
  <div id="main" class="site-main hs-content-scroller">
