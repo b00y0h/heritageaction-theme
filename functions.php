@@ -6,6 +6,7 @@
  * @since Heritage Action 1.0
  */
 
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  *
@@ -98,17 +99,27 @@ add_action( 'widgets_init', 'heritageaction_widgets_init' );
  */
 function heritageaction_scripts() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
+	wp_enqueue_style( 'jquery.jscrollpane', get_template_directory_uri() . '/css/jquery.jscrollpane.custom.css' );
 
 	if ( is_singular() && wp_attachment_is_image() ) {
 		wp_enqueue_script( 'keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 	
-	wp_enqueue_script( 'application', get_template_directory_uri() . '/js/application-ck.js', array( 'jquery' ), '20121028', false );	
   // get rid of unused scripts for this theme
   wp_deregister_style( 'royalslider-frontend-css');		
   wp_deregister_style( 'royalslider-skin-minimal');		
 	wp_deregister_script( 'royalslider-js');
 	wp_deregister_script( 'jquery-easing-js');
+
+	wp_enqueue_script( 'application', get_template_directory_uri() . '/js/application-ck.js', array( 'jquery' ), '', true );	
+  // wp_enqueue_script( 'mwheelIntent', get_template_directory_uri() . '/js/mwheelIntent.js', array( 'jquery' ), '', false ); 
+  // wp_enqueue_script( 'history', get_template_directory_uri() . '/js/jquery.history.js', array( 'jquery' ), '', false );  
+  // wp_enqueue_script( 'stringLib', get_template_directory_uri() . '/js/core.string.js', array( 'jquery' ), '', false ); 
+  // wp_enqueue_script( 'easing', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ), '', false );  
+  // wp_enqueue_script( 'smartresize', get_template_directory_uri() . '/js/jquery.smartresize.js', array( 'jquery' ), '', false );  
+  // wp_enqueue_script( 'application', get_template_directory_uri() . '/js/application.js', array( 'jquery' ), '', false ); 
+  // wp_enqueue_script( 'page', get_template_directory_uri() . '/js/jquery.page.js', array( 'jquery' ), '', false );  
+	
 }
 add_action( 'wp_enqueue_scripts', 'heritageaction_scripts' );
 
@@ -338,4 +349,3 @@ $incdir = get_template_directory() . '/inc/';
 /*-----------------------------------------------------------------------------------*/
 
 require_once($incdir .'custom-posttypes.php');
-
