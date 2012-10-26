@@ -30,6 +30,8 @@
 <div id="page" class="hfeed site wrap">
  <?php do_action( 'before' ); ?>
  <header id="masthead" class="site-header" role="banner">
+  <div id="hs-container" class="hs-container">
+    <header id="masthead" class="site-header" role="banner">
    <a href="#more-nav" id="more-nav">More</a>
    <a href="#less-nav" id="less-nav">Less</a>
 	 <nav role="navigation" class="site-navigation main-navigation">
@@ -78,4 +80,4 @@
 					 </div>
 	 </nav><!-- .site-navigation .main-navigation -->
  </header><!-- #masthead .site-header -->
- <div id="main" class="site-main">
+    <div id="main" class="site-main hs-content-scroller">

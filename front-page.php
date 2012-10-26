@@ -12,10 +12,7 @@
 
 get_header(); ?>
 
-<div id="main-outer">
-   <div id="main-inner">
-		<div id="primary" class="content-area">
-  		  <div id="content" class="site-content" role="main">
+   <div id="main-inner" class="hs-content-wrapper">
   		    
   		    <!-- =========================== -->
   		    <!-- = Landing Widget. HA Logo = -->
@@ -239,10 +236,7 @@ get_header(); ?>
             
           </div>
 
-  			</div><!-- #content .site-content -->
-
-		</div><!-- #primary .content-area -->
     
     </div> <!-- #main-inner -->
     
-    </div> <!-- #main-outer -->
+<?php get_footer(); ?>
