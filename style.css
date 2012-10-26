@@ -66,7 +66,7 @@ input[type="color"],
   display: none; }
 
 /* line 12, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-misc.scss */
-.display-block, nav[role='navigation'] li.hover > .nav-desc, .site-title a, .post-meta, #secondary .meta, .team-info .title, .widgets .btn, .widgets .post-title, #secondary .post-title, #secondary #read-the-forge, #secondary #follow-twitter, .donate #main-inner .btn, #select-your-donation .btn, .contact .btn, #subscribe h2 span {
+.display-block, nav[role='navigation'] li.hover > .nav-desc, .post-meta, #secondary .meta, .team-info .title, .widgets .btn, .widgets .post-title, #secondary .post-title, #secondary #read-the-forge, #secondary #follow-twitter, .donate #main-inner .btn, #select-your-donation .btn, .contact .btn, #subscribe h2 span {
   display: block; }
 
 /* line 15, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-misc.scss */
@@ -1010,6 +1010,7 @@ nav[role='navigation'] {
   .site-title a {
     width: 120px;
     height: 70px;
+    display: block!important;
     background-color: transparent!important; }
     /* line 174, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
     .site-title a:hover {

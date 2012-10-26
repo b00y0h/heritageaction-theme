@@ -169,7 +169,7 @@ nav[role='navigation'] {
   }
   a {
     @include size($nav-height,120px);
-    @extend .display-block;
+    display:block!important;
     background-color:transparent!important;
     &:hover {
       @extend .no-underline;
