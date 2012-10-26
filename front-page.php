@@ -17,15 +17,18 @@ get_header(); ?>
   		    <!-- =========================== -->
   		    <!-- = Landing Widget. HA Logo = -->
   		    <!-- =========================== -->
-  		    <div id="landing-widget" class="widgets">
-  		      <img src="<?php echo get_bloginfo('template_url'); ?>/img/logo@2x.png" alt="Logo@2x">
+  		    <div id="landing-widget" class="hs-content widgets">
+  		      <div class="widgets-inner">
+  		        <img src="<?php echo get_bloginfo('template_url'); ?>/img/logo@2x.png" alt="Logo@2x">
+  		      </div>
   		    </div>
   		    
   		    <!-- ============== -->
   		    <!-- = Score Card = -->
   		    <!-- ============== -->
   		    
-            <div id="score-card" class="widgets">
+            <div id="score-card" class="hs-content widgets">
+    		      <div class="widgets-inner">
               <header class="gradient light-blue-gradient">
                 <h2 class="title">Score Card</h2>
               </header>
@@ -33,6 +36,7 @@ get_header(); ?>
                 <img src="<?php echo get_bloginfo('template_url'); ?>/img/scorecard-map.gif" alt="Scorecard Map" class="size-full">
               </div>
               <a href="http://heritageactionscorecard.com" class="btn rounded gradient medium-blue-gradient">Get the scores</a>
+              </div>
             </div>
             
             
@@ -40,7 +44,8 @@ get_header(); ?>
             <!-- = Action Dashboar = -->
             <!-- =================== -->
             
-            <div id="action-dashboard" class="widgets">
+            <div id="action-dashboard" class="hs-content widgets">
+              <div class="widgets-inner">
               <header class="gradient red-gradient">
                 <h2 class="title">Action Dashboard</h2>
               </header>
@@ -55,6 +60,7 @@ get_header(); ?>
               <!-- ^^^^^ enter your zip ^^^^^^ -->
               
               <a href="#" class="btn rounded gradient red-gradient dashboardZipGo">Find your district</a>
+              </div>
             </div>
             
           
@@ -67,15 +73,18 @@ get_header(); ?>
           <!-- ========== -->
           <!-- = Donate = -->
           <!-- ========== -->
-          <div id="donate" class="widgets">
+          <div id="donate" class="hs-content widgets">
+            <div class="widgets-inner">
             donate
+            </div>
     			</div>
 
           <!-- ============= -->
           <!-- = Key Votes = -->
           <!-- ============= -->
           
-    			<div id="key-votes" class="widgets">
+    			<div id="key-votes" class="hs-content widgets">
+    			  <div class="widgets-inner">
             <header class="gradient blue-gradient">
               <h2 class="title">Key Votes</h2>
             </header>
@@ -150,14 +159,15 @@ get_header(); ?>
             
             <a id="more-key-votes-link" href="/chamber/key-vote-house/" class="btn rounded gradient blue-gradient">More Key Votes</a>
             
-            
+            </div>
     			</div> <!-- #key-votes -->
 
           <!-- ================== -->
           <!-- = Press Releases = -->
           <!-- ================== -->
 
-          <div id="recent-press-releases" class="widgets">
+          <div id="recent-press-releases" class="hs-content widgets">
+            <div class="widgets-inner">
             <header class="gradient orange-gradient">
               <h2 class="title">Press Releases &amp; Statements</h2>
             </header>
@@ -197,14 +207,15 @@ get_header(); ?>
             <a href='/press-releases/' class='btn rounded gradient orange-gradient'>Read More</a>
 
             </div>
-
+            </div>
           </div> <!-- #recent-press-releases -->
 
           <!-- ============ -->
           <!-- = About Us = -->
           <!-- ============ -->
           
-          <div id="about-us" class="widgets">
+          <div id="about-us" class="hs-content widgets">
+            <div class="widgets-inner">
             <header class="gradient medium-blue-gradient">
               <h2 class="title">About Us</h2>
             </header>
@@ -226,14 +237,16 @@ get_header(); ?>
               <div style="clear:both;"></div>
             </div>  
             <a href="/about" class='btn rounded gradient medium-blue-gradient'>More</a>
+            </div>
           </div> <!-- #about-us -->
           
           <!-- ========== -->
           <!-- = Search = -->
           <!-- ========== -->
           
-          <div id="search-widget" class="widgets">
-            
+          <div id="search-widget" class="hs-content widgets">
+            <div class="widgets-inner">
+  		      </div>
           </div>
 
     
