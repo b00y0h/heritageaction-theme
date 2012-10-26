@@ -4,7 +4,7 @@
       // resize .hs-content when browser window is resized
       function resizeContent(elem) {
         // get height of window
-        var windowHeight = $(window).height();
+        // var windowHeight = $(window).height();
         var windowWidth = $(window).width();
         // resize
         $(elem).css('width',(windowWidth) + "px").css('max-width',(windowWidth) + "px");
@@ -13,7 +13,7 @@
       resizeContent('.hs-content');
       
       // window resize events
-      $(window).resize(function () { 
+      $(window).resize(function () {
         resizeContent('.hs-content');
         });
       

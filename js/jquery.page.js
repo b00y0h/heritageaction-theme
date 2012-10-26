@@ -1,14 +1,15 @@
-(function(window, undefined) {
+;(function ($, window, undefined) {
+  'use strict';
 
   var Page  = (function() {
 
-    var $container      = $( '#hs-container' ),
+      var $container      = $( '#hs-container' ),
       // the scroll container that wraps the articles
       $scroller     = $container.find( 'div.hs-content-scroller' ),
       $menu       = $container.find( 'aside' ),
       // menu links
       $links        = $menu.find( 'nav > a' ),
-      $articles     = $container.find( 'div.hs-content-wrapper > article' ),
+      $articles     = $container.find( 'div.hs-content-wrapper > .widgets' ),
       // button to scroll to the top of the page
       // only shown when screen size < 715
       $toTop        = $container.find( 'a.hs-totop-link' ),
@@ -21,8 +22,6 @@
       // init function
       init        = function() {
 
-        // initialize the jScrollPane on both the menu and articles
-        // _initCustomScroll();
         // initialize some events
         _initEvents();
         // sets some css properties
@@ -32,26 +31,13 @@
         _goto();
 
       },
-      _initCustomScroll = function() {
-
-        // Only add custom scroll to articles if screen size > 715.
-        // If not the articles will be expanded
-        if( $(window).width() > 715 ) {
-
-          $articles.jScrollPane( scrollOptions );
-
-        }
-        // add custom scroll to menu
-        $menu.children( 'nav' ).jScrollPane( scrollOptions );
-
-      },
       _goto       = function( chapter ) {
 
           // get the url from history state (e.g. chapter=3) and extract the chapter number
-        var chapter   = chapter || History.getState().url.queryStringToJSON().chapter,
-          isHome    = ( chapter === undefined ),
+        var panel   = panel || History.getState().url.queryStringToJSON().panel,
+          isHome    = ( panel === undefined ),
           // we will jump to the introduction chapter if theres no chapter
-          $article  = $( chapter ? '#' + 'chapter' + chapter : '#' + 'introduction' );
+          $article  = $( panel ? '#' + 'panel' + panel : '#' + 'introduction' );
 
         if( $article.length ) {
 
@@ -99,41 +85,6 @@
       _initWindowEvents = function() {
 
         $(window).on({
-          // when resizing the window we need to reinitialize or destroy the jScrollPanes
-          // depending on the screen size
-          'smartresize' : function( event ) {
-
-            $('article.hs-content').each( function() {
-
-              var $article  = $(this),
-                aJSP    = $article.data( 'jsp' );
-
-              if( $(window).width() > 715 ) {
-
-                ( aJSP === undefined ) ? $article.jScrollPane( scrollOptions ) : aJSP.reinitialise();
-
-                _initArticleEvents();
-
-              }
-              else {
-
-                // destroy article's custom scroll if screen size <= 715px
-                if( aJSP !== undefined )
-                  aJSP.destroy();
-
-                $container.off( 'click', 'article.hs-content' );
-
-              }
-
-            });
-
-            var nJSP = $menu.children( 'nav' ).data( 'jsp' );
-            nJSP.reinitialise();
-
-            // jumps to the current chapter
-            _goto();
-
-          },
           // triggered when the history state changes - jumps to the respective chapter
           'statechange' : function( event ) {
 
@@ -152,9 +103,9 @@
         $links.on( 'click', function( event ) {
 
           var href    = $(this).attr('href'),
-            chapter   = ( href.search(/chapter/) !== -1 ) ? href.substring(8) : 0;
+            panel   = ( href.search(/panel/) !== -1 ) ? href.substring(8) : 0;
 
-          _saveState( chapter );
+          _saveState( panel );
 
           return false;
 
@@ -194,6 +145,6 @@
 
   })();
 
-  Page.init();
+  new Page.init();
 
-})(window);
+}(jQuery, window));
