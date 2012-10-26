@@ -11,19 +11,7 @@
 
 	</div><!-- #main .site-main -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-  		<nav class="site-navigation footer-navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
-			</nav>
-			<address>
-			  214 Massachusetts Avenue NE, Suite 400, Washington, DC 20002 <br>
-        &copy; <?php echo date('Y'); ?> Heritage Action for America. All Rights Reserved.
-			</address>
-			
-		</div><!-- .site-info -->
-	</footer><!-- #colophon .site-footer -->
-</div><!-- #page .hfeed .site -->
+</div><!-- #hs-container .hs-container -->
 
 <script>
   var _gaq = _gaq || [];
@@ -37,8 +25,6 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
-<div id="fb-root"></div>
 <?php wp_footer(); ?>
-
 </body>
 </html>
