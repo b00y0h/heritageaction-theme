@@ -1136,17 +1136,17 @@ jQuery.extend( jQuery.easing,
         _initEvents();
         // sets some css properties
         // _layout();
-        // jumps to the respective chapter
+        // jumps to the respective panel
         // according to the url
         _goto();
 
       },
-      _goto       = function( chapter ) {
+      _goto       = function( panel ) {
 
-          // get the url from history state (e.g. chapter=3) and extract the chapter number
+          // get the url from history state (e.g. panel=3) and extract the panel number
         var panel   = panel || History.getState().url.queryStringToJSON().panel,
           isHome    = ( panel === undefined ),
-          // we will jump to the introduction chapter if theres no chapter
+          // we will jump to the introduction panel if theres no panel
           $article  = $( panel ? '#' + 'panel' + panel : '#' + 'introduction' );
 
         if( $article.length ) {
@@ -1165,7 +1165,7 @@ jQuery.extend( jQuery.easing,
 
           $elScroller.stop().animate( param, animation.speed, animation.easing, function() {
 
-            // active class for selected chapter
+            // active class for selected panel
             $articles.removeClass( 'hs-content-active' );
             $article.addClass( 'hs-content-active' );
 
@@ -1174,13 +1174,13 @@ jQuery.extend( jQuery.easing,
         }
 
       },
-      _saveState      = function( chapter ) {
+      _saveState      = function( panel ) {
 
         // adds a new state to the history object
         // this will trigger the statechange on the window
-        if( History.getState().url.queryStringToJSON().chapter !== chapter ) {
+        if( History.getState().url.queryStringToJSON().panel !== panel ) {
 
-          History.pushState( null, null, '?chapter=' + chapter );
+          History.pushState( null, null, '?panel=' + panel );
 
         }
 
@@ -1195,7 +1195,7 @@ jQuery.extend( jQuery.easing,
       _initWindowEvents = function() {
 
         $(window).on({
-          // triggered when the history state changes - jumps to the respective chapter
+          // triggered when the history state changes - jumps to the respective panel
           'statechange' : function( event ) {
 
             _goto();
@@ -1206,14 +1206,14 @@ jQuery.extend( jQuery.easing,
       },
       _initMenuEvents   = function() {
 
-        // when we click a menu link we check which chapter the link refers to,
+        // when we click a menu link we check which panel the link refers to,
         // and we save the state on the history obj.
         // the statechange of the window is then triggered and the page/scroller scrolls to the
-        // respective chapter's position
+        // respective panel's position
         $links.on( 'click', function( event ) {
 
           var href    = $(this).attr('href'),
-            panel   = ( href.search(/panel/) !== -1 ) ? href.substring(8) : 0;
+            panel   = ( href.search(/panel/) !== -1 ) ? href.substring(6) : 0;
 
           _saveState( panel );
 
@@ -1234,16 +1234,16 @@ jQuery.extend( jQuery.easing,
       },
       _initArticleEvents  = function() {
 
-        // when we click on an article we check which chapter the article refers to,
+        // when we click on an article we check which panel the article refers to,
         // and we save the state on the history obj.
         // the statechange of the window is then triggered and the page/scroller scrolls to the
-        // respective chapter's position
+        // respective panel's position
         $container.on( 'click', 'article.hs-content', function( event ) {
 
           var id      = $(this).attr('id'),
-            chapter   = ( id.search(/chapter/) !== -1 ) ? id.substring(7) : 0;
+            panel   = ( id.search(/panel/) !== -1 ) ? id.substring(5) : 0;
 
-          _saveState( chapter );
+          _saveState( panel );
 
           return false;
 

@@ -17,7 +17,7 @@ get_header(); ?>
   		    <!-- =========================== -->
   		    <!-- = Landing Widget. HA Logo = -->
   		    <!-- =========================== -->
-  		    <div id="landing-widget" class="hs-content widgets">
+  		    <div id="introduction" class="hs-content widgets">
   		      <div class="widgets-inner">
   		        <img src="<?php echo get_bloginfo('template_url'); ?>/img/logo@2x.png" alt="Logo@2x">
   		      </div>
@@ -27,7 +27,7 @@ get_header(); ?>
   		    <!-- = Score Card = -->
   		    <!-- ============== -->
   		    
-            <div id="score-card" class="hs-content widgets">
+            <div id="panel1" class="hs-content widgets">
     		      <div class="widgets-inner">
               <header class="gradient light-blue-gradient">
                 <h2 class="title">Score Card</h2>
@@ -41,10 +41,10 @@ get_header(); ?>
             
             
             <!-- =================== -->
-            <!-- = Action Dashboar = -->
+            <!-- = Action Dashboard = -->
             <!-- =================== -->
             
-            <div id="action-dashboard" class="hs-content widgets">
+            <div id="panel2" class="hs-content widgets">
               <div class="widgets-inner">
               <header class="gradient red-gradient">
                 <h2 class="title">Action Dashboard</h2>
@@ -73,7 +73,7 @@ get_header(); ?>
           <!-- ========== -->
           <!-- = Donate = -->
           <!-- ========== -->
-          <div id="donate" class="hs-content widgets">
+          <div id="panel4" class="hs-content widgets">
             <div class="widgets-inner">
             donate
             </div>
@@ -83,7 +83,7 @@ get_header(); ?>
           <!-- = Key Votes = -->
           <!-- ============= -->
           
-    			<div id="key-votes" class="hs-content widgets">
+    			<div id="panel5" class="hs-content widgets">
     			  <div class="widgets-inner">
             <header class="gradient blue-gradient">
               <h2 class="title">Key Votes</h2>
@@ -166,7 +166,7 @@ get_header(); ?>
           <!-- = Press Releases = -->
           <!-- ================== -->
 
-          <div id="recent-press-releases" class="hs-content widgets">
+          <div id="panel6" class="hs-content widgets">
             <div class="widgets-inner">
             <header class="gradient orange-gradient">
               <h2 class="title">Press Releases &amp; Statements</h2>
@@ -214,7 +214,7 @@ get_header(); ?>
           <!-- = About Us = -->
           <!-- ============ -->
           
-          <div id="about-us" class="hs-content widgets">
+          <div id="panel7" class="hs-content widgets">
             <div class="widgets-inner">
             <header class="gradient medium-blue-gradient">
               <h2 class="title">About Us</h2>
@@ -244,7 +244,7 @@ get_header(); ?>
           <!-- = Search = -->
           <!-- ========== -->
           
-          <div id="search-widget" class="hs-content widgets">
+          <div id="panel8" class="hs-content widgets">
             <div class="widgets-inner">
   		      </div>
           </div>

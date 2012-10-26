@@ -6,7 +6,7 @@
  * @since Heritage Action 1.0
  */
 ?>
-		<div id="secondary" class="widget-area hs-content widgets" role="complementary">
+		<div id="panel3" class="widget-area hs-content widgets" role="complementary">
 		  <div class="widgets-inner">
 		  <header id="the-forge" class="widget-main-header"><h2>The Forge</h2></header>
 			  
