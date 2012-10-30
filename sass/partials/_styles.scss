@@ -389,11 +389,18 @@ background:transparent url('img/striped-bg.png');
   	text-align:center;
   }
 }
-//  #main {
-//    z-index:1;
-//    width:100%;
-//    padding-top:20px;
-//  }
+  #main {
+    padding:0 10px;
+    margin-bottom:$nav-height+$nav-height;
+    #hero {
+      margin:-10px -10px 1em -10px;
+      padding:10px;
+      h1 {
+        margin:0;
+        padding:0;
+      }
+    }
+  }
 //  #main-outer { // scrollable #scroll-content
 //    position:absolute;
 //    top:0;
@@ -855,31 +862,25 @@ h1 {
   position: relative;
 	border: 0;
 	padding: 0;
-	margin: 0 auto 6em;
-	width: 150px;
-}
-.switch label {
-  font-family:$alternate-font-family2;
-  display:inline;
-  color:#b7b7b7;
-  text-transform:uppercase;
-
-}
-
-.items_senate{
-  @extend .display-none;
-}
-
-#facebook-page-wall{
-  background:#fff;
-}
-
-
-
-@media only screen {
-.switch {
-  width: 90px;
-	legend {
+	margin: 0 auto 5em;
+	width: 90px;
+	label {
+    font-family:$alternate-font-family2;
+    display:inline;
+    color:#b7b7b7;
+    text-transform:uppercase;
+    float:left;
+    display:inline;
+  	position: absolute;
+  	z-index: 2;
+  	top:0px;
+  	padding-top:25px;
+  	width:60%;
+  	&:last-of-type {
+    	left: 60%;
+    }
+  }
+  legend {
   	&:after {
   	  @include gradient-vertical(#eeeeee, #fefefe);
     	@include border-radius(37px);
@@ -910,18 +911,6 @@ h1 {
     	left: 55%;
     }
   }
-  label {
-    float:left;
-    display:inline;
-  	position: absolute;
-  	z-index: 2;
-  	top:0px;
-  	padding-top:25px;
-  	width:60%;
-  	&:last-of-type {
-    	left: 60%;
-    }
-  }
   .switch-button {
   	clear: both;
   	position: absolute;
@@ -942,8 +931,22 @@ h1 {
   	-o-transition: all 0.3s ease-out;
   	transition: all 0.3s ease-out;
   }
+	
 }
+
+.items_senate{
+  @extend .display-none;
 }
+
+#facebook-page-wall{
+  background:#fff;
+}
+
+
+
+.switch {
+}
+
 .tinycarousel {
   .viewport { position: relative; overflow-x:hidden; height:220px; }
   .buttons { display: block; }

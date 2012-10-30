@@ -191,8 +191,7 @@ get_header(); ?>
                     <li class="press-release-slide">
                       <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
                       <span class="post-meta"><?php heritageaction_posted_on(); ?></span>
-                      <p><?php echo mb_strimwidth(get_the_excerpt(),0,100); ?> </p>
-                      <a href="<?php the_permalink(); ?>" class="read-more">READ FULL PRESS RELEASE</a>
+                      <p><a href="<?php the_permalink(); ?>"><?php echo mb_strimwidth(get_the_excerpt(),0,100); ?></a></p>
                     </li>
 
                     <?php wp_reset_postdata(); endforeach; ?>
