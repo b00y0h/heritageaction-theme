@@ -86,7 +86,7 @@ nav[role='navigation'] {
       color:$white;
       z-index:1000;
       cursor:pointer;
-      @include respond-to(desktop) {
+      .no-touch & {
         height:137px;
       }
       &#home-link:hover {
@@ -94,7 +94,7 @@ nav[role='navigation'] {
       }
       a {color:$white;background-color:transparent;}
       > .nav-desc {
-        @include respond-to(desktop) {
+        .no-touch & {
         display:block;
         z-index:1001;
         }

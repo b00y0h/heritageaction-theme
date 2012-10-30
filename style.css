@@ -923,10 +923,9 @@ nav[role='navigation'] {
       color: white;
       z-index: 1000;
       cursor: pointer; }
-      @media only screen and (min-width: 1224px) {
-        /* line 84, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
-        nav[role='navigation'] li:hover {
-          height: 137px; } }
+      /* line 89, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+      .no-touch nav[role='navigation'] li:hover {
+        height: 137px; }
       /* line 92, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
       nav[role='navigation'] li:hover#home-link:hover {
         height: 70px; }
@@ -934,11 +933,10 @@ nav[role='navigation'] {
       nav[role='navigation'] li:hover a {
         color: white;
         background-color: transparent; }
-      @media only screen and (min-width: 1224px) {
-        /* line 96, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
-        nav[role='navigation'] li:hover > .nav-desc {
-          display: block;
-          z-index: 1001; } }
+      /* line 97, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
+      .no-touch nav[role='navigation'] li:hover > .nav-desc {
+        display: block;
+        z-index: 1001; }
     /* line 103, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_menu.scss */
     nav[role='navigation'] li.hover {
       height: 137px; }
