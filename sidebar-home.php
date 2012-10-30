@@ -16,7 +16,7 @@
 			      <?php
 			      $cat_id = get_cat_ID('featured');
 			      $args = array(
-                'numberposts' => 3,
+                'numberposts' => 1,
                 'offset' => 0,
                 'category' => $cat_id,
                 'orderby' => 'post_date',
@@ -46,7 +46,7 @@
 			      <?php
 			      $cat_id = get_cat_ID('featured');
 			          $args = array(
-                'numberposts' => 3,
+                'numberposts' => 1,
                 'offset' => 0,
                 'category' => '',
                 'orderby' => 'post_date',

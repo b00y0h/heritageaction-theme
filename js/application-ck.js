@@ -1062,25 +1062,7 @@ jQuery.extend( jQuery.easing,
         resizeContent('.hs-content .widgets-inner, #introduction');
         });
       
-      // more/less nav scroll
-      // #more-nav:target {
-      //   @extend .invisible;
-      //   ~ nav {
-      //   left:-240px;
-      //   }
-      //   + #less-nav {
-      //     visibility:visible;
-      //   }
-      // }
-      // #less-nav:target {
-      //   @extend .invisible;
-      //   ~ nav {
-      //   left:0;
-      //   }
-      //   + #more-nav {
-      //     visibility:visible;
-      //   }
-      // }
+      // move the nav when more/less is clicked
       $("#more-nav").click(function(e){
         moveNav('nav','-240');
         // ugh---ly :/
