@@ -106,6 +106,7 @@
     * MIT License
   */
   (function( win ){
+  	var doc = win.document;
 
   	// If there's a hash, or addEventListener is undefined, stop here
   	if( !location.hash && win.addEventListener ){
