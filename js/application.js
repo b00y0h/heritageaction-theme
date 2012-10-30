@@ -38,13 +38,6 @@
         }
       });
 
-
-
-      $("#listen-live").click(function(){
-        window.open($(this).attr('href'),'Listen_Live!','resizable=yes,scrollbars=yes,width=837,height=470');
-        return false;
-      });
-
       $("#signup-form-submit-button").click(function(){
         var form_data = $("#signup-form").serialize();
         $("#signup-content").load("/bluehornet.php?" + form_data);
