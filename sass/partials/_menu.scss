@@ -57,7 +57,14 @@ nav[role='navigation'] {
       background-color:transparent;
       }
     }
-  }  
+  }
+  .go {
+    @extend .rounded;
+    @include square(22px);
+    @include box-shadow(rgba(0, 0, 0, .35) 0 1px 5px);
+    padding:5px 9px;
+  }
+
 #more-nav, #less-nav {
   @include font-shorthand(10px, auto, $nav-height);
   @extend .alternate-font-family;
