@@ -2,33 +2,6 @@
   font-family: $button-font-family;
 }
 
-footer {
-  &.site-footer {
-    background-color:#000;
-    color:#fff;
-    font-size:12px;
-    padding:45px 0;
-    text-align:center;
-    color:$footer-text-color;
-    a {
-      color:$footer-text-color;
-      padding:0 1em;
-      &:hover {
-        color:white;
-      }
-    }
-    address {
-      margin:0 0 1.5em 0;
-      a {text-decoration:underline;}
-    }
-  }
-}
-
-.made-in-usa {
-  background:transparent url('img/made-in-usa.png') left center no-repeat;
-  @include size(22px, 44px);
-  @extend .display-inline-block;
-}
 .gradient a {
   color:$white;
 }
@@ -340,7 +313,7 @@ background:transparent url('img/striped-bg.png');
   .widgets-inner {
   @extend .shadow;
     background-color:$white;
-    padding:0 10px;
+    padding:0 10px 1em;
   }
   header {
     margin:0 -10px 10px;
@@ -435,10 +408,12 @@ background:transparent url('img/striped-bg.png');
 
 
 #panel3 {
-  background-color:$base-text-color;
   color:$weak-text-color;
-  padding:0 15px 40px;
+//  padding:0 15px 40px;
   position:relative;
+  .widgets-inner{
+    background-color:$base-text-color;
+  }
   h3 {
     @include font-shorthand(14px, normal, 14px);
     @extend .uppercase;
@@ -474,7 +449,7 @@ background:transparent url('img/striped-bg.png');
 #the-forge {
   @extend .base-drop-shadow;
   text-align:center;
-  margin:0 -15px 20px;
+  margin-bottom: 20px;
   h2 {
     line-height:40px;color:$white;
     background:transparent url('img/the-forge.png') center no-repeat;
@@ -1068,4 +1043,11 @@ h1 {
 
 .hs-container {
   padding-top:10px;
+}
+
+#introduction {
+  img {
+    @include size(auto, 100%);
+    margin-top:4em;
+  }
 }
