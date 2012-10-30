@@ -19,12 +19,6 @@ get_header(); ?>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
             <a href="#" class="btn rounded centered gradient red-gradient">SUPPORT HERITAGE</a>
           </div>
-          <div class="col2">
-            <div class="video shadow-curl-right shadow-full">
-  		      <img src="<?php echo get_bloginfo('template_url'); ?>/import-image/about-us-main.jpg" alt="Slide1" class="size-full">
-  		      <div class="overlay"></div>
-  		      </div>
-          </div>
           </div> <!-- .inner -->
   		  </div> <!-- #hero -->
    <div id="main-inner">

@@ -611,9 +611,6 @@ h1 {
   @include row();
   margin-bottom:40px;
   h2 {padding-top:35px;@extend .base-font-family;@extend .normal;}
-  .info-detail {
-    margin-left: 200px;
-  }
   .title {
     @extend .uppercase;
     @extend .post-meta;
@@ -622,21 +619,10 @@ h1 {
     font-size:11px;
   }
   .partner-image {
-    &::before, &::after {
-      width:60%;
-      height:70%;
-    }
-    &::before {
-      @include skew-rotate(-11deg, -6deg);
-      left:8px;
-    }
-    &::after {
-    @include skew-rotate(11deg, 6deg);
-    right:8px;
-  }
 //  remove bottom 'padding'
   line-height:0;
-  font-size:0
+  font-size:0;
+  margin-right:10px;      
   }
 }
 
