@@ -36,7 +36,7 @@
       <a href="#panel1"><span class="nav-title">Score Card</span></a>
       <a href="#panel2"><span class="nav-title">Dashboard</span></a>
       <a href="#panel3"><span<span class="nav-title">The Forge Blog</span></a>
-      <a href="#panel4"><span<span class="nav-title">Donate</span></a>
+      <!-- <a href="#panel4"><span<span class="nav-title">Donate</span></a> -->
       <a href="#panel5"><span<span class="nav-title">Key Votes</span></a>
       <a href="#panel6"><span<span class="nav-title">Press Releases</span></a>
       <a href="#panel7"><span<span class="nav-title">About Us</span></a>
