@@ -56,16 +56,6 @@
 
 
 
-      var $masthead = $( '#masthead' ),
-
-
-      $( window ).resize( function() {
-        if ( false !== timeout ){
-          clearTimeout( timeout );
-
-        timeout = setTimeout( function() {
-          } else {
-
     // ===============================================================
     // = remove placeholder text on focus and put it back on unfocus =
     // ===============================================================
