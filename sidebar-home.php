@@ -6,7 +6,7 @@
  * @since Heritage Action 1.0
  */
 ?>
-		<div id="secondary" class="widget-area shadow-curl-right" role="complementary">
+		<div id="secondary" class="widget-area" role="complementary">
 		  <header id="the-forge" class="widget-main-header"><h2>The Forge</h2></header>
 			  
 			  <aside id="featured-posts" class="widget">
