@@ -30,8 +30,8 @@
 <body <?php body_class(); ?>>
   <div id="hs-container" class="hs-container">
   <aside id="masthead" class="site-header" role="banner">
-   <a id="more-nav">More</a>
-   <a id="less-nav">Less</a>
+   <a id="more-nav">More <i class='lsf symbol'>&#xe00d;</i></a>
+   <a id="less-nav"><i class='lsf symbol'>&#xe00c;</i> Less</a>
 	 <nav role="navigation" class="site-navigation main-navigation">
       <a href="#panel1"><span class="nav-title">Score Card</span></a>
       <a href="#panel2"><span class="nav-title">Dashboard</span></a>
