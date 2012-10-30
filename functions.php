@@ -72,9 +72,17 @@ function heritageaction_setup() {
 	 * Add support for the Aside Post Formats
 	 */
 	add_theme_support( 'post-formats', array( 'aside', ) );
+	add_filter('comment_form_defaults','comments_form_defaults');
 }
 endif; // heritageaction_setup
 add_action( 'after_setup_theme', 'heritageaction_setup' );
+
+
+// remove html tags
+function comments_form_defaults($default) {
+	unset($default['comment_notes_after']);
+	return $default;
+}
 
 
 /**
