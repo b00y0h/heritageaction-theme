@@ -241,8 +241,8 @@ background:transparent url('img/striped-bg.png');
 .pagination ul > li > a,
 .pagination ul > li > span {
   float: left;
-  padding: 0 14px;
-  line-height: 38px;
+  padding: 0 5px;
+  line-height: 30px;
   text-decoration: none;
   background-color: #f3f3f3;
   @include gradient-vertical($white, #f3f3f3);
@@ -401,17 +401,24 @@ background:transparent url('img/striped-bg.png');
       }
     }
   }
-//  #main-outer { // scrollable #scroll-content
-//    position:absolute;
-//    top:0;
-//    z-index:1;
-//    width:100%;
-//    padding:0;
-//    -webkit-overflow-scrolling:touch;
-//    overflow:auto;
-//    padding:0 20px;
-//  }
-
+  #primary {
+    background-color:$white;
+    padding:10px;
+    margin:-10px;
+    margin-bottom:2em;
+  }
+.entry-header {
+  img {
+    @include size(auto, 100%);
+  }
+}
+#searchform {
+  input, .go {
+    @extend .display-inline-block;
+  }
+  input {width:85%;}
+  .go {margin-bottom:.5em;}
+}
 
 
 #panel3 {
@@ -578,6 +585,7 @@ background:transparent url('img/striped-bg.png');
 h1 {
   font-family:$header-font-family;
   padding-bottom:32px;
+  font-weight:normal;
 }
 
 
