@@ -85,21 +85,3 @@ nav[role='navigation'] {
   left:0;
   @extend .invisible;
 }
-#more-nav:target {
-  @extend .invisible;
-  ~ nav {
-  left:-240px;
-  }
-  + #less-nav {
-    visibility:visible;
-  }
-}
-#less-nav:target {
-  @extend .invisible;
-  ~ nav {
-  left:0;
-  }
-  + #more-nav {
-    visibility:visible;
-  }
-}
