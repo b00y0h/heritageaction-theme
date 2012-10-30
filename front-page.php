@@ -18,9 +18,7 @@ get_header(); ?>
   		    <!-- = Landing Widget. HA Logo = -->
   		    <!-- =========================== -->
   		    <div id="introduction" class="hs-content widgets">
-  		      <div class="widgets-inner">
   		        <img src="<?php echo get_bloginfo('template_url'); ?>/img/logo@2x.png" alt="Logo@2x">
-  		      </div>
   		    </div>
   		    
   		    <!-- ============== -->
@@ -50,11 +48,10 @@ get_header(); ?>
                 <h2 class="title">Action Dashboard</h2>
               </header>
               <p class="post-title">Holding your Members of Congress accountable starts here.</p>
-              <p>Find your dashboard: enter your zip code or your district code (Maine's first district would be ME01):</p>
               <!-- enter your zip -->
               <div class="control-group question">
                 <div class="controls input">
-                  <input type="search" class="dashboardZipSearch" name="enter_your_zip" id="enter_your_zip" placeholder="Enter your zip">
+                  <input type="search" class="dashboardZipSearch" name="enter_your_zip" id="enter_your_zip" placeholder="Enter your zip or district code">
                 </div>
               </div>
               <!-- ^^^^^ enter your zip ^^^^^^ -->
