@@ -111,16 +111,6 @@
 
         });
 
-        // scrolls to the top of the page.
-        // this button will only be visible for screen size < 715
-        $toTop.on( 'click', function( event ) {
-
-          $( 'html, body' ).stop().animate( { scrollTop : 0 }, animation.speed, animation.easing );
-
-          return false;
-
-        });
-
       },
       _initArticleEvents  = function() {
 
