@@ -4,17 +4,18 @@
       // resize .hs-content when browser window is resized
       function resizeContent(elem) {
         // get height of window
-        // var windowHeight = $(window).height();
+        var windowHeight = $(window).height();
         var windowWidth = $(window).width();
         // resize
-        $(elem).css('width',(windowWidth) + "px").css('max-width',(windowWidth) + "px");
+        // $(elem).css('width',(windowWidth - 40) + "px").css('max-width',(windowWidth - 40) + "px").css('min-height',(windowHeight + 30) + "px");
+        $(elem).css('min-height',(windowHeight - 20) + "px");
       }
       // invoke as soon as page loads
-      resizeContent('.hs-content');
+      // resizeContent('.hs-content .widgets-inner, #introduction');
       
       // window resize events
       $(window).resize(function () {
-        resizeContent('.hs-content');
+        // resizeContent('.hs-content .widgets-inner, #introduction');
         });
       
       // home key votes toggle
