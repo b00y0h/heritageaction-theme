@@ -24,8 +24,6 @@
 
         // initialize some events
         _initEvents();
-        // sets some css properties
-        // _layout();
         // jumps to the respective panel
         // according to the url
         _goto();
@@ -43,7 +41,7 @@
 
             // left / top of the element
           var left    = $article.position().left,
-            top     = $article.position().top,
+            top     = $article.position().top - 70,
             // check if we are scrolling down or left
             // is_v will be true when the screen size < 715
             is_v    = ( $(document).height() - $(window).height() > 0 ),

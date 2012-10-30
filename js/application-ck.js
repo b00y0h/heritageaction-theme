@@ -1055,12 +1055,53 @@ jQuery.extend( jQuery.easing,
         $(elem).css('min-height',(windowHeight - 20) + "px");
       }
       // invoke as soon as page loads
-      // resizeContent('.hs-content .widgets-inner, #introduction');
+      resizeContent('.hs-content .widgets-inner, #introduction');
       
       // window resize events
       $(window).resize(function () {
-        // resizeContent('.hs-content .widgets-inner, #introduction');
+        resizeContent('.hs-content .widgets-inner, #introduction');
         });
+      
+      // more/less nav scroll
+      // #more-nav:target {
+      //   @extend .invisible;
+      //   ~ nav {
+      //   left:-240px;
+      //   }
+      //   + #less-nav {
+      //     visibility:visible;
+      //   }
+      // }
+      // #less-nav:target {
+      //   @extend .invisible;
+      //   ~ nav {
+      //   left:0;
+      //   }
+      //   + #more-nav {
+      //     visibility:visible;
+      //   }
+      // }
+      $("#more-nav").click(function(e){
+        moveNav('nav','-240');
+        // ugh---ly :/
+        $("#less-nav").css('visibility','visible')
+        $("#more-nav").css('visibility','hidden')
+      })
+      $("#less-nav").click(function(e){
+        moveNav('nav','0');
+        $("#more-nav").css('visibility','visible')
+        $("#less-nav").css('visibility','hidden')
+      })
+      
+      // more the nav in the correct direction
+      function moveNav(elem,direction) {
+        $(elem).animate({
+          left: direction + "px"
+          },500, function() {
+            // animation complete
+          });
+        return false;
+      };
       
       // home key votes toggle
       $(".keyVoteSelector").change(function(){
@@ -1214,8 +1255,6 @@ jQuery.extend( jQuery.easing,
 
         // initialize some events
         _initEvents();
-        // sets some css properties
-        // _layout();
         // jumps to the respective panel
         // according to the url
         _goto();
@@ -1233,7 +1272,7 @@ jQuery.extend( jQuery.easing,
 
             // left / top of the element
           var left    = $article.position().left,
-            top     = $article.position().top,
+            top     = $article.position().top - 70,
             // check if we are scrolling down or left
             // is_v will be true when the screen size < 715
             is_v    = ( $(document).height() - $(window).height() > 0 ),
