@@ -51,7 +51,7 @@ get_header(); ?>
 
 		</div><!-- #content .site-content -->
 	</div><!-- #primary .content-area -->
-    <?php get_sidebar(); ?>
+    <?php // get_sidebar(); ?>
   </div> <!-- #main-inner -->
 
 <?php get_footer(); ?>
