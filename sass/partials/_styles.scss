@@ -334,10 +334,14 @@ background:transparent url('img/striped-bg.png');
 
 // WIDGETS
 .widgets {
-  @extend .shadow;
   position:relative;
-  padding:0 10px 15px;
-  margin-bottom:30px;
+  background-color:transparent!important;
+  margin:0 20px 50px;
+  .widgets-inner {
+  @extend .shadow;
+    background-color:$white;
+    padding:0 10px;
+  }
   header {
     margin:0 -10px 10px;
     text-align:center;
@@ -354,10 +358,24 @@ background:transparent url('img/striped-bg.png');
   .widget-title {
     text-align:center;
   }
-  &#score-card {
+  &#panel1 { // score card
     h2 {
       background:transparent url('img/score-card.png') center no-repeat;
       text-indent:-9999em;
+    }
+  }
+  &#panel2 { // action dashboard
+    text-align:center;
+    p {
+      @include font-shorthand(22px, normal, 24px);
+      margin:20px 10px 0;
+    }
+    input {
+      font-size:.8em;
+      margin-top:30px;
+      padding:1em .5em;
+      text-align:center;
+      width:90%;
     }
   }
   .post-title {
@@ -365,6 +383,7 @@ background:transparent url('img/striped-bg.png');
     @extend .display-block;
     font-size:18px;
   }
+  #scorecard-map {text-align:center;}
 }
 
 #key-votes {
@@ -415,7 +434,7 @@ background:transparent url('img/striped-bg.png');
 
 
 
-#secondary {
+#panel3 {
   background-color:$base-text-color;
   color:$weak-text-color;
   padding:0 15px 40px;
@@ -1008,69 +1027,45 @@ h1 {
   font-size:18px;
 
 }
-.hot_disqus_thread{
-  color:#fff;
-}
-.hot_disqus_thread .small{
-  font-size:11px;
-}
-#hot_threads h3{
-  margin-bottom:8px;
-}
-#congresspages-wrapper{
-  width:986px;
-  margin:0 auto;
-}
-.page-template-page-congresspages-php #hero{
-  margin-bottom:15px;
-}
 
 
+// table horizontal scrolling. haven't figured out way to hide ios url bar
 
-body {
-  overflow-y:hidden;
-  overflow-x:hidden;
-}
-.hs-content-scroller{
-	position: absolute;
-	top:10px;
-	left: 10px;
-	right: 10px;
-	overflow: hidden;
-	height: 100%;
-}
-.hs-content-wrapper{
-	width: 7950px;
-	position: absolute;
-	height: 100%;
-	overflow: hidden;
-}
-.hs-content{
-	width: 300px;
-	overflow-y: scroll;
-	height: 100%;
-	float: left;
-	border-right: 1px dashed #A9BECD;
-	border-left: 1px dashed #A9BECD;
-	border-right: 1px dashed rgba(126, 126, 126, 0.2);
-	border-left: 1px dashed rgba(255, 255, 255, 0.5);
-	background: transparent;
-	-webkit-transition: background 0.3s linear;
-	-moz-transition: background 0.3s linear;
-	-o-transition: background 0.3s linear;
-	-ms-transition: background 0.3s linear;
-	transition: background 0.3s linear;
-}
+//body {
+//  overflow-y:hidden;
+//  overflow-x:hidden;
+//}
+//.hs-content-scroller{
+//  position: absolute;
+//  top:0;
+//  left: 0;
+//  right: 0;
+//  overflow: hidden;
+//  height: 100%;
+//}
+//.hs-content-wrapper{
+//  width: 7950px;
+//  position: absolute;
+//  height: 100%;
+//  overflow: hidden;
+//  @extend .clearfix;
+//  &:after {
+//    display:block;
+//    content: ' ';
+//  }
+//}
+//.hs-content{
+//  width: 300px;
+//  overflow-y: scroll;
+//  height: 100%;
+//  float: left;
+//}
+//
+//    .jspVerticalBar{
+//        opacity: 1;
+//    }
 
-    .jspVerticalBar{
-        opacity: 1;
-    }
-    .hs-content-scroller{
-        overflow-x: scroll;
-    }
-    .hs-content:hover{
-        background: transparent;
-    }
-    .hs-content-active:hover {
-        background: #f1f5f8;
-    }
+
+.hs-container {
+  padding-top:10px;
+}

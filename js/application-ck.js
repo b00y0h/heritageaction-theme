@@ -363,6 +363,96 @@
 }(jQuery, window));
 
 /* **********************************************
+     Begin jquery.mousewheel.js
+********************************************** */
+
+/*! Copyright (c) 2011 Brandon Aaron (http://brandonaaron.net)
+ * Licensed under the MIT License (LICENSE.txt).
+ *
+ * Thanks to: http://adomas.org/javascript-mouse-wheel/ for some pointers.
+ * Thanks to: Mathias Bank(http://www.mathias-bank.de) for a scope bug fix.
+ * Thanks to: Seamus Leahy for adding deltaX and deltaY
+ *
+ * Version: 3.0.6
+ * 
+ * Requires: 1.2.2+
+ */
+
+(function($) {
+
+var types = ['DOMMouseScroll', 'mousewheel'];
+
+if ($.event.fixHooks) {
+    for ( var i=types.length; i; ) {
+        $.event.fixHooks[ types[--i] ] = $.event.mouseHooks;
+    }
+}
+
+$.event.special.mousewheel = {
+    setup: function() {
+        if ( this.addEventListener ) {
+            for ( var i=types.length; i; ) {
+                this.addEventListener( types[--i], handler, false );
+            }
+        } else {
+            this.onmousewheel = handler;
+        }
+    },
+    
+    teardown: function() {
+        if ( this.removeEventListener ) {
+            for ( var i=types.length; i; ) {
+                this.removeEventListener( types[--i], handler, false );
+            }
+        } else {
+            this.onmousewheel = null;
+        }
+    }
+};
+
+$.fn.extend({
+    mousewheel: function(fn) {
+        return fn ? this.bind("mousewheel", fn) : this.trigger("mousewheel");
+    },
+    
+    unmousewheel: function(fn) {
+        return this.unbind("mousewheel", fn);
+    }
+});
+
+
+function handler(event) {
+    var orgEvent = event || window.event, args = [].slice.call( arguments, 1 ), delta = 0, returnValue = true, deltaX = 0, deltaY = 0;
+    event = $.event.fix(orgEvent);
+    event.type = "mousewheel";
+    
+    // Old school scrollwheel delta
+    if ( orgEvent.wheelDelta ) { delta = orgEvent.wheelDelta/120; }
+    if ( orgEvent.detail     ) { delta = -orgEvent.detail/3; }
+    
+    // New school multidimensional scroll (touchpads) deltas
+    deltaY = delta;
+    
+    // Gecko
+    if ( orgEvent.axis !== undefined && orgEvent.axis === orgEvent.HORIZONTAL_AXIS ) {
+        deltaY = 0;
+        deltaX = -1*delta;
+    }
+    
+    // Webkit
+    if ( orgEvent.wheelDeltaY !== undefined ) { deltaY = orgEvent.wheelDeltaY/120; }
+    if ( orgEvent.wheelDeltaX !== undefined ) { deltaX = -1*orgEvent.wheelDeltaX/120; }
+    
+    // Add event and delta to the front of the arguments
+    args.unshift(event, delta, deltaX, deltaY);
+    
+    return ($.event.dispatch || $.event.handle).apply(this, args);
+}
+
+})(jQuery);
+
+
+/* **********************************************
      Begin mwheelIntent.js
 ********************************************** */
 
@@ -958,17 +1048,18 @@ jQuery.extend( jQuery.easing,
       // resize .hs-content when browser window is resized
       function resizeContent(elem) {
         // get height of window
-        // var windowHeight = $(window).height();
+        var windowHeight = $(window).height();
         var windowWidth = $(window).width();
         // resize
-        $(elem).css('width',(windowWidth) + "px").css('max-width',(windowWidth) + "px");
+        // $(elem).css('width',(windowWidth - 40) + "px").css('max-width',(windowWidth - 40) + "px").css('min-height',(windowHeight + 30) + "px");
+        $(elem).css('min-height',(windowHeight - 20) + "px");
       }
       // invoke as soon as page loads
-      resizeContent('.hs-content');
+      // resizeContent('.hs-content .widgets-inner, #introduction');
       
       // window resize events
       $(window).resize(function () {
-        resizeContent('.hs-content');
+        // resizeContent('.hs-content .widgets-inner, #introduction');
         });
       
       // home key votes toggle
@@ -992,13 +1083,6 @@ jQuery.extend( jQuery.easing,
         }
       });
 
-
-
-      $("#listen-live").click(function(){
-        window.open($(this).attr('href'),'Listen_Live!','resizable=yes,scrollbars=yes,width=837,height=470');
-        return false;
-      });
-
       $("#signup-form-submit-button").click(function(){
         var form_data = $("#signup-form").serialize();
         $("#signup-content").load("/bluehornet.php?" + form_data);
@@ -1012,52 +1096,9 @@ jQuery.extend( jQuery.easing,
         time += 365 * 20;
         now.setDate(time);
         document.cookie = '_signup_submitted=true; expires=' + now.toGMTString() + '; path=/';
-
-
         return false;
       });
 
-
-      /**
-       * Handles toggling the main navigation menu for small screens.
-       */
-
-      var $masthead = $( '#masthead' ),
-          timeout = false;
-
-      // $.fn.smallMenu = function() {
-      //  $masthead.find( '.site-navigation' ).removeClass( 'main-navigation' ).addClass( 'main-small-navigation' );
-      //  $masthead.find( '.site-navigation h1' ).removeClass( 'assistive-text' ).addClass( 'menu-toggle' );
-      //
-      //  $( '.menu-toggle' ).unbind( 'click' ).click( function() {
-      //    $masthead.find( '.menu' ).toggle();
-      //    $( this ).toggleClass( 'toggled-on' );
-      //  } );
-      // };
-
-      // Check viewport width on first load.
-      if ( $( window ).width() < 600 ){
-        $.fn.smallMenu();
-        }
-
-      // Check viewport width when user resizes the browser window.
-      $( window ).resize( function() {
-        var browserWidth = $( window ).width();
-
-        if ( false !== timeout ){
-          clearTimeout( timeout );
-        }
-
-        timeout = setTimeout( function() {
-          if ( browserWidth < 600 ) {
-            $.fn.smallMenu();
-          } else {
-            $masthead.find( '.site-navigation' ).removeClass( 'main-small-navigation' ).addClass( 'main-navigation' );
-            $masthead.find( '.site-navigation h1' ).removeClass( 'menu-toggle' ).addClass( 'assistive-text' );
-            $masthead.find( '.menu' ).removeAttr( 'style' );
-          }
-        }, 200 );
-      } );
 
 
     // ===============================================================
@@ -1103,6 +1144,45 @@ jQuery.extend( jQuery.easing,
 
     });
   })(jQuery);
+  
+  /*
+    * Normalized hide address bar for iOS & Android
+    * (c) Scott Jehl, scottjehl.com
+    * MIT License
+  */
+  (function( win ){
+  	var doc = win.document;
+
+  	// If there's a hash, or addEventListener is undefined, stop here
+  	if( !location.hash && win.addEventListener ){
+
+  		//scroll to 1
+  		window.scrollTo( 0, 1 );
+  		var scrollTop = 1,
+  			getScrollTop = function(){
+  				return win.pageYOffset || doc.compatMode === "CSS1Compat" && doc.documentElement.scrollTop || doc.body.scrollTop || 0;
+  			},
+
+  			//reset to 0 on bodyready, if needed
+  			bodycheck = setInterval(function(){
+  				if( doc.body ){
+  					clearInterval( bodycheck );
+  					scrollTop = getScrollTop();
+  					win.scrollTo( 0, scrollTop === 1 ? 0 : 1 );
+  				}	
+  			}, 15 );
+
+  		win.addEventListener( "load", function(){
+  			setTimeout(function(){
+  				//at load, if user hasn't scrolled more than 20 or so...
+  				if( getScrollTop() < 20 ){
+  					//reset to hide addr bar at onload
+  					win.scrollTo( 0, scrollTop === 1 ? 0 : 1 );
+  				}
+  			}, 0);
+  		} );
+  	}
+  })( this );  
 
 /* **********************************************
      Begin jquery.page.js
@@ -1216,16 +1296,6 @@ jQuery.extend( jQuery.easing,
             panel   = ( href.search(/panel/) !== -1 ) ? href.substring(6) : 0;
 
           _saveState( panel );
-
-          return false;
-
-        });
-
-        // scrolls to the top of the page.
-        // this button will only be visible for screen size < 715
-        $toTop.on( 'click', function( event ) {
-
-          $( 'html, body' ).stop().animate( { scrollTop : 0 }, animation.speed, animation.easing );
 
           return false;
 
