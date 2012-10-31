@@ -15,13 +15,14 @@ get_header(); ?>
 		      <div class="inner">
     		  <h1 id="about_us">About Us</h1>
 		      <div class="col1">
-  		      <p>This is a description of Heritage Action. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
-            <a href="#" class="btn rounded centered gradient red-gradient">SUPPORT HERITAGE</a>
+  		      <?php the_content(); ?>
+            <a href="/donate" class="btn rounded centered gradient red-gradient">DONATE TO HERITAGE ACTION</a>
           </div>
           <div class="col2">
             <div class="video shadow-curl-right shadow-full">
-  		      <img src="<?php echo get_bloginfo('template_url'); ?>/import-image/about-us-main.jpg" alt="Slide1" class="size-full">
+            <a href="http://www.youtube.com/watch?v=xwLCw1oKQcg" rel="lightbox" data-ob_share="false">
+  		        <img src="<?php echo get_bloginfo('template_url'); ?>/img/video-image-large.png" alt="Slide1" class="size-full">
+  		      </a>
   		      <div class="overlay"></div>
   		      </div>
           </div>
