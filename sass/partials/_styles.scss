@@ -409,10 +409,9 @@ background:transparent url('img/striped-bg.png');
 
 .home {
   #main-outer {
-    background:#f3f3f3 url('img/bg-capital-left.jpg') left top no-repeat; 
+    background:#f3f3f3 url('img/bg-capital-left.jpg') left bottom no-repeat; 
     .touch & {
       padding-top:40px;
-      background-position: bottom; 
     }
   }
   #black-bg {
