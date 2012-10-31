@@ -13,14 +13,14 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 	  
-	  <div class="footer-inner-wrap">
+	  <div class="inner">
 	  
-	  <div class="heritage-sister-site">
-  	  <a href="http://www.heritage.org" target="_blank">
-  	    Visit our sister site:<br>
-  	    <img src="<?php echo get_bloginfo('template_url'); ?>/img/hfa.png" width="150">
-  	  </a>
-  	</div>
+		<div class="heritage-sister-site">
+	  	  <a href="http://www.heritage.org" target="_blank">
+	  	    Visit our sister site:<br>
+	  	    <img src="<?php echo get_bloginfo('template_url'); ?>/img/hfa.png" width="150">
+	  	  </a>
+	  	</div>
     
 	  
 		<div class="site-info">
