@@ -59,10 +59,12 @@
 			          
 			            <div class="hot_disqus_thread">
 			              <a href="<?php echo $thread->link; ?>"><?php echo $thread->title; ?></a><br>
+			              <span class="small">Reactions <?php echo $thread->reactions; ?></span> &nbsp;
 			              <span class="small">Comments <?php echo $thread->posts; ?></span> &nbsp;
+			              <!-- >
 			              <span class="small">Likes <?php echo $thread->likes; ?></span> &nbsp;
 			              <span class="small">Dislikes <?php echo $thread->dislikes; ?></span> &nbsp;
-			              <span class="small">Reactions <?php echo $thread->reactions; ?></span>
+			              -->
 			            </div>
 			            <hr/>
 			          
