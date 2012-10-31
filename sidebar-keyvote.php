@@ -16,13 +16,45 @@
 		  </header>
       
 			  
-			  <aside id="recent-key-votes" class="widget">
-			    <h3 class='widget-title'>Recent Key Votes</h3>
+			  <aside id="recent-house-key-votes" class="widget">
+			    <h3 class='widget-title'>House Key Votes</h3>
 			    <ul>                
               <?php 
     			      $args = array(
                     'numberposts' => 5,
                     'offset' => 0,
+                    'taxonomy' => 'chamber',
+                    'term' => 'key-vote-house',
+                    'orderby' => 'post_date',
+                    'order' => 'DESC',
+                    'post_type' => 'key-votes'); 
+                    
+                $house_key_votes = wp_get_recent_posts( $args );
+                foreach( $house_key_votes as $house_key_vote ): 
+                   $post_id = $house_key_vote['ID'];
+                   $post = get_post($post_id);
+                   setup_postdata($post);
+                ?>
+                
+              	<li class='<?php echo get_post_meta($post_id,"key_vote_type",true); ?>'><a href="<?php the_permalink(); ?>">
+                  <span class='post-title'><?php the_title(); ?></span></a>
+                  <span class='excerpt'><?php echo truncateWords(get_the_excerpt(),185); ?>[...]</span>                  
+                </li>
+                
+              	<?php wp_reset_postdata(); endforeach; ?>
+            
+			    </ul>
+			  </aside>
+			  
+			  <aside id="recent-senate-key-votes" class="widget">
+			    <h3 class='widget-title'>Senate Key Votes</h3>
+			    <ul>                
+              <?php 
+    			      $args = array(
+                    'numberposts' => 5,
+                    'offset' => 0,
+                    'taxonomy' => 'chamber',
+                    'term' => 'key-vote-senate',
                     'orderby' => 'post_date',
                     'order' => 'DESC',
                     'post_type' => 'key-votes'); 
