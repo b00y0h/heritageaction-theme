@@ -19,7 +19,7 @@ get_header(); ?>
             <a href="/donate" class="btn rounded centered gradient red-gradient">DONATE TO HERITAGE ACTION</a>
           </div>
           <div class="col2">
-            <div class="video shadow-curl-right shadow-full">
+            <div class="video-slug shadow-curl-right shadow-full">
             <a href="http://www.youtube.com/watch?v=xwLCw1oKQcg" rel="lightbox" data-ob_share="false">
   		        <img src="<?php echo get_bloginfo('template_url'); ?>/img/video-image-large.png" alt="Slide1" class="size-full">
   		      </a>

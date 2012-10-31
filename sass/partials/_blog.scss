@@ -33,7 +33,7 @@
   }
   #secondary {
     @extend .position-relative;
-    .video {
+    .video-slug {
       margin:1.5em 0;
     }
     p {color:$white;@include font-shorthand(12px, normal, 16px);}

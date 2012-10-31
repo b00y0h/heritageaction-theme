@@ -27,7 +27,7 @@
 		    
 		    <aside id="widget-about-us" class="widget">
 		      <h3>About Us</h3>
-		      <div class="video shadow">
+		      <div class="video-slug shadow">
 		        <a href="http://www.youtube.com/watch?v=xwLCw1oKQcg" rel="lightbox" data-ob_share="false">
             <img class="size-full" src="<?php echo get_bloginfo('template_url'); ?>/import-image/video-slug.jpg" alt="About Us">
             </a>
