@@ -31,46 +31,35 @@ get_header(); ?>
 		<div id="primary" class="content-area">
   		  <h1>Meet The Team</h1>
   		  <div id="content" class="site-content row" role="main">
-          
-          <!-- #michael-needham -->
-          <section id="michael-needham" class='team-info'>
-            <div class="partner-image shadow shadow-curl-left shadow-curl-right float-left">
-              <img src="<?php echo get_bloginfo('template_url'); ?>/img/about-michael-needham.jpg" alt="Michael Needham Photo">
-            </div>
-            <div class="info-detail">
-              <h2>Michael A. Needham</h2>
-              <h3 class="title">Chief Executive Officer</h3>
-              <p>Mike Needham is the Chief Executive Officer for Heritage Action for America. He is responsible for setting the strategy and vision of Heritage Action, ensuring it advances the mission of The Heritage Foundation while building it into a permanent presence in Washington. He also oversees all policy decisions that hold Members of Congress accountable.Prior to his role at Heritage Action, Mike served in four different roles at The Heritage Foundation, including Chief of Staff, advisor to the President, and a director in The Kathryn and Shelby Cullom Davis Institute for International Studies.</p>
-            </div> <!-- .info-detail -->            
-          </section>
-          <!-- ^^^ end #michael-needham ^^^ -->
-          
-          <!-- #tim-chapman -->
-          <section id="tim-chapman" class='team-info'>
-            <div class="partner-image shadow shadow-curl-left shadow-curl-right float-left">
-              <img src="<?php echo get_bloginfo('template_url'); ?>/img/about-tim-chapman.jpg" alt="Tim Chapman Photo">
-            </div>
-            <div class="info-detail">
-              <h2>Tim Chapman</h2>
-              <h3 class="title">Chief Operating Officer</h3>
-              <p>Tim Chapman is the Chief Operating Officer of Heritage Action for America. He oversees the day-to-day operations while working closely with our sister organization, The Heritage Foundation, to ensure both organizations work towards common goals.Prior to his role at Heritage Action, Tim previously served as Chief of Staff to Heritage Foundation President Ed J. Feulner, Ph.D. In this position, Tim advised Dr. Feulner on public policy matters and activities of the conservative movement. He also managed Dr. Feulner’s office staff and Heritage’s day-to-day operations.</p>
-            </div> <!-- .info-detail -->            
-          </section>
-          <!-- ^^^ end #tim-chapman ^^^ -->
-          
-          <!-- #jessica-anderson -->
-          <section id="jessica-anderson" class='team-info'>
-            <div class="partner-image shadow shadow-curl-left shadow-curl-right float-left">
-              <img src="<?php echo get_bloginfo('template_url'); ?>/img/about-jessica-anderson.jpg" alt="Jessica Anderson Photo">
-            </div>
-            <div class="info-detail">
-              <h2>Jessica Anderson</h2>
-              <h3 class="title">Deputy Political Director</h3>
-              <p>Jessica Anderson is a Deputy Political Director for Heritage Action for America. She first started with Heritage Action as the North Carolina State Director. Previously, she led the get-out-the-vote effort, campaign and new media training for the John W. Pope Civitas Institute in Raleigh, NC. Today, you can find her identifying, equipping and training activists for Heritage Action on the ground throughout the country. She is a University of Florida graduate.</p>
-            </div> <!-- .info-detail -->            
-          </section>
-          <!-- ^^^ end #jessica-anderson ^^^ -->
-          
+  		    
+  		   	<?php
+  					global $query_string; // required
+  					global $post;
+  					$posts = query_posts('post_type=page&post_parent=' . $post->ID . '&sort_column=menu_order&order=ASC'); 
+  				?>
+
+
+  						<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+  						  
+  						  
+  						  <!-- #<?php echo $post->post_name; ?> -->
+                <section id="<?php echo $post->post_name; ?>" class='team-info'>
+                  <div class="partner-image shadow shadow-curl-left shadow-curl-right float-left">
+                    <img src="<?php echo get_bloginfo('template_url'); ?>/img/about-<?php echo $post->post_name; ?>.jpg" alt="<?php the_title(); ?> Photo">
+                  </div>
+                  <div class="info-detail">
+                    <?php the_content(); ?>
+                  </div> <!-- .info-detail -->            
+                </section>
+                <!-- ^^^ end #<?php echo $post->post_name; ?> ^^^ -->
+                  						
+  							
+  						<?php endwhile; // end of the loop. ?>
+
+
+  				<?php wp_reset_query(); // reset the query ?>
+  		    
+        
           <!-- #tripp-baird -->
           <section id="tripp-baird" class='team-info'>
             <div class="partner-image shadow shadow-curl-left shadow-curl-right float-left">
