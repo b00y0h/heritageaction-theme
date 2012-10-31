@@ -4,7 +4,7 @@
  * @since Heritage Action 1.0
  */
 ?>
-<div id="primary" class="content-area">
+<div id="" class="content-area">
 
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

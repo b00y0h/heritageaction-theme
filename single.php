@@ -14,6 +14,7 @@ get_header(); ?>
     <p class='page-excerpt'><?php // echo get_post_meta($post->ID, 'page_excerpt', true); ?></p>
   </div>
 </div>
+<div id="main-inner">
 
 		<div id="primary" class="content-area">
 			<div id="content" class="site-content" role="main">
@@ -44,6 +45,6 @@ get_header(); ?>
         
       }
     ?>
-
+</div>
 
 <?php get_footer(); ?>

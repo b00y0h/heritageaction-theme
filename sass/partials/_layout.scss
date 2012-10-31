@@ -160,6 +160,19 @@ nav[role='navigation'] {
     @extend .column4;
   }
 }
+.single {
+  #main-inner {
+    @extend .max-width;
+    @extend .centered;
+    @extend .clearfix;
+  }
+  #primary {
+    @extend .column8;
+  }
+  #secondary {
+    @extend .column4;
+  }
+}
 
 .archive, .search, .error404 {
   #main-inner {
