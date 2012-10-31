@@ -12,16 +12,31 @@
 	</div><!-- #main .site-main -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+	  
+	  <div class="footer-inner-wrap">
+	  
+	  <div class="heritage-sister-site">
+  	  <a href="http://www.heritage.org" target="_blank">
+  	    Visit our sister site:<br>
+  	    <img src="<?php echo get_bloginfo('template_url'); ?>/img/hfa.png" width="150">
+  	  </a>
+  	</div>
+    
+	  
 		<div class="site-info">
   		<nav class="site-navigation footer-navigation">
 			<?php wp_nav_menu( array( 'theme_location' => 'footer' ) ); ?>
 			</nav>
+			
+			
 			<address>
 			  214 Massachusetts Avenue NE, Suite 400, Washington, DC 20002 <br>
         &copy; <?php echo date('Y'); ?> Heritage Action for America. All Rights Reserved.
 			</address>
 			
 		</div><!-- .site-info -->
+		
+		</div>
 	</footer><!-- #colophon .site-footer -->
 </div><!-- #page .hfeed .site -->
 

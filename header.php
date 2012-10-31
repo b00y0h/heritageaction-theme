@@ -68,6 +68,24 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<style type="text/css" media="screen">
+  .footer-inner-wrap{
+    width:960px;
+    margin:0 auto;
+  }
+  .site-info{
+    width:560px;
+  }
+  .heritage-sister-site{
+    float:right;
+    margin-right:30px;
+    padding-bottom:10px;
+  }
+  .heritage-sister-site a:hover{
+    text-decoration:none;
+    
+  }
+</style>
 </head>
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site wrap">
