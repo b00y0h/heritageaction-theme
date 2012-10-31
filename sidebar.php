@@ -8,12 +8,12 @@
 ?>
 		<div id="secondary" class="widget-area shadow-curl-right" role="complementary">
 		  <header id="subscribe" class="widget-main-header">
-		    <a href="#">
+		    <a href="http://feeds.feedburner.com/heritageaction">
 		      <h2><i class="icon-rss-cones"></i>Subscribe
 		        <span class="via"><i class="icon-rss-bug"></i>via Feedburner</span>
 		      </h2>
-		      </a>
-		    </header>
+		    </a>
+		  </header>
 		    
 		    <aside id="widget-search" class="widget">		      
 		      <form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">

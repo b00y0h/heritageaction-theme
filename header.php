@@ -82,8 +82,39 @@
     padding-bottom:10px;
   }
   .heritage-sister-site a:hover{
-    text-decoration:none;
-    
+    text-decoration:none;    
+  }
+  .key-vote-title{
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 36px;
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    font-family: "HelveticaNeue-CondensedBold", "Open Sans Condensed", Arial, sans-serif;
+  }
+  .entry-title.chamber-title a{
+    color:#000;
+  }
+  .entry-title.chamber-title a:hover{
+    /*text-decoration:none;*/
+  }
+  .key-vote-content{
+    width:650px;
+    float:left;
+  }
+  .key-vote-sidebar{
+    width:300px;
+    float:right;
+    margin-bottom:25px;
+  }
+  .key-vote-type-icon{
+    width:75px;
+    height:75px;
+    border:1px solid;
+    float:left;
+    margin-right:5px;
+    text-align:center;
+    vertical-align:middle;
   }
 </style>
 </head>
