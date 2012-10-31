@@ -17,7 +17,7 @@
       
 			  
 			  <aside id="recent-house-key-votes" class="widget">
-			    <h3 class='widget-title'>House Key Votes</h3>
+			    <h3 class='widget-title'><a href="/chamber/key-vote-house/">House Key Votes</a></h3>
 			    <ul>                
               <?php 
     			      $args = array(
@@ -47,7 +47,7 @@
 			  </aside>
 			  
 			  <aside id="recent-senate-key-votes" class="widget">
-			    <h3 class='widget-title'>Senate Key Votes</h3>
+			    <h3 class='widget-title'><a href="/chamber/key-vote-senate/">Senate Key Votes</a></h3>
 			    <ul>                
               <?php 
     			      $args = array(

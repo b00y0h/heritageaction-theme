@@ -201,7 +201,10 @@
       return false;
     });
 
-
+		// allow clicking on nav dropdown to act as link click
+		$("#menu-main-nav > li.score-card, #menu-main-nav > li.the-forge-blog, #menu-main-nav > li.donate").click(function(){
+			window.location.href = $('a',$(this)).attr('href');
+		})
 
 
 

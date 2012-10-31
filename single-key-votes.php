@@ -34,7 +34,7 @@ get_header(); ?>
         	    <div class="key-vote-type-icon"><?php echo get_post_meta($post->ID,"key_vote_type",true); ?></div>        	    
         	    <?php the_title(); ?>
         	  </h1>
-        	  <div class="entry-date"><?php echo get_the_date('F d, Y'); ?></div>
+        	  <div class="keyvote-entry-date"><?php echo get_the_date('F d, Y'); ?></div>
         		<?php the_content(); ?>
         		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'heritageaction' ), 'after' => '</div>' ) ); ?>
         	</div><!-- .entry-content -->
@@ -49,11 +49,8 @@ get_header(); ?>
 
 			        
 			</div><!-- #content .site-content -->
-			
-			<div class="key-vote-sidebar"><?php get_sidebar('keyvote'); ?></div>
-			<div style="clear:both;"></div>
 		</div><!-- #primary .content-area -->
 <?php endwhile; // end of the loop. ?>
 
-
+<?php get_sidebar('keyvote'); ?>
 <?php get_footer(); ?>

@@ -68,6 +68,22 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<style type="text/css" media="screen">
+  .keyvote-entry-date{
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform:uppercase;
+    padding:5px 0;
+  }
+  #secondary .widget-title a{
+    color:#a7d4fb;
+  }
+  .single .post-meta{
+    font-size:11px;
+  }
+  
+</style>
 
 </head>
 <body <?php body_class(); ?>>
@@ -135,8 +151,9 @@
     </div> <!-- .inner -->
  </header><!-- #masthead .site-header -->
 
- <?php if ( is_home() || is_category() || is_tag() ) :
- 
+ <?php 
+ if ( is_home() || is_category() || is_tag() || (is_singular('post')) ) :
+ // keyword header stripe
  get_sidebar('blog');
   
  endif; ?>

@@ -74,7 +74,6 @@ get_header(); ?>
 		
   </div>
 </div>
-
 <div id="main-inner">
 
 		<section id="primary" class="content-area">
@@ -108,6 +107,10 @@ get_header(); ?>
 
 			</div><!-- #content .site-content -->
 		</section><!-- #primary .content-area -->
-<?php get_sidebar(); ?>
+<?php if(is_tax('chamber')): ?>
+  <?php get_sidebar('keyvote'); ?>
+<?php else: ?>
+  <?php get_sidebar(); ?>
+<?php endif; ?>
 </div> <!-- #main-inner -->
 <?php get_footer(); ?>

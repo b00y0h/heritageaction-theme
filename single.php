@@ -34,8 +34,16 @@ get_header(); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
-			</div><!-- #content .site-content -->
+			</div><!-- #content .site-content -->      
 		</div><!-- #primary .content-area -->
 
-<?php // get_sidebar(); ?>
+    <?php
+      if(is_singular('post')){
+        
+        get_sidebar();
+        
+      }
+    ?>
+
+
 <?php get_footer(); ?>
