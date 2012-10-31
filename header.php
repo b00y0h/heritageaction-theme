@@ -68,23 +68,6 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<style type="text/css" media="screen">
-  nav[role="navigation"] li.orange-gradient:hover, nav[role="navigation"] li.orange-gradient:hover {
-    border-right-color: transparent;
-  }
-  nav[role="navigation"] li.light-red-gradient:hover, nav[role="navigation"] li.light-red-gradient:hover {
-    border-right-color: transparent;
-  }
-  nav[role="navigation"] li.light-blue-gradient:hover, nav[role="navigation"] li.light-blue-gradient:hover {
-    border-right-color: transparent;
-  }
-  nav[role="navigation"] li.red-gradient:hover, nav[role="navigation"] li.red-gradient:hover, nav[role="navigation"] li.ribbon:hover {
-    border-right-color: transparent;
-  }
-  nav[role="navigation"] li.blue-gradient:hover, nav[role="navigation"] li.blue-gradient:hover, nav[role="navigation"] li.blue-gradient.hover:hover, nav[role="navigation"] .blue.pagination ul > li.current:hover, .blue.pagination nav[role="navigation"] ul > li.current:hover, nav[role="navigation"] li.blue-gradient.hover, nav[role="navigation"] li.hover.blue-gradient:hover, nav[role="navigation"] li.hover.blue-gradient, nav[role="navigation"] .blue.pagination ul > li.hover.current, .blue.pagination nav[role="navigation"] ul > li.hover.current {
-    border-right-color: transparent;
-  }
-</style>
 </head>
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site wrap">
