@@ -68,55 +68,7 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<style type="text/css" media="screen">
-  .footer-inner-wrap{
-    width:960px;
-    margin:0 auto;
-  }
-  .site-info{
-    width:560px;
-  }
-  .heritage-sister-site{
-    float:right;
-    margin-right:30px;
-    padding-bottom:10px;
-  }
-  .heritage-sister-site a:hover{
-    text-decoration:none;    
-  }
-  .key-vote-title{
-    font-size: 36px;
-    font-weight: bold;
-    line-height: 36px;
-    margin-bottom: 0;
-    padding-bottom: 10px;
-    font-family: "HelveticaNeue-CondensedBold", "Open Sans Condensed", Arial, sans-serif;
-  }
-  .entry-title.chamber-title a{
-    color:#000;
-  }
-  .entry-title.chamber-title a:hover{
-    /*text-decoration:none;*/
-  }
-  .key-vote-content{
-    width:650px;
-    float:left;
-  }
-  .key-vote-sidebar{
-    width:300px;
-    float:right;
-    margin-bottom:25px;
-  }
-  .key-vote-type-icon{
-    width:75px;
-    height:75px;
-    border:1px solid;
-    float:left;
-    margin-right:5px;
-    text-align:center;
-    vertical-align:middle;
-  }
-</style>
+
 </head>
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site wrap">
