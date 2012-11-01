@@ -378,3 +378,45 @@ $incdir = get_template_directory() . '/inc/';
 
 require_once($incdir .'custom-posttypes.php');
 
+add_action( 'show_user_profile', 'heritageaction_show_extra_profile_fields' );
+add_action( 'edit_user_profile', 'heritageaction_show_extra_profile_fields' );
+
+function heritageaction_show_extra_profile_fields( $user ) { ?>
+
+	<h3>Heritage Action profile information</h3>
+
+	<table class="form-table">
+	  
+	  <tr>
+			<th><label for="twitter">Title</label></th>
+
+			<td>
+				<input type="text" name="title" id="title" value="<?php echo esc_attr( get_the_author_meta( 'title', $user->ID ) ); ?>" class="regular-text" /><br />
+				<span class="description">Please enter your job title.</span>
+			</td>
+		</tr>
+    
+
+		<tr>
+			<th><label for="twitter">Twitter</label></th>
+
+			<td>
+				<input type="text" name="twitter" id="twitter" value="<?php echo esc_attr( get_the_author_meta( 'twitter', $user->ID ) ); ?>" class="regular-text" /><br />
+				<span class="description">Please enter your Twitter username (without the @ symbol).</span>
+			</td>
+		</tr>
+
+	</table>
+<?php }
+
+add_action( 'personal_options_update', 'heritageaction_save_extra_profile_fields' );
+add_action( 'edit_user_profile_update', 'heritageaction_save_extra_profile_fields' );
+
+function heritageaction_save_extra_profile_fields( $user_id ) {
+
+	if ( !current_user_can( 'edit_user', $user_id ) )
+		return false;
+
+	update_user_meta( $user_id, 'title', $_POST['title'] );
+	update_user_meta( $user_id, 'twitter', $_POST['twitter'] );
+}

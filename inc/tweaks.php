@@ -51,3 +51,4 @@ function heritageaction_enhanced_image_navigation( $url, $id ) {
 }
 add_filter( 'attachment_link', 'heritageaction_enhanced_image_navigation', 10, 2 );
 
+

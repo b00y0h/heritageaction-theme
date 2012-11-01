@@ -17,11 +17,13 @@ get_header(); ?>
 <div id="main-inner">
 
 		<div id="primary" class="content-area">
-			<div id="content" class="site-content" role="main">
+			<div id="content" class="site-content single-post-content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php // heritageaction_content_nav( 'nav-above' ); ?>
+				<?php // heritageaction_content_nav( 'nav-above' ); ?>				
+				
+				<h1 class="entry-title single-post-title"><?php the_title(); ?></h1>			
 
 				<?php get_template_part( 'content', 'single' ); ?>
 
@@ -38,13 +40,6 @@ get_header(); ?>
 			</div><!-- #content .site-content -->      
 		</div><!-- #primary .content-area -->
 
-    <?php
-      if(is_singular('post')){
-        
-        get_sidebar();
-        
-      }
-    ?>
 </div>
 
 <?php get_footer(); ?>

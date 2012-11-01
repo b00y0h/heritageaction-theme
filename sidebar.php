@@ -156,7 +156,7 @@
 		</div><!-- #secondary .widget-area -->
 		
 		<?php if((date('N') <= 5) && (date('G', strtotime(current_time('mysql'))) >= 9 && date('G', strtotime(current_time('mysql'))) <= 11) ) : ?>
-		<div class="listenLiveWidget widget-area">
+		<div class="listenLiveWidget widget-area desktop-only">
       <a id="listen-live" href="http://www.istook.com/f/live" target="_blank">Listen to Istook Live!</a>
 		</div>
 		<div style="clear:both;"></div>
