@@ -78,11 +78,14 @@ get_header(); ?>
 				
 				<?php if(!in_array(get_the_author_meta('user_nicename'), array('admin'))): ?>
 				<div class="single-post-author">
+				  <?php if(file_exists(get_stylesheet_directory().'/img/about-'.strtolower(str_replace(' ','-',get_the_author_meta('display_name'))).'.jpg')) : ?>
 				  <div class="author-image">
             <a href="/author/<?php echo the_author_meta('user_nicename'); ?>">
 				      <img src="<?php echo get_bloginfo('template_url'); ?>/img/about-<?php echo strtolower(str_replace(' ','-',get_the_author_meta('display_name'))); ?>.jpg" alt="<?php the_author_meta('display_name'); ?> Photo" height="100">
             </a>
 				  </div>
+				  <?php endif; ?>
+				  
 				  <div class="author-name">
 				    <a href="/author/<?php the_author_meta('user_nicename'); ?>">
 				      <?php the_author_meta('display_name'); ?>
