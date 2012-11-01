@@ -8,7 +8,7 @@
 ?>
 <div id="blog-sidebar-header" class="">
   <div id="the-forge-header" class="dark-gray-gradient shadow">
-    <span>The Forge Blog</span>
+    <a href="/blog"><span>The Forge Blog</span></a>
   </div>
   			<?php do_action( 'before_sidebar' ); ?>
   			<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : 

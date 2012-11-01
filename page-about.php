@@ -155,7 +155,7 @@ get_header(); ?>
           <!-- #ashe-schow -->
           <section id="ashe-schow" class='team-info'>
             <div class="partner-image shadow shadow-curl-left shadow-curl-right float-left">
-              <img src="<?php echo get_bloginfo('template_url'); ?>/img/about-ashley-schow.jpg" alt="Ashe Schow Photo">
+              <img src="<?php echo get_bloginfo('template_url'); ?>/img/about-ashe-schow.jpg" alt="Ashe Schow Photo">
             </div>
             <div class="info-detail">
               <h2>Ashe Schow</h2>

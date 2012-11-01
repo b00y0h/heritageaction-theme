@@ -104,13 +104,13 @@
   }
   .single-post-author{
     border-top:5px solid #ddd;
-    padding-top:10px;
+    padding-top:20px;
     margin-bottom:15px;
   }
   .author-image{
     float:left;
     margin-right:10px;
-    border:1px solid;
+    border:1px solid #ddd;
     height:auto;
     line-height:auto;
     height:102px;
@@ -120,7 +120,7 @@
     
   }
   .author-name a{
-    font-size:28px;
+    font-size:26px;
     font-family: Georgia, serif;
     font-weight: normal;
     color:#000;
@@ -129,6 +129,7 @@
     color: #999999;
     font-family: Arial, sans-serif;
     font-size: 11px;
+    font-weight:normal;
     text-rendering: optimizelegibility;
     text-transform: uppercase;
     padding:5px 0;
@@ -136,7 +137,7 @@
   .single-post-comment-title{
     font-size:24px;
     font-family: "IM Fell Great Primer SC", serif;
-    padding:10px 0;
+    padding:15px 0 10px 0;
   }
 </style>
 

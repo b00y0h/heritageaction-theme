@@ -19,7 +19,7 @@ get_header(); ?>
 
 				<?php // heritageaction_content_nav( 'nav-above' ); ?>
 				<?php
-          if (is_singular('post') && has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.  
+          if (is_singular('post') && get_the_post_thumbnail() !="" ) { // check if the post has a Post Thumbnail assigned to it.  
             echo '<div class="single-post-featured-image">';
                 the_post_thumbnail(array(571,319), array('class' => 'featured-image', 'width' => '587'));
             echo "</div>";
@@ -80,7 +80,7 @@ get_header(); ?>
 				<div class="single-post-author">
 				  <div class="author-image">
             <a href="/author/<?php echo the_author_meta('user_nicename'); ?>">
-				      <img src="<?php echo get_bloginfo('template_url'); ?>/img/about-<?php the_author_meta('user_nicename'); ?>.jpg" alt="<?php the_author_meta('display_name'); ?> Photo" height="100">
+				      <img src="<?php echo get_bloginfo('template_url'); ?>/img/about-<?php echo strtolower(str_replace(' ','-',get_the_author_meta('display_name'))); ?>.jpg" alt="<?php the_author_meta('display_name'); ?> Photo" height="100">
             </a>
 				  </div>
 				  <div class="author-name">
@@ -90,10 +90,12 @@ get_header(); ?>
 				  </div>
 				  <div class="author-meta">
 				    <h3 class="title"><?php echo the_author_meta('title'); ?></h3>
+				    <?php if(get_the_author_meta('twitter')): ?>
 				    <a href="https://twitter.com/<?php the_author_meta('twitter'); ?>" target="_blank">
 				      <img src="<?php echo get_bloginfo('template_url'); ?>/img/tiny-twitter-logo.png" valign="middle" width="25">
 				      @<?php the_author_meta('twitter'); ?>
 				    </a>
+				    <?php endif; ?>
 				  </div>
 				  
 				  <div style="clear:both;"></div>
