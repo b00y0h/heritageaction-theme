@@ -1,4 +1,4 @@
-.blog, .archive, .search, .error404 {
+.blog, .archive, .search, .error404, .single {
   article {
     border-bottom:4px solid $grayMedium;
     margin-bottom: $base-line-height+7px;
@@ -67,7 +67,7 @@
     text-transform:capitalize;
     white-space:nowrap;
     @include respond-to(tablet){
-     font-size:15px!important; 
+     font-size:15px!important;
     }
   }
   h3 {
@@ -91,7 +91,7 @@
 }
 #subscribe {
   @extend .medium-blue-gradient;
-  margin:0 -15px 20px; 
+  margin:0 -15px 20px;
   text-align:center;
   h2 {
     @include font-shorthand(20px, normal, 34px);
@@ -122,7 +122,7 @@
 .icon-rss-bug {
   background: transparent url("img/rss-bug.png");
   @include size(15px,27px);
-	
+
 }
 .icon-rss-cones {
   background: transparent url("img/rss-cones.png");
