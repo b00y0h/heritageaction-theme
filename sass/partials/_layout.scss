@@ -93,7 +93,7 @@ nav[role='navigation'] {
     @include column(8);
     #press-release-slider, .viewport {
       height: 200px;
-      overflow:hidden; 
+      overflow:hidden;
       width:100%;
 //      width:600px;
     }
@@ -161,7 +161,7 @@ nav[role='navigation'] {
   }
 }
 .single {
-  #main-inner {
+  #main-wrapper {
     @extend .max-width;
     @extend .centered;
     @extend .clearfix;
@@ -175,7 +175,7 @@ nav[role='navigation'] {
 }
 
 .archive, .search, .error404 {
-  #main-inner {
+  #main-wrapper {
     @extend .max-width;
   	@extend .centered;
   	@extend .clearfix;

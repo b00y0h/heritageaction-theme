@@ -13,14 +13,14 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 /* line 19, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-mixins.scss */
-.clearfix, #under-cover, .page-template #hero, #select-your-donation, #masthead .inner, .home #main-inner, .home #main-outer, .blog #main, .single #main-inner, .archive #main-inner, .search #main-inner, .error404 #main-inner {
+.clearfix, #under-cover, .page-template #hero, #select-your-donation, #masthead .inner, .home #main-inner, .home #main-outer, .blog #main, .single #main-wrapper, .archive #main-wrapper, .search #main-wrapper, .error404 #main-wrapper {
   *zoom: 1; }
   /* line 10, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-mixins.scss */
-  .clearfix:before, #under-cover:before, .page-template #hero:before, #select-your-donation:before, #masthead .inner:before, .home #main-inner:before, .home #main-outer:before, .blog #main:before, .single #main-inner:before, .archive #main-inner:before, .search #main-inner:before, .error404 #main-inner:before, .clearfix:after, #under-cover:after, .page-template #hero:after, #select-your-donation:after, #masthead .inner:after, .home #main-inner:after, .home #main-outer:after, .blog #main:after, .single #main-inner:after, .archive #main-inner:after, .search #main-inner:after, .error404 #main-inner:after {
+  .clearfix:before, #under-cover:before, .page-template #hero:before, #select-your-donation:before, #masthead .inner:before, .home #main-inner:before, .home #main-outer:before, .blog #main:before, .single #main-wrapper:before, .archive #main-wrapper:before, .search #main-wrapper:before, .error404 #main-wrapper:before, .clearfix:after, #under-cover:after, .page-template #hero:after, #select-your-donation:after, #masthead .inner:after, .home #main-inner:after, .home #main-outer:after, .blog #main:after, .single #main-wrapper:after, .archive #main-wrapper:after, .search #main-wrapper:after, .error404 #main-wrapper:after {
     display: table;
     content: ""; }
   /* line 14, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-mixins.scss */
-  .clearfix:after, #under-cover:after, .page-template #hero:after, #select-your-donation:after, #masthead .inner:after, .home #main-inner:after, .home #main-outer:after, .blog #main:after, .single #main-inner:after, .archive #main-inner:after, .search #main-inner:after, .error404 #main-inner:after {
+  .clearfix:after, #under-cover:after, .page-template #hero:after, #select-your-donation:after, #masthead .inner:after, .home #main-inner:after, .home #main-outer:after, .blog #main:after, .single #main-wrapper:after, .archive #main-wrapper:after, .search #main-wrapper:after, .error404 #main-wrapper:after {
     clear: both; }
 
 /* line 160, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-mixins.scss */
@@ -2854,11 +2854,11 @@ input[type="checkbox"] {
   margin: 0 1.38889%; }
 
 /* line 14, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
-.max-width, #under-cover .inner, nav[role='navigation'], .home #main-inner, #hero .inner, #primary, footer .inner, .CPContent, .CPHeader, #masthead .inner, .blog #main, .single #main-inner, .archive #main-inner, .search #main-inner, .error404 #main-inner {
+.max-width, #under-cover .inner, nav[role='navigation'], .home #main-inner, #hero .inner, #primary, footer .inner, .CPContent, .CPHeader, #masthead .inner, .blog #main, .single #main-wrapper, .archive #main-wrapper, .search #main-wrapper, .error404 #main-wrapper {
   max-width: 960px; }
 
 /* line 17, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */
-.centered, #sign-up-tab, #under-cover .inner, .donate #main-inner .btn, .contact #captcha, .contact .btn, .home #main-inner, #hero .inner, #primary, footer .inner, .CPContent, .CPHeader, #masthead .inner, .blog #main, .single #main-inner, .archive #main-inner, .search #main-inner, .error404 #main-inner {
+.centered, #sign-up-tab, #under-cover .inner, .donate #main-inner .btn, .contact #captcha, .contact .btn, .home #main-inner, #hero .inner, #primary, footer .inner, .CPContent, .CPHeader, #masthead .inner, .blog #main, .single #main-wrapper, .archive #main-wrapper, .search #main-wrapper, .error404 #main-wrapper {
   margin: 0 auto; }
 
 /* line 22, /Users/bobby/Documents/Source/wordpress/themes/heritageaction/sass/partials/_layout.scss */

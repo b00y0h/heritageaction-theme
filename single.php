@@ -14,16 +14,16 @@ get_header(); ?>
     <p class='page-excerpt'><?php // echo get_post_meta($post->ID, 'page_excerpt', true); ?></p>
   </div>
 </div>
-<div id="main-inner">
-
+<div id="main-wrapper">
+    <div class="row">
 		<div id="primary" class="content-area">
 			<div id="content" class="site-content single-post-content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php // heritageaction_content_nav( 'nav-above' ); ?>				
-				
-				<h1 class="entry-title single-post-title"><?php the_title(); ?></h1>			
+				<?php // heritageaction_content_nav( 'nav-above' ); ?>
+
+				<h1 class="entry-title single-post-title"><?php the_title(); ?></h1>
 
 				<?php get_template_part( 'content', 'single' ); ?>
 
@@ -37,9 +37,17 @@ get_header(); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
-			</div><!-- #content .site-content -->      
+			</div><!-- #content .site-content -->
 		</div><!-- #primary .content-area -->
 
+    <?php
+      if(is_singular('post')){
+
+        get_sidebar();
+
+      }
+    ?>
+</div>
 </div>
 
 <?php get_footer(); ?>

@@ -12,7 +12,7 @@ get_header(); ?>
 
 <div id="hero">
   <div class="inner clearfix">
-    <header class="page-header">  	  
+    <header class="page-header">
 			<h1 class="page-title">
 			  <?php if ( have_posts() ) : ?>
 				<?php
@@ -43,12 +43,12 @@ get_header(); ?>
 
 					} elseif ( is_year() ) {
 						printf( __( 'Yearly Archives: %s', 'heritageaction' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
-          } elseif ( is_post_type_archive('press-releases') ){            
-            _e( 'Press Releases', 'heritageaction' );  
-          } elseif ( is_post_type_archive('key-votes') ){            
-            _e( 'Key Votes', 'heritageaction' );   
-          } elseif ( is_tax('chamber') ){ 
-            _e( single_tag_title( '', false ) . ' Key Votes' , 'heritageaction' );                     
+          } elseif ( is_post_type_archive('press-releases') ){
+            _e( 'Press Releases', 'heritageaction' );
+          } elseif ( is_post_type_archive('key-votes') ){
+            _e( 'Key Votes', 'heritageaction' );
+          } elseif ( is_tax('chamber') ){
+            _e( single_tag_title( '', false ) . ' Key Votes' , 'heritageaction' );
 					} else {
 						_e( 'Archives', 'heritageaction' );
 
@@ -71,11 +71,11 @@ get_header(); ?>
 			?>
 		</header><!-- .page-header -->
 		<?php endif; ?>
-		
+
   </div>
 </div>
-<div id="main-inner">
-
+<div id="main-wrapper">
+<div class="row">
 		<section id="primary" class="content-area">
 			<div id="content" class="site-content" role="main">
 
@@ -112,5 +112,6 @@ get_header(); ?>
 <?php else: ?>
   <?php get_sidebar(); ?>
 <?php endif; ?>
-</div> <!-- #main-inner -->
+</div>
+</div> <!-- #main-wrapper -->
 <?php get_footer(); ?>
