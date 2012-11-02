@@ -8,9 +8,10 @@
 
 get_header(); ?>
 
-<div class="single-post-spacer"></div>  
+<div class="single-post-spacer"></div>
 
-<div id="main-inner">
+<div id="main-wrapper">
+    <div class="row">
 
 		<div id="primary" class="content-area">
 			<div id="content" class="site-content single-post-content" role="main">
@@ -19,20 +20,20 @@ get_header(); ?>
 
 				<?php // heritageaction_content_nav( 'nav-above' ); ?>
 				<?php
-          if (is_singular('post') && get_the_post_thumbnail() !="" ) { // check if the post has a Post Thumbnail assigned to it.  
+          if (is_singular('post') && get_the_post_thumbnail() !="" ) { // check if the post has a Post Thumbnail assigned to it.
             echo '<div class="single-post-featured-image">';
                 the_post_thumbnail(array(571,319), array('class' => 'featured-image', 'width' => '587'));
             echo "</div>";
-          } 
+          }
         ?>
-				
-				
+
+
 				<h1 class="entry-title single-post-title"><?php the_title(); ?></h1>
-			  
+
 			  <div class="single-post-meta">
 			    <?php
 			      $post_category = get_the_category();
-        
+
 			      if ($post_category) {
 			        echo "<span class='single-post-meta-section'>Category:</span> ";
               foreach($post_category as $category) {
@@ -53,7 +54,7 @@ get_header(); ?>
             }
 			    ?>
 			  </div>
-			  
+
 			  <div class="single-post-social">
           <div id="shareTw"><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="heritage_action" data-url="<?php the_permalink(); ?>" data-text="<?php the_title(); ?>">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></div>
           <div id="shareFb"><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="<?php the_permalink(); ?>" layout="button_count" width="300"></fb:like></div>
@@ -75,7 +76,7 @@ get_header(); ?>
 				<?php get_template_part( 'content', 'single' ); ?>
 
 				<?php // heritageaction_content_nav( 'nav-below' ); ?>
-				
+
 				<?php if(!in_array(get_the_author_meta('user_nicename'), array('admin'))): ?>
 				<div class="single-post-author">
 				  <?php if(file_exists(get_stylesheet_directory().'/img/about-'.strtolower(str_replace(' ','-',get_the_author_meta('display_name'))).'.jpg')) : ?>
@@ -85,7 +86,7 @@ get_header(); ?>
             </a>
 				  </div>
 				  <?php endif; ?>
-				  
+
 				  <div class="author-name">
 				    <a href="/author/<?php the_author_meta('user_nicename'); ?>">
 				      <?php the_author_meta('display_name'); ?>
@@ -100,7 +101,7 @@ get_header(); ?>
 				    </a>
 				    <?php endif; ?>
 				  </div>
-				  
+
 				  <div style="clear:both;"></div>
 				</div>
 				<?php endif; ?>
@@ -113,15 +114,15 @@ get_header(); ?>
 					  <?php
 					  comments_template( '', true );
 					}
-						
+
 				?>
 
 			<?php endwhile; // end of the loop. ?>
 
-			</div><!-- #content .site-content -->      
+			</div><!-- #content .site-content -->
 		</div><!-- #primary .content-area -->
 
     <?php get_sidebar(); ?>
 </div>
-
+</div>
 <?php get_footer(); ?>

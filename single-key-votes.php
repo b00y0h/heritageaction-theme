@@ -8,7 +8,7 @@
 
 get_header(); ?>
 <?php while ( have_posts() ) : the_post();  global $post; ?>
-  
+
   <?php
     $chamber = get_the_terms($post->ID, 'chamber');
     sort($chamber);
@@ -20,18 +20,20 @@ get_header(); ?>
   </div>
 </div>
 
+<div id="main-wrapper">
+    <div class="row">
 
 
 		<div id="primary" class="content-area">
 			<div id="content" class="site-content" role="main">
 
-			
+
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
         	<div class="entry-content">
         	  <h1 class="entry-title key-vote-title">
-        	    <div class="key-vote-type-icon"><?php echo get_post_meta($post->ID,"key_vote_type",true); ?></div>        	    
+        	    <div class="key-vote-type-icon"><?php echo get_post_meta($post->ID,"key_vote_type",true); ?></div>
         	    <?php the_title(); ?>
         	  </h1>
         	  <div class="keyvote-entry-date"><?php echo get_the_date('F d, Y'); ?></div>
@@ -47,10 +49,11 @@ get_header(); ?>
 						comments_template( '', true );
 				?>
 
-			        
+
 			</div><!-- #content .site-content -->
 		</div><!-- #primary .content-area -->
 <?php endwhile; // end of the loop. ?>
 
 <?php get_sidebar('keyvote'); ?>
+</div></div>
 <?php get_footer(); ?>
