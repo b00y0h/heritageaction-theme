@@ -150,7 +150,9 @@
 			    <ul>
            <?php echo twitter_feed($user='heritage_action', $count='5'); ?>
 			    </ul>
-          <a href="https://twitter.com/Heritage_Action" id="follow-twitter" target="_blank">Follow @Heritage_Action</a>
+			    <div align="center">
+            <a href="https://twitter.com/Heritage_Action" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @Heritage_Action</a>
+          </div>
 			  </aside>
 
 		</div><!-- #secondary .widget-area -->

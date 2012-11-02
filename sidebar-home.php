@@ -7,7 +7,7 @@
  */
 ?>
 		<div id="secondary" class="widget-area" role="complementary">
-		  <header id="the-forge" class="widget-main-header"><h2>The Forge</h2></header>
+		  <header id="the-forge" class="widget-main-header"><a href="/blog"><h2>The Forge</h2></a></header>
 			  
 			  <aside id="featured-posts" class="widget">
 			    <h3 class='widget-title'>Featured Posts</h3>
@@ -81,7 +81,9 @@
 			    <ul>
 			      <?php echo twitter_feed($user='heritage_action', $count='5'); ?>
 			    </ul>			    
-          <a href="https://twitter.com/Heritage_Action" id="follow-twitter" target="_blank">Follow @Heritage_Action</a>
+			    <div align="center">
+            <a href="https://twitter.com/Heritage_Action" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @Heritage_Action</a>
+          </div>
 			  </aside>
 
 		</div><!-- #secondary .widget-area -->
