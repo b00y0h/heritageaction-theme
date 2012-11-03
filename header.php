@@ -67,6 +67,10 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <style type="text/css" media="screen">
+  .key-vote-type-icon{
+    border:none;
+    padding-right:5px;
+  }
   .single-post-spacer{
     height:30px;
   }

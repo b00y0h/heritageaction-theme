@@ -33,7 +33,9 @@ get_header(); ?>
 
         	<div class="entry-content">
         	  <h1 class="entry-title key-vote-title">
-        	    <div class="key-vote-type-icon"><?php echo get_post_meta($post->ID,"key_vote_type",true); ?></div>
+        	    <div class="key-vote-type-icon">
+        	      <img src="<?php echo get_bloginfo('template_url'); ?>/img/vote-<?php echo get_post_meta($post->ID,"key_vote_type",true); ?>-lg.png" width="100">
+        	    </div>
         	    <?php the_title(); ?>
         	  </h1>
         	  <div class="keyvote-entry-date"><?php echo get_the_date('F d, Y'); ?></div>
