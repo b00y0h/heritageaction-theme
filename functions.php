@@ -373,6 +373,38 @@ function reversetype_post_type_labels( $singular, $plural = '' )
 $incdir = get_template_directory() . '/inc/';
 
 /*-----------------------------------------------------------------------------------*/
+/*  Open up url in lightbox
+/*-----------------------------------------------------------------------------------*/
+
+function youtubeLightbox($transient)
+{
+    $takeover = (get_transient($transient));
+
+    if($takeover && isset($takeover['url']) && !empty($takeover['url'])) :
+
+        $takeover_url = $takeover['url'];
+        $takeover_title = (!empty($takeover['title'])) ? $takeover['title'] : '';
+        $takeover_description = (!empty($takeover['description'])) ? $takeover['description'] : '';
+
+            if(!empty($takeover['link'])) {
+            $takeover_link_text = (!empty($takeover['link_text'])) ? $takeover['link_text'] : 'Take Action';
+            $takeover_description .= urlencode("<div align='center'><a href=\"{$takeover['link']}\" class=\"btn rounded gradient medium-blue-gradient\">$takeover_link_text</a></div>");
+            }
+    endif;
+
+    $params = array(
+        'takeover_url' => $takeover_url,
+        'takeover_title' => $takeover_title,
+        'takeover_description' => $takeover_description
+        );
+
+        wp_enqueue_script( 'home', get_template_directory_uri() . '/js/home.js', array( 'jquery' ), '20121108', true );
+        wp_localize_script( 'home', 'Video', $params );
+}
+
+
+
+/*-----------------------------------------------------------------------------------*/
 /*	Load Theme Specific Components
 /*-----------------------------------------------------------------------------------*/
 
