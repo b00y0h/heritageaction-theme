@@ -14,7 +14,7 @@
 <!--[if gt IE 8]><!--> <html <?php language_attributes(); ?> class="no-js"> <!--<![endif]-->
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  
+
   <!--[if gte IE 9]>
     <style type="text/css">
       .gradient {
@@ -22,7 +22,7 @@
       }
     </style>
   <![endif]-->
-  
+
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
 <title><?php
@@ -66,85 +66,6 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<style type="text/css" media="screen">
-  .key-vote-type-icon{
-    border:none;
-    padding-right:5px;
-  }
-  .single-post-spacer{
-    height:30px;
-  }
-  .single-post-title{
-    font-family: HelveticaNeue-CondensedBold, 'Open Sans Condensed', Arial, sans-serif;
-    font-size: 36px;
-    font-weight: bold;
-    text-transform:uppercase;
-    padding-bottom:15px;
-  }
-  .single-post-meta{
-    font-size:11px;
-    font-family: Arial, sans-serif;
-    padding:5px 0;
-  }
-  .single-post-meta-section{
-    text-transform:uppercase;
-    font-weight:bold;
-    font-size:12px;
-  }
-  .single-post-social{
-    float:right;
-  }
-  #shareTw, #shareFb, #shareGp{
-    float:right;
-    margin-left:5px;
-  }
-  .single-post-content .byline.post-meta{
-    padding-bottom:15px;
-  }
-  .single-post-featured-image{
-    height:318px;
-    max-height:318px;
-    margin-bottom:15px;
-  }
-  .single-post-author{
-    border-top:5px solid #ddd;
-    padding-top:20px;
-    margin-bottom:15px;
-  }
-  .author-image{
-    float:left;
-    margin-right:10px;
-    border:1px solid #ddd;
-    height:auto;
-    line-height:auto;
-    height:102px;
-  }
-  .author-image a{
-    display:block;
-    
-  }
-  .author-name a{
-    font-size:26px;
-    font-family: Georgia, serif;
-    font-weight: normal;
-    color:#000;
-  }
-  .author-meta h3.title{
-    color: #999999;
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    font-weight:normal;
-    text-rendering: optimizelegibility;
-    text-transform: uppercase;
-    padding:5px 0;
-  }
-  .single-post-comment-title{
-    font-size:24px;
-    font-family: "IM Fell Great Primer SC", serif;
-    padding:15px 0 10px 0;
-  }
-</style>
-
 </head>
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site wrap">
@@ -153,13 +74,13 @@
    <div class="inner">
 	 <nav role="navigation" class="site-navigation main-navigation">
 		 <h2 class="assistive-text"><?php _e( 'Menu', 'heritageaction' ); ?></h2>
-		 <div class="assistive-text skip-link">		   
+		 <div class="assistive-text skip-link">
 		   <a href="#content" title="<?php esc_attr_e( 'Skip to content', 'heritageaction' ); ?>"><?php _e( 'Skip to content', 'heritageaction' ); ?></a>
 		 </div>
 		 <div class="menu-main-nav-container">
 				 <ul id="menu-main-nav" class="menu">
 				    <li id="home-link">
-				      <h1 class="site-title">		   
+				      <h1 class="site-title">
          		   <a href="<?php echo home_url( '/' ); ?>" rel="home">
          		     <?php bloginfo( 'name' ); ?>
          		  </a>
@@ -211,11 +132,11 @@
     </div> <!-- .inner -->
  </header><!-- #masthead .site-header -->
 
- <?php 
+ <?php
  if ( is_home() || is_category() || is_tag() || (is_singular('post')) ) :
  // keyword header stripe
  get_sidebar('blog');
-  
+
  endif; ?>
 
 
