@@ -1,12 +1,14 @@
 <?php
 /*
-Template Name: Congress
+Template Name: Congress Pages
 */
 ?>
 
 <?php get_header(); ?>
 <?php the_post(); ?>
-
+<style type="text/css" media="screen">
+  p#top{display:none;}
+</style>
 <div class="col1">
   <div id="hero">
     <div class="inner">

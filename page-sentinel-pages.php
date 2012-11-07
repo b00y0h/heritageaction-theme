@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all pages.
+ * Template Name: Sentinel Pages
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
@@ -23,13 +23,13 @@ get_header(); ?>
 			<div id="content" class="site-content" role="main">
 
 				<?php while ( have_posts() ) : the_post(); ?>
-
-					<?php get_template_part( 'content', 'page' ); ?>
-
-					<?php if ('open' == $post->comment_status) { comments_template( '', true ); } ?>
+				  
+					<?php
+					  echo $post->post_content
+					?>
 
 				<?php endwhile; // end of the loop. ?>
-
+<br><br>
 			</div><!-- #content .site-content -->
 		</div><!-- #primary .content-area -->
 

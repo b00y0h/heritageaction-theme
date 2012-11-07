@@ -77,7 +77,7 @@ get_header(); ?>
 
 				<?php // heritageaction_content_nav( 'nav-below' ); ?>
 
-				<?php if(!in_array(get_the_author_meta('user_nicename'), array('admin'))): ?>
+				<?php if(!in_array(get_the_author_meta('user_nicename'), array('admin','heritageaction','andre'))): ?>
 				<div class="single-post-author">
 				  <?php if(file_exists(get_stylesheet_directory().'/img/about-'.strtolower(str_replace(' ','-',get_the_author_meta('display_name'))).'.jpg')) : ?>
 				  <div class="author-image">
