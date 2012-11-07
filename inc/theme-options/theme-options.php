@@ -34,17 +34,20 @@ function heritageaction_theme_options_init() {
 
 	// Register our individual settings fields
 	add_settings_field(
-		'sample_checkbox', // Unique identifier for the field for this section
-		__( 'Sample Checkbox', 'heritageaction' ), // Setting field label
-		'heritageaction_settings_field_sample_checkbox', // Function that renders the settings field
+		'enable_video_checkbox', // Unique identifier for the field for this section
+		__( 'Video Enable', 'heritageaction' ), // Setting field label
+		'heritageaction_settings_field_enable_video_checkbox_checkbox', // Function that renders the settings field
 		'theme_options', // Menu slug, used to uniquely identify the page; see heritageaction_theme_options_add_page()
 		'general' // Settings section. Same as the first argument in the add_settings_section() above
 	);
 
-	add_settings_field( 'sample_text_input', __( 'Sample Text Input', 'heritageaction' ), 'heritageaction_settings_field_sample_text_input', 'theme_options', 'general' );
-	add_settings_field( 'sample_select_options', __( 'Sample Select Options', 'heritageaction' ), 'heritageaction_settings_field_sample_select_options', 'theme_options', 'general' );
-	add_settings_field( 'sample_radio_buttons', __( 'Sample Radio Buttons', 'heritageaction' ), 'heritageaction_settings_field_sample_radio_buttons', 'theme_options', 'general' );
-	add_settings_field( 'sample_textarea', __( 'Sample Textarea', 'heritageaction' ), 'heritageaction_settings_field_sample_textarea', 'theme_options', 'general' );
+    // add_settings_field( 'sample_text_input', __( 'Sample Text Input', 'heritageaction' ), 'heritageaction_settings_field_sample_text_input', 'theme_options', 'general' );
+    add_settings_field( 'video_url', __( 'Video Url', 'heritageaction' ), 'heritageaction_settings_field_video_url_input', 'theme_options', 'general' );
+    add_settings_field( 'video_title', __( 'Video Title', 'heritageaction' ), 'heritageaction_settings_field_video_title_input', 'theme_options', 'general' );
+	// add_settings_field( 'sample_select_options', __( 'Sample Select Options', 'heritageaction' ), 'heritageaction_settings_field_sample_select_options', 'theme_options', 'general' );
+	// add_settings_field( 'sample_radio_buttons', __( 'Sample Radio Buttons', 'heritageaction' ), 'heritageaction_settings_field_sample_radio_buttons', 'theme_options', 'general' );
+	add_settings_field( 'video_description', __( 'Description of video', 'heritageaction' ), 'heritageaction_settings_field_video_description', 'theme_options', 'general' );
+    add_settings_field( 'video_link_to', __( 'Link to?', 'heritageaction' ), 'heritageaction_settings_field_video_link_to', 'theme_options', 'general' );
 }
 add_action( 'admin_init', 'heritageaction_theme_options_init' );
 
@@ -148,11 +151,11 @@ function heritageaction_sample_radio_buttons() {
 function heritageaction_get_theme_options() {
 	$saved = (array) get_option( 'heritageaction_theme_options' );
 	$defaults = array(
-		'sample_checkbox'       => 'off',
-		'sample_text_input'     => '',
-		'sample_select_options' => '',
-		'sample_radio_buttons'  => '',
-		'sample_textarea'       => '',
+        'enable_video_checkbox' => '',
+		'video_url'       => '',
+		'video_title'     => '',
+		'video_link_to' => '',
+		'video_description'  => '',
 	);
 
 	$defaults = apply_filters( 'heritageaction_default_theme_options', $defaults );
@@ -166,26 +169,49 @@ function heritageaction_get_theme_options() {
 /**
  * Renders the sample checkbox setting field.
  */
-function heritageaction_settings_field_sample_checkbox() {
+function heritageaction_settings_field_enable_video_checkbox_checkbox() {
 	$options = heritageaction_get_theme_options();
 	?>
 	<label for="sample-checkbox">
-		<input type="checkbox" name="heritageaction_theme_options[sample_checkbox]" id="sample-checkbox" <?php checked( 'on', $options['sample_checkbox'] ); ?> />
-		<?php _e( 'A sample checkbox.', 'heritageaction' ); ?>
+		<input type="checkbox" name="heritageaction_theme_options[enable_video_checkbox]" id="enable-video-checkbox" <?php checked( 'on', $options['enable_video_checkbox'] ); ?> />
+		<?php _e( 'Click to enable video overlay', 'heritageaction' ); ?>
 	</label>
 	<?php
 }
 
 /**
- * Renders the sample text input setting field.
+ * Renders the video url text input setting field.
  */
-function heritageaction_settings_field_sample_text_input() {
+function heritageaction_settings_field_video_url_input() {
 	$options = heritageaction_get_theme_options();
 	?>
-	<input type="text" name="heritageaction_theme_options[sample_text_input]" id="sample-text-input" value="<?php echo esc_attr( $options['sample_text_input'] ); ?>" />
-	<label class="description" for="sample-text-input"><?php _e( 'Sample text input', 'heritageaction' ); ?></label>
+	<input type="text" name="heritageaction_theme_options[video_url]" id="video-url" value="<?php echo esc_attr( $options['video_url'] ); ?>" />
+	<label class="description" for="video-url"><?php _e( '(youtuve, vimeo, etc)', 'heritageaction' ); ?></label>
 	<?php
 }
+
+/**
+ * Renders the video title text input setting field.
+ */
+function heritageaction_settings_field_video_title_input() {
+    $options = heritageaction_get_theme_options();
+    ?>
+    <input type="text" name="heritageaction_theme_options[video_title]" id="video-title" value="<?php echo esc_attr( $options['video_title'] ); ?>" />
+    <?php
+}
+
+/**
+ * Renders the video title link to input setting field.
+ */
+function heritageaction_settings_field_video_link_to() {
+    $options = heritageaction_get_theme_options();
+    ?>
+    <input type="text" name="heritageaction_theme_options[video_link_to]" id="video-link-to" value="<?php echo esc_attr( $options['video_link_to'] ); ?>" />
+    <label class="description" for="video-link-to"><?php _e( 'Where do you want this page to link to?', 'heritageaction' ); ?></label>
+    <?php
+}
+
+
 
 /**
  * Renders the sample select options setting field.
@@ -236,11 +262,10 @@ function heritageaction_settings_field_sample_radio_buttons() {
 /**
  * Renders the sample textarea setting field.
  */
-function heritageaction_settings_field_sample_textarea() {
+function heritageaction_settings_field_video_description() {
 	$options = heritageaction_get_theme_options();
 	?>
-	<textarea class="large-text" type="text" name="heritageaction_theme_options[sample_textarea]" id="sample-textarea" cols="50" rows="10" /><?php echo esc_textarea( $options['sample_textarea'] ); ?></textarea>
-	<label class="description" for="sample-textarea"><?php _e( 'Sample textarea', 'heritageaction' ); ?></label>
+	<textarea class="large-text" type="text" name="heritageaction_theme_options[video_description]" id="video-description" cols="50" rows="5" /><?php echo esc_textarea( $options['video_description'] ); ?></textarea>
 	<?php
 }
 
@@ -283,12 +308,18 @@ function heritageaction_theme_options_validate( $input ) {
 	$output = array();
 
 	// Checkboxes will only be present if checked.
-	if ( isset( $input['sample_checkbox'] ) )
-		$output['sample_checkbox'] = 'on';
+	if ( isset( $input['enable_video_checkbox'] ) )
+		$output['enable_video_checkbox'] = 'on';
 
 	// The sample text input must be safe text with no HTML tags
-	if ( isset( $input['sample_text_input'] ) && ! empty( $input['sample_text_input'] ) )
-		$output['sample_text_input'] = wp_filter_nohtml_kses( $input['sample_text_input'] );
+	if ( isset( $input['video_url'] ) && ! empty( $input['video_url'] ) )
+		$output['video_url'] = wp_filter_nohtml_kses( $input['video_url'] );
+
+    if ( isset( $input['video_title'] ) && ! empty( $input['video_title'] ) )
+        $output['video_title'] = wp_filter_nohtml_kses( $input['video_title'] );
+
+    if ( isset( $input['video_link_to'] ) && ! empty( $input['video_link_to'] ) )
+        $output['video_link_to'] = wp_filter_nohtml_kses( $input['video_link_to'] );
 
 	// The sample select option must actually be in the array of select options
 	if ( isset( $input['sample_select_options'] ) && array_key_exists( $input['sample_select_options'], heritageaction_sample_select_options() ) )
@@ -299,8 +330,8 @@ function heritageaction_theme_options_validate( $input ) {
 		$output['sample_radio_buttons'] = $input['sample_radio_buttons'];
 
 	// The sample textarea must be safe text with the allowed tags for posts
-	if ( isset( $input['sample_textarea'] ) && ! empty( $input['sample_textarea'] ) )
-		$output['sample_textarea'] = wp_filter_post_kses( $input['sample_textarea'] );
+	if ( isset( $input['video_description'] ) && ! empty( $input['video_description'] ) )
+		$output['video_description'] = wp_filter_post_kses( $input['video_description'] );
 
 	return apply_filters( 'heritageaction_theme_options_validate', $output, $input );
 }

@@ -7,6 +7,20 @@
  */
 
 /**
+* Bootstrap the Theme Options Framework
+*/
+// if( file_exists(get_template_directory().'/options/options.php') )
+//   include_once(get_template_directory().'/options/options.php');
+
+/**
+* Set up General Options
+*/
+// if( file_exists(get_template_directory().'/theme-options.php') )
+//   include_once(get_template_directory().'/theme-options.php');
+
+// require_once ( get_template_directory() . '/theme-options.php' );
+
+/**
  * Set the content width based on the theme's design and stylesheet.
  *
  * @since Heritage Action 1.0
@@ -39,7 +53,7 @@ function heritageaction_setup() {
 	/**
 	 * Custom Theme Options
 	 */
-	//require( get_template_directory() . '/inc/theme-options/theme-options.php' );
+	require( get_template_directory() . '/inc/theme-options/theme-options.php' );
 
 	/**
 	 * Make theme available for translation
@@ -376,19 +390,21 @@ $incdir = get_template_directory() . '/inc/';
 /*  Open up url in lightbox
 /*-----------------------------------------------------------------------------------*/
 
-function youtubeLightbox($transient)
-{
-    $takeover = (get_transient($transient));
+function youtubeLightbox() {
 
-    if($takeover && isset($takeover['url']) && !empty($takeover['url'])) :
+    $settings = get_option('heritageaction_theme_options');
 
-        $takeover_url = $takeover['url'];
-        $takeover_title = (!empty($takeover['title'])) ? $takeover['title'] : '';
-        $takeover_description = (!empty($takeover['description'])) ? $takeover['description'] : '';
+    $takeover = $settings;
 
-            if(!empty($takeover['link'])) {
+    if($takeover && isset($takeover['video_url']) && !empty($takeover['video_url'])) :
+
+        $takeover_url = $takeover['video_url'];
+        $takeover_title = (!empty($takeover['video_title'])) ? $takeover['video_title'] : '';
+        $takeover_description = (!empty($takeover['video_description'])) ? $takeover['video_description'] : '';
+
+            if(!empty($takeover['link_to'])) {
             $takeover_link_text = (!empty($takeover['link_text'])) ? $takeover['link_text'] : 'Take Action';
-            $takeover_description .= urlencode("<div align='center'><a href=\"{$takeover['link']}\" class=\"btn rounded gradient medium-blue-gradient\">$takeover_link_text</a></div>");
+            $takeover_description .= urlencode("<div align='center'><a href=\"{$takeover['link_to']}\" class=\"btn rounded gradient medium-blue-gradient\">$takeover_link_text</a></div>");
             }
     endif;
 

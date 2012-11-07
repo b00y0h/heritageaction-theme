@@ -12,18 +12,7 @@
 
 get_header(); ?>
 
-<?php
-$transient_values = array(
-    'url' => urlencode('http://www.youtube.com/watch?v=39sKHeK3l0Y'),
-    'title' => '',
-    'description' => '',
-    'link' => '',
-    'link_text' => ''
-    );
-
-set_transient('ha_takeover', $transient_values);  ?>
-
-<?php youtubeLightbox('ha_takeover'); ?>
+<?php youtubeLightbox(); ?>
 
 <div id="main-outer">
    <div id="main-inner">
