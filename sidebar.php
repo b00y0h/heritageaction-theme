@@ -90,7 +90,7 @@
                 'orderby' => 'post_date',
                 'order' => 'DESC',
                 'post_type' => 'post',
-                'post_status' => 'draft, publish, future, pending, private',
+                'post_status' => 'publish',
                 'suppress_filters' => true ); 
                 
                 $recent_posts = wp_get_recent_posts( $args );
@@ -124,7 +124,7 @@
                 'order' => 'DESC',
                 'category__not_in' => array($cat_id),
                 'post_type' => 'post',
-                'post_status' => 'draft, publish, future, pending, private',
+                'post_status' => 'publish',
                 'suppress_filters' => true ); 
                 
                 $recent_posts = wp_get_recent_posts( $args );

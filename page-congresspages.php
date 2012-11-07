@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Congress Pages
+Template Name: Congress
 */
 ?>
 
