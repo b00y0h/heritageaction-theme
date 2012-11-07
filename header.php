@@ -66,6 +66,14 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+
+<style type="text/css" media="screen">
+  .entry-content blockquote{
+    font-size:14px;
+    line-height:20px;
+  }
+</style>
+
 </head>
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site wrap">
