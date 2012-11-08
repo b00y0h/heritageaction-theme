@@ -1256,3 +1256,46 @@ h1 {
     font-family: "IM Fell Great Primer SC", serif;
     padding:15px 0 10px 0;
   }
+
+  .entry-content blockquote{
+    font-size:14px;
+    line-height:20px;
+  }
+  .no-touch nav[role="navigation"] li.the-forge-blog:hover .nav-desc{
+    text-align:left;
+  }
+  .no-touch nav[role="navigation"] li.the-forge-blog:hover .nav-desc .blog-excerpt{
+    display:none;
+  }
+  .no-touch nav[role="navigation"] li.the-forge-blog:hover .nav-desc > h6.blog-title{
+    overflow:visible;
+    text-overflow: clip;
+    white-space:normal;
+  }
+  .royalHtmlContent {
+    padding:0;
+  }
+  .royalHtmlContent iframe, .royalHtmlContent object, .royalHtmlContent embed{
+    position:absolute;
+    top:0;
+    left:0;
+    width:643px;
+    height:378px;
+    z-index:1;
+  }
+  .royalHtmlContent .slide-text-wrap{
+    padding:10px 70px;
+  }
+  .authorMeta{
+    padding-bottom:30px;
+    margin-bottom:10px;
+  }
+  .authorImageWrapper{
+    float:left;
+    margin-right:10px;
+    margin-bottom:10px;
+  }
+  .signup-form-error{
+    border:1px solid red !important;
+  }
+

@@ -24,28 +24,28 @@
   }
 
 function signup_validate(form){
-	form = jQuery(form);
-	jQuery('.signup-form-error',form).removeClass('signup-form-error');
-	var output = true
-	// validate name
-	if(jQuery("#signup_name" ,form).val() == '' || jQuery("#signup_name" ,form).val() == 'Name'){
-		output = false;
-		jQuery("#signup_name" ,form).addClass('signup-form-error');
-	}
-	
-	// validate email
-	if(jQuery("#email_address" ,form).val() == '' || jQuery("#email_address" ,form).val() == 'Email Address'){
-		output = false;
-		jQuery("#email_address" ,form).addClass('signup-form-error');
-	}
-	
-	// validate zip
-	if(jQuery("#zip_code" ,form).val() == '' || jQuery("#zip_code" ,form).val() == 'Zip Code'){
-		output = false;
-		jQuery("#zip_code" ,form).addClass('signup-form-error');
-	}
-	
-	return output;
+    form = jQuery(form);
+    jQuery('.signup-form-error',form).removeClass('signup-form-error');
+    var output = true;
+    // validate name
+    if(jQuery("#signup_name" ,form).val() === '' || jQuery("#signup_name" ,form).val() === 'Name'){
+        output = false;
+        jQuery("#signup_name" ,form).addClass('signup-form-error');
+    }
+
+    // validate email
+    if(jQuery("#email_address" ,form).val() === '' || jQuery("#email_address" ,form).val() === 'Email Address'){
+        output = false;
+        jQuery("#email_address" ,form).addClass('signup-form-error');
+    }
+
+    // validate zip
+    if(jQuery("#zip_code" ,form).val() === '' || jQuery("#zip_code" ,form).val() === 'Zip Code'){
+        output = false;
+        jQuery("#zip_code" ,form).addClass('signup-form-error');
+    }
+
+    return output;
 }
 
   (function($){
@@ -121,22 +121,22 @@ function signup_validate(form){
       });
 
       $("#signup-form-submit-button").click(function(){
-	
-				if(signup_validate("#signup-form") ){
-					var form_data = $("#signup-form").serialize();
-	        $("#signup-content").load("/bluehornet/bluehornet-api.php?" + form_data);
 
-	        var _gaq = _gaq || [];
-	        _gaq.push(['_trackEvent', 'Signup', 'Footer Signup', $("#signup_name").val()+' '+$("#email_address").val()]);
+                if(signup_validate("#signup-form") ){
+                    var form_data = $("#signup-form").serialize();
+            $("#signup-content").load("/bluehornet/bluehornet-api.php?" + form_data);
 
-	        // set cookie
-	        var now = new Date();
-	        var time = now.getDate();
-	        time += 365 * 20;
-	        now.setDate(time);
-	        document.cookie = '_signup_submitted=true; expires=' + now.toGMTString() + '; path=/';
-				}
-        
+            var _gaq = _gaq || [];
+            _gaq.push(['_trackEvent', 'Signup', 'Footer Signup', $("#signup_name").val()+' '+$("#email_address").val()]);
+
+            // set cookie
+            var now = new Date();
+            var time = now.getDate();
+            time += 365 * 20;
+            now.setDate(time);
+            document.cookie = '_signup_submitted=true; expires=' + now.toGMTString() + '; path=/';
+                }
+
 
 
         return false;
@@ -149,16 +149,6 @@ function signup_validate(form){
 
       var $masthead = $( '#masthead' ),
           timeout = false;
-
-      // $.fn.smallMenu = function() {
-      //  $masthead.find( '.site-navigation' ).removeClass( 'main-navigation' ).addClass( 'main-small-navigation' );
-      //  $masthead.find( '.site-navigation h1' ).removeClass( 'assistive-text' ).addClass( 'menu-toggle' );
-      //
-      //  $( '.menu-toggle' ).unbind( 'click' ).click( function() {
-      //    $masthead.find( '.menu' ).toggle();
-      //    $( this ).toggleClass( 'toggled-on' );
-      //  } );
-      // };
 
       // Check viewport width on first load.
       if ( $( window ).width() < 600 ){
@@ -206,9 +196,9 @@ function signup_validate(form){
       return false;
     });
 
-		// allow clicking on nav dropdown to act as link click
-		$("#menu-main-nav > li.score-card, #menu-main-nav > li.the-forge-blog, #menu-main-nav > li.donate").click(function(){
-			window.location.href = $('a',$(this)).attr('href');
-		});
+        // allow clicking on nav dropdown to act as link click
+        $("#menu-main-nav > li.score-card, #menu-main-nav > li.the-forge-blog, #menu-main-nav > li.donate").click(function(){
+            window.location.href = $('a',$(this)).attr('href');
+        });
     });
   })(jQuery);

@@ -66,55 +66,6 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-
-<style type="text/css" media="screen">
-  .entry-content blockquote{
-    font-size:14px;
-    line-height:20px;
-  }
-  .no-touch nav[role="navigation"] li:hover {
-    /*height: auto;*/
-  }
-  .no-touch nav[role="navigation"] li.the-forge-blog:hover .nav-desc{
-    text-align:left;    
-  }
-  .no-touch nav[role="navigation"] li.the-forge-blog:hover .nav-desc .blog-excerpt{
-    display:none;
-  }
-  .no-touch nav[role="navigation"] li.the-forge-blog:hover .nav-desc > h6.blog-title{
-    overflow:visible;
-    text-overflow: clip;
-    white-space:normal;
-  }
-  .royalHtmlContent {
-    padding:0; 
-  }
-  .royalHtmlContent iframe, .royalHtmlContent object, .royalHtmlContent embed{
-    position:absolute;
-    top:0;
-    left:0;
-    width:643px;
-    height:378px;    
-    z-index:1;
-  }
-  .royalHtmlContent .slide-text-wrap{
-    padding:10px 70px;
-  }
-  .authorMeta{
-    padding-bottom:30px;
-    margin-bottom:10px;
-  }
-  .authorImageWrapper{
-    float:left;
-    margin-right:10px;
-    margin-bottom:10px;
-  }
-  .signup-form-error{
-    border:1px solid red !important;
-  }
-  
-</style>
-
 </head>
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site wrap">
@@ -155,10 +106,10 @@
 											 </a>
 											 <span class="nav-desc">
 											   <?php
-											    $featured_category = get_term_by('name', 'Featured', 'category'); 
+											    $featured_category = get_term_by('name', 'Featured', 'category');
 											    $latest_post = new WP_Query(array('posts_per_page'=>'1', 'post_type'=>'post','orderby' => 'post_date',
                           'order' => 'DESC', 'ignore_sticky_posts' => 1, 'cat'=>$featured_category->term_id));
-											    while($latest_post->have_posts()): $latest_post->the_post();?>											    
+											    while($latest_post->have_posts()): $latest_post->the_post();?>
 											   <h6 class="blog-title"><?php echo the_title(); ?></h6>
 											   <span class="blog-date"><?php the_date(); ?></span>
 											   <p class="blog-excerpt"><?php echo truncateWords(get_the_excerpt(),90); ?>...</p>
