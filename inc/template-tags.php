@@ -60,6 +60,7 @@ function heritageaction_signup_section( ) {
     <div id="sign-up-tab" class="gradient medium-blue-gradient">Sign Up</div>
     <div id="signup-content" class="centered max-width">
       <form id="signup-form" action="front-page_submit" method="get" accept-charset="utf-8">
+        <input type="hidden" name="user[userip]" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>">
         <input type="text" name="user[name]" id="signup_name" placeholder="Name">
         <input type="text" name="user[email_address]" id="email_address" placeholder="Email Address">
         <input type="text" name="user[zip_code]" id="zip_code" placeholder="Zip Code">

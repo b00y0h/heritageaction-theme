@@ -81,6 +81,7 @@ get_header(); ?>
                     'term' => 'key-vote-senate',
                     'orderby' => 'post_date',
                     'order' => 'DESC',
+                    'post_status' => 'publish',
                     'post_type' => 'key-votes');
 
                 $house_key_votes = wp_get_recent_posts( $args );
@@ -166,6 +167,7 @@ get_header(); ?>
                         'offset' => 0,
                         'orderby' => 'post_date',
                         'order' => 'DESC',
+                        'post_status' => 'publish',
                         'post_type' => 'press-releases');
 
                     $house_key_votes = wp_get_recent_posts( $args );

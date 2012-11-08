@@ -23,6 +23,31 @@
      }
   }
 
+function signup_validate(form){
+	form = jQuery(form);
+	jQuery('.signup-form-error',form).removeClass('signup-form-error');
+	var output = true
+	// validate name
+	if(jQuery("#signup_name" ,form).val() == '' || jQuery("#signup_name" ,form).val() == 'Name'){
+		output = false;
+		jQuery("#signup_name" ,form).addClass('signup-form-error');
+	}
+	
+	// validate email
+	if(jQuery("#email_address" ,form).val() == '' || jQuery("#email_address" ,form).val() == 'Email Address'){
+		output = false;
+		jQuery("#email_address" ,form).addClass('signup-form-error');
+	}
+	
+	// validate zip
+	if(jQuery("#zip_code" ,form).val() == '' || jQuery("#zip_code" ,form).val() == 'Zip Code'){
+		output = false;
+		jQuery("#zip_code" ,form).addClass('signup-form-error');
+	}
+	
+	return output;
+}
+
   (function($){
     $(document).ready(function(){
 
@@ -96,18 +121,22 @@
       });
 
       $("#signup-form-submit-button").click(function(){
-        var form_data = $("#signup-form").serialize();
-        $("#signup-content").load("/bluehornet.php?" + form_data);
+	
+				if(signup_validate("#signup-form") ){
+					var form_data = $("#signup-form").serialize();
+	        $("#signup-content").load("/bluehornet/bluehornet-api.php?" + form_data);
 
-        var _gaq = _gaq || [];
-        _gaq.push(['_trackEvent', 'Signup', 'Footer Signup', $("#signup_name").val()+' '+$("#email_address").val()]);
+	        var _gaq = _gaq || [];
+	        _gaq.push(['_trackEvent', 'Signup', 'Footer Signup', $("#signup_name").val()+' '+$("#email_address").val()]);
 
-        // set cookie
-        var now = new Date();
-        var time = now.getDate();
-        time += 365 * 20;
-        now.setDate(time);
-        document.cookie = '_signup_submitted=true; expires=' + now.toGMTString() + '; path=/';
+	        // set cookie
+	        var now = new Date();
+	        var time = now.getDate();
+	        time += 365 * 20;
+	        now.setDate(time);
+	        document.cookie = '_signup_submitted=true; expires=' + now.toGMTString() + '; path=/';
+				}
+        
 
 
         return false;

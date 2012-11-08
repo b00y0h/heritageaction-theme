@@ -100,6 +100,19 @@
   .royalHtmlContent .slide-text-wrap{
     padding:10px 70px;
   }
+  .authorMeta{
+    padding-bottom:30px;
+    margin-bottom:10px;
+  }
+  .authorImageWrapper{
+    float:left;
+    margin-right:10px;
+    margin-bottom:10px;
+  }
+  .signup-form-error{
+    border:1px solid red !important;
+  }
+  
 </style>
 
 </head>

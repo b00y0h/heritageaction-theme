@@ -29,7 +29,7 @@ get_header(); ?>
 					<?php if ('open' == $post->comment_status) { comments_template( '', true ); } ?>
 
 				<?php endwhile; // end of the loop. ?>
-
+        <div style="clear:both;"></div>
 			</div><!-- #content .site-content -->
 		</div><!-- #primary .content-area -->
 
