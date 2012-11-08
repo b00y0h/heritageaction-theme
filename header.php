@@ -72,6 +72,20 @@
     font-size:14px;
     line-height:20px;
   }
+  .no-touch nav[role="navigation"] li:hover {
+    /*height: auto;*/
+  }
+  .no-touch nav[role="navigation"] li.the-forge-blog:hover .nav-desc{
+    text-align:left;    
+  }
+  .no-touch nav[role="navigation"] li.the-forge-blog:hover .nav-desc .blog-excerpt{
+    display:none;
+  }
+  .no-touch nav[role="navigation"] li.the-forge-blog:hover .nav-desc > h6.blog-title{
+    overflow:visible;
+    text-overflow: clip;
+    white-space:normal;
+  }
 </style>
 
 </head>
@@ -114,11 +128,13 @@
 											 </a>
 											 <span class="nav-desc">
 											   <?php
+											    $featured_category = get_term_by('name', 'Featured', 'category'); 
 											    $latest_post = new WP_Query(array('posts_per_page'=>'1', 'post_type'=>'post','orderby' => 'post_date',
-                          'order' => 'DESC', 'ignore_sticky_posts' => 1));
-											    while($latest_post->have_posts()): $latest_post->the_post();?>
+                          'order' => 'DESC', 'ignore_sticky_posts' => 1, 'cat'=>$featured_category->term_id));
+											    while($latest_post->have_posts()): $latest_post->the_post();?>											    
 											   <h6 class="blog-title"><?php echo the_title(); ?></h6>
-											   <p class="blog-excerpt"><?php echo truncateWords(get_the_excerpt(),50); ?>[...]</p>
+											   <span class="blog-date"><?php the_date(); ?></span>
+											   <p class="blog-excerpt"><?php echo truncateWords(get_the_excerpt(),90); ?>...</p>
 											   <?php endwhile; wp_reset_postdata(); ?>
 											 </span>
 									 </li>
