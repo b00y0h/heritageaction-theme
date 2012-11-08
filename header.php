@@ -86,6 +86,20 @@
     text-overflow: clip;
     white-space:normal;
   }
+  .royalHtmlContent {
+    padding:0; 
+  }
+  .royalHtmlContent iframe, .royalHtmlContent object, .royalHtmlContent embed{
+    position:absolute;
+    top:0;
+    left:0;
+    width:643px;
+    height:378px;    
+    z-index:1;
+  }
+  .royalHtmlContent .slide-text-wrap{
+    padding:10px 70px;
+  }
 </style>
 
 </head>
