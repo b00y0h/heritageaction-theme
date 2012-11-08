@@ -45,9 +45,11 @@ get_header(); ?>
   						  
   						  <!-- #<?php echo $post->post_name; ?> -->
                 <section id="<?php echo $post->post_name; ?>" class='team-info'>
+                  <?php if(file_exists(get_stylesheet_directory().'/img/about-'.$post->post_name.'.jpg')) : ?>
                   <div class="partner-image shadow shadow-curl-left shadow-curl-right float-left">
                     <img src="<?php echo get_bloginfo('template_url'); ?>/img/about-<?php echo $post->post_name; ?>.jpg" alt="<?php the_title(); ?> Photo">
                   </div>
+                  <?php endif; ?>
                   <div class="info-detail">
                     <?php the_content(); ?>
                   </div> <!-- .info-detail -->            

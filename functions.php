@@ -272,7 +272,7 @@ function filter_search($query) {
     if ($query->is_search && $query->query_vars['post_type'] == 'post') {
 	      $query->set('post_type', array('post'));
     }
-    else{
+    elseif($query->is_search){
         $query->set('post_type', array('post','page','key-votes','legislative-fights','press-releases'));
     }
     return $query;
