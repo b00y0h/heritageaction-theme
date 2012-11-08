@@ -33,7 +33,7 @@
          <!-- = Action Dashboard = -->
          <!-- =================== -->
          
-         <div id="panel2" class="hs-content widgets">
+         <div id="panel2" class="hs-content widgets" style="display:none;">
            <div class="widgets-inner">
            <header class="gradient red-gradient">
              <h2 class="title">Action Dashboard</h2>
@@ -99,6 +99,7 @@
                'term' => 'key-vote-house',
                'orderby' => 'post_date',
                'order' => 'DESC',
+               'post_status' => 'publish',
                'post_type' => 'key-votes'); 
                
            $house_key_votes = wp_get_recent_posts( $args );
@@ -127,6 +128,7 @@
                'term' => 'key-vote-senate',
                'orderby' => 'post_date',
                'order' => 'DESC',
+               'post_status' => 'publish',
                'post_type' => 'key-votes'); 
                
            $house_key_votes = wp_get_recent_posts( $args );
@@ -170,6 +172,7 @@
                        'offset' => 0,
                        'orderby' => 'post_date',
                        'order' => 'DESC',
+                       'post_status' => 'publish',
                        'post_type' => 'press-releases'); 
 
                    $house_key_votes = wp_get_recent_posts( $args );
@@ -212,7 +215,8 @@
            </a>
            <div class="overlay"></div>
          </div>
-
+         
+         <?php /* ?>
          <div class="social">
            <div id="fb-widget-like" class="fb-like" data-href="https://www.facebook.com/heritageforamerica" data-send="true" data-layout="button_count" data-width="175" data-show-faces="false"></div>
 
@@ -223,6 +227,7 @@
 
            <div style="clear:both;"></div>
          </div>  
+          */ ?>
          <a href="/about" class='btn rounded gradient medium-blue-gradient'>More</a>
          </div>
        </div> <!-- #about-us -->

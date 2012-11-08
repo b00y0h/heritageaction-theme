@@ -1,8 +1,8 @@
 /*
-Theme Name: Heritage Action
-Theme URI: http://underscores.me/
-Author: Bobby Smith
-Author URI: http://bobby.is
+Theme Name: Heritage Action Mobile
+Theme URI: http://heritageaction.com
+Author: Andre Fredette
+Author URI: http://andrefredette.com
 Description: Description
 Version: 1.0
 License: GNU General Public License
@@ -339,7 +339,8 @@ b, strong {
 
 /* line 91, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-normalize.scss */
 blockquote {
-  margin: 0; }
+  margin: 0; 
+}
 
 /* line 96, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-normalize.scss */
 dfn {
@@ -523,7 +524,7 @@ table {
   line-height: 15px; }
 
 /* line 41, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-typography.scss */
-.normal-font, h5, blockquote cite {
+.normal-font, h5, {
   font-size: 14px;
   line-height: 20px; }
 
@@ -533,7 +534,7 @@ table {
   line-height: 20px; }
 
 /* line 51, /Users/bobby/Documents/Source/sass/css-framework/lib/_b00-typography.scss */
-.medium-large-font, h3, blockquote {
+.medium-large-font, h3 {
   font-size: 18.06px;
   line-height: 25px; }
 
