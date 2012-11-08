@@ -48,6 +48,7 @@ function signup_validate(form){
     return output;
 }
 
+
   (function($){
     $(document).ready(function(){
 
@@ -122,8 +123,8 @@ function signup_validate(form){
 
       $("#signup-form-submit-button").click(function(){
 
-                if(signup_validate("#signup-form") ){
-                    var form_data = $("#signup-form").serialize();
+        if(signup_validate("#signup-form") ){
+            var form_data = $("#signup-form").serialize();
             $("#signup-content").load("/bluehornet/bluehornet-api.php?" + form_data);
 
             var _gaq = _gaq || [];
@@ -135,7 +136,7 @@ function signup_validate(form){
             time += 365 * 20;
             now.setDate(time);
             document.cookie = '_signup_submitted=true; expires=' + now.toGMTString() + '; path=/';
-                }
+         }
 
 
 
