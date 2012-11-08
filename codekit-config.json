@@ -44,15 +44,6 @@
       "initialSize" : 6108,
       "fileType" : 8192
     },
-    "\/404.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/404.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/js\/jquery-ui-1.8.24.custom.min.js" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 0,
@@ -63,6 +54,15 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/js\/jquery-ui-1.8.24.custom.min-ck.js",
       "fileType" : 64
+    },
+    "\/404.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/404.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/img\/about-dwayne-carson.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -75,15 +75,6 @@
       "initialSize" : 5060,
       "fileType" : 4096
     },
-    "\/style.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/style.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/githubber.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -92,6 +83,15 @@
       "inputAbbreviatedPath" : "\/githubber.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
+    },
+    "\/style.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/style.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/js\/backstretch.js" : {
       "ignoreWasSetByUser" : 0,
@@ -136,18 +136,6 @@
       "initialSize" : 3526,
       "fileType" : 8192
     },
-    "\/sass\/partials\/_type.scss" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/partials\/_type.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/css\/_type.css",
-      "fileType" : 4,
-      "debugStyle" : 1
-    },
     "\/img\/the-forge-blog-logo.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -157,6 +145,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/img\/the-forge-blog-logo.png",
       "initialSize" : 7960,
+      "fileType" : 8192
+    },
+    "\/img\/striped-bg.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/striped-bg.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/striped-bg.png",
+      "initialSize" : 158,
       "fileType" : 8192
     },
     "\/sass\/css\/_global.css" : {
@@ -208,16 +207,17 @@
       "initialSize" : 3605,
       "fileType" : 4096
     },
-    "\/img\/striped-bg.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+    "\/sass\/partials\/_type.scss" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/striped-bg.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/striped-bg.png",
-      "initialSize" : 158,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/sass\/partials\/_type.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/css\/_type.css",
+      "fileType" : 4,
+      "debugStyle" : 1
     },
     "\/sass\/partials\/_responsive.scss" : {
       "ignoreWasSetByUser" : 1,
@@ -297,7 +297,7 @@
     },
     "\/js\/core.string.js" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/js\/core.string.js",
@@ -328,16 +328,16 @@
       "initialSize" : 6327,
       "fileType" : 4096
     },
-    "\/img\/bg-capital-left.jpg" : {
+    "\/js\/jquery.history.js" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/bg-capital-left.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/bg-capital-left.jpg",
-      "initialSize" : 15456,
-      "fileType" : 4096
+      "inputAbbreviatedPath" : "\/js\/jquery.history.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/jquery.history-ck.js",
+      "fileType" : 64
     },
     "\/img\/home-logo-hover.png" : {
       "ignoreWasSetByUser" : 0,
@@ -381,16 +381,16 @@
       "outputAbbreviatedPath" : "\/js\/application-ck.js",
       "fileType" : 64
     },
-    "\/js\/jquery.history.js" : {
+    "\/img\/bg-capital-mobile.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/jquery.history.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/jquery.history-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/img\/bg-capital-mobile.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/bg-capital-mobile.jpg",
+      "initialSize" : 10719,
+      "fileType" : 4096
     },
     "\/footer.php" : {
       "ignoreWasSetByUser" : 0,
@@ -413,9 +413,38 @@
       "fileType" : 4,
       "debugStyle" : 1
     },
-    "\/js\/jquery.smartresize.js" : {
+    "\/inc\/theme-options\/theme-options.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/inc\/theme-options\/theme-options.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/img\/bg-capital-left.jpg" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/bg-capital-left.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/bg-capital-left.jpg",
+      "initialSize" : 15456,
+      "fileType" : 4096
+    },
+    "\/archive.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/archive.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/js\/jquery.smartresize.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/js\/jquery.smartresize.js",
@@ -424,12 +453,23 @@
       "outputAbbreviatedPath" : "\/js\/jquery.smartresize-ck.js",
       "fileType" : 64
     },
-    "\/archive.php" : {
+    "\/import-image\/milk-does-a-body-bad.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/archive.php",
+      "inputAbbreviatedPath" : "\/import-image\/milk-does-a-body-bad.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/import-image\/milk-does-a-body-bad.jpg",
+      "initialSize" : 25047,
+      "fileType" : 4096
+    },
+    "\/page-call.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/page-call.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -443,46 +483,6 @@
       "outputAbbreviatedPath" : "\/img\/rss-bug.png",
       "initialSize" : 629,
       "fileType" : 8192
-    },
-    "\/inc\/theme-options\/theme-options.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/inc\/theme-options\/theme-options.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
-    "\/import-image\/milk-does-a-body-bad.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/import-image\/milk-does-a-body-bad.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/import-image\/milk-does-a-body-bad.jpg",
-      "initialSize" : 25047,
-      "fileType" : 4096
-    },
-    "\/img\/bg-capital-mobile.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/bg-capital-mobile.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/bg-capital-mobile.jpg",
-      "initialSize" : 10719,
-      "fileType" : 4096
-    },
-    "\/page-call.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/page-call.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/content-single-footer.php" : {
       "ignoreWasSetByUser" : 0,
@@ -516,6 +516,18 @@
       "initialSize" : 1934,
       "fileType" : 8192
     },
+    "\/sass\/partials\/responsive-768px-979px.scss" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/partials\/responsive-768px-979px.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/css\/responsive-768px-979px.css",
+      "fileType" : 4,
+      "debugStyle" : 1
+    },
     "\/sass\/partials\/_blog.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -539,18 +551,6 @@
       "outputAbbreviatedPath" : "\/js\/orangebox.min-ck.js",
       "fileType" : 64
     },
-    "\/sass\/partials\/responsive-768px-979px.scss" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/partials\/responsive-768px-979px.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/css\/responsive-768px-979px.css",
-      "fileType" : 4,
-      "debugStyle" : 1
-    },
     "\/searchform.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -559,6 +559,17 @@
       "inputAbbreviatedPath" : "\/searchform.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
+    },
+    "\/js\/jquery.mousewheel.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/jquery.mousewheel.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/jquery.mousewheel-ck.js",
+      "fileType" : 64
     },
     "\/img\/bg-capital-center.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -579,17 +590,6 @@
       "inputAbbreviatedPath" : "\/page-donate.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
-    },
-    "\/js\/jquery.mousewheel.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/jquery.mousewheel.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/jquery.mousewheel-ck.js",
-      "fileType" : 64
     },
     "\/inc\/template-tags.php" : {
       "ignoreWasSetByUser" : 0,
@@ -620,17 +620,6 @@
       "outputAbbreviatedPath" : "\/js\/jquery.plugins-ck.js",
       "fileType" : 64
     },
-    "\/js\/jquery.page.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/jquery.page.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/jquery.page-ck.js",
-      "fileType" : 64
-    },
     "\/content.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -639,6 +628,17 @@
       "inputAbbreviatedPath" : "\/content.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
+    },
+    "\/js\/jquery.page.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/jquery.page.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/jquery.page-ck.js",
+      "fileType" : 64
     },
     "\/sass\/partials\/_forms.scss" : {
       "ignoreWasSetByUser" : 1,
@@ -713,17 +713,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/img\/about-andrew-mcIndoe.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/about-andrew-mcIndoe.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/about-andrew-mcIndoe.jpg",
-      "initialSize" : 4603,
-      "fileType" : 4096
-    },
     "\/img\/about-michael-needham.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -733,6 +722,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/img\/about-michael-needham.jpg",
       "initialSize" : 4036,
+      "fileType" : 4096
+    },
+    "\/img\/about-andrew-mcIndoe.jpg" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/about-andrew-mcIndoe.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/about-andrew-mcIndoe.jpg",
+      "initialSize" : 4603,
       "fileType" : 4096
     },
     "\/comments.php" : {
@@ -764,15 +764,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/image.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/image.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/img\/about-josh-robbins.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -784,17 +775,25 @@
       "initialSize" : 4378,
       "fileType" : 4096
     },
-    "\/sass\/partials\/_menu.scss" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
+    "\/js\/keyboard-image-navigation.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/partials\/_menu.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/css\/_menu.css",
-      "fileType" : 4,
-      "debugStyle" : 1
+      "inputAbbreviatedPath" : "\/js\/keyboard-image-navigation.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/keyboard-image-navigation-ck.js",
+      "fileType" : 64
+    },
+    "\/image.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/image.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/img\/bullet-no.png" : {
       "ignoreWasSetByUser" : 0,
@@ -856,15 +855,15 @@
       "initialSize" : 4937,
       "fileType" : 8192
     },
-    "\/img\/logo.png" : {
+    "\/img\/search.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/logo.png",
+      "inputAbbreviatedPath" : "\/img\/search.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/logo.png",
-      "initialSize" : 3556,
+      "outputAbbreviatedPath" : "\/img\/search.png",
+      "initialSize" : 498,
       "fileType" : 8192
     },
     "\/img\/about-jessica-anderson.jpg" : {
@@ -877,6 +876,17 @@
       "outputAbbreviatedPath" : "\/img\/about-jessica-anderson.jpg",
       "initialSize" : 5563,
       "fileType" : 4096
+    },
+    "\/img\/logo.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/logo.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/logo.png",
+      "initialSize" : 3556,
+      "fileType" : 8192
     },
     "\/img\/about-nathanael-yellis.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -901,47 +911,17 @@
       "fileType" : 4,
       "debugStyle" : 1
     },
-    "\/img\/search.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+    "\/sass\/partials\/_menu.scss" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/search.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/search.png",
-      "initialSize" : 498,
-      "fileType" : 8192
-    },
-    "\/js\/keyboard-image-navigation.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/keyboard-image-navigation.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/keyboard-image-navigation-ck.js",
-      "fileType" : 64
-    },
-    "\/img\/striped-bg-light.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/striped-bg-light.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/striped-bg-light.png",
-      "initialSize" : 164,
-      "fileType" : 8192
-    },
-    "\/page.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/page.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/sass\/partials\/_menu.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/css\/_menu.css",
+      "fileType" : 4,
+      "debugStyle" : 1
     },
     "\/js\/unused-functions.js" : {
       "ignoreWasSetByUser" : 0,
@@ -953,6 +933,26 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/js\/unused-functions-ck.js",
       "fileType" : 64
+    },
+    "\/page.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/page.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/img\/striped-bg-light.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/striped-bg-light.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/striped-bg-light.png",
+      "initialSize" : 164,
+      "fileType" : 8192
     },
     "\/img\/about-russ-vought.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -1003,6 +1003,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
+    "\/page-contact.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/page-contact.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/import-image\/slide1.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1013,24 +1022,6 @@
       "outputAbbreviatedPath" : "\/import-image\/slide1.jpg",
       "initialSize" : 25156,
       "fileType" : 4096
-    },
-    "\/page-contact.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/page-contact.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
-    "\/functions.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/functions.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/js\/jquery.easing.1.3.js" : {
       "ignoreWasSetByUser" : 0,
@@ -1043,6 +1034,26 @@
       "outputAbbreviatedPath" : "\/js\/jquery.easing.1.3-ck.js",
       "fileType" : 64
     },
+    "\/functions.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/functions.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/js\/jquery.jscrollpane.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/js\/jquery.jscrollpane.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/jquery.jscrollpane.min-ck.js",
+      "fileType" : 64
+    },
     "\/inc\/custom-posttypes.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1051,17 +1062,6 @@
       "inputAbbreviatedPath" : "\/inc\/custom-posttypes.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
-    },
-    "\/import-image\/local-blog-roundup.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/import-image\/local-blog-roundup.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/import-image\/local-blog-roundup.jpg",
-      "initialSize" : 8433,
-      "fileType" : 4096
     },
     "\/img\/bullet-yes.png" : {
       "ignoreWasSetByUser" : 0,
@@ -1085,16 +1085,25 @@
       "initialSize" : 4871,
       "fileType" : 4096
     },
-    "\/js\/jquery.jscrollpane.min.js" : {
+    "\/import-image\/local-blog-roundup.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/jquery.jscrollpane.min.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/jquery.jscrollpane.min-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/import-image\/local-blog-roundup.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/import-image\/local-blog-roundup.jpg",
+      "initialSize" : 8433,
+      "fileType" : 4096
+    },
+    "\/single.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/single.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/sass\/variables.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -1108,15 +1117,6 @@
       "fileType" : 4,
       "debugStyle" : 1
     },
-    "\/single.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/single.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/sass\/partials\/_styles.scss" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
@@ -1129,17 +1129,6 @@
       "fileType" : 4,
       "debugStyle" : 1
     },
-    "\/img\/buttons.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/buttons.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/buttons.png",
-      "initialSize" : 3009,
-      "fileType" : 8192
-    },
     "\/img\/video-overlay.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1149,6 +1138,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/img\/video-overlay.png",
       "initialSize" : 145,
+      "fileType" : 8192
+    },
+    "\/img\/buttons.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/buttons.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/buttons.png",
+      "initialSize" : 3009,
       "fileType" : 8192
     },
     "\/img\/logo@2x.png" : {
@@ -1206,16 +1206,44 @@
       "followForSyntaxChecking" : 1
     },
     {
-      "type" : 1,
+      "type" : 0,
       "position" : 1,
-      "linkedFileAbbreviatedPath" : "\/js\/jquery-ui-1.8.24.custom.min.js",
+      "linkedFileAbbreviatedPath" : "\/js\/jquery.mousewheel.js",
+      "baseFileAbbreviatedPath" : "\/js\/application.js",
+      "followForSyntaxChecking" : 1
+    },
+    {
+      "type" : 0,
+      "position" : 2,
+      "linkedFileAbbreviatedPath" : "\/js\/jquery.history.js",
+      "baseFileAbbreviatedPath" : "\/js\/application.js",
+      "followForSyntaxChecking" : 1
+    },
+    {
+      "type" : 0,
+      "position" : 3,
+      "linkedFileAbbreviatedPath" : "\/js\/core.string.js",
+      "baseFileAbbreviatedPath" : "\/js\/application.js",
+      "followForSyntaxChecking" : 1
+    },
+    {
+      "type" : 0,
+      "position" : 4,
+      "linkedFileAbbreviatedPath" : "\/js\/jquery.easing.1.3.js",
+      "baseFileAbbreviatedPath" : "\/js\/application.js",
+      "followForSyntaxChecking" : 1
+    },
+    {
+      "type" : 0,
+      "position" : 5,
+      "linkedFileAbbreviatedPath" : "\/js\/jquery.smartresize.js",
       "baseFileAbbreviatedPath" : "\/js\/application.js",
       "followForSyntaxChecking" : 1
     },
     {
       "type" : 1,
-      "position" : 2,
-      "linkedFileAbbreviatedPath" : "\/js\/jquery.easing.1.3.js",
+      "position" : 6,
+      "linkedFileAbbreviatedPath" : "\/js\/jquery.page.js",
       "baseFileAbbreviatedPath" : "\/js\/application.js",
       "followForSyntaxChecking" : 1
     }

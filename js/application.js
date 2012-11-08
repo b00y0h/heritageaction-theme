@@ -12,25 +12,27 @@
       }
       // invoke as soon as page loads
       resizeContent('.hs-content .widgets-inner, #introduction');
-      
+
+        $("#panel8 .widgets-inner").css('min-height',($(window).height() - 300) + "px").css('margin-bottom',"300px");
+
       // window resize events
       $(window).resize(function () {
         resizeContent('.hs-content .widgets-inner, #introduction');
         });
-      
+
       // move the nav when more/less is clicked
       $("#more-nav").click(function(e){
         moveNav('nav','-240');
         // ugh---ly :/
-        $("#less-nav").css('visibility','visible')
-        $("#more-nav").css('visibility','hidden')
-      })
+        $("#less-nav").css('visibility','visible');
+        $("#more-nav").css('visibility','hidden');
+      });
       $("#less-nav").click(function(e){
         moveNav('nav','0');
-        $("#more-nav").css('visibility','visible')
-        $("#less-nav").css('visibility','hidden')
-      })
-      
+        $("#more-nav").css('visibility','visible');
+        $("#less-nav").css('visibility','hidden');
+      });
+
       // more the nav in the correct direction
       function moveNav(elem,direction) {
         $(elem).animate({
@@ -39,8 +41,8 @@
             // animation complete
           });
         return false;
-      };
-      
+      }
+
       // home key votes toggle
       $(".keyVoteSelector").change(function(){
         $(".items").slideUp();
@@ -123,7 +125,7 @@
 
     });
   })(jQuery);
-  
+
   /*
     * Normalized hide address bar for iOS & Android
     * (c) Scott Jehl, scottjehl.com
@@ -148,7 +150,7 @@
   					clearInterval( bodycheck );
   					scrollTop = getScrollTop();
   					win.scrollTo( 0, scrollTop === 1 ? 0 : 1 );
-  				}	
+  				}
   			}, 15 );
 
   		win.addEventListener( "load", function(){
@@ -161,4 +163,4 @@
   			}, 0);
   		} );
   	}
-  })( this );  
+  })( this );
