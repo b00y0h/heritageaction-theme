@@ -12,7 +12,7 @@ get_header(); ?>
 <div id="hero">
   <div class="inner clearfix">
 		<header class="page-header">
-			<h1 class="page-title"><?php 
+			<h1 class="page-title"><?php
 			$title_pre = (get_query_var('post_type') == 'post') ? "Forge " : '';
 			printf( __( $title_pre . 'Search Results for: %s', 'heritageaction' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 		</header><!-- .page-header -->
@@ -20,7 +20,8 @@ get_header(); ?>
 </div>
 <?php endif; ?>
 
-<div id="main-inner">
+<div id="main-wrapper">
+    <div class="row">
 
 		<section id="primary" class="content-area">
 			<div id="content" class="site-content" role="main">
@@ -47,5 +48,6 @@ get_header(); ?>
 			</div><!-- #content .site-content -->
 		</section><!-- #primary .content-area -->
   <?php get_sidebar(); ?>
-</div> <!-- #main-inner -->
+  </div> <!-- #main-inner -->
+</div>
 <?php get_footer(); ?>
