@@ -132,7 +132,7 @@ function heritageaction_scripts() {
 	wp_enqueue_style( 'orangebox', get_template_directory_uri() ."/orangebox.css" );
 	//wp_enqueue_style( 'bxstyles', get_template_directory_uri() ."/bx_styles.css" );
 
-	wp_enqueue_script( 'application', get_template_directory_uri() . '/js/application-ck.js', array( 'jquery' ), '20120928', true );
+	wp_enqueue_script( 'application', get_template_directory_uri() . '/js/application.js', array( 'jquery' ), '20120928', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -238,7 +238,7 @@ function ha_save_key_vote_type( $post_id ) {
 
 
 function search_url_rewrite_rule() {
-    if (is_search() && !empty($_GET['s'])) {
+    if (!empty($_GET['s'])) {
         if(isset($_GET['search_post_type']) && $_GET['search_post_type'] == 'post'){
           wp_redirect(home_url("/search-blog/") . urlencode(get_query_var('s')) );
         }
@@ -251,12 +251,49 @@ function search_url_rewrite_rule() {
 }
 add_action('template_redirect', 'search_url_rewrite_rule');
 
+
+/*
 add_action( 'init', 'search_rule' );
 function search_rule(){
       add_rewrite_rule('^search-blog/([^/]*)?', 'index.php?s=$matches[1]&post_type=post', 'top');
       add_rewrite_rule('^search/([^/]*)?', 'index.php?s=$matches[1]', 'top');
-
 }
+
+*/
+add_filter( 'rewrite_rules_array','my_insert_rewrite_rules' );
+function my_insert_rewrite_rules( $rules ) {
+	$newrules = array();
+	$newrules['^search-blog/(.*)?'] = 'index.php?s=$matches[1]&post_type=post';
+	$newrules['^search/([^/]*)?'] = 'index.php?s=$matches[1]';
+	return $newrules + $rules;
+}
+
+function filter_search($query) {
+    if ($query->is_search && $query->query_vars['post_type'] == 'post') {
+	      $query->set('post_type', array('post'));
+    }
+    else{
+        $query->set('post_type', array('post','page','key-votes','legislative-fights','press-releases'));
+    }
+    return $query;
+};
+add_filter('pre_get_posts', 'filter_search');
+
+
+
+add_action( 'wp_loaded', 'my_flush_rules' );
+// flush_rules() if our rules are not yet included
+function my_flush_rules(){
+	$rules = get_option( 'rewrite_rules' );
+
+	if ( !isset($rules['^search-blog/(.*)?']) ||  
+	     !isset($rules['^search/([^/]*)?'])  
+	   ) {
+		global $wp_rewrite;
+	   	$wp_rewrite->flush_rules();
+	}
+}
+
 
 /**
 * Simple WordPress Twitter feed
