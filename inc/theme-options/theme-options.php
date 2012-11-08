@@ -48,7 +48,7 @@ function heritageaction_theme_options_init() {
 	// add_settings_field( 'sample_radio_buttons', __( 'Sample Radio Buttons', 'heritageaction' ), 'heritageaction_settings_field_sample_radio_buttons', 'theme_options', 'general' );
 	add_settings_field( 'video_description', __( 'Description of video', 'heritageaction' ), 'heritageaction_settings_field_video_description', 'theme_options', 'general' );
 	add_settings_field( 'video_link_text', __( 'Link text', 'heritageaction' ), 'heritageaction_settings_field_video_link_text', 'theme_options', 'general' );
-    add_settings_field( 'video_link_to', __( 'Link to?', 'heritageaction' ), 'heritageaction_settings_field_video_link_to', 'theme_options', 'general' );
+    add_settings_field( 'video_link_to', __( 'Link to', 'heritageaction' ), 'heritageaction_settings_field_video_link_to', 'theme_options', 'general' );
 }
 add_action( 'admin_init', 'heritageaction_theme_options_init' );
 
@@ -187,8 +187,8 @@ function heritageaction_settings_field_enable_video_checkbox_checkbox() {
 function heritageaction_settings_field_video_url_input() {
 	$options = heritageaction_get_theme_options();
 	?>
-	<input type="text" name="heritageaction_theme_options[video_url]" id="video-url" value="<?php echo esc_attr( $options['video_url'] ); ?>" />
-	<label class="description" for="video-url"><?php _e( '(youtuve, vimeo, etc)', 'heritageaction' ); ?></label>
+	<input type="text" name="heritageaction_theme_options[video_url]" id="video-url" value="<?php echo esc_attr( $options['video_url'] ); ?>" size="80" />
+	<label class="description" for="video-url"><?php _e( '(youtube, vimeo)', 'heritageaction' ); ?></label>
 	<?php
 }
 
@@ -198,7 +198,7 @@ function heritageaction_settings_field_video_url_input() {
 function heritageaction_settings_field_video_title_input() {
     $options = heritageaction_get_theme_options();
     ?>
-    <input type="text" name="heritageaction_theme_options[video_title]" id="video-title" value="<?php echo esc_attr( $options['video_title'] ); ?>" />
+    <input type="text" name="heritageaction_theme_options[video_title]" id="video-title" value="<?php echo esc_attr( $options['video_title'] ); ?>" size="40" />
     <?php
 }
 
@@ -208,7 +208,7 @@ function heritageaction_settings_field_video_title_input() {
 function heritageaction_settings_field_video_link_to() {
     $options = heritageaction_get_theme_options();
     ?>
-    <input type="text" name="heritageaction_theme_options[video_link_to]" id="video-link-to" value="<?php echo esc_attr( $options['video_link_to'] ); ?>" />
+    <input type="text" name="heritageaction_theme_options[video_link_to]" id="video-link-to" value="<?php echo esc_attr( $options['video_link_to'] ); ?>" size="80" />
     <label class="description" for="video-link-to"><?php _e( 'Where do you want this page to link to?', 'heritageaction' ); ?></label>
     <?php
 }
