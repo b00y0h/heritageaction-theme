@@ -32,7 +32,7 @@
     }
 
     $(document).ready(function () {
-        if (getCookie('seen_takeover') !== Video.takeover_url) {
+        if (Video.enable_video && getCookie('seen_takeover') !== Video.takeover_url) {
             $(document).orangeBox('createCustom', {
                 href: decodeURIComponent((Video.takeover_url + '').replace(/\+/g, '%20')),
                 title: decodeURIComponent((Video.takeover_title + '').replace(/\+/g, '%20')),

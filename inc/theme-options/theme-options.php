@@ -47,6 +47,7 @@ function heritageaction_theme_options_init() {
 	// add_settings_field( 'sample_select_options', __( 'Sample Select Options', 'heritageaction' ), 'heritageaction_settings_field_sample_select_options', 'theme_options', 'general' );
 	// add_settings_field( 'sample_radio_buttons', __( 'Sample Radio Buttons', 'heritageaction' ), 'heritageaction_settings_field_sample_radio_buttons', 'theme_options', 'general' );
 	add_settings_field( 'video_description', __( 'Description of video', 'heritageaction' ), 'heritageaction_settings_field_video_description', 'theme_options', 'general' );
+	add_settings_field( 'video_link_text', __( 'Link text', 'heritageaction' ), 'heritageaction_settings_field_video_link_text', 'theme_options', 'general' );
     add_settings_field( 'video_link_to', __( 'Link to?', 'heritageaction' ), 'heritageaction_settings_field_video_link_to', 'theme_options', 'general' );
 }
 add_action( 'admin_init', 'heritageaction_theme_options_init' );
@@ -154,6 +155,7 @@ function heritageaction_get_theme_options() {
         'enable_video_checkbox' => '',
 		'video_url'       => '',
 		'video_title'     => '',
+		'video_link_text' => '',
 		'video_link_to' => '',
 		'video_description'  => '',
 	);
@@ -172,7 +174,7 @@ function heritageaction_get_theme_options() {
 function heritageaction_settings_field_enable_video_checkbox_checkbox() {
 	$options = heritageaction_get_theme_options();
 	?>
-	<label for="sample-checkbox">
+	<label for="enable-video-checkbox">
 		<input type="checkbox" name="heritageaction_theme_options[enable_video_checkbox]" id="enable-video-checkbox" <?php checked( 'on', $options['enable_video_checkbox'] ); ?> />
 		<?php _e( 'Click to enable video overlay', 'heritageaction' ); ?>
 	</label>
@@ -208,6 +210,17 @@ function heritageaction_settings_field_video_link_to() {
     ?>
     <input type="text" name="heritageaction_theme_options[video_link_to]" id="video-link-to" value="<?php echo esc_attr( $options['video_link_to'] ); ?>" />
     <label class="description" for="video-link-to"><?php _e( 'Where do you want this page to link to?', 'heritageaction' ); ?></label>
+    <?php
+}
+
+/**
+ * Renders the video link text to input setting field.
+ */
+function heritageaction_settings_field_video_link_text() {
+    $options = heritageaction_get_theme_options();
+    ?>
+    <input type="text" name="heritageaction_theme_options[video_link_text]" id="video-link-text" value="<?php echo esc_attr( $options['video_link_text'] ); ?>" />
+    <label class="description" for="video-link-text"><?php _e( 'Text of the link in the description. Defaults to: Take Action', 'heritageaction' ); ?></label>
     <?php
 }
 
@@ -283,6 +296,7 @@ function heritageaction_theme_options_render_page() {
 		<?php settings_errors(); ?>
 
 		<form method="post" action="options.php">
+		  <h1>Takeover Video</h1>
 			<?php
 				settings_fields( 'heritageaction_options' );
 				do_settings_sections( 'theme_options' );
@@ -318,6 +332,9 @@ function heritageaction_theme_options_validate( $input ) {
     if ( isset( $input['video_title'] ) && ! empty( $input['video_title'] ) )
         $output['video_title'] = wp_filter_nohtml_kses( $input['video_title'] );
 
+    if ( isset( $input['video_link_text'] ) && ! empty( $input['video_link_text'] ) )
+        $output['video_link_text'] = wp_filter_nohtml_kses( $input['video_link_text'] );  
+      
     if ( isset( $input['video_link_to'] ) && ! empty( $input['video_link_to'] ) )
         $output['video_link_to'] = wp_filter_nohtml_kses( $input['video_link_to'] );
 

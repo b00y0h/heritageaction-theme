@@ -396,26 +396,28 @@ function youtubeLightbox() {
 
     $takeover = $settings;
 
-    if($takeover && isset($takeover['video_url']) && !empty($takeover['video_url'])) :
+    if($takeover && isset($takeover['video_url']) && !empty($takeover['video_url'])) {
 
         $takeover_url = $takeover['video_url'];
         $takeover_title = (!empty($takeover['video_title'])) ? $takeover['video_title'] : '';
         $takeover_description = (!empty($takeover['video_description'])) ? $takeover['video_description'] : '';
-
-            if(!empty($takeover['link_to'])) {
-            $takeover_link_text = (!empty($takeover['link_text'])) ? $takeover['link_text'] : 'Take Action';
-            $takeover_description .= urlencode("<div align='center'><a href=\"{$takeover['link_to']}\" class=\"btn rounded gradient medium-blue-gradient\">$takeover_link_text</a></div>");
-            }
-    endif;
+        $enable_video = isset($takeover['enable_video_checkbox']) ? $takeover['enable_video_checkbox'] : false;
+        
+        if(!empty($takeover['video_link_to'])) {
+            $takeover_link_text = (!empty($takeover['video_link_text'])) ? $takeover['video_link_text'] : 'Take Action';
+            $takeover_description .= urlencode("<div align='center'><a href=\"{$takeover['video_link_to']}\" class=\"btn rounded gradient medium-blue-gradient\" style=\"font-size:1.5em;padding:1em;\">$takeover_link_text</a></div>");
+        }
+    }
 
     $params = array(
-        'takeover_url' => $takeover_url,
-        'takeover_title' => $takeover_title,
-        'takeover_description' => $takeover_description
-        );
+        'enable_video' => @$enable_video,
+        'takeover_url' => @$takeover_url,
+        'takeover_title' => @$takeover_title,
+        'takeover_description' => @$takeover_description
+    );
 
-        wp_enqueue_script( 'home', get_template_directory_uri() . '/js/home.js', array( 'jquery' ), '20121108', true );
-        wp_localize_script( 'home', 'Video', $params );
+    wp_enqueue_script( 'home', get_template_directory_uri() . '/js/home.js', array( 'jquery' ), '20121108', true );
+    wp_localize_script( 'home', 'Video', $params );
 }
 
 
