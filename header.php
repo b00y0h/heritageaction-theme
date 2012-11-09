@@ -115,6 +115,16 @@
     border-top: none;
     padding-top: 0px;
   }
+  .listenLiveWidget{
+    float:right;
+    margin:0px 10px 20px 0;
+  }
+  #menu-main-nav > li.score-card {
+    cursor:default;
+  }
+  #menu-main-nav > li.score-card a{
+    display:block;
+  }
 </style>
 </head>
 <body <?php body_class(); ?>>

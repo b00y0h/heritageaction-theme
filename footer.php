@@ -52,6 +52,22 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 </script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 1022609756;
+var google_conversion_label = "dxY8CNqh9AMQ3JLP5wM";
+var google_custom_params = window.google_tag_params;
+var google_remarketing_only = true;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1022609756/?value=0&amp;label=dxY8CNqh9AMQ3JLP5wM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
 <div id="fb-root"></div>
 <?php wp_footer(); ?>
 
