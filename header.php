@@ -71,17 +71,6 @@
     font-size:14px;
     line-height:20px;
   }
-  .no-touch nav[role="navigation"] li.the-forge-blog:hover .nav-desc > a{
-    text-align:left;    
-  }
-  .no-touch nav[role="navigation"] li.the-forge-blog:hover .nav-desc .blog-excerpt{
-    display:none;
-  }
-  .no-touch nav[role="navigation"] li.the-forge-blog:hover .nav-desc > a > h6.blog-title{
-    overflow:visible;
-    text-overflow: clip;
-    white-space:normal;
-  }
   .royalHtmlContent {
     padding:0; 
   }
