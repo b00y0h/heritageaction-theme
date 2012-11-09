@@ -4,7 +4,7 @@
  *
  **/
 
-
+oB.settings.autoplay=true;
 // Placing functions before they are called (JSHINT)
  function actionDashboardGo(){
     jQuery(".dashboardZipSearch").removeClass('error');

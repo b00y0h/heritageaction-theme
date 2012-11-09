@@ -66,6 +66,56 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<style type="text/css" media="screen">
+  .entry-content blockquote{
+    font-size:14px;
+    line-height:20px;
+  }
+  .no-touch nav[role="navigation"] li:hover {
+    /*height: auto;*/
+  }
+  .no-touch nav[role="navigation"] li.the-forge-blog:hover .nav-desc{
+    text-align:left;    
+  }
+  .no-touch nav[role="navigation"] li.the-forge-blog:hover .nav-desc .blog-excerpt{
+    display:none;
+  }
+  .no-touch nav[role="navigation"] li.the-forge-blog:hover .nav-desc > h6.blog-title{
+    overflow:visible;
+    text-overflow: clip;
+    white-space:normal;
+  }
+  .royalHtmlContent {
+    padding:0; 
+  }
+  .royalHtmlContent iframe, .royalHtmlContent object, .royalHtmlContent embed{
+    position:absolute;
+    top:0;
+    left:0;
+    width:643px;
+    height:378px;    
+    z-index:1;
+  }
+  .royalHtmlContent .slide-text-wrap{
+    padding:10px 70px;
+  }
+  .authorMeta{
+    padding-bottom:30px;
+    margin-bottom:10px;
+  }
+  .authorImageWrapper{
+    float:left;
+    margin-right:10px;
+    margin-bottom:10px;
+  }
+  .signup-form-error{
+    border:1px solid red !important;
+  }
+  .single-post-author {
+    border-top: none;
+    padding-top: 0px;
+  }
+</style>
 </head>
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site wrap">
@@ -90,7 +140,7 @@
 								 <a href="http://heritageactionscorecard.com" target="_blank">
 										 <span class="nav-title">Score Card</span>
 								 </a>
-								 <span class="nav-desc">&ldquo;The final source for congressional accountability.&rdquo;<span class="author">– Jeffy Smithbo</span></span>
+								  <span class="nav-desc">&ldquo;Heritage Action is the scorecard for conservatives&rdquo;<br/><span class="author">– Washington Examiner</span></span>
 						 </li>
 									 <li class="gradient red-gradient dashboard">
 											 <a href="/congress/">
@@ -120,7 +170,7 @@
 											 <a href="/donate/">
 													 <span class="nav-title">Donate</span>
 											 </a>
-											 <span class="nav-desc">&ldquo;I give money to Heritage Action, you should too.&rdquo;<span class="author">– Erick Erickson</span></span>
+											 <span class="nav-desc">&ldquo;I give money to Heritage Action, you should too.&rdquo;<br/><span class="author">– Erick Erickson</span></span>
 									 </li>
 									 <li id="search" class="gradient blue-gradient search">
 											 <a href="#" id="search-trigger"></a>
