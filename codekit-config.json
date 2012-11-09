@@ -1,6 +1,6 @@
 {
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
-  "creatorBuild" : "7834",
+  "creatorBuild" : "7839",
   "files" : {
     "\/img\/about-erin-kanoy-siefring.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -103,15 +103,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/page-call.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/page-call.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/img\/about-michael-needham.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -133,6 +124,15 @@
       "outputAbbreviatedPath" : "\/img\/about-jessica-anderson.jpg",
       "initialSize" : 5563,
       "fileType" : 4096
+    },
+    "\/page-call.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/page-call.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/img\/bg-capital-center.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -176,14 +176,16 @@
       "initialSize" : 3450,
       "fileType" : 8192
     },
-    "\/image.php" : {
+    "\/js\/jquery.tinycarousel.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/image.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/js\/jquery.tinycarousel.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 0,
+      "outputAbbreviatedPath" : "\/js\/jquery.tinycarousel-ck.js",
+      "fileType" : 64
     },
     "\/img\/search-hover.png" : {
       "ignoreWasSetByUser" : 0,
@@ -196,16 +198,14 @@
       "initialSize" : 430,
       "fileType" : 8192
     },
-    "\/js\/jquery.tinycarousel.js" : {
+    "\/image.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/js\/jquery.tinycarousel.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 0,
-      "outputAbbreviatedPath" : "\/js\/jquery.tinycarousel-ck.js",
-      "fileType" : 64
+      "inputAbbreviatedPath" : "\/image.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/img\/video-image-large.png" : {
       "ignoreWasSetByUser" : 0,
@@ -417,17 +417,16 @@
       "initialSize" : 11657,
       "fileType" : 4096
     },
-    "\/sass\/partials\/responsive-767px-max.scss" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
+    "\/img\/about-josh-robbins.jpg" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/partials\/responsive-767px-max.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/css\/responsive-767px-max.css",
-      "fileType" : 4,
-      "debugStyle" : 1
+      "inputAbbreviatedPath" : "\/img\/about-josh-robbins.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/about-josh-robbins.jpg",
+      "initialSize" : 4378,
+      "fileType" : 4096
     },
     "\/sass\/partials\/_type.scss" : {
       "ignoreWasSetByUser" : 1,
@@ -515,15 +514,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/no-results.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/no-results.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/img\/logo.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -535,16 +525,26 @@
       "initialSize" : 3556,
       "fileType" : 8192
     },
-    "\/img\/about-josh-robbins.jpg" : {
+    "\/no-results.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/about-josh-robbins.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/about-josh-robbins.jpg",
-      "initialSize" : 4378,
-      "fileType" : 4096
+      "inputAbbreviatedPath" : "\/no-results.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/sass\/partials\/responsive-767px-max.scss" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/partials\/responsive-767px-max.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/css\/responsive-767px-max.css",
+      "fileType" : 4,
+      "debugStyle" : 1
     },
     "\/sass\/partials\/_menu.scss" : {
       "ignoreWasSetByUser" : 1,
@@ -778,17 +778,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/img\/the-forge.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/the-forge.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/the-forge.png",
-      "initialSize" : 4937,
-      "fileType" : 8192
-    },
     "\/img\/search.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -800,14 +789,25 @@
       "initialSize" : 498,
       "fileType" : 8192
     },
-    "\/content.php" : {
+    "\/page.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/content.php",
+      "inputAbbreviatedPath" : "\/page.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
+    },
+    "\/img\/the-forge.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/the-forge.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/the-forge.png",
+      "initialSize" : 4937,
+      "fileType" : 8192
     },
     "\/img\/about-russ-vought.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -820,12 +820,12 @@
       "initialSize" : 5703,
       "fileType" : 4096
     },
-    "\/page.php" : {
+    "\/content.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/page.php",
+      "inputAbbreviatedPath" : "\/content.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -1106,6 +1106,17 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
+    "\/img\/bullet-default.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/bullet-default.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/bullet-default.png",
+      "initialSize" : 227,
+      "fileType" : 8192
+    },
     "\/footer.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1144,15 +1155,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/single.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/single.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/sass\/partials\/_styles.scss" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
@@ -1165,16 +1167,14 @@
       "fileType" : 4,
       "debugStyle" : 1
     },
-    "\/img\/bullet-default.png" : {
+    "\/single.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/bullet-default.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/bullet-default.png",
-      "initialSize" : 227,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/single.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/sidebar-blog.php" : {
       "ignoreWasSetByUser" : 0,
@@ -1449,6 +1449,7 @@
       "unused" : 1,
       "debug" : 0,
       "bitwise" : 1,
+      "white" : false,
       "browser" : 1,
       "worker" : 0,
       "laxcomma" : 1,
