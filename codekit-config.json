@@ -165,6 +165,17 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
+    "\/img\/call\/first-call-header.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/call\/first-call-header.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/call\/first-call-header.png",
+      "initialSize" : 3450,
+      "fileType" : 8192
+    },
     "\/js\/jquery.tinycarousel.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -175,15 +186,6 @@
       "syntaxCheckerStyle" : 0,
       "outputAbbreviatedPath" : "\/js\/jquery.tinycarousel-ck.js",
       "fileType" : 64
-    },
-    "\/image.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/image.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/img\/search-hover.png" : {
       "ignoreWasSetByUser" : 0,
@@ -196,16 +198,14 @@
       "initialSize" : 430,
       "fileType" : 8192
     },
-    "\/img\/call\/first-call-header.png" : {
+    "\/image.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/call\/first-call-header.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/call\/first-call-header.png",
-      "initialSize" : 3450,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/image.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/img\/video-image-large.png" : {
       "ignoreWasSetByUser" : 0,
@@ -452,17 +452,14 @@
       "fileType" : 4,
       "debugStyle" : 1
     },
-    "\/sass\/partials\/responsive-767px-max.scss" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
+    "\/index.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/partials\/responsive-767px-max.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/css\/responsive-767px-max.css",
-      "fileType" : 4,
-      "debugStyle" : 1
+      "inputAbbreviatedPath" : "\/index.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/sass\/partials\/ie.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -528,21 +525,24 @@
       "initialSize" : 3556,
       "fileType" : 8192
     },
+    "\/sass\/partials\/responsive-767px-max.scss" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/partials\/responsive-767px-max.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/css\/responsive-767px-max.css",
+      "fileType" : 4,
+      "debugStyle" : 1
+    },
     "\/no-results.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/no-results.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
-    "\/index.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/index.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -747,14 +747,16 @@
       "initialSize" : 3526,
       "fileType" : 8192
     },
-    "\/page.php" : {
+    "\/img\/hfa.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/page.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/img\/hfa.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/hfa.png",
+      "initialSize" : 8315,
+      "fileType" : 8192
     },
     "\/import-image\/Key-Vote-Alert--YES-on-Full-Repeal.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -778,25 +780,25 @@
       "initialSize" : 4937,
       "fileType" : 8192
     },
-    "\/rtl.css" : {
+    "\/img\/search.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/rtl.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
-    "\/img\/hfa.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/hfa.png",
+      "inputAbbreviatedPath" : "\/img\/search.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/hfa.png",
-      "initialSize" : 8315,
+      "outputAbbreviatedPath" : "\/img\/search.png",
+      "initialSize" : 498,
       "fileType" : 8192
+    },
+    "\/page.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/page.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/content.php" : {
       "ignoreWasSetByUser" : 0,
@@ -818,16 +820,14 @@
       "initialSize" : 5703,
       "fileType" : 4096
     },
-    "\/img\/search.png" : {
+    "\/rtl.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/search.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/search.png",
-      "initialSize" : 498,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/rtl.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/sass\/partials\/_blog.scss" : {
       "ignoreWasSetByUser" : 0,

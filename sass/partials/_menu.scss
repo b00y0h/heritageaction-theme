@@ -134,8 +134,8 @@ nav[role='navigation'] {
     margin-top:10px;
   }
   .blog-title {
-    @include text-overflow();
     color:white;
+    white-space:normal;
     @include font-shorthand(16px, bold, 16px);
     font-style:normal;
   }
@@ -150,7 +150,7 @@ nav[role='navigation'] {
   }
 }
 #home-link {
- width:119px!important; 
+ width:119px!important;
  position:absolute;
  left:-119px;
  background:transparent url('img/logo.png') left center no-repeat;
@@ -160,7 +160,7 @@ nav[role='navigation'] {
   @include size($nav-height,120px);
   text-indent:-9999em;
   #home-link:hover & {
-    background: url(img/home-logo-hover.png) no-repeat;    
+    background: url(img/home-logo-hover.png) no-repeat;
   }
   a {
     @include size($nav-height,120px);
@@ -212,7 +212,7 @@ li#search {
     right:10px;
     bottom:40px;
   }
-  
+
 }
 .footer-navigation {
   li {

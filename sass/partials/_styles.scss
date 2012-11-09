@@ -1267,11 +1267,6 @@ h1 {
   .no-touch nav[role="navigation"] li.the-forge-blog:hover .nav-desc .blog-excerpt{
     display:none;
   }
-  .no-touch nav[role="navigation"] li.the-forge-blog:hover .nav-desc > h6.blog-title{
-    overflow:visible;
-    text-overflow: clip;
-    white-space:normal;
-  }
   .royalHtmlContent {
     padding:0;
   }
