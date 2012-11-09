@@ -71,16 +71,13 @@
     font-size:14px;
     line-height:20px;
   }
-  .no-touch nav[role="navigation"] li:hover {
-    /*height: auto;*/
-  }
-  .no-touch nav[role="navigation"] li.the-forge-blog:hover .nav-desc{
+  .no-touch nav[role="navigation"] li.the-forge-blog:hover .nav-desc > a{
     text-align:left;    
   }
   .no-touch nav[role="navigation"] li.the-forge-blog:hover .nav-desc .blog-excerpt{
     display:none;
   }
-  .no-touch nav[role="navigation"] li.the-forge-blog:hover .nav-desc > h6.blog-title{
+  .no-touch nav[role="navigation"] li.the-forge-blog:hover .nav-desc > a > h6.blog-title{
     overflow:visible;
     text-overflow: clip;
     white-space:normal;
@@ -122,8 +119,15 @@
   #menu-main-nav > li.score-card {
     cursor:default;
   }
-  #menu-main-nav > li.score-card a{
+  #menu-main-nav > li.score-card a, #menu-main-nav > li.the-forge-blog a{
     display:block;
+  }
+  #menu-main-nav > li.the-forge-blog .nav-desc > a {
+    line-height:20px;    
+  }
+  #menu-main-nav > li.the-forge-blog .nav-desc > a > .blog-date{
+    font-size:12px;
+    font-weight:normal;
   }
 </style>
 </head>
@@ -170,9 +174,12 @@
 											    $latest_post = new WP_Query(array('posts_per_page'=>'1', 'post_type'=>'post','orderby' => 'post_date',
                           'order' => 'DESC', 'ignore_sticky_posts' => 1, 'cat'=>$featured_category->term_id));
 											    while($latest_post->have_posts()): $latest_post->the_post();?>
-											   <h6 class="blog-title"><?php echo the_title(); ?></h6>
-											   <span class="blog-date"><?php the_date(); ?></span>
+											   <a class="blog-link" href="<?php the_permalink(); ?>">
+											     <h6 class="blog-title"><?php echo the_title(); ?></h6>
+											     <span class="blog-date"><?php the_date(); ?></span>
+											   </a>   
 											   <p class="blog-excerpt"><?php echo truncateWords(get_the_excerpt(),90); ?>...</p>
+											   
 											   <?php endwhile; wp_reset_postdata(); ?>
 											 </span>
 									 </li>

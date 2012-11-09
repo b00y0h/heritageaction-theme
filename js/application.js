@@ -198,7 +198,7 @@ function signup_validate(form){
     });
 
         // allow clicking on nav dropdown to act as link click
-        $("#menu-main-nav > li.the-forge-blog, #menu-main-nav > li.donate").click(function(){
+        $("#menu-main-nav > li.donate").click(function(){
             window.location.href = $('a',$(this)).attr('href');
         });
     });
