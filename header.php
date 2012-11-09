@@ -66,72 +66,6 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<style type="text/css" media="screen">
-  .entry-content blockquote{
-    font-size:14px;
-    line-height:20px;
-  }
-  .royalHtmlContent {
-    padding:0; 
-  }
-  .royalHtmlContent iframe, .royalHtmlContent object, .royalHtmlContent embed{
-    position:absolute;
-    top:0;
-    left:0;
-    width:643px;
-    height:378px;    
-    z-index:1;
-  }
-  .royalHtmlContent .slide-text-wrap{
-    padding:10px 70px;
-  }
-  .authorMeta{
-    padding-bottom:30px;
-    margin-bottom:10px;
-  }
-  .authorImageWrapper{
-    float:left;
-    margin-right:10px;
-    margin-bottom:10px;
-  }
-  .signup-form-error{
-    border:1px solid red !important;
-  }
-  .single-post-author {
-    border-top: none;
-    padding-top: 0px;
-  }
-  .listenLiveWidget{
-    float:right;
-    margin:0px 10px 20px 0;
-  }
-  #menu-main-nav > li.score-card {
-    cursor:default;
-  }
-  #menu-main-nav > li.score-card a, #menu-main-nav > li.the-forge-blog a{
-    display:block;
-  }
-  #menu-main-nav > li.the-forge-blog .nav-desc > a {
-    line-height:20px;    
-  }
-  #menu-main-nav > li.the-forge-blog .nav-desc > a > .blog-date{
-    font-size:12px;
-    font-weight:normal;
-  }
-  #shareFb iframe{
-    max-width:450px !important;
-  }
-  .post-suggested-tweets-wrapper{
-    margin-bottom:15px;
-  }
-  .post-suggested-tweet{
-    width:190px;
-    float:left;
-    padding:5px 10px;
-    border:1px solid #ccc;
-    margin-right:11px;
-  }
-</style>
 </head>
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site wrap">
@@ -179,9 +113,9 @@
 											   <a class="blog-link" href="<?php the_permalink(); ?>">
 											     <h6 class="blog-title"><?php echo the_title(); ?></h6>
 											     <span class="blog-date"><?php the_date(); ?></span>
-											   </a>   
+											   </a>
 											   <p class="blog-excerpt"><?php echo truncateWords(get_the_excerpt(),90); ?>...</p>
-											   
+
 											   <?php endwhile; wp_reset_postdata(); ?>
 											 </span>
 									 </li>
