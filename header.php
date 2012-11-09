@@ -129,6 +129,19 @@
     font-size:12px;
     font-weight:normal;
   }
+  #shareFb iframe{
+    max-width:450px !important;
+  }
+  .post-suggested-tweets-wrapper{
+    margin-bottom:15px;
+  }
+  .post-suggested-tweet{
+    width:190px;
+    float:left;
+    padding:5px 10px;
+    border:1px solid #ccc;
+    margin-right:11px;
+  }
 </style>
 </head>
 <body <?php body_class(); ?>>
