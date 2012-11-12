@@ -75,6 +75,8 @@ get_header(); ?>
 
 				<?php get_template_part( 'content', 'single' ); ?>
 
+				<?php heritageaction_post_suggested_tweets(); ?>
+
 				<?php // heritageaction_content_nav( 'nav-below' ); ?>
 
 				<?php if(!in_array(get_the_author_meta('user_nicename'), array('admin','heritageaction','andre'))): ?>

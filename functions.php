@@ -507,3 +507,153 @@ function heritageaction_save_extra_profile_fields( $user_id ) {
 	update_user_meta( $user_id, 'title', $_POST['title'] );
 	update_user_meta( $user_id, 'twitter', $_POST['twitter'] );
 }
+
+
+// post tweet suggestions
+
+
+/* Create one or more meta boxes to be displayed on the post editor screen. */
+function post_tweet_suggestions_meta_boxes() {
+
+	add_meta_box(
+		'heritageaction-post-tweet-suggestions',			// Unique ID
+		esc_html__( 'Tweet Suggestions', 'heritageaction' ),		// Title
+		'post_tweet_suggestions_meta_box',		// Callback function
+		'post',					// Admin page (or post type)
+		'normal',					// Context
+		'high'					// Priority
+	);
+	
+	
+}
+add_action( 'add_meta_boxes', 'post_tweet_suggestions_meta_boxes' );
+
+/* Display the post meta box. */
+function post_tweet_suggestions_meta_box( $object, $box ) { ?>
+
+	<?php wp_nonce_field( basename( __FILE__ ), 'heritageaction_post_class_nonce' ); ?>
+
+  <script type="text/javascript">
+    (function($){
+      $(document).ready(function(){
+        measureTweets();
+        $('.tweet_input').keyup(function(){
+          measureTweets();
+        })
+      })
+    })(jQuery);
+    
+    function measureTweets(){
+      jQuery(".charCount").each(function(){
+        var id = jQuery(this).attr('id').replace("charCount_",'');        
+        var count = jQuery("#suggest_tweet_"+id).val().length;
+        jQuery(this).html(parseFloat(140-count) + " remaining");
+      })
+    }
+  </script> 
+
+  <style type="text/css" media="screen">
+    .charCount{
+      float:right;
+      width:84px;
+      text-align:right;
+      margin: -9px 0 0 15px;
+    }
+    .tweet_input{
+      float:left;
+    }
+  </style>
+
+	<p>
+		<label for="suggest_tweet_1"><?php _e( "Tweet Suggestion #1", 'heritageaction' ); ?></label>
+		<br />		
+		
+		<input class="widefat tweet_input" type="text" name="tweets[suggest_tweet_1]" id="suggest_tweet_1" value="<?php echo esc_attr( get_post_meta( $object->ID, 'suggest_tweet_1', true ) ); ?>" style='width:85%' maxlength="140"/>
+		<div id="charCount_1" class="charCount">0</div>		
+		<br class="clearfix">
+	</p>
+	<p>
+		<label for="suggest_tweet_2"><?php _e( "Tweet Suggestion #2", 'heritageaction' ); ?></label>
+		<br />
+		<input class="widefat tweet_input" type="text" name="tweets[suggest_tweet_2]" id="suggest_tweet_2" value="<?php echo esc_attr( get_post_meta( $object->ID, 'suggest_tweet_2', true ) ); ?>" style='width:85%' maxlength="140"/>
+		<div id="charCount_2" class="charCount">0</div>		
+		<br class="clearfix">
+	</p>
+	<p>
+		<label for="suggest_tweet_3"><?php _e( "Tweet Suggestion #3", 'heritageaction' ); ?></label>
+		<br />
+		<input class="widefat tweet_input" type="text" name="tweets[suggest_tweet_3]" id="suggest_tweet_3" value="<?php echo esc_attr( get_post_meta( $object->ID, 'suggest_tweet_3', true ) ); ?>" style='width:85%' maxlength="140"/>
+		<div id="charCount_3" class="charCount">0</div>		
+		<br class="clearfix">
+	</p>
+<?php }
+
+/* Save the meta box's post metadata. */
+function post_tweet_suggestions_save( $post_id) {
+  
+  $post = get_post($post_id);
+
+  if($post->post_type == 'post'){
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+        return;
+
+	  if( !isset( $_POST['heritageaction_post_class_nonce'] ) || !wp_verify_nonce( $_POST['heritageaction_post_class_nonce'], plugin_basename( __FILE__ ) ) )
+        //return;
+    
+    if ( !current_user_can( 'edit_post', $post_id ) ){
+        return;
+    }
+    
+    //echo nl2br(print_r($_POST,true));
+
+   $i = 1;
+	  foreach($_POST['tweets'] as $key=>$tweet){
+
+	    $new_meta_value = ( $tweet != "") ? sanitize_html_class( $tweet ) : '' ;
+    	update_post_meta($post_id, $key , $tweet );
+
+	    $i++;
+	  }
+    
+  }
+
+		
+}
+add_action( 'save_post', 'post_tweet_suggestions_save');
+
+function heritageaction_post_suggested_tweets(){
+  global $post;
+	$tweet_1 = @get_post_meta( $post->ID, 'suggest_tweet_1', true );
+  $tweet_2 = @get_post_meta( $post->ID, 'suggest_tweet_2', true );
+  $tweet_3 = @get_post_meta( $post->ID, 'suggest_tweet_3', true );
+	if(!empty($tweet_1) || !empty($tweet_2) || !empty($tweet_3) ) { ?>
+	<div class="post-suggested-tweets-wrapper">
+	  <h3>Article Highlights</h3>
+    
+    <?php if($tweet_1): ?>
+	  <div class="post-suggested-tweet suggest-tweet-1">
+	    <span class="suggest-text"><?php echo $tweet_1; ?></span><br>
+	    <span class="tweet-suggestion">
+	      <a class="click-to-tweet" href="https://twitter.com/intent/tweet?original_referer=http://heritageaction.com&amp;source=tweetbutton&amp;text=<?php echo urlencode($tweet_1); ?>&amp;url=<?php the_permalink(); ?>">Tweet This</a></span>
+	  </div>
+	  <?php endif; ?>
+	  <?php if($tweet_2): ?>
+	  <div class="post-suggested-tweet suggest-tweet-2">
+	    <span class="suggest-text"><?php echo $tweet_2; ?></span><br>
+	    <span class="tweet-suggestion">
+	      <a class="click-to-tweet" href="https://twitter.com/intent/tweet?original_referer=http://heritageaction.com&amp;source=tweetbutton&amp;text=<?php echo urlencode($tweet_2); ?>&amp;via=Heritage_Action&amp;url=<?php the_permalink(); ?>">Tweet This</a></span>
+	  </div>
+	  <?php endif; ?>
+	  <?php if($tweet_3): ?>
+	  <div class="post-suggested-tweet suggest-tweet-3">
+	    <span class="suggest-text"><?php echo $tweet_3; ?></span><br>
+	    <span class="tweet-suggestion">
+	      <a class="click-to-tweet" href="https://twitter.com/intent/tweet?original_referer=http://heritageaction.com&amp;source=tweetbutton&amp;text=<?php echo urlencode($tweet_3); ?>&amp;url=<?php the_permalink(); ?>&amp;via=Heritage_Action">Tweet This</a></span>
+	  </div>
+	  <?php endif; ?>
+	  <div style="clear:both;"></div>
+	  
+	</div>
+  <?php 
+  }
+}
