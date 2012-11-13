@@ -42,8 +42,8 @@
 
 <script>
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-5004756-2']);
-  _gaq.push(['_setDomainName', 'ha.andrefredette.com']);
+  _gaq.push(['_setAccount', 'UA-16902633-1']);
+  _gaq.push(['_setDomainName', 'heritageaction.com']);
   _gaq.push(['_trackPageview']);
 
   (function() {
