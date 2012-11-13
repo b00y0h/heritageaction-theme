@@ -66,6 +66,13 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
+<style type="text/css" media="screen">
+  .click-to-tweet{
+    color:#115CDA;
+    font-family: Arial, sans-serif;
+    font-size:12px;
+  }
+</style>
 </head>
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site wrap">
