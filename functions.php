@@ -269,10 +269,10 @@ function my_insert_rewrite_rules( $rules ) {
 }
 
 function filter_search($query) {
-    if ($query->is_search && $query->query_vars['post_type'] == 'post') {
+    if ($query->is_search && !is_admin() && $query->query_vars['post_type'] == 'post') {
 	      $query->set('post_type', array('post'));
     }
-    elseif($query->is_search){
+    elseif($query->is_search && !is_admin()){
         $query->set('post_type', array('post','page','key-votes','legislative-fights','press-releases'));
     }
     return $query;
@@ -287,7 +287,7 @@ function my_flush_rules(){
 	$rules = get_option( 'rewrite_rules' );
 
 	if ( !isset($rules['^search-blog/(.*)?']) ||  
-	     !isset($rules['^search/([^/]*)?'])  
+	     !isset($rules['^search/([^/]*)?'])
 	   ) {
 		global $wp_rewrite;
 	   	$wp_rewrite->flush_rules();
