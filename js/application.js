@@ -24,25 +24,28 @@ oB.settings.autoplay=true;
   }
 
 function signup_validate(form){
-    form = jQuery(form);
+		if(typeof form === 'string'){
+			form = jQuery(form);
+		}
+    
     jQuery('.signup-form-error',form).removeClass('signup-form-error');
     var output = true;
     // validate name
-    if(jQuery("#signup_name" ,form).val() === '' || jQuery("#signup_name" ,form).val() === 'Name'){
+    if(jQuery(".signup_name" ,form).val() === '' || jQuery(".signup_name" ,form).val() === 'Name'){
         output = false;
-        jQuery("#signup_name" ,form).addClass('signup-form-error');
+        jQuery(".signup_name" ,form).addClass('signup-form-error');
     }
 
     // validate email
-    if(jQuery("#email_address" ,form).val() === '' || jQuery("#email_address" ,form).val() === 'Email Address'){
+    if(jQuery(".email_address" ,form).val() === '' || jQuery(".email_address" ,form).val() === 'Email Address'){
         output = false;
-        jQuery("#email_address" ,form).addClass('signup-form-error');
+        jQuery(".email_address" ,form).addClass('signup-form-error');
     }
 
     // validate zip
-    if(jQuery("#zip_code" ,form).val() === '' || jQuery("#zip_code" ,form).val() === 'Zip Code'){
+    if(jQuery(".zip_code" ,form).val() === '' || jQuery(".zip_code" ,form).val() === 'Zip Code'){
         output = false;
-        jQuery("#zip_code" ,form).addClass('signup-form-error');
+        jQuery(".zip_code" ,form).addClass('signup-form-error');
     }
 
     return output;
@@ -121,7 +124,7 @@ function signup_validate(form){
         return false;
       });
 
-      $("#signup-form-submit-button").click(function(){
+      $("#footer-signup-form-submit-button").click(function(){
 
         if(signup_validate("#signup-form") ){
             var form_data = $("#signup-form").serialize();
@@ -140,6 +143,37 @@ function signup_validate(form){
 
 
 
+        return false;
+      });
+
+			$(".signup-form-submit-button").click(function(){
+				var form = $(this).parent();
+        if(signup_validate(form) ){
+            var form_data = $(this).parent().serialize();
+						//console.log(form_data);
+										
+            $(".paramount_signup_form_result").load("/bluehornet/bluehornet-api.php?" + form_data, function(){
+							form.hide();
+							$(".paramount_signup_thankyou", form.parent()).show();
+						});
+						
+						if(form.attr('data-pa-ga') == 'true'){
+            	var _gaq = _gaq || [];
+            	_gaq.push(['_trackEvent', 'Signup', form.attr('data-pa-name') , $(".signup_name").val()+' '+$(".email_address").val()]);
+						}
+						
+						if(form.attr('data-pa-cookie') == 'true'){
+							
+							// set cookie
+	            var now = new Date();
+	            var time = now.getDate();
+	            time += 365 * 20;
+	            now.setDate(time);
+							var cookie_name = '_signup_' + form.attr('data-pa-name').toLowerCase().replace(' ','_') + '_submitted';
+	            document.cookie = cookie_name + '=true; expires=' + now.toGMTString() + '; path=/';
+							
+						}
+         }
         return false;
       });
 

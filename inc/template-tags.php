@@ -61,10 +61,10 @@ function heritageaction_signup_section( ) {
     <div id="signup-content" class="centered max-width">
       <form id="signup-form" action="front-page_submit" method="get" accept-charset="utf-8">
         <input type="hidden" name="user[userip]" value="<?php echo $_SERVER['REMOTE_ADDR']; ?>">
-        <input type="text" name="user[name]" id="signup_name" placeholder="Name">
-        <input type="text" name="user[email_address]" id="email_address" placeholder="Email Address">
-        <input type="text" name="user[zip_code]" id="zip_code" placeholder="Zip Code">
-        <a href="#" id="signup-form-submit-button" class="btn rounded gradient medium-blue-gradient">Sign Up</a>
+        <input type="text" name="user[name]" id="signup_name" class="signup_name" placeholder="Name">
+        <input type="text" name="user[email_address]" id="email_address" class="email_address" placeholder="Email Address">
+        <input type="text" name="user[zip_code]" id="zip_code" class="zip_code" placeholder="Zip Code">
+        <a href="#" id="footer-signup-form-submit-button" class="btn rounded gradient medium-blue-gradient">Sign Up</a>
         <div id="interest">
             <div class="control-group question">
               <label class="control-label"><?php _e("I'm interested in:", 'heritageaction'); ?></label>
