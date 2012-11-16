@@ -71,7 +71,7 @@
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/style.css",
-      "outputAbbreviatedPath" : "No Output Path",
+      "outputAbbreviatedPath" : "\/No Output Path",
       "fileType" : 16
     },
     "\/inc\/custom-posttypes.php" : {
@@ -147,7 +147,7 @@
     },
     "\/js\/application-ck.js" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
+      "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/js\/application-ck.js",
@@ -207,17 +207,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/img\/video-image-large.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/video-image-large.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/video-image-large.png",
-      "initialSize" : 187091,
-      "fileType" : 8192
-    },
     "\/img\/vote-no-lg.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -227,6 +216,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/img\/vote-no-lg.png",
       "initialSize" : 2034,
+      "fileType" : 8192
+    },
+    "\/img\/video-image-large.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/video-image-large.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/video-image-large.png",
+      "initialSize" : 187091,
       "fileType" : 8192
     },
     "\/searchform.php" : {
@@ -351,6 +351,17 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
+    "-mobile\/js\/application-ck.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "-mobile\/js\/application-ck.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/js\/application-ck-ck.js",
+      "fileType" : 64
+    },
     "\/img\/made-in-usa.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -406,17 +417,6 @@
       "initialSize" : 5060,
       "fileType" : 4096
     },
-    "\/import-image\/about-us-main.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/import-image\/about-us-main.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/import-image\/about-us-main.jpg",
-      "initialSize" : 11657,
-      "fileType" : 4096
-    },
     "\/img\/about-josh-robbins.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -427,6 +427,18 @@
       "outputAbbreviatedPath" : "\/img\/about-josh-robbins.jpg",
       "initialSize" : 4378,
       "fileType" : 4096
+    },
+    "\/sass\/partials\/responsive-767px-max.scss" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/partials\/responsive-767px-max.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/sass\/css\/responsive-767px-max.css",
+      "fileType" : 4,
+      "debugStyle" : 1
     },
     "\/sass\/partials\/_type.scss" : {
       "ignoreWasSetByUser" : 1,
@@ -505,14 +517,16 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/single-key-votes.php" : {
+    "\/import-image\/about-us-main.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/single-key-votes.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/import-image\/about-us-main.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/import-image\/about-us-main.jpg",
+      "initialSize" : 11657,
+      "fileType" : 4096
     },
     "\/img\/logo.png" : {
       "ignoreWasSetByUser" : 0,
@@ -525,24 +539,21 @@
       "initialSize" : 3556,
       "fileType" : 8192
     },
-    "\/sass\/partials\/responsive-767px-max.scss" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/partials\/responsive-767px-max.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/sass\/css\/responsive-767px-max.css",
-      "fileType" : 4,
-      "debugStyle" : 1
-    },
     "\/no-results.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/no-results.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
+    "\/single-key-votes.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/single-key-votes.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -769,16 +780,14 @@
       "initialSize" : 22024,
       "fileType" : 4096
     },
-    "\/img\/the-forge.png" : {
+    "\/rtl.css" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/the-forge.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/the-forge.png",
-      "initialSize" : 4937,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/rtl.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/img\/search.png" : {
       "ignoreWasSetByUser" : 0,
@@ -791,6 +800,26 @@
       "initialSize" : 498,
       "fileType" : 8192
     },
+    "\/img\/the-forge.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/the-forge.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/the-forge.png",
+      "initialSize" : 4937,
+      "fileType" : 8192
+    },
+    "\/content.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/content.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/page.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -800,12 +829,12 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/content.php" : {
+    "\/single-press-releases.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/content.php",
+      "inputAbbreviatedPath" : "\/single-press-releases.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
@@ -819,15 +848,6 @@
       "outputAbbreviatedPath" : "\/img\/about-russ-vought.jpg",
       "initialSize" : 5703,
       "fileType" : 4096
-    },
-    "\/rtl.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/rtl.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
     },
     "\/sass\/partials\/_blog.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -1074,7 +1094,7 @@
       "inputAbbreviatedPath" : "\/js\/application.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/js\/application-ck.js",
+      "outputAbbreviatedPath" : "-mobile\/js\/application-ck.js",
       "fileType" : 64
     },
     "\/import-image\/local-blog-roundup.jpg" : {
@@ -1126,15 +1146,6 @@
       "initialSize" : 301,
       "fileType" : 8192
     },
-    "\/call-alert-styles.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/call-alert-styles.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/page-contact.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1175,6 +1186,15 @@
       "outputAbbreviatedPath" : "\/img\/bullet-default.png",
       "initialSize" : 227,
       "fileType" : 8192
+    },
+    "\/call-alert-styles.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/call-alert-styles.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/sidebar-blog.php" : {
       "ignoreWasSetByUser" : 0,
@@ -1374,7 +1394,7 @@
     "jsCheckerReservedNamesString" : "",
     "javascriptOutputStyle" : 1,
     "stylusDebugStyle" : 0,
-    "hamlUseCDATA" : false,
+    "hamlUseCDATA" : 0,
     "hamlAutoOutputPathStyle" : 0,
     "sassDebugStyle" : 1,
     "hamlOutputStyle" : 0,
@@ -1412,7 +1432,7 @@
       "trailing" : 1,
       "nonew" : 1,
       "withstmt" : 0,
-      "yui" : false,
+      "yui" : 0,
       "mootools" : 0,
       "proto" : 0,
       "boss" : 0,
@@ -1449,7 +1469,7 @@
       "unused" : 1,
       "debug" : 0,
       "bitwise" : 1,
-      "white" : false,
+      "white" : 0,
       "browser" : 1,
       "worker" : 0,
       "laxcomma" : 1,
