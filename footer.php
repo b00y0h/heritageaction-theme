@@ -61,11 +61,22 @@
        <!-- ========== -->
        <!-- = Donate = -->
        <!-- ========== -->
-       <!-- <div id="panel4" class="hs-content widgets">
-         <div class="widgets-inner">
-         donate
-         </div>
-      </div> -->
+        <div id="panel4" class="hs-content widgets">
+           <div class="widgets-inner">
+           <header class="gradient red-gradient">
+             <h2 class="title">Support Heritage Action</h2>
+           </header>
+           <p>
+             <em>“Heritage Action is the political muscle that turns conservative policy ideas into conservative realities on Capitol Hill.”</em><br>
+                &nbsp;&nbsp;&nbsp;–Sean Hannity
+           </p>
+           <p>
+             <em>“I support Heritage Action for America. I write about them, I give them money, I sign up for their emails. You should too.”</em><br>
+             &nbsp;&nbsp;&nbsp;–Erick Erickson, RedState.com
+           </p>
+           <a href="/donate" class="btn rounded gradient red-gradient">Donate</a>
+           </div>
+        </div> 
 
        <!-- ============= -->
        <!-- = Key Votes = -->
