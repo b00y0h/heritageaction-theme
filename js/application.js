@@ -43,6 +43,12 @@
         return false;
       }
 
+			$(".site-navigation a").click(function(){
+				$(".site-navigation a").removeClass('active-nav');
+				$(this).addClass('active-nav');
+			})
+			
+
       // home key votes toggle
       $(".keyVoteSelector").change(function(){
         $(".items").slideUp();
