@@ -25,7 +25,10 @@
   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-
+<style type="text/css" media="screen">
+  .active-nav > span, #search-trigger.active-nav{color:#D8240F;}
+  #masthead{z-index:50000;}
+</style>
 </head>
 <body <?php body_class(); ?>>
   <div id="hs-container" class="hs-container">
