@@ -67,10 +67,26 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <style type="text/css" media="screen">
-  .click-to-tweet{
-    color:#115CDA;
-    font-family: Arial, sans-serif;
-    font-size:12px;
+  .post-suggested-tweet p{
+    margin:5px 0 0 0;
+  }
+  .single-post-author{
+    padding-bottom:25px;
+    border-bottom: 5px solid #ddd;
+  }
+  .post-suggested-tweets-wrapper{
+    margin:0px 0 20px 0;
+    border-bottom: 5px solid #ddd;
+    padding:0px 0 25px 0px;
+  }
+  .paramount_signup_title{
+    padding-bottom:5px;
+  }
+  .post-suggested-tweet{
+    background-color:#eee;
+  }
+  a.click-to-tweet{
+    font-size:12px; 
   }
 </style>
 </head>

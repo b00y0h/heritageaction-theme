@@ -547,7 +547,7 @@ function post_tweet_suggestions_meta_box( $object, $box ) { ?>
       jQuery(".charCount").each(function(){
         var id = jQuery(this).attr('id').replace("charCount_",'');        
         var count = jQuery("#suggest_tweet_"+id).val().length;
-        jQuery(this).html(parseFloat(140-count) + " remaining");
+        jQuery(this).html(parseFloat(105-count) + " remaining");
       })
     }
   </script> 
@@ -627,28 +627,34 @@ function heritageaction_post_suggested_tweets(){
   $tweet_2 = @get_post_meta( $post->ID, 'suggest_tweet_2', true );
   $tweet_3 = @get_post_meta( $post->ID, 'suggest_tweet_3', true );
 	if(!empty($tweet_1) || !empty($tweet_2) || !empty($tweet_3) ) { ?>
-	<div class="post-suggested-tweets-wrapper">
-	  <h3>Article Highlights</h3>
+	<div class="post-suggested-tweets-wrapper only-desktop">
+	  <div class="single-post-comment-title">Suggested Tweets</div>
     
     <?php if($tweet_1): ?>
 	  <div class="post-suggested-tweet suggest-tweet-1">
-	    <span class="suggest-text"><?php echo $tweet_1; ?></span><br>
+	    <span class="suggest-text"><?php echo $tweet_1; ?></span>
+	    <p align="center">
 	    <span class="tweet-suggestion">
-	      <a class="click-to-tweet" href="https://twitter.com/intent/tweet?original_referer=http://heritageaction.com&amp;source=tweetbutton&amp;text=<?php echo urlencode($tweet_1); ?>&amp;url=<?php the_permalink(); ?>">Tweet This</a></span>
+	      <a class="click-to-tweet btn rounded gradient medium-blue-gradient" href="https://twitter.com/intent/tweet?original_referer=http://heritageaction.com&amp;source=tweetbutton&amp;text=<?php echo urlencode($tweet_1); ?>&amp;via=Heritage_Action&amp;url=<?php the_permalink(); ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/img/tiny-twitter-logo-white.png" width="15" vertical-align="middle" style="margin-bottom:-2px"> Tweet This</a></span>
+	    </p>
 	  </div>
 	  <?php endif; ?>
 	  <?php if($tweet_2): ?>
 	  <div class="post-suggested-tweet suggest-tweet-2">
-	    <span class="suggest-text"><?php echo $tweet_2; ?></span><br>
-	    <span class="tweet-suggestion">
-	      <a class="click-to-tweet" href="https://twitter.com/intent/tweet?original_referer=http://heritageaction.com&amp;source=tweetbutton&amp;text=<?php echo urlencode($tweet_2); ?>&amp;via=Heritage_Action&amp;url=<?php the_permalink(); ?>">Tweet This</a></span>
+	    <span class="suggest-text"><?php echo $tweet_2; ?></span>
+	    <p align="center">
+	      <span class="tweet-suggestion">
+	        <a class="click-to-tweet btn rounded gradient medium-blue-gradient" href="https://twitter.com/intent/tweet?original_referer=http://heritageaction.com&amp;source=tweetbutton&amp;text=<?php echo urlencode($tweet_2); ?>&amp;via=Heritage_Action&amp;url=<?php the_permalink(); ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/img/tiny-twitter-logo-white.png" width="15" vertical-align="middle" style="margin-bottom:-2px"> Tweet This</a></span>
+	    </p>
 	  </div>
 	  <?php endif; ?>
 	  <?php if($tweet_3): ?>
 	  <div class="post-suggested-tweet suggest-tweet-3">
-	    <span class="suggest-text"><?php echo $tweet_3; ?></span><br>
+	    <span class="suggest-text"><?php echo $tweet_3; ?></span>
+	    <p align="center">
 	    <span class="tweet-suggestion">
-	      <a class="click-to-tweet" href="https://twitter.com/intent/tweet?original_referer=http://heritageaction.com&amp;source=tweetbutton&amp;text=<?php echo urlencode($tweet_3); ?>&amp;url=<?php the_permalink(); ?>&amp;via=Heritage_Action">Tweet This</a></span>
+	      <a class="click-to-tweet btn rounded gradient medium-blue-gradient" href="https://twitter.com/intent/tweet?original_referer=http://heritageaction.com&amp;source=tweetbutton&amp;text=<?php echo urlencode($tweet_3); ?>&amp;url=<?php the_permalink(); ?>&amp;via=Heritage_Action"><img src="<?php echo get_bloginfo('template_url'); ?>/img/tiny-twitter-logo-white.png" width="15" vertical-align="middle" style="margin-bottom:-2px"> Tweet This</a></span>
+	    </p>
 	  </div>
 	  <?php endif; ?>
 	  <div style="clear:both;"></div>

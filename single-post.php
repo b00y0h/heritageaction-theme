@@ -75,7 +75,7 @@ get_header(); ?>
 
 				<?php get_template_part( 'content', 'single' ); ?>
 
-				<?php heritageaction_post_suggested_tweets(); ?>
+			
 
 				<?php // heritageaction_content_nav( 'nav-below' ); ?>
 
@@ -107,6 +107,8 @@ get_header(); ?>
 				  <div style="clear:both;"></div>
 				</div>
 				<?php endif; ?>
+				
+				<?php  heritageaction_post_suggested_tweets(); ?>
 
 				<?php
 					// If comments are open or we have at least one comment, load up the comment template
