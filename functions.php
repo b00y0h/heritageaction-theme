@@ -667,57 +667,28 @@ function heritageaction_post_suggested_tweets(){
 add_shortcode('paramount_signup', 'paramount_signup_form');
 
 function paramount_signup_form($atts){
+  $output = '';
   extract( shortcode_atts( array(
-      'name' => 'Signup Shortcode',
-      'width' => '200',
+      'name' => 'Signup Form',
+      'width' => '210',
   		'groups' => '968328',
   		'title' => 'Sign Up',
   		'usecookie' => 'false',
   		'analytics' => 'false',
   		'align' => 'full',
   		'link_text' => 'Sign Up',
-  		'thankyou' => 'Thank you for signing up.'
+  		'thankyou' => 'Thank you for signing up.',
+  		'style' => ''
   	), $atts ) );
   	$cookie_name = '_signup_' . str_replace(' ','_', strtolower($name)) . '_submitted';
+
   	
-    if($usecookie == 'true' && @$_COOKIE[$cookie_name] != 'true') :
+    if(($usecookie == 'true' && @$_COOKIE[$cookie_name] != 'true') || $usecookie == 'false') :
+    ob_start();
   ?>	
   
-  <style type="text/css" media="screen">
-    .paramount_signup_form{
-      
-    }
-    .paramount_signup_form input[type=text]{
-      width:100%;
-    }
-    .paramount_signup_title{
-      font-size:1.2em;
-      font-weight:bold;
-    }
-    .paramount_align_left{
-      float:left;
-      margin-right:20px;
-      margin-bottom:20px;
-    }
-    .paramount_align_right{
-      float:right;
-      margin-left:20px;
-      margin-bottom:20px;
-    }
-    .paramount_align_center{
-      margin:0 auto 20px auto;
-      text-align:center;
-    }
-    .paramount_align_full{
-      clear:both;
-      margin-bottom:20px;
-    }
-    .paramount_signup_form_result, .paramount_signup_thankyou{
-      display:none;
-    }
-  </style>
   
-  	<div class="paramount_signup_form paramount_align_<?php echo $align; ?>" style="width:<?php echo $width; ?>px;">
+  	<div class="paramount_signup_form paramount_align_<?php echo $align; ?>" style="width:<?php echo $width; ?>px; <?php echo $style; ?>">
       <div class="paramount_signup_title"><?php echo $title; ?></div>
       <div class="centered max-width signup-content">
         <form class="signup-form" action="front-page_submit" method="get" accept-charset="utf-8" data-pa-name='<?php echo $name; ?>' data-pa-ga='<?php echo $analytics ?>' data-pa-cookie="<?php echo $usecookie; ?>">
@@ -733,5 +704,9 @@ function paramount_signup_form($atts){
       </div>
     </div>
   <?php
+    $output = ob_get_clean();
     endif;  // cookie check
+    
+    return $output;
 }
+

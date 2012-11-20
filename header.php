@@ -79,14 +79,41 @@
     border-bottom: 5px solid #ddd;
     padding:0px 0 25px 0px;
   }
-  .paramount_signup_title{
-    padding-bottom:5px;
-  }
   .post-suggested-tweet{
     background-color:#eee;
   }
   a.click-to-tweet{
     font-size:12px; 
+  }
+  
+  .paramount_signup_form input[type=text]{
+    width:100%;
+  }
+  .paramount_signup_title{
+    font-size:1.2em;
+    font-weight:bold;
+    padding-bottom:5px;
+  }
+  .paramount_align_left{
+    float:left;
+    margin-right:20px;
+    margin-bottom:20px;
+  }
+  .paramount_align_right{
+    float:right;
+    margin-left:20px;
+    margin-bottom:20px;
+  }
+  .paramount_align_center{
+    margin:0 auto 20px auto;
+    text-align:center;
+  }
+  .paramount_align_full{
+    clear:both;
+    margin-bottom:20px;
+  }
+  .paramount_signup_form_result, .paramount_signup_thankyou{
+    display:none;
   }
 </style>
 </head>
