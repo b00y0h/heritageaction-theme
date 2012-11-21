@@ -67,6 +67,9 @@
 }(document, 'script', 'facebook-jssdk'));</script>
 
 <style type="text/css" media="screen">
+  #content .entry-content a{text-decoration:underline;}
+  #content .entry-content .post-meta a{text-decoration:none;}
+  
   .post-suggested-tweet p{
     margin:5px 0 0 0;
   }
@@ -114,6 +117,12 @@
   }
   .paramount_signup_form_result, .paramount_signup_thankyou{
     display:none;
+  }
+  
+  .single-post-featured-image, .featured-image {
+    width: 100%;
+    height: auto;
+    max-height:none;
   }
 </style>
 </head>
