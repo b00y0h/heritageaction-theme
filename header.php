@@ -28,6 +28,16 @@
 <style type="text/css" media="screen">
   .active-nav > span, #search-trigger.active-nav{color:#D8240F;}
   #masthead{z-index:50000;}
+  
+  
+  #keyVoteSwitchWrap{margin-bottom:5px;}
+  #keyVoteSwitchWrap.switch legend::after{width:98%;}
+  .houseChamberLabel{margin-left:-10px;}
+  .senateChamberLabel{margin-left:10px;}
+  .keyVoteLabel.activeChamber{font-weight:bold;}
+  #keyVoteTouchSlider{z-index:5000;}
+  .keyvoteLabelWrap{height:30px;margin-bottom:35px;}
+
 </style>
 </head>
 <body <?php body_class(); ?>>
