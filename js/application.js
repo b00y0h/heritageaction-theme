@@ -96,19 +96,20 @@ function signup_validate(form){
 					}
 				}
 			});
+			
 			$(".houseChamberLabel").click(function(){
 				$(".keyVoteLabel").removeClass('activeChamber');
 				$(".houseChamberLabel").addClass('activeChamber');
-				$(".items").slideUp();
-        $(".items_house").slideDown();
+				$(".items_house").show();
+				$('.items_senate').hide()				        
         $("#more-key-votes-link").attr('href','/chamber/key-vote-house/');
 				$("#keyVoteTouchSlider").css('left','0');
 			})
 			$(".senateChamberLabel").click(function(){
 				$(".keyVoteLabel").removeClass('activeChamber');
-				$(".items").slideUp();
+				$(".items_senate").show();
+				$(".items_house").hide();
 				$(".senateChamberLabel").addClass('activeChamber');
-        $(".items_senate").slideDown();
         $("#more-key-votes-link").attr('href','/chamber/key-vote-senate/');
 				$("#keyVoteTouchSlider").css('left','45px');
 			})
