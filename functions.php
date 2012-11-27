@@ -120,7 +120,11 @@ function heritageaction_scripts() {
 	wp_deregister_script( 'jquery-easing-js');
 
 	wp_enqueue_script( 'application', get_template_directory_uri() . '/js/application.js', array( 'jquery' ), '', true );	
+	wp_enqueue_script('jquery-ui-core');
+	wp_enqueue_script( 'jquery-effects-custom', get_template_directory_uri() . '/js/jquery-ui-1.8.24.custom.min.js', array( 'jquery' ), '20121002', true );
 	wp_enqueue_script( 'touch-punch', get_template_directory_uri() . '/js/jquery.ui.touch-punch.min.js', array( 'jquery'), '20121127', true );
+	
+	wp_enqueue_script( 'backstretch', get_template_directory_uri() . '/js/backstretch.js', array( 'jquery'), '20121127', true );
 	
   // wp_enqueue_script( 'mwheelIntent', get_template_directory_uri() . '/js/mwheelIntent.js', array( 'jquery' ), '', false ); 
   // wp_enqueue_script( 'history', get_template_directory_uri() . '/js/jquery.history.js', array( 'jquery' ), '', false );  
