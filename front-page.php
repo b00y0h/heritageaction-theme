@@ -28,20 +28,32 @@ get_header(); ?>
               <header class="gradient blue-gradient">
                 <h2 class="title">Key Votes</h2>
               </header>
+              
+              <div class="nonie-keyvote-switch">                              
+                <div id="keyVoteSwitchWrap" class="switch border-box">
+                  <legend></legend>                
+                  <div id="keyVoteTouchSlider" class="switch-button"></div>
+                </div>
+                <div class="switch keyvoteLabelWrap">
+                <label for="house" class="keyVoteLabel houseChamberLabel activeChamber">House</label>
+                <label for="senate" class="keyVoteLabel senateChamberLabel">Senate</label>
+                </div>
+              </div>
+             
+              <div class="ie-keyvote-switch">
+                <fieldset class="switch">
+                 <legend></legend>
 
+                <input id="house" name="view" type="radio" value="house"  class="keyVoteSelector" checked>
+                <label for="house">House</label>
 
-              <fieldset class="switch">
-              	<legend></legend>
+                <input id="senate" name="view" type="radio" value="senate" class="keyVoteSelector">
+                <label for="senate">Senate</label>
 
-              	<input id="house" name="view" type="radio" value="house"  class="keyVoteSelector" checked>
-              	<label for="house">House</label>
-
-              	<input id="senate" name="view" type="radio" value="senate" class="keyVoteSelector">
-              	<label for="senate">Senate</label>
-
-              	<span class="switch-button"></span>
-              </fieldset>
-                <!-- ^^^^^ house-senate switcher ^^^^^^ -->
+                <span class="switch-button"></span>
+                </fieldset>
+              </div>
+             <!-- ^^^^^ house-senate switcher ^^^^^^ -->
 
 
               <ul class="items items_house">

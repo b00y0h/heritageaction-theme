@@ -68,6 +68,51 @@ function signup_validate(form){
         $(".items_" + $(".keyVoteSelector:checked").val() ).slideDown();
         $("#more-key-votes-link").attr('href','/chamber/key-vote-' + $(".keyVoteSelector:checked").val() + '/');
       });
+	
+	
+			$("#keyVoteTouchSlider").draggable({
+				axis: "x",
+				containment: "parent",
+				snap: "#keyVoteSwitchWrap",
+				snapMode: "inner",
+				stop: function(event, ui) {
+					$(".keyVoteLabel").removeClass('activeChamber');
+					var pos = ui.position.left;
+					if(pos == '0'){
+						// house
+						$(".houseChamberLabel").addClass('activeChamber');
+						$(".items").slideUp();
+		        $(".items_house").slideDown();
+		        $("#more-key-votes-link").attr('href','/chamber/key-vote-house/');
+						$("#keyVoteTouchSlider").css('left','0');
+					}
+					else{
+						// senate
+						$(".items").slideUp();
+						$(".senateChamberLabel").addClass('activeChamber');
+		        $(".items_senate").slideDown();
+		        $("#more-key-votes-link").attr('href','/chamber/key-vote-senate/');
+						$("#keyVoteTouchSlider").css('left','45px');
+					}
+				}
+			});
+			$(".houseChamberLabel").click(function(){
+				$(".keyVoteLabel").removeClass('activeChamber');
+				$(".houseChamberLabel").addClass('activeChamber');
+				$(".items").slideUp();
+        $(".items_house").slideDown();
+        $("#more-key-votes-link").attr('href','/chamber/key-vote-house/');
+				$("#keyVoteTouchSlider").css('left','0');
+			})
+			$(".senateChamberLabel").click(function(){
+				$(".keyVoteLabel").removeClass('activeChamber');
+				$(".items").slideUp();
+				$(".senateChamberLabel").addClass('activeChamber');
+        $(".items_senate").slideDown();
+        $("#more-key-votes-link").attr('href','/chamber/key-vote-senate/');
+				$("#keyVoteTouchSlider").css('left','45px');
+			})
+			
 
       $("#search-trigger").click(function(){
         if($("#search").hasClass('hover')){
