@@ -132,7 +132,7 @@ function heritageaction_scripts() {
 	wp_enqueue_style( 'orangebox', get_template_directory_uri() ."/orangebox.css" );
 	//wp_enqueue_style( 'bxstyles', get_template_directory_uri() ."/bx_styles.css" );
 
-	wp_enqueue_script( 'application', get_template_directory_uri() . '/js/application.js', array( 'jquery' ), '20121126', true );
+	wp_enqueue_script( 'application', get_template_directory_uri() . '/js/application.js', array( 'jquery' ), '20121127', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -146,8 +146,7 @@ function heritageaction_scripts() {
 	wp_enqueue_script( 'jquery-effects-custom', get_template_directory_uri() . '/js/jquery-ui-1.8.24.custom.min.js', array( 'jquery' ), '20121002', true );
 	wp_enqueue_script( 'orangebox', get_template_directory_uri() . '/js/orangebox.min.js', array( 'jquery' ), '20121004');
 	wp_enqueue_script( 'tinycarousel', get_template_directory_uri() . '/js/jquery.tinycarousel.js', array( 'jquery' ), '20121004', true );
-	wp_enqueue_script( 'touch-punch', get_template_directory_uri() . '/js/jquery.ui.touch-punch.min.js', array( 'jquery'), '20121127', true );
-
+  wp_enqueue_script( 'touch-punch', get_template_directory_uri() . '/js/jquery.ui.touch-punch.min.js', array( 'jquery'), '20121127', true );
 
 }
 add_action( 'wp_enqueue_scripts', 'heritageaction_scripts' );
@@ -240,17 +239,19 @@ function ha_save_key_vote_type( $post_id ) {
 
 function search_url_rewrite_rule() {
     if (!empty($_GET['s'])) {
+        remove_filter('template_redirect', 'redirect_canonical', 1);
         if(isset($_GET['search_post_type']) && $_GET['search_post_type'] == 'post'){
-          wp_redirect(home_url("/search-blog/") . urlencode(get_query_var('s')) );
+          wp_redirect(("/search-blog/") . urlencode(get_query_var('s')), 301);
+          exit;
         }
         else{
-          wp_redirect(home_url("/search/") . urlencode(get_query_var('s')) );
+          wp_redirect(home_url("/search/") . urlencode(get_query_var('s')), 301);
+          exit;
         }
 
-        exit();
     }
 }
-add_action('template_redirect', 'search_url_rewrite_rule');
+add_action('template_redirect', 'search_url_rewrite_rule', 1);
 
 
 /*
@@ -264,17 +265,22 @@ function search_rule(){
 add_filter( 'rewrite_rules_array','my_insert_rewrite_rules' );
 function my_insert_rewrite_rules( $rules ) {
 	$newrules = array();
-	$newrules['^search-blog/(.*)?'] = 'index.php?s=$matches[1]&post_type=post';
-	$newrules['^search/([^/]*)?'] = 'index.php?s=$matches[1]';
+	$newrules['^search-blog/([^/]*)?'] = 'index.php?s=$matches[1]&post_type=post';
+	$newrules['^search-blog/([^/]*)/page/([0-9]+)?'] = 'index.php?s=$matches[1]&paged=$matches[2]&post_type=post';
+	$newrules['^search/([^/]*)/page/([0-9]+)?'] = 'index.php?s=$matches[1]&paged=$matches[2]';
 	return $newrules + $rules;
 }
+
+ //remove_filter('template_redirect', 'redirect_canonical');
 
 function filter_search($query) {
     if ($query->is_search && !is_admin() && $query->query_vars['post_type'] == 'post') {
 	      $query->set('post_type', array('post'));
+	      $query->set('posts_per_page',10);	     
     }
     elseif($query->is_search && !is_admin()){
         $query->set('post_type', array('post','page','key-votes','legislative-fights','press-releases'));
+        $query->set('posts_per_page',10);
     }
     return $query;
 };
@@ -287,8 +293,9 @@ add_action( 'wp_loaded', 'my_flush_rules' );
 function my_flush_rules(){
 	$rules = get_option( 'rewrite_rules' );
 
-	if ( !isset($rules['^search-blog/(.*)?']) ||  
-	     !isset($rules['^search/([^/]*)?'])
+	if ( !isset($rules['^search-blog/([^/]*)?']) ||
+	     !isset($rules['^search-blog/([^/]*)/page/([0-9]+)?']) ||  
+	     !isset($rules['^search/([^/]*)/([0-9]+)?'])
 	   ) {
 		global $wp_rewrite;
 	   	$wp_rewrite->flush_rules();
@@ -371,7 +378,7 @@ function twitter_feed($user = 'twitter', $count = '3'){
         }
         $i++;
     }
-
+    
     krsort($output);
     $output = implode("\n", $output);
 
@@ -665,6 +672,7 @@ function heritageaction_post_suggested_tweets(){
   }
 }
 
+
 add_shortcode('paramount_signup', 'paramount_signup_form');
 
 function paramount_signup_form($atts){
@@ -710,4 +718,3 @@ function paramount_signup_form($atts){
     
     return $output;
 }
-

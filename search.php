@@ -6,7 +6,11 @@
  * @since Heritage Action 1.0
  */
 
-get_header(); ?>
+
+
+get_header(); 
+global $wp_query;
+?>
 
 <?php if ( have_posts() ) : ?>
 <div id="hero">
@@ -24,7 +28,7 @@ get_header(); ?>
     <div class="row">
 
 		<section id="primary" class="content-area">
-			<div id="content" class="site-content" role="main">
+			<div id="content" class="site-content" role="main">			 
 
 			<?php if ( have_posts() ) : ?>
 
