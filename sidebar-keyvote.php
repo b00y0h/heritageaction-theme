@@ -39,6 +39,7 @@
                 
               	<li class='<?php echo get_post_meta($post_id,"key_vote_type",true); ?>'><a href="<?php the_permalink(); ?>">
                   <span class='post-title'><?php the_title(); ?></span></a>
+                  <span class="meta"><?php echo the_date('F jS, Y'); ?></span>
                   <span class='excerpt'><?php echo truncateWords(get_the_excerpt(),185); ?>[...]</span>                  
                 </li>
                 
@@ -70,6 +71,7 @@
                 
               	<li class='<?php echo get_post_meta($post_id,"key_vote_type",true); ?>'><a href="<?php the_permalink(); ?>">
                   <span class='post-title'><?php the_title(); ?></span></a>
+                  <span class="meta"><?php echo the_date('F jS, Y'); ?></span>
                   <span class='excerpt'><?php echo truncateWords(get_the_excerpt(),185); ?>[...]</span>                  
                 </li>
                 
