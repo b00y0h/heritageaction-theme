@@ -41,7 +41,7 @@ get_header(); ?>
 		</div><!-- #primary .content-area -->
 
     <?php
-      if(is_singular('post')){
+      if(is_singular('post','legislative-fights')){
 
         get_sidebar();
 

@@ -22,7 +22,7 @@ get_header(); ?>
 				<?php
           if (is_singular('post') && get_the_post_thumbnail() !="" ) { // check if the post has a Post Thumbnail assigned to it.
             echo '<div class="single-post-featured-image">';
-                the_post_thumbnail(array(571,319), array('class' => 'featured-image', 'width' => '587'));
+                the_post_thumbnail('full', array('class' => 'featured-image'));
             echo "</div>";
           }
         ?>

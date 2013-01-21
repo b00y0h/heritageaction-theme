@@ -8,6 +8,15 @@ Template Name: Congress Pages
 <?php the_post(); ?>
 <style type="text/css" media="screen">
   p#top{display:none;}
+  #congresspages-wrapper{
+    min-height:500px;
+  }
+  .CPMaintenance .cpIntroTitle{
+    padding:20px;
+    width:800px;
+    margin:0 auto;
+    line-height:28px;
+  }
 </style>
 <div class="col1">
   <div id="hero">
@@ -16,7 +25,11 @@ Template Name: Congress Pages
 	  </div>
 	</div>
   <div id="congresspages-wrapper">
-    <?php the_content(); ?>
+    <?php //the_content(); ?>
+    
+    <div class="CPWelcome CPMaintenance">
+      <div class="cpIntroTitle">The dashboard is temporarily down as we update it for the 113th Congress.</div>      
+    </div>
   </div>
 </div>
  

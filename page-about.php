@@ -44,6 +44,7 @@ get_header(); ?>
   						  
   						  
   						  <!-- #<?php echo $post->post_name; ?> -->
+  						  <a name="<?echo str_replace(' ','-',strtolower(get_the_title())); ?>"></a>
                 <section id="<?php echo $post->post_name; ?>" class='team-info'>
                   <?php if(file_exists(get_stylesheet_directory().'/img/about-'.$post->post_name.'.jpg')) : ?>
                   <div class="partner-image shadow shadow-curl-left shadow-curl-right float-left">
@@ -63,6 +64,7 @@ get_header(); ?>
   				<?php wp_reset_query(); // reset the query ?>
   		    
         
+          
           <br><br><br>
           
   			</div><!-- #content .site-content -->

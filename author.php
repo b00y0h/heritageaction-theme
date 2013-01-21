@@ -18,7 +18,7 @@ get_header(); ?>
 				<?php
 				  global $post;					
 						the_post();
-						printf( __( 'Author: %s', 'heritageaction' ), '<span class="vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( "ID" ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
+						printf( __( 'Author: %s', 'heritageaction' ), '<span class="vcard"><a class="url fn n" href="' . '/about/#' . str_replace(' ','-',strtolower(get_the_author()))  . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' );
 						/* Since we called the_post() above, we need to
 						 * rewind the loop back to the beginning that way
 						 * we can run the loop properly, in full.
@@ -67,7 +67,9 @@ get_header(); ?>
 						 * If you want to overload this in a child theme then include a file
 						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 						 */
-						get_template_part( 'content', get_post_format() );
+						if(get_post_type() == 'post'){
+						  get_template_part( 'content', get_post_format() );
+						}						
 					?>
 
 				<?php endwhile; ?>

@@ -27,7 +27,8 @@
                     'term' => 'key-vote-house',
                     'orderby' => 'post_date',
                     'order' => 'DESC',
-                    'post_type' => 'key-votes'); 
+                    'post_type' => 'key-votes',
+                    'post_status'=>'publish'); 
                     
                 $house_key_votes = wp_get_recent_posts( $args );
                 foreach( $house_key_votes as $house_key_vote ): 
@@ -57,7 +58,8 @@
                     'term' => 'key-vote-senate',
                     'orderby' => 'post_date',
                     'order' => 'DESC',
-                    'post_type' => 'key-votes'); 
+                    'post_type' => 'key-votes',
+                    'post_status'=>'publish'); 
                     
                 $house_key_votes = wp_get_recent_posts( $args );
                 foreach( $house_key_votes as $house_key_vote ): 

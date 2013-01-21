@@ -448,7 +448,7 @@ if (@$_GET['printer'] == true){
         
       <div class="welcomeWrapper">
 
-          <h1>Get Started</h1>
+          <h1><?php echo (CPSetting::getValue('call_alert_welcome_title')) ? CPSetting::getValue('call_alert_welcome_title') : 'Get Started'; ?></h1>
           
           <?php echo CPSetting::getValue('call_alert_chamber_message'); ?>
           <select id="chamberSelect">
@@ -495,12 +495,12 @@ if (@$_GET['printer'] == true){
        
        <div class="welcomeWrapper">
          
-          <h1>Get Started</h1>
+          <h1><?php echo (CPSetting::getValue('call_alert_welcome_title')) ? CPSetting::getValue('call_alert_welcome_title') : 'Get Started'; ?></h1>
        
-          <p><?php echo CPSetting::getValue('call_alert_welcome_message'); ?></p>
+          <?php echo wptexturize( wpautop(CPSetting::getValue('call_alert_welcome_message'), 1) ) ; ?>
         
           <div class="cpZipCodeForm" align="left">
-            <input name="zip" id="myZip" value="Enter your ZIP code" onblur="if (this.value == '') {this.value = 'Enter your ZIP code';}" onfocus="if (this.value == 'Enter your ZIP code') {this.value = '';}"> <div id="validZip"><img src="<?php bloginfo('template_directory'); ?>/img/Check.png"></div><div id="submitZip">Find Your District</div>
+            <input name="zip" id="myZip" value="Enter your ZIP code" onblur="if (this.value == '') {this.value = 'Enter your ZIP code';}" onfocus="if (this.value == 'Enter your ZIP code') {this.value = '';}"> <div id="validZip"><img src="<?php bloginfo('template_directory'); ?>/img/Check.png"></div><div id="submitZip" class="btn rounded gradient medium-blue-gradient"><?php echo (CPSetting::getValue('call_alert_welcome_button')) ? stripslashes(CPSetting::getValue('call_alert_welcome_button')) : 'Find Your District'; ?></div>
           </div>
     
        </div>
@@ -647,7 +647,7 @@ if (@$_GET['printer'] == true){
             <div style="clear:both;"></div>
 
             <div class="callThankyou">
-               <?php echo CPSetting::getValue('call_alert_thankyou_message'); ?> 
+               <?php echo wptexturize( wpautop(CPSetting::getValue('call_alert_thankyou_message'), 1) ) ; ?>
                
                <p>
                  Your Action Dashboard: the important information you need to hold Congress accountable and a place to discuss your accountability work with other conservatives in your area. Visit your action dashboard now: <a href="http://heritageaction.com/congress/<?php echo $zipcode; ?>">heritageaction.com/congress/<?php echo $zipcode; ?></a>

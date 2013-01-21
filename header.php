@@ -49,7 +49,7 @@
  ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<link href='http://fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC|Open+Sans+Condensed:700|Bree+Serif' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC|Open+Sans+Condensed:700|Bree+Serif' rel='stylesheet' type='text/css'>
 
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
@@ -70,7 +70,7 @@
 <style type="text/css" media="screen">
   #content .entry-content a{text-decoration:underline;}
   #content .entry-content .post-meta a{text-decoration:none;}
-  
+
   .post-suggested-tweet p{
     margin:5px 0 0 0;
   }
@@ -82,13 +82,14 @@
     margin:0px 0 20px 0;
     border-bottom: 5px solid #ddd;
     padding:0px 0 25px 0px;
-  }
+  }  
   .post-suggested-tweet{
     background-color:#eee;
   }
   a.click-to-tweet{
     font-size:12px; 
   }
+  
   
   .paramount_signup_form input[type=text]{
     width:100%;
@@ -157,7 +158,32 @@
   html.ie .ie-keyvote-switch{
     display:block;
   }
+  
+  .no-touch nav[role="navigation"] li.the-forge-blog:hover, .no-touch nav[role="navigation"] li.the-forge-blog:hover a{
+    height: auto;
+    padding-bottom:3px;
+  }
+  .signup-form-submit-button{
+	text-decoration:none !important;
+  }
+  .welcomeWrapper{
+    min-height:465px;
+  }
+  
+  .author-name-link{
+    color:#000!important;
+  }
+  .author-name-link:hover{
+ 
+  }
 </style>
+
+<?php 
+if(is_page_template('page-donatestandard.php') || is_tree('150')){
+  require(get_stylesheet_directory() . '/kimbia-donate-header.php');
+}
+?>
+
 </head>
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site wrap">
@@ -173,7 +199,7 @@
 				 <ul id="menu-main-nav" class="menu">
 				    <li id="home-link">
 				      <h1 class="site-title">
-         		   <a href="<?php echo home_url( '/' ); ?>" rel="home">
+         		   <a href="<?php echo home_url( '/', 'http'); ?>" rel="home">
          		     <?php bloginfo( 'name' ); ?>
          		  </a>
          		 </h1>
@@ -185,15 +211,18 @@
 								  <span class="nav-desc">&ldquo;Heritage Action is the scorecard for conservatives&rdquo;<br/><span class="author">– Washington Examiner</span></span>
 						 </li>
 									 <li class="gradient red-gradient dashboard">
-											 <a href="/congress/">
+											 <a href="<?php echo home_url( '/congress/', 'http'); ?>">
 													 <span class="nav-title">Dashboard</span>
 											 </a>
 											 <span class="nav-desc nav-search">
+											    <span style="font-size:13px;">The dashboard is temporarily down as we update it for the 113th Congress.</span>
+											    <? /*?>
 											    <input id="headerNavDashboardSearch" type="search" name="search zip" value="" placeholder="Enter your zip" class="dashboardZipSearch"><div class="go gradient red-gradient dashboardZipGo"><div class="arrow-right"></div></div>
+											    */?>
 											 </span>
 									 </li>
 									 <li class="gradient orange-gradient the-forge-blog">
-											 <a href="/blog/">
+											 <a href="<?php echo home_url( '/blog/', 'http'); ?>">
 													 <span class="nav-title">The Forge Blog</span>
 											 </a>
 											 <span class="nav-desc">
@@ -212,7 +241,7 @@
 											 </span>
 									 </li>
 									 <li id="donate" class="gradient light-red-gradient donate">
-											 <a href="/donate/">
+											 <a href="<?php echo home_url( '/donate/', 'http'); ?>">
 													 <span class="nav-title">Donate</span>
 											 </a>
 											 <span class="nav-desc">&ldquo;I give money to Heritage Action, you should too.&rdquo;<br/><span class="author">– Erick Erickson</span></span>

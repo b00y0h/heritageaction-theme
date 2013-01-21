@@ -68,8 +68,7 @@ function signup_validate(form){
         $(".items_" + $(".keyVoteSelector:checked").val() ).slideDown();
         $("#more-key-votes-link").attr('href','/chamber/key-vote-' + $(".keyVoteSelector:checked").val() + '/');
       });
-	
-	
+
 			$("#keyVoteTouchSlider").draggable({
 				axis: "x",
 				containment: "parent",
@@ -96,7 +95,6 @@ function signup_validate(form){
 					}
 				}
 			});
-			
 			$(".houseChamberLabel").click(function(){
 				$(".keyVoteLabel").removeClass('activeChamber');
 				$(".houseChamberLabel").addClass('activeChamber');
@@ -113,7 +111,6 @@ function signup_validate(form){
         $("#more-key-votes-link").attr('href','/chamber/key-vote-senate/');
 				$("#keyVoteTouchSlider").css('left','45px');
 			})
-			
 
       $("#search-trigger").click(function(){
         if($("#search").hasClass('hover')){
@@ -177,7 +174,8 @@ function signup_validate(form){
             $("#signup-content").load("/bluehornet/bluehornet-api.php?" + form_data);
 
             var _gaq = _gaq || [];
-            _gaq.push(['_trackEvent', 'Signup', 'Footer Signup', $("#signup_name").val()+' '+$("#email_address").val()]);
+            //_gaq.push(['_trackEvent', 'Signup', 'Footer Signup', jQuery("#signup_name").val()+' '+jQuery("#email_address").val()]);
+						_gaq.push(['_trackEvent', 'Signup', 'Footer Signup']);
 
             // set cookie
             var now = new Date();
@@ -205,7 +203,7 @@ function signup_validate(form){
 						
 						if(form.attr('data-pa-ga') == 'true'){
             	var _gaq = _gaq || [];
-            	_gaq.push(['_trackEvent', 'Signup', form.attr('data-pa-name') , $(".signup_name").val()+' '+$(".email_address").val()]);
+            	_gaq.push(['_trackEvent', 'Signup', form.attr('data-pa-name') , jQuery(".signup_name").val()+' '+jQuery(".email_address").val()]);
 						}
 						
 						if(form.attr('data-pa-cookie') == 'true'){

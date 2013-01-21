@@ -107,6 +107,23 @@ function my_neat_body_class( $classes ) {
 }
 
 
+function is_tree( $pid ) {      // $pid = The ID of the page we're looking for pages underneath
+    global $post;               // load details about this page
+
+    if ( is_page($pid) )
+        return true;            // we're at the page or at a sub page
+
+    $anc = get_post_ancestors( $post->ID );
+    foreach ( $anc as $ancestor ) {
+        if( is_page() && $ancestor == $pid ) {
+            return true;
+        }
+    }
+
+    return false;  // we arn't at the page, and the page is not an ancestor
+}
+
+
 /**
  * Register widgetized area and update sidebar with default widgets
  *
@@ -643,7 +660,7 @@ function heritageaction_post_suggested_tweets(){
 	    <span class="suggest-text"><?php echo $tweet_1; ?></span>
 	    <p align="center">
 	    <span class="tweet-suggestion">
-	      <a class="click-to-tweet btn rounded gradient medium-blue-gradient" href="https://twitter.com/intent/tweet?original_referer=http://heritageaction.com&amp;source=tweetbutton&amp;text=<?php echo urlencode($tweet_1); ?>&amp;via=Heritage_Action&amp;url=<?php the_permalink(); ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/img/tiny-twitter-logo-white.png" width="15" vertical-align="middle" style="margin-bottom:-2px"> Tweet This</a></span>
+	      <a class="click-to-tweet btn rounded gradient medium-blue-gradient" href="https://twitter.com/intent/tweet?original_referer=http://heritageaction.com&amp;source=tweetbutton&amp;text=<?php echo urlencode($tweet_1); ?>&amp;via=Heritage_Action&amp;url=<?php the_permalink(); ?>" onClick="_gaq.push(['_trackEvent', 'Tweets', 'Suggested Tweet 1', '<?php the_title(); ?>']);"><img src="<?php echo get_bloginfo('template_url'); ?>/img/tiny-twitter-logo-white.png" width="15" vertical-align="middle" style="margin-bottom:-2px"> Tweet This</a></span>
 	    </p>
 	  </div>
 	  <?php endif; ?>
@@ -652,7 +669,7 @@ function heritageaction_post_suggested_tweets(){
 	    <span class="suggest-text"><?php echo $tweet_2; ?></span>
 	    <p align="center">
 	      <span class="tweet-suggestion">
-	        <a class="click-to-tweet btn rounded gradient medium-blue-gradient" href="https://twitter.com/intent/tweet?original_referer=http://heritageaction.com&amp;source=tweetbutton&amp;text=<?php echo urlencode($tweet_2); ?>&amp;via=Heritage_Action&amp;url=<?php the_permalink(); ?>"><img src="<?php echo get_bloginfo('template_url'); ?>/img/tiny-twitter-logo-white.png" width="15" vertical-align="middle" style="margin-bottom:-2px"> Tweet This</a></span>
+	        <a class="click-to-tweet btn rounded gradient medium-blue-gradient" href="https://twitter.com/intent/tweet?original_referer=http://heritageaction.com&amp;source=tweetbutton&amp;text=<?php echo urlencode($tweet_2); ?>&amp;via=Heritage_Action&amp;url=<?php the_permalink(); ?>" onClick="_gaq.push(['_trackEvent', 'Tweets', 'Suggested Tweet 2', '<?php the_title(); ?>']);"><img src="<?php echo get_bloginfo('template_url'); ?>/img/tiny-twitter-logo-white.png" width="15" vertical-align="middle" style="margin-bottom:-2px"> Tweet This</a></span>
 	    </p>
 	  </div>
 	  <?php endif; ?>
@@ -661,7 +678,7 @@ function heritageaction_post_suggested_tweets(){
 	    <span class="suggest-text"><?php echo $tweet_3; ?></span>
 	    <p align="center">
 	    <span class="tweet-suggestion">
-	      <a class="click-to-tweet btn rounded gradient medium-blue-gradient" href="https://twitter.com/intent/tweet?original_referer=http://heritageaction.com&amp;source=tweetbutton&amp;text=<?php echo urlencode($tweet_3); ?>&amp;url=<?php the_permalink(); ?>&amp;via=Heritage_Action"><img src="<?php echo get_bloginfo('template_url'); ?>/img/tiny-twitter-logo-white.png" width="15" vertical-align="middle" style="margin-bottom:-2px"> Tweet This</a></span>
+	      <a class="click-to-tweet btn rounded gradient medium-blue-gradient" href="https://twitter.com/intent/tweet?original_referer=http://heritageaction.com&amp;source=tweetbutton&amp;text=<?php echo urlencode($tweet_3); ?>&amp;url=<?php the_permalink(); ?>&amp;via=Heritage_Action" onClick="_gaq.push(['_trackEvent', 'Tweets', 'Suggested Tweet 3', '<?php the_title(); ?>']);"><img src="<?php echo get_bloginfo('template_url'); ?>/img/tiny-twitter-logo-white.png" width="15" vertical-align="middle" style="margin-bottom:-2px"> Tweet This</a></span>
 	    </p>
 	  </div>
 	  <?php endif; ?>

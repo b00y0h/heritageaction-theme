@@ -28,7 +28,8 @@ get_header(); ?>
               <header class="gradient blue-gradient">
                 <h2 class="title">Key Votes</h2>
               </header>
-              
+
+
               <div class="nonie-keyvote-switch">                              
                 <div id="keyVoteSwitchWrap" class="switch border-box">
                   <legend></legend>                
@@ -65,7 +66,8 @@ get_header(); ?>
                     'term' => 'key-vote-house',
                     'orderby' => 'post_date',
                     'order' => 'DESC',
-                    'post_type' => 'key-votes');
+                    'post_type' => 'key-votes',
+                    'post_status'=>'publish');
 
                 $house_key_votes = wp_get_recent_posts( $args );
                 foreach( $house_key_votes as $house_key_vote ):
@@ -133,6 +135,10 @@ get_header(); ?>
               <header class="gradient red-gradient">
                 <h2 class="title">Action Dashboard</h2>
               </header>
+              
+              <p style="font-size:15px;">The dashboard is temporarily down as we update it for the 113th Congress.</p>
+              
+              <? /*?>
               <p class="post-title">Holding your Members of Congress accountable starts here.</p>
               <p>Find your dashboard: enter your zip code or your district code (Maine's first district would be ME01):</p>
               <!-- enter your zip -->
@@ -144,6 +150,7 @@ get_header(); ?>
               <!-- ^^^^^ enter your zip ^^^^^^ -->
 
               <a href="#" class="btn rounded gradient red-gradient dashboardZipGo">Find your district</a>
+              */?>
             </div>
 
           </div> <!-- .col2 -->
