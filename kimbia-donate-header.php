@@ -68,4 +68,8 @@
               }
             </script>
 <?php } ?>
+<?php if(in_array($_SERVER['REMOTE_ADDR'],array("96.238.176.144"))) : ?>
+  <script type="text/javascript" charset="utf-8" src="<?php bloginfo('template_directory'); ?>/js/jquery.ba-replacetext.min.js"></script>
+  <script type="text/javascript" charset="utf-8" src="<?php bloginfo('template_directory'); ?>/js/thf-change-recurring-giving.js"></script>
+<?php endif; ?>
 <!-- end kimbia donate header -->
