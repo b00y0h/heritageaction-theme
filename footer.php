@@ -15,8 +15,7 @@
 	  
 	  <div class="inner">
 	    
-	  <?php if(in_array($_SERVER['REMOTE_ADDR'],array("96.238.176.144")) &&
-	           is_page('donate') || is_tree('150')) : ?>
+	  <?php if(is_tree('150')) : ?>
 	    <div class="verisign" style="float:left;">
   	    <table width="135" border="0" cellpadding="2" cellspacing="0" title="Click to Verify - This site chose Symantec SSL for secure e-commerce and confidential communications.">
         <tr>

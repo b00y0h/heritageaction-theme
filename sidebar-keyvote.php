@@ -5,7 +5,26 @@
  * @package Heritage Action
  * @since Heritage Action 1.0
  */
-?>
+ 
+ global $post;
+ $keyvote_count = 5;
+?>  
+    <?php if(is_single()): ?>
+      <?php if(get_post_meta($post->ID, 'key_vote_bill_number', true)) : $keyvote_count = 3; ?>
+        
+        <div style="width:280px; float:right; margin:0 26px 10px 0;">
+          <iframe src="https://www.popvox.com/widgets/minimap?&bill=<?php echo @get_post_meta($post->ID, 'key_vote_congress', true); ?>/<?php echo strtolower(get_post_meta($post->ID, 'key_vote_bill_number', true)); ?>&stats=1&title=1" scrolling="no" border="0" marginheight="0" marginwidth="0" frameborder="0" width="280" height="<?php echo @(get_post_meta($post->ID, 'key_vote_congress', true)=='112') ? '340' : '740';  ?>" style="border:1px solid #cc6a11"> </iframe>
+          <br>
+          <center>
+            <small>
+              powered by <a href="https://www.popvox.com" target="_blank">popvox.com</a>
+            </small>
+          </center>
+        </div>
+      <?php endif; ?>
+    
+    <?php endif; ?>
+    
 		<div id="secondary" class="widget-area" role="complementary">
 		  <header id="subscribe" class="widget-main-header">
 		    <a href="http://feeds.feedburner.com/keyvotes" target="_blank">
@@ -21,7 +40,7 @@
 			    <ul>                
               <?php 
     			      $args = array(
-                    'numberposts' => 5,
+                    'numberposts' => $keyvote_count,
                     'offset' => 0,
                     'taxonomy' => 'chamber',
                     'term' => 'key-vote-house',
@@ -53,7 +72,7 @@
 			    <ul>                
               <?php 
     			      $args = array(
-                    'numberposts' => 5,
+                    'numberposts' => $keyvote_count,
                     'offset' => 0,
                     'taxonomy' => 'chamber',
                     'term' => 'key-vote-senate',

@@ -40,7 +40,16 @@ get_header(); ?>
             <?php endif; ?>
          </div>
          <div class="authorBio">
-            <?php echo nl2br(get_the_author_meta('description')); ?>
+            <div class="author-description">
+              <?php echo nl2br(get_the_author_meta('description')); ?>
+            </div>
+            
+              <?php if( get_the_author_meta('twitter') && get_the_author_meta('first_name') ): ?>
+
+                Follow <?php echo ucwords(get_the_author_meta('first_name')); ?> on Twitter: <a href="https://twitter.com/#!/<?php echo get_the_author_meta('twitter'); ?>" target="_blank">@<?php echo get_the_author_meta('twitter'); ?></a>
+
+              <?php endif; ?>
+            
          </div>
          <div style="clear:both;"></div>
       </div>

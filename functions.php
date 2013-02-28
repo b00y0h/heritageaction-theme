@@ -92,6 +92,36 @@ function heritageaction_setup() {
 endif; // heritageaction_setup
 add_action( 'after_setup_theme', 'heritageaction_setup' );
 
+function latest_keyvote_chamber(){
+  $args = array(
+      'numberposts' => 1,
+      'offset' => 0,
+      'taxonomy' => 'chamber',
+      'orderby' => 'post_date',
+      'order' => 'DESC',
+      'post_status' => 'publish',
+      'post_type' => 'key-votes');
+  $output = false;
+  $key_votes = wp_get_recent_posts( $args );
+  foreach( $key_votes as $key_vote ){  
+     $post_id = $key_vote['ID'];
+     $terms = get_the_terms($post_id, 'chamber');
+     sort($terms);
+     if(count($terms)==2 || $terms[0]->slug=='key-vote-house'){
+       $output = 'house';
+     } 
+     else{
+       $output = 'senate';
+     }     
+   }
+   return $output;
+}
+
+function extend_wysiwyg($initArray) {
+$initArray['extended_valid_elements'] = "iframe[id|class|title|style|align|frameborder|height|longdesc|marginheight|marginwidth|name|scrolling|src|width],script[src|type]";
+return $initArray;
+}
+add_filter('tiny_mce_before_init', 'extend_wysiwyg');
 
 // remove html tags
 function comments_form_defaults($default) {
@@ -149,7 +179,7 @@ function heritageaction_scripts() {
 	wp_enqueue_style( 'orangebox', get_template_directory_uri() ."/orangebox.css" );
 	//wp_enqueue_style( 'bxstyles', get_template_directory_uri() ."/bx_styles.css" );
 
-	wp_enqueue_script( 'application', get_template_directory_uri() . '/js/application.js', array( 'jquery' ), '20121127', true );
+	wp_enqueue_script( 'application', get_template_directory_uri() . '/js/application.js', array( 'jquery' ), '20130201', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -203,6 +233,22 @@ function gf_count( $attrs ){
 }
 add_shortcode( 'gf_count', 'gf_count');
 
+function key_vote_bill_number( $post ){
+  // Use nonce for verification
+  wp_nonce_field( plugin_basename( __FILE__ ), 'key_vote_nonce' );
+    $key_vote_bill_number = strtoupper(get_post_meta($post->ID,'key_vote_bill_number',true));
+    $key_vote_congress = get_post_meta($post->ID, 'key_vote_congress', true);
+    ?>
+  <select name="key_vote_congress" id="key_vote_congress">
+    <option value="113" <?php echo ($key_vote_congress == '113') ? 'selected="selected"' : '';  ?>>113th</option>
+    <option value="112" <?php echo ($key_vote_congress == '112') ? 'selected="selected"' : '';  ?>>112th</option>    
+  </select>  
+  <label for="key_vote_bill_number">Bill Number:</label>  
+  <input id="key_vote_bill_number" name="key_vote_bill_number" value="<?php echo $key_vote_bill_number; ?>" size="8" />
+<?php ?>
+<?php
+}
+
 function post_key_vote_meta_box( $post ) {
   // Use nonce for verification
   wp_nonce_field( plugin_basename( __FILE__ ), 'key_vote_nonce' );
@@ -217,12 +263,13 @@ function post_key_vote_meta_box( $post ) {
 <?php ?>
 <?php
 }
-add_action('add_meta_boxes','add_key_vote_metabox');
-function add_key_vote_metabox() {
+add_action('add_meta_boxes','add_key_vote_metaboxes');
+function add_key_vote_metaboxes() {
     add_meta_box('key_vote_type_meta', __('Key Vote Recommendation'), 'post_key_vote_meta_box', 'key-votes', 'side', 'high');
+    add_meta_box('key_vote_bill_number', __('Key Vote Bill Number'), 'key_vote_bill_number', 'key-votes', 'side', 'high');
 }
-add_action( 'save_post', 'ha_save_key_vote_type' );
-function ha_save_key_vote_type( $post_id ) {
+add_action( 'save_post', 'ha_save_key_vote_meta' );
+function ha_save_key_vote_meta( $post_id ) {
   $post = get_post($post_id);
 
   if($post->post_type == 'key-votes'){
@@ -243,7 +290,12 @@ function ha_save_key_vote_type( $post_id ) {
       if ( !current_user_can( 'edit_post', $post_id ) )
           return;
     }
-
+    
+    // clean bill number
+    $bill_number = str_replace(' ','',strtoupper($_POST['key_vote_bill_number']));
+    
+    update_post_meta($post_id, 'key_vote_congress', $_POST['key_vote_congress']);
+    update_post_meta($post_id, 'key_vote_bill_number', $bill_number);
     update_post_meta($post_id, 'key_vote_type', $_POST['key_vote_type']);
   }
 
@@ -517,6 +569,15 @@ function heritageaction_show_extra_profile_fields( $user ) { ?>
 				<span class="description">Please enter your Twitter username (without the @ symbol).</span>
 			</td>
 		</tr>
+		
+		<tr>
+			<th><label for="biophoto">Bio Photo</label></th>
+
+			<td>
+				<input type="text" name="biophoto" id="biophoto" value="<?php echo esc_attr( get_the_author_meta( 'biophoto', $user->ID ) ); ?>" class="regular-text" /><br />
+				<span class="description">Please enter the url to the bio photo.</span>
+			</td>
+		</tr>
 
 	</table>
 <?php }
@@ -531,6 +592,7 @@ function heritageaction_save_extra_profile_fields( $user_id ) {
 
 	update_user_meta( $user_id, 'title', $_POST['title'] );
 	update_user_meta( $user_id, 'twitter', $_POST['twitter'] );
+	update_user_meta( $user_id, 'biophoto', $_POST['biophoto'] );
 }
 
 

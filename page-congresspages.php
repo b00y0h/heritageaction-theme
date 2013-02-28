@@ -25,11 +25,20 @@ Template Name: Congress Pages
 	  </div>
 	</div>
   <div id="congresspages-wrapper">
-    <?php //the_content(); ?>
+    <?php if(CPSetting::getValue('enable_action_dashboard')) : ?>
+      
+      <?php the_content(); ?>
     
-    <div class="CPWelcome CPMaintenance">
-      <div class="cpIntroTitle">The dashboard is temporarily down as we update it for the 113th Congress.</div>      
-    </div>
+    <?php else: ?>
+      
+      <div class="CPWelcome CPMaintenance">
+        <div class="cpIntroTitle"><?php echo CPSetting::getValue('dashboard_down_message'); ?></div>      
+      </div>
+      
+    <?php endif; ?>
+    
+    
+    
   </div>
 </div>
  

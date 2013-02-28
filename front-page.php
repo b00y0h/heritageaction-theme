@@ -36,8 +36,8 @@ get_header(); ?>
                   <div id="keyVoteTouchSlider" class="switch-button"></div>
                 </div>
                 <div class="switch keyvoteLabelWrap">
-                <label for="house" class="keyVoteLabel houseChamberLabel activeChamber">House</label>
-                <label for="senate" class="keyVoteLabel senateChamberLabel">Senate</label>
+                <label for="house" class="keyVoteLabel houseChamberLabel <?php echo (latest_keyvote_chamber() =='house') ? 'activeChamber':'';?>">House</label>
+                <label for="senate" class="keyVoteLabel senateChamberLabel <?php echo (latest_keyvote_chamber() =='senate') ? 'activeChamber':'';?>">Senate</label>
                 </div>
               </div>
              
@@ -45,10 +45,10 @@ get_header(); ?>
                 <fieldset class="switch">
                  <legend></legend>
 
-                <input id="house" name="view" type="radio" value="house"  class="keyVoteSelector" checked>
+                <input id="house" name="view" type="radio" value="house"  class="keyVoteSelector" <?php echo (latest_keyvote_chamber() =='house') ? 'checked':'';?>>
                 <label for="house">House</label>
 
-                <input id="senate" name="view" type="radio" value="senate" class="keyVoteSelector">
+                <input id="senate" name="view" type="radio" value="senate" class="keyVoteSelector" <?php echo (latest_keyvote_chamber() =='senate') ? 'checked':'';?>>
                 <label for="senate">Senate</label>
 
                 <span class="switch-button"></span>
@@ -114,13 +114,14 @@ get_header(); ?>
 
                 </ul>
 
-              <a id="more-key-votes-link" href="/chamber/key-vote-house/" class="btn rounded gradient blue-gradient">More Key Votes</a>
+              <a id="more-key-votes-link" href="/chamber/key-vote-<?php echo latest_keyvote_chamber(); ?>/" class="btn rounded gradient blue-gradient">More Key Votes</a>
 
 
       			</div> <!-- #key-votes -->
           </div> <!-- .col1 -->
 
           <div class="col2">
+            
             <div id="score-card" class="widgets">
               <header class="gradient light-blue-gradient">
                 <h2 class="title">Score Card</h2>
@@ -135,22 +136,23 @@ get_header(); ?>
               <header class="gradient red-gradient">
                 <h2 class="title">Action Dashboard</h2>
               </header>
-              
-              <p style="font-size:15px;">The dashboard is temporarily down as we update it for the 113th Congress.</p>
-              
-              <? /*?>
-              <p class="post-title">Holding your Members of Congress accountable starts here.</p>
-              <p>Find your dashboard: enter your zip code or your district code (Maine's first district would be ME01):</p>
-              <!-- enter your zip -->
-              <div class="control-group question">
-                <div class="controls input">
-                  <input type="search" class="dashboardZipSearch" name="enter_your_zip" id="enter_your_zip" placeholder="Enter your zip">
+     
+              <?php if(CPSetting::getValue('enable_action_dashboard')): ?>
+                <p class="post-title">Holding your Members of Congress accountable starts here.</p>
+                <p>Find your dashboard: enter your zip code or your district code (Maine's first district would be ME01):</p>
+                <!-- enter your zip -->
+                <div class="control-group question">
+                  <div class="controls input">
+                    <input type="search" class="dashboardZipSearch" name="enter_your_zip" id="enter_your_zip" placeholder="Enter your zip">
+                  </div>
                 </div>
-              </div>
-              <!-- ^^^^^ enter your zip ^^^^^^ -->
+                <!-- ^^^^^ enter your zip ^^^^^^ -->
 
-              <a href="#" class="btn rounded gradient red-gradient dashboardZipGo">Find your district</a>
-              */?>
+                <a href="#" class="btn rounded gradient red-gradient dashboardZipGo">Find your district</a>
+              <?php else: ?>
+                <p style="font-size:15px;"><?php echo CPSetting::getValue('dashboard_down_message'); ?></p>
+              <?php endif; ?>
+
             </div>
 
           </div> <!-- .col2 -->

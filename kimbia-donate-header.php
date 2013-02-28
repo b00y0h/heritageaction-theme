@@ -1,4 +1,4 @@
-<!-- kimbia donate header -->
+<!-- start kimbia donate header -->
 <?php
  
      /*
@@ -68,3 +68,4 @@
               }
             </script>
 <?php } ?>
+<!-- end kimbia donate header -->

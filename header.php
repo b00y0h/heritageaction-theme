@@ -30,7 +30,7 @@
  /*
 	 * Print the <title> tag based on what is being viewed.
 	 */
- global $page, $paged;
+ global $page, $paged, $post;
 
  wp_title( '|', true, 'right' );
 
@@ -50,6 +50,25 @@
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link href='//fonts.googleapis.com/css?family=IM+Fell+Great+Primer+SC|Open+Sans+Condensed:700|Bree+Serif' rel='stylesheet' type='text/css'>
+<meta property="twitter:account_id" content="130600206" />
+<?php if(is_single() && in_array(get_post_type(), array('post','key-votes'))): ?>
+	<!-- start twitter-card info -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@Heritage_Action">
+	<meta name="twitter:url" content="<?php the_permalink(); ?>">
+	<meta name="twitter:title" content="<?php the_title(); ?>">
+	<meta name="twitter:description" content="<?php echo truncateWords( strip_tags($post->post_content), 250 ); ?>">  
+<?php 
+  if (is_singular('post') && get_the_post_thumbnail() !="" ) : ?>
+    <meta name="twitter:image" content="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>"><?php 
+  endif; ?>
+  
+<?php	if( get_the_author_meta('twitter', $post->post_author) ): ?>
+	<meta name="twitter:creator" content="@<?php echo get_the_author_meta('twitter', $post->post_author); ?>"><?php 
+	endif; ?>
+	
+	<!-- end twitter-card info -->
+<?php endif; ?>
 
 <!--[if lt IE 9]>
 <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
@@ -58,6 +77,8 @@
 
 
 <?php wp_head(); ?>
+
+
 
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -173,17 +194,48 @@
   .author-name-link{
     color:#000!important;
   }
-  .author-name-link:hover{
- 
+  .read-more-post{
+    text-align:right;
+    padding-bottom:10px;
+  }
+  .read-more-post a{
+    text-decoration:none !important;
+  }
+  .readmore-disqus-count{
+    float:left;
+    margin-top:12px;
+  }
+  .readmore-disqus-count a{
+    text-decoration:none !important;
+  }
+  
+  .authorImageWrapper{ margin-bottom:30px; }
+  .author-description{ padding-bottom:20px; }
+  
+  .single-post-social {
+    height: 25px;
+    width: 300px;
   }
 </style>
 
 <?php 
 if(is_page_template('page-donatestandard.php') || is_tree('150')){
   require(get_stylesheet_directory() . '/kimbia-donate-header.php');
+  echo "\n";
+  require(get_stylesheet_directory() . '/standard-donate-script-header.php');
 }
 ?>
 
+
+
+<style type="text/css" media="screen">
+  /* keyvote autoselection css */
+  .items{ display:none; }
+  .items_<?php echo latest_keyvote_chamber(); ?>{display:block;}
+  <?php if(latest_keyvote_chamber() == 'senate'): ?>
+    #keyVoteTouchSlider{left:45px;}
+  <?php endif; ?>
+</style>
 </head>
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site wrap">
@@ -214,11 +266,12 @@ if(is_page_template('page-donatestandard.php') || is_tree('150')){
 											 <a href="<?php echo home_url( '/congress/', 'http'); ?>">
 													 <span class="nav-title">Dashboard</span>
 											 </a>
-											 <span class="nav-desc nav-search">
-											    <span style="font-size:13px;">The dashboard is temporarily down as we update it for the 113th Congress.</span>
-											    <? /*?>
-											    <input id="headerNavDashboardSearch" type="search" name="search zip" value="" placeholder="Enter your zip" class="dashboardZipSearch"><div class="go gradient red-gradient dashboardZipGo"><div class="arrow-right"></div></div>
-											    */?>
+											 <span class="nav-desc nav-search">											    
+											    <?php if(CPSetting::getValue('enable_action_dashboard')): ?>
+											      <input id="headerNavDashboardSearch" type="search" name="search zip" value="" placeholder="Enter your zip" class="dashboardZipSearch"><div class="go gradient red-gradient dashboardZipGo"><div class="arrow-right"></div></div>											    
+											    <?php else: ?>  
+											      <span style="font-size:13px;"><?php echo CPSetting::getValue('dashboard_down_message'); ?></span>
+											    <?php endif; ?>
 											 </span>
 									 </li>
 									 <li class="gradient orange-gradient the-forge-blog">

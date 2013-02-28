@@ -38,7 +38,29 @@ get_header(); ?>
         	    </div>
         	    <?php the_title(); ?>
         	  </h1>
-        	  <div class="keyvote-entry-date"><?php echo get_the_date('F d, Y'); ?></div>
+        	  
+        	   
+      	    <div class="single-post-social">
+              <div id="shareTw"><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="heritage_action" data-url="<?php the_permalink(); ?>" data-text="<?php the_title(); ?>">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></div>
+              <div id="shareFb"><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="<?php the_permalink(); ?>" layout="button_count" width="300"></fb:like></div>
+              <div id="shareGp">
+              <!-- Place this tag where you want the +1 button to render -->
+              <g:plusone size="medium" href="<?php the_permalink(); ?>"></g:plusone>
+
+              <!-- Place this render call where appropriate -->
+              <script type="text/javascript">
+                (function() {
+                  var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                  po.src = 'https://apis.google.com/js/plusone.js';
+                  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                })();
+              </script>
+              </div>
+    			  </div>
+      	    
+        	  
+        	  <div class="keyvote-entry-date"><?php echo get_the_date('F d, Y'); ?></div>        	          	  
+        	  
         		<?php the_content(); ?>
         		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'heritageaction' ), 'after' => '</div>' ) ); ?>
         	</div><!-- .entry-content -->

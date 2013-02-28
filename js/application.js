@@ -58,8 +58,7 @@ function signup_validate(form){
       // press release slider
       $("#press-release-slider").tinycarousel({
         pager: true,
-        interval: true,
-        intervaltime: 7000
+        interval: false
       });
 
       // home key votes toggle
@@ -159,7 +158,19 @@ function signup_validate(form){
         }
       });
 
-
+			$('html.no-placeholder [placeholder]').focus(function() {
+        var input = $(this);
+        if (input.val() == input.attr('placeholder')) {
+          input.val('');
+          input.removeClass('placeholder');
+        }
+      }).blur(function() {
+        var input = $(this);
+        if (input.val() == '' || input.val() == input.attr('placeholder')) {
+          input.addClass('placeholder');
+          input.val(input.attr('placeholder'));
+        }
+      }).blur();
 
 
       $("#listen-live").click(function(){

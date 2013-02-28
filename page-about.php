@@ -36,7 +36,7 @@ get_header(); ?>
   		   	<?php
   					global $query_string; // required
   					global $post;
-  					$posts = query_posts('post_type=page&post_parent=' . $post->ID . '&sort_column=menu_order&order=ASC&posts_per_page=-1'); 
+  					$posts = query_posts('post_type=page&post_parent=' . $post->ID . '&orderby=menu_order&order=ASC&posts_per_page=-1'); 
   				?>
 
 

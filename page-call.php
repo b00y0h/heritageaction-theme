@@ -23,21 +23,32 @@ $zipcode = (isset($wp_query->query_vars['zipdist'])) ? $wp_query->query_vars['zi
 $zipcode = str_replace("/","",$zipcode);
 
 $chamber = get_query_var('chamber');
+$multiple_results = false;
 
 if(isset($zipcode) && !empty($zipcode)){
   
   $zip2Dist = new CPZip2Dist();
   $district = $zip2Dist->getDistrict($zipcode); 
-  $members = array();
+  $members = array(); 
   
-  if($chamber == "senate"){
-    $senate = $cpSenate->getSenators(CPCommon::dist2State($district));
-    $members = array_merge($senate,$members);
+  if(is_array($district) && $chamber=='house'){
+    $multiple_results = true;
   }
-  if($chamber == "house"){
-    $cpHouse->loadByCode($district);    
-    $members[] = $cpHouse;
+  else{
+    if(!$district){$district = $zipcode;}
+    if($chamber == "senate"){
+      $district = (is_array($district)) ? $district[0]->state.$district[0]->district : $district;
+      $senate = $cpSenate->getSenators(CPCommon::dist2State($district));
+      $members = array_merge($senate,$members);
+    }
+    if($chamber == "house"){
+      $cpHouse->loadByCode($district);    
+      $members[] = $cpHouse;
+    }
   }
+  
+  
+  
   
 }
 
@@ -427,7 +438,7 @@ if (@$_GET['printer'] == true){
   <div class="callCongressHeader">
      <div class="subHeader"><?php echo CPSetting::getValue('call_alert_' . $chamber . '_tagline'); ?></div>
      <div class="headerInfo">
-     <?php if(isset($zipcode) && !empty($zipcode)) : ?>
+     <?php if(isset($zipcode) && !empty($zipcode) && !$multiple_results) : ?>
       
       <div class="currentZipInfo">
         <?php echo ($chamber == "house") ? "Representatives" : "Senators"; ?> for ZIP <?php echo $zipcode; ?> <a href="/call/<?php echo $chamber; ?>/"><span id="changeZip" class="fakeLink">Change</span></a>
@@ -444,6 +455,7 @@ if (@$_GET['printer'] == true){
  
    <div class="call-entry">
      
+     
      <?php if(!isset($chamber) || empty($chamber)): ?>
         
       <div class="welcomeWrapper">
@@ -457,8 +469,12 @@ if (@$_GET['printer'] == true){
             <option value="house">House</option>
           </select>
       </div>
+      
+      <?php elseif($multiple_results): ?>
+
+         <?php $resolve_type = 'call'; include(CP_PATH . '/views/resolve-multiple.php'); ?>
         
-     <?php elseif(!isset($zipcode) || empty($zipcode)): ?>
+     <?php elseif(!isset($zipcode) || empty($zipcode) ): ?>
        
        <script type="text/javascript">
         (function($){
@@ -507,7 +523,7 @@ if (@$_GET['printer'] == true){
      <?php endif;  ?>  
        
     
-     <?php if(isset($zipcode) && !empty($zipcode) && !empty($chamber)): ?>
+     <?php if(isset($zipcode) && !empty($zipcode) && !empty($chamber) && !$multiple_results): ?>
      
       <form id="callForm">
           <input type="hidden" name="zip" value="<?php echo $zipcode;?>">
