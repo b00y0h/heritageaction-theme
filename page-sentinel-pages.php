@@ -10,8 +10,17 @@
  * @package Heritage Action
  * @since Heritage Action 1.0
  */
-
 get_header(); ?>
+<style type="text/css" media="screen">
+  .sentinel-content{
+    width:700px; 
+    min-height:475px;
+    float:left;
+    color:#000;
+    font-family:Georgia;
+    font-size:16px;
+  }
+</style>
 
 		    <div id="hero">
           <div class="inner clearfix">
@@ -20,17 +29,15 @@ get_header(); ?>
           </div>
         </div>
 		<div id="primary" class="content-area">
-			<div id="content" class="site-content" role="main">
+		  <?php get_sidebar('sentinel'); ?>
+			<div id="content" class="site-content sentinel-content" role="main">
 
-				<?php while ( have_posts() ) : the_post(); ?>
-				  
-					<?php
-					  echo $post->post_content
-					?>
-
-				<?php endwhile; // end of the loop. ?>
-<br><br>
+        <?php get_template_part('sentinel/page',$post->post_name); ?>
+				
+        <br><br>
 			</div><!-- #content .site-content -->
+			<div style="clear:both;"></div>
+			
 		</div><!-- #primary .content-area -->
 
 <?php get_footer(); ?>
