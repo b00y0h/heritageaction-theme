@@ -6,6 +6,9 @@
   .sentinel-faq-content a{
     text-decoration:underline;
   }
+  #signup-button{
+	  text-decoration: none;
+  }
 </style>
 <div class="sentinel-faq-content">
 <?php the_content(); ?>

@@ -128,6 +128,14 @@
 	<fieldset id="fs-one" align="center">
 	  
 	  <div class="sentinel-intro-text" align="left">
+	  <?php if( isset($_COOKIE['_sentinel_email']) && !empty($_COOKIE['_sentinel_email'])) : ?>
+	   
+	   <h2>You have already completed the Influence Profile</h2>
+	   <p>
+		   <a href="/sentinel/reportaction">Report your latest work to hold Congress accountable.</a>
+	   </p>
+	   <br><br>
+	  <?php endif; ?>
 
       <img src="<?php bloginfo('template_directory'); ?>/images/intro-text.png" alt="You are about to embark on the path to becoming a Heritage Action Sentinel.">
       <p>
@@ -248,21 +256,21 @@
 		</div><br />
 		<label for="heritage-member">
 		<strong>Are you a member of The Heritage Foundation?</strong> &nbsp; &nbsp; <input id="heritage-member" name="heritage_member_c" type="checkbox" value="1" /> &nbsp;&nbsp;Yes
-		</label><br />
+		</label><br /><br />
     
     <div class="sentinel-contact-col-left">
-  		<input class="required" name="name" type="text" placeholder="Full Name *" />
+  		<input class="required" name="name" id="profile_name" type="text" placeholder="Full Name *" />
 
   		<input name="address" type="text" placeholder="Address" />
 
   		<input name="address_city" type="text" placeholder="City" />
 
-  		<input name="address_state" type="text" placeholder="State" />
+  		<!-- <input name="address_state" type="text" placeholder="State" /> -->
 		</div>
 		
 		<div class="sentinel-contact-col-right">
 		  
-		  <input class="email required" name="email" type="text" placeholder="Email *" />
+		  <input class="email required" id="profile_email" name="email" type="text" placeholder="Email *" />
     
   		<input class="required" name="phone" type="text" placeholder="Phone *" />
 
@@ -281,7 +289,7 @@
                 <input type="hidden" name="influence_profile" value="1"/>
 
 	  <a href="#" class="back btn rounded medium-blue-gradient shadow" >Back</a>
-    <a href="#" id="submit" class="back btn rounded blue-gradient shadow">Submit</a>
+      <a href="#" id="submit" class="btn rounded blue-gradient shadow">Submit</a>
 
 	</fieldset>
 </form>
@@ -304,7 +312,7 @@
 </script>
 <!-- Custom scripts for this page -->
 <script type="text/javascript">
-	var customMessage = 'Thanks for submitting your Sentinel Influence Profile. Our system logged your response and a staffer was assigned to setup a call with you. Look for an email from us soon.<br/><br/>Now that you are in our system, you can submit action reports for credit towards becoming an official  Sentinel. Ready to start submitting your work? <a href="http://heritageaction.staging.wpengine.com/sentinel/reportaction/">Click here to get started</a>.<br/><br/><a href="http://heritageaction.staging.wpengine.com/sentinel/faq/">Sentinel Frequently Asked Questions</a>.';
+	var customMessage = 'Thanks for submitting your Sentinel Influence Profile. Our system logged your response and a staffer was assigned to setup a call with you. Look for an email from us soon.<br/><br/>Now that you are in our system, you can submit action reports for credit towards becoming an official  Sentinel. Ready to start submitting your work? <a href="/sentinel/reportaction/">Click here to get started</a>.<br/><br/><a href="/sentinel/faq/">Sentinel Frequently Asked Questions</a>.';
 	jQuery.fn.reset = function(){
 		jQuery(this).each(function(){
 			this.reset();
@@ -348,12 +356,13 @@
 			var form = jQuery(this);
 
 			if (form.valid()) {
-                                form.find('input#submit').attr('disabled', 'disabled').val('Loading...');
+                form.find('#submit').attr('disabled', 'disabled').html('Loading...');
 
 				jQuery.post('/proxy.php?action=action_influence_profile',
 					jQuery('#sentinel-survey-form').serialize(),
 					function(data){
-                                                form.find('input#submit').val('Submit').removeAttr('disabled');
+                        form.find('input#submit').val('Submit').removeAttr('disabled');
+                        form.find('#submit').removeAttr('disabled').html('Submit');
 
 						if(data.location){
 							window.location.href = data.location;
@@ -368,17 +377,24 @@
 						if(data.response){
 							if(data.response == 200){
 								jQuery('#response').html(customMessage);
+								
+								setCookie('_sentinel_name',jQuery('#profile_name').val(), 365*20);
+								setCookie('_sentinel_email',jQuery('#profile_email').val(), 365*20);
+								jQuery("#fs-one,#fs-two,#fs-three,#fs-four").hide();
+							
 							} else{
 								jQuery('#response').text(data.response);
 							}
 							jQuery('#response').css('display', 'block');
 							jQuery('#fs-one').css('display', 'none');
 							jQuery(form).reset();
+							/*
 							var next = jQuery(form).find('fieldset').eq(0);
 							jQuery(form).find('fieldset').eq(3).fadeOut('fast', function() {
 								next.fadeIn('fast');
 								window.scrollTo(0, 0);
 							});
+							*/
 							
 						} else{
 							jQuery('#response').css('display', 'none');

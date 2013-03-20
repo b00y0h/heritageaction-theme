@@ -79,7 +79,9 @@
 	</p>
 	
 	<p>
-		<textarea class="required" cols="60" id="description" name="description" rows="10" placeholder="Activity Description..." style="height:75px;font-size:14px"></textarea>
+
+		<label >Please only enter one activity at a time to get full credit.</label>
+		<textarea class="required" cols="60" id="description" name="description" rows="10" placeholder="Describe the activity." style="height:75px;font-size:14px" maxlength="310"></textarea>
 	</p>
 	
 	  <a id="report-action-button" href="#" class="btn rounded blue-gradient shadow">Send Report</a>
@@ -99,7 +101,15 @@
 	
 	
 	jQuery('document').ready(function(){
-	  jQuery("#report-action-button").click(function(){
+	    
+	    if(getCookie('_sentinel_email') != null){
+			jQuery('#ar-form-email').val(getCookie('_sentinel_email'));
+		}
+		if(getCookie('_sentinel_name') != null){
+			jQuery('#ar-form-name').val(getCookie('_sentinel_name'));
+		}
+	
+	    jQuery("#report-action-button").click(function(){
 		  jQuery('#sentinel-ar-form').submit();
 		  return false;
 		})
@@ -131,6 +141,8 @@
 					if(data.response){
 						if(data.response == 200){
 							jQuery('#response').text(customMessage);
+							setCookie('_sentinel_name',jQuery('#ar-form-name').val(), 365*20);
+							setCookie('_sentinel_email',jQuery('#ar-form-email').val(), 365*20);
 						} else{
 							jQuery('#response').text(data.response);
 						}

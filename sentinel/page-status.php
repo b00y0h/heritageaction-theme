@@ -165,6 +165,10 @@
 <script type="text/javascript">
 	var customMessage = 'Completed!';
 	jQuery('document').ready(function(){
+		if(getCookie('_sentinel_email') != null){
+			jQuery('#status-checker-email').val(getCookie('_sentinel_email'));
+		}
+	
 		// Translation
 		var categorys = {
 			'local':'#local-',
@@ -204,6 +208,13 @@
 							jQuery('#response').css('display', 'none');
 						}
 						if(data.points){
+							// set cookie
+				            var now = new Date();
+				            var time = now.getDate();
+				            time += 365 * 20;
+				            now.setDate(time);
+				            setCookie('_sentinel_email', jQuery('#status-checker-email').val(), 365*20);
+										
 							console.log("points: ");
 							var sum = 0;
 							jQuery.each(data.points, function(key, val){
@@ -236,5 +247,5 @@
 
 <br/>
 <div class="checker-intro">
-<p style="font-style:italic">We look at all action reports that you send us, and Sentinel points are awarded on a case by case basis--strong work earns more points. As we work to encourage accountability for Washington, these points are a way to acknowledge the conservatives that are doing the hard work of accountability every day. So if you have questions about earning more points, please give us a <a href="/sentinel/contact/" title="Sentinel: Ask Us Your Questions">call or send us an email</a>.</p>
+<p style="font-style:italic">We look at all action reports that you send us, and Sentinel points are awarded on a case by case basis--strong work earns more points. As we work to encourage accountability for Washington, these points are a way to acknowledge the conservatives that are doing the hard work of accountability every day. So if you have questions about earning more points, please give us a <a href="/sentinel/faq/" title="Sentinel: Ask Us Your Questions">call or send us an email</a>.</p>
 </div>
