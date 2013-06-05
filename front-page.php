@@ -11,6 +11,32 @@
  */
 
 get_header(); ?>
+<!-- Tag for Activity Group: RT, Activity Name: Heritage Action Homepage RT, Activity ID: 1277718 -->
+<!-- Expected URL: http://heritageaction.com -->
+
+<!--
+Activity ID: 1277718
+Activity Name: Heritage Action Homepage RT
+Activity Group Name: RT
+-->
+
+<!--
+Start of DoubleClick Floodlight Tag: Please do not remove
+Activity name of this tag: Heritage Action Homepage RT
+URL of the webpage where the tag is expected to be placed: http://heritageaction.com
+This tag must be placed between the <body> and </body> tags, as close as possible to the opening tag.
+Creation Date: 04/15/2013
+-->
+<script type="text/javascript">
+var axel = Math.random() + "";
+var a = axel * 10000000000000;
+document.write('<iframe src="http://3958080.fls.doubleclick.net/activityi;src=3958080;type=rtxch970;cat=herit757;ord=1;num=' + a + '?" width="1" height="1" frameborder="0" style="display:none"></iframe>');
+</script>
+<noscript>
+<iframe src="http://3958080.fls.doubleclick.net/activityi;src=3958080;type=rtxch970;cat=herit757;ord=1;num=1?" width="1" height="1" frameborder="0" style="display:none"></iframe>
+</noscript>
+
+<!-- End of DoubleClick Floodlight Tag: Please do not remove -->
 
 <?php youtubeLightbox(); ?>
 

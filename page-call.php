@@ -21,6 +21,7 @@ $CallLog = new CPCallLog();
 
 $zipcode = (isset($wp_query->query_vars['zipdist'])) ? $wp_query->query_vars['zipdist'] : @$_GET['zipdist'];
 $zipcode = str_replace("/","",$zipcode);
+$zipcode = (strlen($zipcode > 5)) ? substr($zipcode,0,5) : $zipcode;  
 
 $chamber = get_query_var('chamber');
 $multiple_results = false;
@@ -29,12 +30,33 @@ if(isset($zipcode) && !empty($zipcode)){
   
   $zip2Dist = new CPZip2Dist();
   $district = $zip2Dist->getDistrict($zipcode); 
+  if(in_array($_SERVER['REMOTE_ADDR'],array("173.53.53.68"))) {
+    //echo nl2br(print_r($district,true));
+  }
   $members = array(); 
-  
-  if(is_array($district) && $chamber=='house'){
-    $multiple_results = true;
+
+  if(is_array($district)){ // && $chamber=='house'){
+    if($chamber == 'house'){
+      $multiple_results = true;
+    }
+    elseif($chamber =='senate'){
+      
+      if($district[0]->state != $district[1]->state){
+        // multiple states for senate call
+        $multiple_results = true;
+      }
+      else{
+        // multiple districts but not states
+        $district = (is_array($district)) ? $district[0]->state.$district[0]->district : $district;
+        $senate = $cpSenate->getSenators(CPCommon::dist2State($district));
+        $members = array_merge($senate,$members);
+      }
+      
+    }
+    
   }
   else{
+    
     if(!$district){$district = $zipcode;}
     if($chamber == "senate"){
       $district = (is_array($district)) ? $district[0]->state.$district[0]->district : $district;
@@ -252,9 +274,9 @@ if (@$_GET['printer'] == true){
         }
       })
       
-      $("#submitZip").live("click",function(){
+      $("#submitZip, .submitZip").live("click",function(){
           updateZipcode();
-       })
+      })
 
        $('body').keypress(function(e){
           if($(".welcomeWrapper").is(":visible")){
@@ -441,7 +463,7 @@ if (@$_GET['printer'] == true){
      <?php if(isset($zipcode) && !empty($zipcode) && !$multiple_results) : ?>
       
       <div class="currentZipInfo">
-        <?php echo ($chamber == "house") ? "Representatives" : "Senators"; ?> for ZIP <?php echo $zipcode; ?> <a href="/call/<?php echo $chamber; ?>/"><span id="changeZip" class="fakeLink">Change</span></a>
+        <?php echo ($chamber == "house") ? "Representatives" : "Senators"; ?> for ZIP <?php echo $zipcode; ?> <a rel="lightbox" data-ob_share="false" data-ob="lightbox" href="#popup_zip_changer"><span id="changeZip" class="fakeLink">Change</span></a>
       </div>
       <div class="callHelp">
         Can't call while online? Want to call later? &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="<?php bloginfo('template_directory'); ?>/img/call/printer-icon.png" valign="middle"> &nbsp; <span class="fakeLink" id="printAlert">Print this alert.</span>
@@ -479,6 +501,10 @@ if (@$_GET['printer'] == true){
        <script type="text/javascript">
         (function($){
           $(document).ready(function(){
+            
+            if(getCookie('hfa_user_district')){
+              window.location = '/call/<?php echo $chamber; ?>/' + getCookie('hfa_user_district') + '/';
+            }
             
             $("#myZip").keyup(function(){
               if($(this).val().length >= 4){
@@ -524,6 +550,47 @@ if (@$_GET['printer'] == true){
        
     
      <?php if(isset($zipcode) && !empty($zipcode) && !empty($chamber) && !$multiple_results): ?>
+     
+       <?php if ($district): ?>
+          <script type="text/javascript">
+           (function($){
+             $(document).ready(function(){
+               setCookie('hfa_user_district','<?php echo $district; ?>',3650);     
+               
+               $("#submitZip").click(function(){
+                  if($("#myZip").val() != '' && $("#myZip").val() != 'Enter your ZIP code'){
+                     window.location = '/call/<?php echo $chamber; ?>/' + $("#myZip").val();
+                  }
+               })
+               
+               $('body').keypress(function(e){
+                   if($("#popup_zip_changer").is(":visible")){
+                     code = (e.keyCode ? e.keyCode : e.which);
+                     if (code == 13){
+                       if($("#myZip").val() != '' && $("#myZip").val() != 'Enter your ZIP code'){
+                          window.location = '/call/<?php echo $chamber; ?>/' + $("#myZip").val();
+                       }
+                     }                     
+                   }
+                });
+                          
+             })
+           })(jQuery);
+          </script>        
+       <?php endif ?>
+       
+       <div id="popup_zip_changer" style="display:none;">
+
+           <h1><?php echo (CPSetting::getValue('call_alert_welcome_title')) ? CPSetting::getValue('call_alert_welcome_title') : 'Get Started'; ?></h1>
+
+           <?php echo wptexturize( wpautop(CPSetting::getValue('call_alert_welcome_message'), 1) ) ; ?>
+
+           <div class="cpZipCodeForm" align="left">
+             <input name="zip" id="myZip" value="Enter your ZIP code" onblur="if (this.value == '') {this.value = 'Enter your ZIP code';}" onfocus="if (this.value == 'Enter your ZIP code') {this.value = '';}"> 
+             <div id="submitZip" class="btn rounded gradient medium-blue-gradient"><?php echo (CPSetting::getValue('call_alert_welcome_button')) ? stripslashes(CPSetting::getValue('call_alert_welcome_button')) : 'Find Your District'; ?></div>
+           </div>
+
+        </div>
      
       <form id="callForm">
           <input type="hidden" name="zip" value="<?php echo $zipcode;?>">

@@ -14,6 +14,7 @@
 <!--[if gt IE 8]>      <html <?php language_attributes(); ?> class="no-js ie gt-ie8"> <![endif]-->
 <!--[if !IE ]><!--> <html <?php language_attributes(); ?> class="no-js not-ie"> <!--<![endif]-->
 <head>
+  <script src="//cdn.optimizely.com/js/79804044.js"></script>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
   <!--[if gte IE 9]>
@@ -88,135 +89,6 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<style type="text/css" media="screen">
-  #content .entry-content a{text-decoration:underline;}
-  #content .entry-content .post-meta a{text-decoration:none;}
-
-  .post-suggested-tweet p{
-    margin:5px 0 0 0;
-  }
-  .single-post-author{
-    padding-bottom:25px;
-    border-bottom: 5px solid #ddd;
-  }
-  .post-suggested-tweets-wrapper{
-    margin:0px 0 20px 0;
-    border-bottom: 5px solid #ddd;
-    padding:0px 0 25px 0px;
-  }  
-  .post-suggested-tweet{
-    background-color:#eee;
-  }
-  a.click-to-tweet{
-    font-size:12px; 
-  }
-  
-  
-  .paramount_signup_form input[type=text]{
-    width:100%;
-  }
-  .paramount_signup_title{
-    font-size:1.2em;
-    font-weight:bold;
-    padding-bottom:5px;
-  }
-  .paramount_align_left{
-    float:left;
-    margin-right:20px;
-    margin-bottom:20px;
-  }
-  .paramount_align_right{
-    float:right;
-    margin-left:20px;
-    margin-bottom:20px;
-  }
-  .paramount_align_center{
-    margin:0 auto 20px auto;
-    text-align:center;
-  }
-  .paramount_align_full{
-    clear:both;
-    margin-bottom:20px;
-  }
-  .paramount_signup_form_result, .paramount_signup_thankyou{
-    display:none;
-  }
-  
-  .single-post-featured-image, .featured-image {
-    width: 100%;
-    height: auto;
-    max-height:none;
-  }
-  
-  #keyVoteSwitchWrap{
-    margin-bottom:5px;
-  }
-  #keyVoteSwitchWrap.switch legend::after{
-    width:98%;
-  }
-  .houseChamberLabel{
-    margin-left:-10px;
-  }
-  .senateChamberLabel{
-    margin-left:10px;
-  }
-  .keyVoteLabel.activeChamber{
-    font-weight:bold;
-  }
-  #keyVoteTouchSlider{
-    z-index:5000;
-  }
-  .keyvoteLabelWrap{
-    height:30px;
-    margin-bottom:35px;
-  }
-  .ie-keyvote-switch{
-    display:none;
-  }
-  html.ie .nonie-keyvote-switch{
-    display:none;
-  }
-  html.ie .ie-keyvote-switch{
-    display:block;
-  }
-  
-  .no-touch nav[role="navigation"] li.the-forge-blog:hover, .no-touch nav[role="navigation"] li.the-forge-blog:hover a{
-    height: auto;
-    padding-bottom:3px;
-  }
-  .signup-form-submit-button{
-	text-decoration:none !important;
-  }
-  .welcomeWrapper{
-    min-height:465px;
-  }
-  
-  .author-name-link{
-    color:#000!important;
-  }
-  .read-more-post{
-    text-align:right;
-    padding-bottom:10px;
-  }
-  .read-more-post a{
-    text-decoration:none !important;
-  }
-  .readmore-disqus-count{
-    float:left;
-    margin-top:12px;
-  }
-  .readmore-disqus-count a{
-    text-decoration:none !important;
-  }
-  
-  .authorImageWrapper{ margin-bottom:30px; }
-  .author-description{ padding-bottom:20px; }
-  
-  .single-post-social {
-    height: 25px;
-    width: 300px;
-  }
-</style>
 
 <?php 
 if(is_page_template('page-donatestandard.php') || is_tree('150')){
@@ -262,51 +134,60 @@ if(is_page_template('page-donatestandard.php') || is_tree('150')){
 								 </a>
 								  <span class="nav-desc">&ldquo;Heritage Action is the scorecard for conservatives&rdquo;<br/><span class="author">– Washington Examiner</span></span>
 						 </li>
-									 <li class="gradient red-gradient dashboard">
-											 <a href="<?php echo home_url( '/congress/', 'http'); ?>">
-													 <span class="nav-title">Dashboard</span>
-											 </a>
-											 <span class="nav-desc nav-search">											    
-											    <?php if(CPSetting::getValue('enable_action_dashboard')): ?>
-											      <input id="headerNavDashboardSearch" type="search" name="search zip" value="" placeholder="Enter your zip" class="dashboardZipSearch"><div class="go gradient red-gradient dashboardZipGo"><div class="arrow-right"></div></div>											    
-											    <?php else: ?>  
-											      <span style="font-size:13px;"><?php echo CPSetting::getValue('dashboard_down_message'); ?></span>
-											    <?php endif; ?>
-											 </span>
-									 </li>
-									 <li class="gradient orange-gradient the-forge-blog">
-											 <a href="<?php echo home_url( '/blog/', 'http'); ?>">
-													 <span class="nav-title">The Forge Blog</span>
-											 </a>
-											 <span class="nav-desc">
-											   <?php
-											    $featured_category = get_term_by('name', 'Featured', 'category');
-											    $latest_post = new WP_Query(array('posts_per_page'=>'1', 'post_type'=>'post','orderby' => 'post_date',
-                          'order' => 'DESC', 'ignore_sticky_posts' => 1, 'cat'=>$featured_category->term_id));
-											    while($latest_post->have_posts()): $latest_post->the_post();?>
-											   <a class="blog-link" href="<?php the_permalink(); ?>">
-											     <h6 class="blog-title"><?php echo the_title(); ?></h6>
-											     <span class="blog-date"><?php the_date(); ?></span>
-											   </a>
-											   <p class="blog-excerpt"><?php echo truncateWords(get_the_excerpt(),90); ?>...</p>
+						 <li class="gradient red-gradient dashboard <?php if(is_page_template('page-congresspages.php')){echo 'current-nav';} ?>">
+  							 <a href="<?php echo home_url( '/congress/', 'http'); ?>">
+  									 <span class="nav-title">Dashboard</span>
+  							 </a>
+  							 <span class="nav-desc nav-search">											    
+  							    <?php if(CPSetting::getValue('enable_action_dashboard')): ?>
+  							      <input id="headerNavDashboardSearch" type="search" name="search zip" value="" placeholder="Enter your zip" class="dashboardZipSearch"><div class="go gradient red-gradient dashboardZipGo"><div class="arrow-right"></div></div>											    
+  							    <?php else: ?>  
+  							      <span style="font-size:13px;"><?php echo CPSetting::getValue('dashboard_down_message'); ?></span>
+  							    <?php endif; ?>
+  							 </span>
+  					 </li>
+  					 <li class="gradient orange-gradient the-forge-blog <?php 
+  					                                                        if(
+  					                                                            is_home() ||
+  					                                                            is_page('blog') || 
+  					                                                            is_singular('post') ||
+  					                                                            is_category() ||
+  					                                                            is_tag() ||
+  					                                                            is_author() ||
+  					                                                            is_archive()
+  					                                                        ){echo 'current-nav';} ?>">
+  							 <a href="<?php echo home_url( '/blog/', 'http'); ?>">
+  									 <span class="nav-title">The Forge Blog</span>
+  							 </a>
+  							 <span class="nav-desc">
+  							   <?php
+  							    $featured_category = get_term_by('name', 'Featured', 'category');
+  							    $latest_post = new WP_Query(array('posts_per_page'=>'1', 'post_type'=>'post','orderby' => 'post_date',
+                    'order' => 'DESC', 'ignore_sticky_posts' => 1, 'cat'=>$featured_category->term_id));
+  							    while($latest_post->have_posts()): $latest_post->the_post();?>
+  							   <a class="blog-link" href="<?php the_permalink(); ?>">
+  							     <h6 class="blog-title"><?php echo the_title(); ?></h6>
+  							     <span class="blog-date"><?php the_date(); ?></span>
+  							   </a>
+  							   <p class="blog-excerpt"><?php echo truncateWords(get_the_excerpt(),90); ?>...</p>
 
-											   <?php endwhile; wp_reset_postdata(); ?>
-											 </span>
-									 </li>
-									 <li id="donate" class="gradient light-red-gradient donate">
-											 <a href="<?php echo home_url( '/donate/', 'http'); ?>">
-													 <span class="nav-title">Donate</span>
-											 </a>
-											 <span class="nav-desc">&ldquo;I give money to Heritage Action, you should too.&rdquo;<br/><span class="author">– Erick Erickson</span></span>
-									 </li>
-									 <li id="search" class="gradient blue-gradient search">
-											 <a href="#" id="search-trigger"></a>
-										   <span id="search-form" class="nav-desc">
-                         <?php get_search_form(); ?>
-											 </span>
-									 </li>
-							 </ul>
-					 </div>
+  							   <?php endwhile; wp_reset_postdata(); ?>
+  							 </span>
+  					 </li>
+  					 <li id="donate" class="gradient light-red-gradient donate <?php if(is_page_template('page-donatestandard.php') || is_tree('150')){echo 'current-nav';} ?>">
+  							 <a href="<?php echo home_url( '/donate/', 'http'); ?>">
+  									 <span class="nav-title">Donate</span>
+  							 </a>
+  							 <span class="nav-desc">&ldquo;I give money to Heritage Action, you should too.&rdquo;<br/><span>– Erick Erickson</span></span>
+  					 </li>
+  					 <li id="search" class="gradient blue-gradient search">
+  							 <a href="#" id="search-trigger"></a>
+  						   <span id="search-form" class="nav-desc">
+                   <?php get_search_form(); ?>
+  							 </span>
+  					 </li>
+  			 </ul>
+  	 </div>
 	 </nav><!-- .site-navigation .main-navigation -->
     </div> <!-- .inner -->
  </header><!-- #masthead .site-header -->

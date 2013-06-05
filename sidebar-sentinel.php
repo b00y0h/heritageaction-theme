@@ -55,11 +55,5 @@
     <div class="sentinel-nav-button <?php echo sentinel_nav_classes('faq'); ?>">
       <a href="/sentinel/faq/" class="btn rounded orange-gradient shadow">FAQ &amp; More Info</a>
     </div> 
-    
-    <?php if(in_array($_SERVER['REMOTE_ADDR'], array('173.53.53.68'))): ?>
-    	<br>
-    	<script src="http://thepathtobalance.com/share.js?"></script>
-    <?php endif; ?>
-    
-   
+       
 </div>

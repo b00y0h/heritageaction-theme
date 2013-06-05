@@ -221,12 +221,15 @@ Template Name: Sentinel Slider
           <?php if( isset($_COOKIE['_sentinel_email']) && !empty($_COOKIE['_sentinel_email'])) : ?>
           <div class="slide" style="display:block;">          	
 	      	
-	      	<h2>Welcome Back</h2>
+	      	<h2>Welcome Back, Sentinel!</h2>
 	      		<p>
-	      			You will earn Sentinel status by reporting your work, similar to how Members of Congress earn Sentinel status by making the right votes.
+	      			Members of Congress can earn Sentinel status by making the right votes. Earn your Sentinel status by reporting how you hold Congress accountable.              
 	      		</p>
 	      		<p>
-	      			As you know, we assign points for activities under the categories Local, Media, Congress, Online, and Other. Our team will review each action report you send, assigning points based on the impact of your work. Remember to post different action items separately.
+	      			We can better influence Members of Congress when we coordinate together and you tell us what you’re hearing from Members of Congress and their staff. <strong>Your on-the-ground intel drives our efforts.</strong>              
+	      		</p>
+	      		<p>
+	      		  Our team will review each report you send, alert our Government Relations team, and assign you points based on the impact of your work.
 	      		</p>
 	      		
 	      		<br><br>
@@ -237,8 +240,18 @@ Template Name: Sentinel Slider
 	      		</div>
 		  </div>
 		  <?php endif; ?>
-         
-            <div class="slide" style="display:block;">
+            
+             <div class="slide" style="display:block;">
+                <iframe width="629" height="354" src="http://www.youtube.com/embed/dA1zfLE0_gU?rel=0" frameborder="0" allowfullscreen></iframe>
+
+                <div align="center">
+                  <br><br>
+                  <a href="/sentinel/influenceprofile/" class="btn rounded blue-gradient shadow">Sign Up Now</a>
+                </div>
+
+            </div>
+            
+            <div class="slide">
               <h2>Are you ready to become a Sentinel?</h2>
 	
               <p>Heritage Action Sentinels are a group committed conservatives doing the hard work of Congressional accountability.</p>

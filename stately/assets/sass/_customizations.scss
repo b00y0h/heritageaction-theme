@@ -1,0 +1,104 @@
+.stately {
+    width: 900px;
+    font-size: 900px;
+}
+#ha-map {
+
+	color: #a6dbea;
+
+	.il,
+  .pa,
+  .oh,
+  .va,
+  .wv,
+  .ms,
+  .mo,
+  .wi,
+  .tn,
+  .nc,
+  .al,
+  .ga,
+  .ms,
+  .tx,
+  .az,
+  .in,
+  .ky,
+  .ks,
+  .ok,
+  .fl,
+  .nj {
+  	color: #292f73;
+  }
+
+}
+#map-contain {
+    position: relative;
+    width:900px;
+}
+#meta-data {
+    width: 900px;
+}
+.circle {
+    display: block;
+   width: 100px;
+   height: 100px;
+   background-color:rgba(138, 210, 230,.5);
+   -moz-border-radius: 150px;
+   -webkit-border-radius: 150px;
+   border-radius: 150px;
+   position: absolute;
+   top: 0;
+   left: 0;
+   a {
+    position: absolute;
+    color: white;
+    font-size: 16px;
+   text-transform: uppercase;
+   text-decoration: none;
+   font-family: Helvetica, sans-serif;
+   font-weight: bold;
+   text-shadow: 1px 1px 4px #000;
+   }
+   i {
+    display: block;
+   width: 10px;
+   height: 10px;
+   background: #e55c36;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   position: absolute;
+   top: 45px;
+   left: 45px;
+   }
+}
+
+@mixin size($size){
+    width: $size;
+    height: $size;
+}
+@mixin location($top, $left, $itop, $ileft,$atop,$aleft,$size:100px) {
+    @include size($size);
+    top: $top;
+    left: $left;
+    i {
+        top:$itop;
+        left:$ileft;
+    }
+    a {
+        top:$atop;
+        left:$aleft;
+    }
+}
+.Philadelphia { @include location(177px,735px,55%,53%,36px,-46px); }
+.Pittsburgh {@include location(194px,663px,47%,50%,42px,-63px);}
+.Chicago {@include location(165px,516px,47%,50%,48px,-6px,140px);}
+.Cincinnati { @include location(232px,603px,47%,47%,28px,22px); }
+.Richmond { @include location(257px,706px,38%,52%,50px,-20px); }
+.Louis { @include location(257px,467px,45%,73%,25px,9px) }
+.Birmingham { @include location(352px,567px,39%,48%,24px,20px,110px) }
+.Dallas { @include location(374px,378px,39%,61%,27px,41px,120px) }
+.Phoenix { @include location(323px,122px,48%,51%,38px,56px,120px) }
+.Tampa { @include location(453px,662px,48%,51%,36px,38px,110px) }
+
+

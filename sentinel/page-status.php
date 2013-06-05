@@ -82,11 +82,10 @@
 	
 	<div class="checker-intro">
   <p>    
-    If you have completed your Sentinel Influence Profile, then you are on your way to becoming a Sentinel and in our system. That means you can use this form to check to see how much progress you have made towards becoming a Sentinel.
-    
-    <br/><br/>
-    
-    Remember, you need to earn 1000 points in three of the six categories to become a Sentinel.<br/>
+    If you have completed your Sentinel Influence Profile, then you are on your way to becoming a Sentinel. That means you can use this form to check to see how much progress you have made towards becoming a Sentinel. 
+    <br><br>
+    Remember, you need to earn 1000 points in three of the six categories to become a Sentinel.
+    <br/>
     
   </p>
 
@@ -171,7 +170,7 @@
 	
 		// Translation
 		var categorys = {
-			'local':'#local-',
+			'Local':'#local-',
 			'Influence_Congress':'#influence-',
 			'Online':'#online-',
 			'Media':'#media-',
@@ -247,5 +246,5 @@
 
 <br/>
 <div class="checker-intro">
-<p style="font-style:italic">We look at all action reports that you send us, and Sentinel points are awarded on a case by case basis--strong work earns more points. As we work to encourage accountability for Washington, these points are a way to acknowledge the conservatives that are doing the hard work of accountability every day. So if you have questions about earning more points, please give us a <a href="/sentinel/faq/" title="Sentinel: Ask Us Your Questions">call or send us an email</a>.</p>
+<p style="font-style:italic">We look at all action reports that you send us, and qualifying Sentinel points are awarded on a case by case basis--really strong work gets more points. As we work to encourage accountability for Washington, these points are a way to acknowledge the conservatives that are doing the hard work of accountability every day. So if you have questions about earning more points, please give us a call or send us an email. <a href="/sentinel/faq/" title="Sentinel: Ask Us Your Questions">Contact Us</a>.</p>
 </div>

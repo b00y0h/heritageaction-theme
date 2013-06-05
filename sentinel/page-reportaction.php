@@ -51,13 +51,16 @@
 	
 	<div id="sent-form-container">
 	  <p>
-	    Use this form to report your activities to us. Our team will read what you write and give you points towards becoming a Sentinel. We'll send you an email that lets you know the points you've earned.
+	    <strong>Your work makes you a Sentinel.</strong> Use this form to share your action. Our team reads your report and assigns the points that qualify you to be a Sentinel.      
     </p>
     <p>
-      If you are not on the path to becoming a Sentinel, this form will not work. Get started on the path to becoming a Sentinel now by <a href="/sentinel/influenceprofile/" title="Sign Up for Sentinel: Complete Your Influence Profile">completing your Sentinel Influence Profile</a>.
+      <strong>Your intel helps us fight.</strong> When we know what your Members of Congress and their staff say in your district, our Government Relations team takes the word straight to Capitol Hill to hold them accountable. Doing this in real time impacts Congress.
     </p>
     <p>
-      <a href="#sample-report" irel="lightbox" data-ob_share="false" data-ob="lightbox">See an example report here!</a>
+      Coordinating with you on the ground ensures that your voice is heard on Capitol Hill through our team. What did the Member or their staff tell you that our Legislative Strategist staff should know about?      
+    </p>
+    <p>
+      <a href="#sample-report" irel="lightbox" data-ob_share="false" data-ob="lightbox">See example reports here.</a>
     </p>
 	  
 	  <div id="response">Success</div>
@@ -168,23 +171,45 @@
 
 <div id="sample-report" style="display:none;">
   <h1>Sample Report</h1>
-  Here are some examples of action items in each category, as well as sample points assigned. Remember, we look at each unique report you submit and assign you points individually. The more of an impact you have, the more points you will earn.
+  
+  <p>We look at each report you submit and assign points individually.</p>
 
-<br/><br/><strong>Local</strong>
-<ul>50-75: Attend skills clinics or other neighborhood events that unify and train local conservatives.<br/>150-250: Attend a Congressional town hall and ask questions, record answers, or live blog/tweet.<br/>100-500: Participate in community canvass project designed to spread awareness of key policy priorities promote accountability.<br/>200: Distribute Heritage Action Scorecards and explain them to people at a Tea Party, 9/12, or GOP meeting.</ul>
+  <p>The more of an impact you have and the more intel you give, the more points you earn.</p>
 
-<strong>Media</strong>
-<ul>50: Write a Letter to the Editor on an issue Congress is debating, and submit it to your local newspaper.<br/>100: Have your Letter to the Editor published.<br/>150: Call in to a radio talk show and discuss why conservatives need to push for a Heritage Action priority.</ul>
+  <p><strong>Congress</strong><br>
+  Call your Member of Congress’s office, ask for the staffer on that issue, and push conservative policy priorities and submit an intel report to Heritage Action. <em>50 points</em>.</p>
 
-<strong>Congress</strong>
-<ul>10: Send your Members of Congress an email using Heritage Action’s action alerts.<br/>50: Call a Member of Congress and submit a call report to Heritage Action.<br/>250: Schedule a meeting with your Members of Congress’ local office to discuss important policy.<br/>200-400 points: Organize a district office visit for multiple Sentinels in your area.</ul>
+  <p>Example of a solid intel report after the call:<br>
+  “When I called into my Senators D.C. office, the Legislative Assistant who handles 2nd Amendment issues said that they are unsure of how the Senator will be voting on the Toomey-Schumer-Manchin gun bill.”</p>
 
-<strong>Recruit</strong>
-<ul>Introduce someone you know to the Sentinel program, have them complete the Influence Profile, and then earn a commission bonus of 10% of the points they earn. Use the recruiting page to invite them to become Sentinels. (Page coming soon.)</ul>
+  <p>Organize a visit to the district office visit for multiple Sentinels in your area. <em>200 points</em>.</p>
 
-<strong>Online</strong>
-<ul>10: Tweet on a hashtag recommended by Heritage Action.<br/>10: Create and use your Watch List on our Legislative Scorecard.<br/>50: Create a Twitter account, build 10 followers, and Tweet to your Member of Congress.<br/>100: Post a guest blog entry on a local conservative blog that discusses how local Members of Congress need to be held accountable.<br/>50-250: Create a personal email list that is appropriate for grassroots activism and forward Heritage Action email alerts.</ul>
+  <p><strong>Local</strong><br>
+  Attend a Congressional town hall, ask a question, record video, or live tweet. <em>200 points</em>.</p>
 
-<strong>Other</strong>
-<ul>We award Sentinel points for any and all activities that promote conservative accountability for Congress.</ul>
+  <p>Example of a solid intel report after the Townhall:<br>
+  “Before my Representative hosted a Townhall, I looked on Heritage Actions’ scorecard about his vote on raising the debt ceiling last year. At the Townhall I asked them why he voted for raising the debt ceiling without putting us on a path to balance in 10 years. He then told me that he did not want to risk the full faith and credit of the United States and he is going to fight on the Continuing Resolution, where they can get spending cuts.”</p>
+
+  <p>Distribute Heritage Action Scorecards at a local political meeting. <em>100 points</em>.</p>
+
+  <p>Attend or host a Skills Clinic or neighborhood event to pull local conservatives together. <em>50-250 points</em>.<br>
+  Participate in a community canvassing project to spread awareness of key policy priorities and promote accountability. <em>100-500 points</em>.</p>
+
+  <p><strong>Media</strong><br>
+  Write a Letter to the Editor on an issue Congress is debating, and submit it to your local newspaper and have it published. <em>50-150 points</em>.<br>
+  Call in to a radio talk show and discuss why Congress must pass a critical policy. <em>100 points</em>.</p>
+
+  <p><strong>Recruit</strong><br>
+  Each recruit that completed the Influence Profile after you invitation earns you 25 points. You’ll also earn 10% of their points as they progress in the Sentinel Program.</p>
+
+  <p>
+    <strong>Online</strong><br>
+    Create a Twitter account, build 10 followers, and Tweet to your Member of Congress. <em>50 points</em>.<br>
+    Post a guest blog entry on a local conservative blog that discusses what Congress needs to be held accountable on. <em>100 points</em>.<br>
+    Invite 10 activists in your Member of Congress’s district and your Representative to participate in a twitter Townhall by tweeting questions @ them and using the hashtag #Ask[Last Name]. <em>150 points per participant</em>.</p>
+
+  <p><strong>Other</strong><br>
+  Participate in Sentinel Strategy Call on Monday evenings. <em>5 points</em>.</p>
+  
+
 </div>

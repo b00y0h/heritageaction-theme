@@ -41,7 +41,12 @@ get_header(); ?>
          </div>
          <div class="authorBio">
             <div class="author-description">
-              <?php echo nl2br(get_the_author_meta('description')); ?>
+              <?php
+              $author_description = get_page_by_path('/about/'.str_replace(' ','-',strtolower(get_the_author())));
+              if($author_description){
+                echo $author_description->post_content;
+              }              
+              ?>              
             </div>
             
               <?php if( get_the_author_meta('twitter') && get_the_author_meta('first_name') ): ?>

@@ -1,0 +1,270 @@
+/** Stately setup
+*************************************/
+@font-face {
+  font-family: 'stately-webfont';
+  src: url("../font/stately-webfont.eot");
+  src: url("../font/stately-webfont.eot?#iefix") format("embedded-opentype"), url("../font/stately-webfont.woff") format("woff"), url("../font/stately-webfont.ttf") format("truetype"), url("../font/stately-webfont.svg#testfontRegular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* line 13, /Users/bobby/Downloads/stately-master/assets/sass/_setup.scss */
+.stately {
+  font: normal normal 300px/100% "stately-webfont";
+  font-size-adjust: none;
+  -webkit-text-rendering: optimizeLegibility;
+  -moz-text-rendering: optimizeLegibility;
+  -ms-text-rendering: optimizeLegibility;
+  -o-text-rendering: optimizeLegibility;
+  text-rendering: optimizeLegibility;
+  -moz-font-feature-settings: "liga=1";
+  -ms-font-feature-settings: "liga" 1;
+  -ms-font-feature-settings: "liga", "dlig";
+  overflow: hidden;
+  width: 300px;
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none; }
+  /* line 31, /Users/bobby/Downloads/stately-master/assets/sass/_setup.scss */
+  .stately li {
+    float: left;
+    margin: -20% 0 0 -100%;
+    position: relative;
+    left: 101%;
+    width: 100%;
+    cursor: default;
+    -webkit-transition: all 1s ease-in;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+
+/** Style customizations
+*************************************/
+/* line 1, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+.stately {
+  width: 900px;
+  font-size: 900px; }
+
+/* line 5, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+#ha-map {
+  color: #a6dbea; }
+  /* line 29, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+  #ha-map .il,
+  #ha-map .pa,
+  #ha-map .oh,
+  #ha-map .va,
+  #ha-map .wv,
+  #ha-map .ms,
+  #ha-map .mo,
+  #ha-map .wi,
+  #ha-map .tn,
+  #ha-map .nc,
+  #ha-map .al,
+  #ha-map .ga,
+  #ha-map .ms,
+  #ha-map .tx,
+  #ha-map .az,
+  #ha-map .in,
+  #ha-map .ky,
+  #ha-map .ks,
+  #ha-map .ok,
+  #ha-map .fl,
+  #ha-map .nj {
+    color: #292f73; }
+
+/* line 34, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+#map-contain {
+  position: relative;
+  width: 900px; }
+
+/* line 38, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+#meta-data {
+  width: 900px; }
+
+/* line 41, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+.circle {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(138, 210, 230, 0.5);
+  -moz-border-radius: 150px;
+  -webkit-border-radius: 150px;
+  border-radius: 150px;
+  position: absolute;
+  top: 0;
+  left: 0; }
+  /* line 52, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+  .circle a {
+    position: absolute;
+    color: white;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px #000; }
+  /* line 62, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+  .circle i {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #e55c36;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    position: absolute;
+    top: 45px;
+    left: 45px; }
+
+/* line 93, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+.Philadelphia {
+  width: 100px;
+  height: 100px;
+  top: 177px;
+  left: 735px; }
+  /* line 84, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+  .Philadelphia i {
+    top: 55%;
+    left: 53%; }
+  /* line 88, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+  .Philadelphia a {
+    top: 36px;
+    left: -46px; }
+
+/* line 94, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+.Pittsburgh {
+  width: 100px;
+  height: 100px;
+  top: 194px;
+  left: 663px; }
+  /* line 84, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+  .Pittsburgh i {
+    top: 47%;
+    left: 50%; }
+  /* line 88, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+  .Pittsburgh a {
+    top: 42px;
+    left: -63px; }
+
+/* line 95, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+.Chicago {
+  width: 140px;
+  height: 140px;
+  top: 165px;
+  left: 516px; }
+  /* line 84, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+  .Chicago i {
+    top: 47%;
+    left: 50%; }
+  /* line 88, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+  .Chicago a {
+    top: 48px;
+    left: -6px; }
+
+/* line 96, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+.Cincinnati {
+  width: 100px;
+  height: 100px;
+  top: 232px;
+  left: 603px; }
+  /* line 84, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+  .Cincinnati i {
+    top: 47%;
+    left: 47%; }
+  /* line 88, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+  .Cincinnati a {
+    top: 28px;
+    left: 22px; }
+
+/* line 97, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+.Richmond {
+  width: 100px;
+  height: 100px;
+  top: 257px;
+  left: 706px; }
+  /* line 84, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+  .Richmond i {
+    top: 38%;
+    left: 52%; }
+  /* line 88, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+  .Richmond a {
+    top: 50px;
+    left: -20px; }
+
+/* line 98, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+.Louis {
+  width: 100px;
+  height: 100px;
+  top: 257px;
+  left: 467px; }
+  /* line 84, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+  .Louis i {
+    top: 45%;
+    left: 73%; }
+  /* line 88, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+  .Louis a {
+    top: 25px;
+    left: 9px; }
+
+/* line 99, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+.Birmingham {
+  width: 110px;
+  height: 110px;
+  top: 352px;
+  left: 567px; }
+  /* line 84, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+  .Birmingham i {
+    top: 39%;
+    left: 48%; }
+  /* line 88, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+  .Birmingham a {
+    top: 24px;
+    left: 20px; }
+
+/* line 100, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+.Dallas {
+  width: 120px;
+  height: 120px;
+  top: 374px;
+  left: 378px; }
+  /* line 84, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+  .Dallas i {
+    top: 39%;
+    left: 61%; }
+  /* line 88, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+  .Dallas a {
+    top: 27px;
+    left: 41px; }
+
+/* line 101, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+.Phoenix {
+  width: 120px;
+  height: 120px;
+  top: 323px;
+  left: 122px; }
+  /* line 84, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+  .Phoenix i {
+    top: 48%;
+    left: 51%; }
+  /* line 88, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+  .Phoenix a {
+    top: 38px;
+    left: 56px; }
+
+/* line 102, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+.Tampa {
+  width: 110px;
+  height: 110px;
+  top: 453px;
+  left: 662px; }
+  /* line 84, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+  .Tampa i {
+    top: 48%;
+    left: 51%; }
+  /* line 88, /Users/bobby/Downloads/stately-master/assets/sass/_customizations.scss */
+  .Tampa a {
+    top: 36px;
+    left: 38px; }

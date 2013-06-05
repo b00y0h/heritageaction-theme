@@ -43,7 +43,6 @@ font-weight: 500;
 padding: 10px;
 }
 --></style>
-<h1>Sentinels: Recruit Your Friends</h1>
 <div id="response">Success</div>
 <div id="error">Error</div>
 <div class="container">
@@ -130,11 +129,11 @@ Your friend will earn credit for recruiting you, so get started now.
 jQuery('#sentinel-recruit').submit(function(e) {
 var form = jQuery(this);
 if (form.valid()) {
-$("#invite").html("Loading...").attr("disabled", "disabled");
+jQuery("#invite").html("Loading...").attr("disabled", "disabled");
 jQuery.post('/proxy.php?action=sentinel_recruit',
 jQuery('#sentinel-recruit').serialize(),
 function(data){
-$("#invite").html("Send Your Recruiting Invitation").removeAttr("disabled");
+jQuery("#invite").html("Send Your Recruiting Invitation").removeAttr("disabled");
 if(data.error){
 jQuery('#error').text(data.error);
 jQuery('#error').css('display', 'block');
@@ -142,7 +141,7 @@ jQuery('#error').css('display', 'block');
 jQuery('#error').css('display', 'none');
 }
 if(data.response){
-$(".clear-after").val("");
+jQuery(".clear-after").val("");
 if(data.response == 200){
 	jQuery('#response').text(customMessage);
 	setCookie('_sentinel_name',jQuery('#recruiter_name').val(), 365*20);

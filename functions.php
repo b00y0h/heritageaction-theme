@@ -175,7 +175,7 @@ add_action( 'widgets_init', 'heritageaction_widgets_init' );
  * Enqueue scripts and styles
  */
 function heritageaction_scripts() {
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
+	wp_enqueue_style( 'style', get_stylesheet_uri(), false, '20130605');
 	wp_enqueue_style( 'orangebox', get_template_directory_uri() ."/orangebox.css" );
 	//wp_enqueue_style( 'bxstyles', get_template_directory_uri() ."/bx_styles.css" );
 
@@ -191,7 +191,7 @@ function heritageaction_scripts() {
 
 	wp_enqueue_script('jquery-ui-core');
 	wp_enqueue_script( 'jquery-effects-custom', get_template_directory_uri() . '/js/jquery-ui-1.8.24.custom.min.js', array( 'jquery' ), '20121002', true );
-	wp_enqueue_script( 'orangebox', get_template_directory_uri() . '/js/orangebox.min.js', array( 'jquery' ), '20121004');
+	wp_enqueue_script( 'orangebox', get_template_directory_uri() . '/js/orangebox.min.js', array( 'jquery' ), '20130306');
 	wp_enqueue_script( 'tinycarousel', get_template_directory_uri() . '/js/jquery.tinycarousel.js', array( 'jquery' ), '20121004', true );
   wp_enqueue_script( 'touch-punch', get_template_directory_uri() . '/js/jquery.ui.touch-punch.min.js', array( 'jquery'), '20121127', true );
 
@@ -797,3 +797,47 @@ function paramount_signup_form($atts){
     
     return $output;
 }
+
+add_role( 'special_events', 'Special Events', array('export_gf_data'=>true,'read'=>true,'level_0'=>true,'gform_full_access'=>true));
+add_action('admin_head', 'special_events_menu_manager');
+function special_events_menu_manager(){
+  if(current_user_can('special_events')){
+    ?>
+    
+    <script type="text/javascript">
+      (function($){
+        $(document).ready(function(){
+          $('.toplevel_page_gf_edit_forms > a').attr('href','admin.php?page=gf_export');
+          $('.toplevel_page_gf_edit_forms > a > .wp-menu-name').text('Form Export');
+          $(".toplevel_page_gf_edit_forms ul>li").hide();
+          $(".toplevel_page_gf_edit_forms ul>li:eq(3)").show();
+          $(".toplevel_page_gf_edit_forms ul>li:eq(5)").show();
+          $(".wrap.export_entry #gform_tab_group #gform_tabs li:gt(0)").hide();
+          $(".gf_form_toolbar_editor, .gf_form_toolbar_settings, .gf_form_toolbar_preview").hide();
+        })
+      })(jQuery);
+    </script> 
+    
+    <?php
+  }
+}
+function remove_user_profile(){
+   if(current_user_can('special_events')){
+     remove_menu_page('profile.php');
+     remove_menu_page('index.php');
+   }
+}
+add_action('admin_menu','remove_user_profile');
+function special_events_redirect( $redirect_to, $request, $user ) {
+    // is there a user ?
+    if(is_array($user->roles)) {
+        // substitute your role(s):
+        if(in_array('special_events', $user->roles)) {
+            // pick where to redirect to, in the example: Posts page
+            return admin_url('admin.php?page=gf_export');
+        } else {
+            return admin_url();
+        }
+    }
+}
+add_filter('login_redirect', 'special_events_redirect', 10, 3);

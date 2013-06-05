@@ -43,6 +43,27 @@ get_header(); ?>
           	?>
         		<?php the_content(); ?>
         		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'heritageaction' ), 'after' => '</div>' ) ); ?>
+        		
+        		
+        		<br><br>
+        		 <div class="single-post-social">
+                <div id="shareTw"><a href="http://twitter.com/share" class="twitter-share-button" data-count="horizontal" data-via="heritage_action" data-url="<?php the_permalink(); ?>" data-text="<?php the_title(); ?>">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></div>
+                <div id="shareFb"><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="<?php the_permalink(); ?>" layout="button_count" width="300"></fb:like></div>
+                <div id="shareGp">
+                <!-- Place this tag where you want the +1 button to render -->
+                <g:plusone size="medium" href="<?php the_permalink(); ?>"></g:plusone>
+
+                <!-- Place this render call where appropriate -->
+                <script type="text/javascript">
+                  (function() {
+                    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                    po.src = 'https://apis.google.com/js/plusone.js';
+                    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+                  })();
+                </script>
+                </div>
+      			 </div>
+      			 <div style="clear:both;"><br></div>
         	</div><!-- .entry-content -->
 
         </article><!-- #post-<?php the_ID(); ?> -->
@@ -63,11 +84,7 @@ get_header(); ?>
 		</div><!-- #primary .content-area -->
 
     <?php
-      if(is_singular('post','legislative-fights')){
-
-        get_sidebar();
-
-      }
+      get_sidebar();      
     ?>
 </div>
 </div>
