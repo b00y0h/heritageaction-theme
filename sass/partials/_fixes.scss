@@ -152,7 +152,7 @@ nav[role="navigation"] li.current-nav a .nav-title{
   border-bottom:4px solid rgba(53, 148, 228,0.9);
   color:#3594E4;
 }
-nav[role="navigation"] li.current-nav a:hover .nav-title{
+nav[role="navigation"] li.current-nav:hover a .nav-title{
   border-bottom:none;
   color:#fff;
 }

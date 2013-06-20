@@ -175,7 +175,7 @@ add_action( 'widgets_init', 'heritageaction_widgets_init' );
  * Enqueue scripts and styles
  */
 function heritageaction_scripts() {
-	wp_enqueue_style( 'style', get_stylesheet_uri(), false, '20130605');
+	wp_enqueue_style( 'style', get_stylesheet_uri(), false, '2013060502' );
 	wp_enqueue_style( 'orangebox', get_template_directory_uri() ."/orangebox.css" );
 	//wp_enqueue_style( 'bxstyles', get_template_directory_uri() ."/bx_styles.css" );
 
@@ -386,6 +386,26 @@ function my_flush_rules(){
 * @return string of formatted API data
 */
 
+function buildBaseString($baseURI, $method, $params) {
+    $r = array();
+    ksort($params);
+    foreach($params as $key=>$value){
+        $r[] = "$key=" . rawurlencode($value);
+    }
+    return $method."&" . rawurlencode($baseURI) . '&' . rawurlencode(implode('&', $r));
+}
+
+function buildAuthorizationHeader($oauth) {
+    $r = 'Authorization: OAuth ';
+    $values = array();
+    foreach($oauth as $key=>$value)
+        $values[] = "$key=\"" . rawurlencode($value) . "\"";
+    $r .= implode(', ', $values);
+    return $r;
+}
+
+
+
 function twitter_feed($user = 'twitter', $count = '3'){
     $i = 1;
     //cache request
@@ -398,28 +418,67 @@ function twitter_feed($user = 'twitter', $count = '3'){
     if ( false !== $cached ) {
     return $cached .= "\n" . '<!--Returned from transient cache.-->';
     }
+    
+    $url = "https://api.twitter.com/1.1/statuses/user_timeline.json";
 
-    // Build Twitter api url
-    $apiurl = "http://api.twitter.com/1/statuses/user_timeline/{$user}.json?count={$count}&exclude_replies=true";
+    $oauth_access_token = "130600206-FHaXrPZe1GI9dSaxqcpmwdVPVqF9fhLBkKSJosPP";
+    $oauth_access_token_secret = "YeGWMITleKh9NruXvUMziiKHsSb95O8tLgw72ydb7RE";
+    $consumer_key = "4zsnNqMMlbn5eu1XOwA";
+    $consumer_secret = "ASAYFlXAhTRiASz1UeK5uxRUdOKuNr9F4iIp74E";
 
-    // Request the API data, using the constructed URL
-    $remote = wp_remote_get( esc_url( $apiurl ) );
+    $oauth = array( 'oauth_consumer_key' => $consumer_key,
+                    'oauth_nonce' => time(),
+                    'oauth_signature_method' => 'HMAC-SHA1',
+                    'oauth_token' => $oauth_access_token,
+                    'oauth_timestamp' => time(),
+                    'oauth_version' => '1.0');
+    
+    $base_info = buildBaseString($url, 'GET', $oauth);
+    $composite_key = rawurlencode($consumer_secret) . '&' . rawurlencode($oauth_access_token_secret);
+    $oauth_signature = base64_encode(hash_hmac('sha1', $base_info, $composite_key, true));
+    $oauth['oauth_signature'] = $oauth_signature;
 
-    // If the API data request results in an error, return
-    // an appropriate comment
-    if ( is_wp_error( $remote ) ) {
-        return '<p>Twitter feed unaviable</p>';
-    }
+    // Make Requests
+    $header = array(buildAuthorizationHeader($oauth), 'Expect:');
+    $options = array( CURLOPT_HTTPHEADER => $header,
+                      //CURLOPT_POSTFIELDS => $postfields,
+                      CURLOPT_HEADER => false,
+                      CURLOPT_URL => $url,
+                      CURLOPT_RETURNTRANSFER => true,
+                      CURLOPT_SSL_VERIFYPEER => false);
 
-    // If the API returns a server error in response, output
-    // an error message indicating the server response.
-    if ( '200' != $remote['response']['code'] ) {
-        return '<p>Twitter feed responded with an HTTP status code of ' . esc_html( $remote['response']['code'] ) . '.</p>';
-    }
+    $feed = curl_init();
+    curl_setopt_array($feed, $options);
+    $json = curl_exec($feed);
+    curl_close($feed);
 
+    /* 
+        // Build Twitter api url
+        $apiurl = "http://api.twitter.com/1/statuses/user_timeline/{$user}.json?count={$count}&exclude_replies=true";
+
+        // Request the API data, using the constructed URL
+        $remote = wp_remote_get( esc_url( $apiurl ) );
+
+        // If the API data request results in an error, return
+        // an appropriate comment
+        if ( is_wp_error( $remote ) ) {
+            return '<p>Twitter feed unaviable</p>';
+        }
+
+        // If the API returns a server error in response, output
+        // an error message indicating the server response.
+        if ( '200' != $remote['response']['code'] ) {
+            return '<p>Twitter feed responded with an HTTP status code of ' . esc_html( $remote['response']['code'] ) . '.</p>';
+        }
+
+    */
+    
     // If the API returns a valid response, the data will be
     // json-encoded; so decode it.
-    $data = json_decode( $remote['body'] );
+    $data = json_decode( $json );
+    if ( !$data ) {
+        return '<p>Twitter feed unavailable</p>';
+    }
 
     $output = '';
 

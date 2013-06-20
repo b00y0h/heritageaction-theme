@@ -80,6 +80,167 @@
 <?php wp_head(); ?>
 
 
+<style type="text/css" media="screen">
+  #content .entry-content a{text-decoration:underline;}
+  #content .entry-content .post-meta a{text-decoration:none;}
+
+  .post-suggested-tweet p{
+    margin:5px 0 0 0;
+  }
+  .single-post-author{
+    padding-bottom:25px;
+    border-bottom: 5px solid #ddd;
+  }
+  .post-suggested-tweets-wrapper{
+    margin:0px 0 20px 0;
+    border-bottom: 5px solid #ddd;
+    padding:0px 0 25px 0px;
+  }  
+  .post-suggested-tweet{
+    background-color:#eee;
+  }
+  a.click-to-tweet{
+    font-size:12px; 
+  }
+
+
+  .paramount_signup_form input[type=text]{
+    width:100%;
+  }
+  .paramount_signup_title{
+    font-size:1.2em;
+    font-weight:bold;
+    padding-bottom:5px;
+  }
+  .paramount_align_left{
+    float:left;
+    margin-right:20px;
+    margin-bottom:20px;
+  }
+  .paramount_align_right{
+    float:right;
+    margin-left:20px;
+    margin-bottom:20px;
+  }
+  .paramount_align_center{
+    margin:0 auto 20px auto;
+    text-align:center;
+  }
+  .paramount_align_full{
+    clear:both;
+    margin-bottom:20px;
+  }
+  .paramount_signup_form_result, .paramount_signup_thankyou{
+    display:none;
+  }
+
+  .single-post-featured-image, .featured-image {
+    width: 100%;
+    height: auto;
+    max-height:none;
+  }
+
+  #keyVoteSwitchWrap{
+    margin-bottom:5px;
+  }
+  #keyVoteSwitchWrap.switch legend::after{
+    width:98%;
+  }
+  .houseChamberLabel{
+    margin-left:-10px;
+  }
+  .senateChamberLabel{
+    margin-left:10px;
+  }
+  .keyVoteLabel.activeChamber{
+    font-weight:bold;
+  }
+  #keyVoteTouchSlider{
+    z-index:5000;
+  }
+  .keyvoteLabelWrap{
+    height:30px;
+    margin-bottom:35px;
+  }
+  .ie-keyvote-switch{
+    display:none;
+  }
+  html.ie .nonie-keyvote-switch{
+    display:none;
+  }
+  html.ie .ie-keyvote-switch{
+    display:block;
+  }
+
+  .no-touch nav[role="navigation"] li.the-forge-blog:hover, .no-touch nav[role="navigation"] li.the-forge-blog:hover a{
+    height: auto;
+    padding-bottom:3px;
+  }
+  .signup-form-submit-button{
+  text-decoration:none !important;
+  }
+  .welcomeWrapper{
+    min-height:465px;
+  }
+
+  .author-name-link{
+    color:#000!important;
+  }
+  .read-more-post{
+    text-align:right;
+    padding-bottom:10px;
+  }
+  .read-more-post a{
+    text-decoration:none !important;
+  }
+  .readmore-disqus-count{
+    float:left;
+    margin-top:12px;
+  }
+  .readmore-disqus-count a{
+    text-decoration:none !important;
+  }
+
+  .authorImageWrapper{ margin-bottom:30px; }
+  .author-description{ padding-bottom:20px; }
+
+  .single-post-social {
+    height: 25px;
+    width: 300px;
+  }
+  .single-key-votes #primary{
+    min-height:900px;
+  }
+
+  #donate.donate-red{
+    background-color: #fe4e4c;
+    color: #fff;
+    background-image: -ms-linear-gradient(top, #fe4e4c, #c91211);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fe4e4c), to(#c91211));
+    background-image: -webkit-linear-gradient(top, #fe4e4c, #c91211);
+    background-image: -o-linear-gradient(top, #fe4e4c, #c91211);
+    background-image: -moz-linear-gradient(top, #fe4e4c, #c91211);
+    background-image: linear-gradient(top, #fe4e4c, #c91211);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fe4e4c', endColorstr='#c91211', GradientType=0);
+  }
+  #donate.donate-red a{
+    background:none;
+    color:#fff;
+  }
+  #menu-main-nav > li.dashboard a {
+    display: block;
+  }
+  nav[role="navigation"] li.current-nav a .nav-title{
+    border-bottom:4px solid rgba(53, 148, 228,0.9);
+    color:#3594E4;
+  }
+  nav[role="navigation"] li.current-nav:hover  a .nav-title{
+    border-bottom:none;
+    color:#fff;
+  }
+</style>
+
 
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];

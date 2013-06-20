@@ -154,6 +154,7 @@
             <a href="https://twitter.com/Heritage_Action" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @Heritage_Action</a>
           </div>
 			  </aside>
+			  
 
 		</div><!-- #secondary .widget-area -->
 		

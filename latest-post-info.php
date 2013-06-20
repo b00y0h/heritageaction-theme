@@ -1,7 +1,8 @@
 <?php 
 /* Template Name: latest-post-info */
 
-header('Access-Control-Allow-Origin: http://heritageactionscorecard.com');
+ header('Access-Control-Allow-Origin: *');  
+
   $featured_category = get_term_by('name', 'Featured', 'category');
   $latest_post = new WP_Query(array('posts_per_page'=>'1', 'post_type'=>'post','orderby' => 'post_date',
   'order' => 'DESC', 'ignore_sticky_posts' => 1, 'cat'=>$featured_category->term_id));
