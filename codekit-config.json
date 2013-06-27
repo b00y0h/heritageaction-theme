@@ -2,16 +2,14 @@
   "CodeKitInfo" : "This is a CodeKit project configuration file. It is designed to sync project settings across multiple machines. Modifying the contents of this file can be a poor life decision if you don't know what you're doing. This file is not useful unless accompanied by the project that created it in CodeKit. For more information, see: http:\/\/incident57.com\/codekit",
   "creatorBuild" : "8300",
   "files" : {
-    "\/images\/call\/third-call-header.png" : {
+    "\/page-sentinel-pages.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/call\/third-call-header.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/call\/third-call-header.png",
-      "initialSize" : 3871,
-      "fileType" : 8192
+      "inputAbbreviatedPath" : "\/page-sentinel-pages.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
     },
     "\/images\/action_button.png" : {
       "ignoreWasSetByUser" : 0,
@@ -24,6 +22,15 @@
       "initialSize" : 3177,
       "fileType" : 8192
     },
+    "\/sentinel\/page-recruit.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sentinel\/page-recruit.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/images\/latestchat.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -34,15 +41,6 @@
       "outputAbbreviatedPath" : "\/images\/latestchat.png",
       "initialSize" : 3232,
       "fileType" : 8192
-    },
-    "\/sentinel\/page-recruit.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sentinel\/page-recruit.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/images\/call\/second-call-header.png" : {
       "ignoreWasSetByUser" : 0,
@@ -87,17 +85,6 @@
       "fileType" : 4,
       "debugStyle" : 1
     },
-    "\/images\/star-divider.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/star-divider.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/star-divider.png",
-      "initialSize" : 555,
-      "fileType" : 8192
-    },
     "\/img\/about-hugh-fike.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -118,6 +105,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/img\/hfa.png",
       "initialSize" : 8315,
+      "fileType" : 8192
+    },
+    "\/images\/star-divider.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/star-divider.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/star-divider.png",
+      "initialSize" : 555,
       "fileType" : 8192
     },
     "\/images\/bodybg.png" : {
@@ -312,17 +310,6 @@
       "initialSize" : 25156,
       "fileType" : 4096
     },
-    "\/img\/call\/message-header-background.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/call\/message-header-background.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/call\/message-header-background.png",
-      "initialSize" : 3218,
-      "fileType" : 8192
-    },
     "\/images\/interiorbg.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -332,6 +319,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/images\/interiorbg.png",
       "initialSize" : 44502,
+      "fileType" : 8192
+    },
+    "\/img\/call\/message-header-background.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/call\/message-header-background.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/call\/message-header-background.png",
+      "initialSize" : 3218,
       "fileType" : 8192
     },
     "\/images\/call\/report-header-background.png" : {
@@ -649,6 +647,17 @@
       "initialSize" : 5297,
       "fileType" : 4096
     },
+    "\/import-image\/Key-Vote-Alert--YES-on-Full-Repeal.jpg" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/import-image\/Key-Vote-Alert--YES-on-Full-Repeal.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/import-image\/Key-Vote-Alert--YES-on-Full-Repeal.jpg",
+      "initialSize" : 22024,
+      "fileType" : 4096
+    },
     "\/images\/bullet1.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -677,17 +686,6 @@
       "inputAbbreviatedPath" : "\/inc\/tweaks.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
-    },
-    "\/import-image\/Key-Vote-Alert--YES-on-Full-Repeal.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/import-image\/Key-Vote-Alert--YES-on-Full-Repeal.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/import-image\/Key-Vote-Alert--YES-on-Full-Repeal.jpg",
-      "initialSize" : 22024,
-      "fileType" : 4096
     },
     "\/images\/bodybackground.png" : {
       "ignoreWasSetByUser" : 0,
@@ -1336,6 +1334,17 @@
       "initialSize" : 2209,
       "fileType" : 4096
     },
+    "\/images\/subscribe-top.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/subscribe-top.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/subscribe-top.png",
+      "initialSize" : 2030,
+      "fileType" : 8192
+    },
     "\/sass\/partials\/_global.scss" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
@@ -1348,17 +1357,6 @@
       "fileType" : 4,
       "debugStyle" : 1
     },
-    "\/images\/subscribe-top.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/subscribe-top.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/subscribe-top.png",
-      "initialSize" : 2030,
-      "fileType" : 8192
-    },
     "\/sentinel\/page-reportaction.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1367,6 +1365,17 @@
       "inputAbbreviatedPath" : "\/sentinel\/page-reportaction.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
+    },
+    "\/img\/call\/printer-icon.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/call\/printer-icon.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/call\/printer-icon.png",
+      "initialSize" : 123,
+      "fileType" : 8192
     },
     "\/images\/call\/message-header-background.png" : {
       "ignoreWasSetByUser" : 0,
@@ -1391,28 +1400,6 @@
       "fileType" : 4,
       "debugStyle" : 1
     },
-    "\/images\/hafa_logo.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/hafa_logo.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/hafa_logo.png",
-      "initialSize" : 24189,
-      "fileType" : 8192
-    },
-    "\/img\/call\/printer-icon.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/call\/printer-icon.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/call\/printer-icon.png",
-      "initialSize" : 123,
-      "fileType" : 8192
-    },
     "\/img\/about-josh-robbins.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1423,6 +1410,17 @@
       "outputAbbreviatedPath" : "\/img\/about-josh-robbins.jpg",
       "initialSize" : 4378,
       "fileType" : 4096
+    },
+    "\/images\/hafa_logo.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/hafa_logo.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/hafa_logo.png",
+      "initialSize" : 24189,
+      "fileType" : 8192
     },
     "\/img\/about-kathryn-gunter.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -1603,17 +1601,6 @@
       "outputAbbreviatedPath" : "\/js\/application-ck.js",
       "fileType" : 64
     },
-    "\/img\/about-ben-evans.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/about-ben-evans.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/about-ben-evans.jpg",
-      "initialSize" : 37115,
-      "fileType" : 4096
-    },
     "\/img\/about-dwayne-carson.jpg" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1623,6 +1610,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/img\/about-dwayne-carson.jpg",
       "initialSize" : 5060,
+      "fileType" : 4096
+    },
+    "\/img\/about-ben-evans.jpg" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/about-ben-evans.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/about-ben-evans.jpg",
+      "initialSize" : 37115,
       "fileType" : 4096
     },
     "\/images\/hfa_donate_off.png" : {
@@ -1730,6 +1728,17 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
+    "\/img\/rss-cones.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/img\/rss-cones.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/rss-cones.png",
+      "initialSize" : 1359,
+      "fileType" : 8192
+    },
     "\/img\/tiny-twitter-logo-white.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1750,17 +1759,6 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/img\/search-blog.png",
       "initialSize" : 447,
-      "fileType" : 8192
-    },
-    "\/img\/rss-cones.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/rss-cones.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/rss-cones.png",
-      "initialSize" : 1359,
       "fileType" : 8192
     },
     "\/images\/button_search_over.png" : {
@@ -1814,6 +1812,15 @@
       "initialSize" : 35231,
       "fileType" : 8192
     },
+    "\/latest-post-info.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/latest-post-info.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/js\/jquery.ba-replacetext.min.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1824,15 +1831,6 @@
       "syntaxCheckerStyle" : 1,
       "outputAbbreviatedPath" : "\/js\/jquery.ba-replacetext.min-ck.js",
       "fileType" : 64
-    },
-    "\/latest-post-info.php" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/latest-post-info.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/sidebar.php" : {
       "ignoreWasSetByUser" : 0,
@@ -1936,14 +1934,16 @@
       "initialSize" : 38532,
       "fileType" : 4096
     },
-    "\/page-about.php" : {
+    "\/images\/nav_issues.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/page-about.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/images\/nav_issues.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/nav_issues.png",
+      "initialSize" : 1966,
+      "fileType" : 8192
     },
     "\/images\/headers\/forestfloor.jpg" : {
       "ignoreWasSetByUser" : 0,
@@ -1978,6 +1978,15 @@
       "initialSize" : 2368,
       "fileType" : 8192
     },
+    "\/page-about.php" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/page-about.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/stately\/assets\/sass\/stately.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1998,17 +2007,6 @@
       "inputAbbreviatedPath" : "\/sentinel\/page-faq.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
-    },
-    "\/images\/nav_issues.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/nav_issues.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/nav_issues.png",
-      "initialSize" : 1966,
-      "fileType" : 8192
     },
     "\/images\/nav_action.png" : {
       "ignoreWasSetByUser" : 0,
@@ -2264,17 +2262,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/images\/headers\/path.jpg" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/headers\/path.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/headers\/path.jpg",
-      "initialSize" : 51727,
-      "fileType" : 4096
-    },
     "\/images\/masthead-2.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -2285,6 +2272,17 @@
       "outputAbbreviatedPath" : "\/images\/masthead-2.png",
       "initialSize" : 206048,
       "fileType" : 8192
+    },
+    "\/images\/headers\/path.jpg" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/headers\/path.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/headers\/path.jpg",
+      "initialSize" : 51727,
+      "fileType" : 4096
     },
     "\/img\/striped-bg-light.png" : {
       "ignoreWasSetByUser" : 0,
@@ -2330,15 +2328,26 @@
       "initialSize" : 1160,
       "fileType" : 8192
     },
-    "\/img\/the-forge.png" : {
+    "\/images\/yellow-tab-bg.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/the-forge.png",
+      "inputAbbreviatedPath" : "\/images\/yellow-tab-bg.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/the-forge.png",
-      "initialSize" : 3035,
+      "outputAbbreviatedPath" : "\/images\/yellow-tab-bg.png",
+      "initialSize" : 2570,
+      "fileType" : 8192
+    },
+    "\/images\/sidebar_bg_middle.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/sidebar_bg_middle.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/sidebar_bg_middle.png",
+      "initialSize" : 185,
       "fileType" : 8192
     },
     "\/images\/printer_icon.png" : {
@@ -2352,17 +2361,6 @@
       "initialSize" : 924,
       "fileType" : 8192
     },
-    "\/images\/yellow-tab-bg.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/yellow-tab-bg.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/yellow-tab-bg.png",
-      "initialSize" : 2570,
-      "fileType" : 8192
-    },
     "\/images\/nav_donate.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -2374,15 +2372,15 @@
       "initialSize" : 1446,
       "fileType" : 8192
     },
-    "\/images\/sidebar_bg_middle.png" : {
+    "\/img\/the-forge.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/sidebar_bg_middle.png",
+      "inputAbbreviatedPath" : "\/img\/the-forge.png",
       "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/sidebar_bg_middle.png",
-      "initialSize" : 185,
+      "outputAbbreviatedPath" : "\/img\/the-forge.png",
+      "initialSize" : 3035,
       "fileType" : 8192
     },
     "\/img\/call\/report-header-background.png" : {
@@ -2584,17 +2582,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/images\/call\/printer-icon.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/call\/printer-icon.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/call\/printer-icon.png",
-      "initialSize" : 123,
-      "fileType" : 8192
-    },
     "\/images\/masthead.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -2615,6 +2602,17 @@
       "processed" : 0,
       "outputAbbreviatedPath" : "\/images\/already-sentinel.png",
       "initialSize" : 34960,
+      "fileType" : 8192
+    },
+    "\/images\/call\/printer-icon.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/call\/printer-icon.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/call\/printer-icon.png",
+      "initialSize" : 123,
       "fileType" : 8192
     },
     "\/archive.php" : {
@@ -2697,17 +2695,6 @@
       "initialSize" : 2347,
       "fileType" : 8192
     },
-    "\/images\/slider-prev-v2.png" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/images\/slider-prev-v2.png",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/images\/slider-prev-v2.png",
-      "initialSize" : 1935,
-      "fileType" : 8192
-    },
     "\/sass\/partials\/ie.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -2739,6 +2726,17 @@
       "inputAbbreviatedPath" : "\/index.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
+    },
+    "\/images\/slider-prev-v2.png" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/images\/slider-prev-v2.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/slider-prev-v2.png",
+      "initialSize" : 1935,
+      "fileType" : 8192
     },
     "\/images\/call\/phone-header-background.png" : {
       "ignoreWasSetByUser" : 0,
@@ -3010,14 +3008,16 @@
       "initialSize" : 154,
       "fileType" : 8192
     },
-    "\/page-sentinel-pages.php" : {
+    "\/images\/call\/third-call-header.png" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/page-sentinel-pages.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
+      "inputAbbreviatedPath" : "\/images\/call\/third-call-header.png",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/images\/call\/third-call-header.png",
+      "initialSize" : 3871,
+      "fileType" : 8192
     }
   },
   "manualImportLinks" : [

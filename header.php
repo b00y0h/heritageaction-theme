@@ -239,6 +239,11 @@
     border-bottom:none;
     color:#fff;
   }
+
+	.ui-accordion-content{
+	 font-family: Georgia,serif;
+	 font-size:14px;
+	}
 </style>
 
 

@@ -41,8 +41,11 @@ get_header(); ?>
          </div>
          <div class="authorBio">
             <div class="author-description">
+							<!-- <?php echo str_replace(' ','-',strtolower(get_the_author())); ?> -->
               <?php
-              $author_description = get_page_by_path('/about/'.str_replace(' ','-',strtolower(get_the_author())));
+							$author_slug = str_replace(' ','-',strtolower(get_the_author()));
+							$author_slug = str_replace('.','',$author_slug);
+              $author_description = get_page_by_path('/about/'.$author_slug);
               if($author_description){
                 echo $author_description->post_content;
               }              
